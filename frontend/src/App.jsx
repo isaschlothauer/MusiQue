@@ -1,12 +1,11 @@
-import Home from "@pages/Home";
-
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  const [searchInput, setSearchInput] = useState("");
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      
     </div>
   );
 }
