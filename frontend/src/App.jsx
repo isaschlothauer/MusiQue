@@ -1,13 +1,8 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
 
 function App() {
-  const [searchInput, setSearchInput] = useState("");
-  return (
-    <div className="App">
-      
-    </div>
-  );
+  return <div className="App">Hi Musique</div>;
 }
 
 export default App;
