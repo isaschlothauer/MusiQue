@@ -2,40 +2,39 @@ body {
     padding: 0;
 }
 
-.artists-card img {
+.artistsCard img {
     width: 100%;
     object-fit: contain;
   }
   
-  .trending-artists {
+  .trendingArtists {
     background-image: linear-gradient(#302518 0.48%, rgb(84 78 70 / 3%) 5.1%),url(src/assets/bg-trending-artists.png);
     background-size: cover;
   }
 
-  .trending-artists h2 {
+  .trendingArtists h2 {
     text-align: center;
     padding-top: 3rem;
     margin: 0;
   }
 
-.artists-card {
+.artistsCard {
     padding-left: 5rem;
     padding-right: 5rem;
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 3rem;
 }
 
-article {
+.articles {
     background-color: #302518;
     color: #F5F5F5;
     padding-bottom: 2rem;
     box-shadow: rgb(17 17 26 / 20%) 0px 4px 16px, rgb(17 17 26 / 20%) 0px 8px 24px, rgb(17 17 26 / 20%) 0px 16px 56px;
 }
 
-.p-buttons {
+.pButtons {
     align-items: center;
     appearance: none;
     background: linear-gradient(269.49deg, #7755F9 10.41%, #02AAFD 111.89%), linear-gradient(270.52deg, #DB6C2F -10.09%, #7755F9 90.46%);
@@ -60,20 +59,21 @@ article {
     touch-action: manipulation;
     white-space: nowrap;
     will-change: box-shadow,transform;
-    margin-bottom: 3rem;
-    margin-top: 1.5rem;
+    margin:auto;
+    margin-bottom: 2rem;
+
 }
 
-.p-buttons:focus {
+.pButtons:focus {
     box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
-.p-buttons:hover {
+.pButtons:hover {
     box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
     transform: translateY(-2px);
   }
 
-  .p-buttons:active {
+  .pButtons:active {
     box-shadow: #3c4fe0 0 3px 7px inset;
     transform: translateY(2px);
   }
@@ -82,4 +82,46 @@ article {
     margin: 0;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  @media screen and (min-width: 600px) {
+
+   .trendingArtists {
+     background: #F6F6F6;
+     background-image: none;
+     padding-left: 2rem;
+     padding-right: 2rem;
+   }
+
+   .trendingArtists h2 {
+    text-align: left;
+    padding-bottom: 2rem;
+    padding-bottom: 2rem;
+   }
+
+   .articles {
+    display: flex;
+    padding: 1rem;
+    background-color: #FFFFFF;
+    border-radius: 0.93rem;
+    color: #131315;
+    box-shadow: none;
+   }
+
+   .artistsCard img {
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+  }
+
+  .artistsCard {
+    padding: 0;
+  }
+
+  .albumText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   }
