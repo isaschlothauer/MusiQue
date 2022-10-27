@@ -1,0 +1,17 @@
+.artists-card img {
+    width: 100%;
+}
+
+.artists-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+
+.trending-artists {
+    background-image: url("/bg-trending-artists.png"); 
+
+}
