@@ -24,7 +24,14 @@ function Recommended() {
           Joao, Germany/Portugal
         </p>
       </div>
-
+      <div className="player">
+        <figure>
+          {/* eslint-disable jsx-a11y/media-has-caption */}
+          <audio controls src="" />
+        </figure>
+      </div>
+      <p className={`${styles.pTextName} ${"pText"}`}>THE AWAY DAYS</p>
+      <p className={`${styles.pItalic} ${"pItalic"}`}>Layers</p>
       <button type="button" className={styles.btn}>
         Spotify Logo
       </button>
