@@ -26,7 +26,7 @@ function Recommended() {
       </div>
 
       <button type="button" className={RecommendedCSS.btn}>
-        Spotify
+        Spotify Logo
       </button>
     </div>
   );
