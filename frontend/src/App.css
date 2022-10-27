@@ -21,7 +21,6 @@ body {
   max-width: 1440px;
   min-width: 330px;
   width: 100%;
-  padding: 1.5rem;
 }
 
 /*--------Fonts Mobile-----------*/
@@ -41,20 +40,20 @@ h2 {
   line-height: 1.875rem;
 }
 
-.p-text {
+.pText {
   font-family: var(--fontNoto);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 1.5rem;
 }
-.p-title {
+.pTitle {
   font-family: var(--fontNoto);
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.375rem;
 }
 
-.p-italic {
+.pItalic {
   font-family: var(--fontNoto);
   font-style: italic;
   font-weight: 400;
@@ -62,7 +61,7 @@ h2 {
   line-height: 1.375rem;
 }
 
-.p-buttons {
+.pButtons {
   font-family: var(--fontNoto);
   font-weight: 700;
   font-size: 0.875rem;
@@ -87,20 +86,20 @@ h2 {
     line-height: 3rem;
   }
 
-  .p-text {
+  .pText {
     font-family: var(--fontNoto);
     font-weight: 400;
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-  .p-title {
+  .pTitle {
     font-family: var(--fontNoto);
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 2rem;
   }
 
-  .p-italic {
+  .pItalic {
     font-family: var(--fontNoto);
     font-weight: 400;
     font-style: italic;
@@ -108,7 +107,7 @@ h2 {
     line-height: 1.75rem;
   }
 
-  .p-buttons {
+  .pButtons {
     font-family: var(--fontNoto);
     font-weight: 700;
     font-size: 1.125rem;
