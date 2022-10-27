@@ -1,8 +1,85 @@
+body {
+    padding: 0;
+}
+
 .artists-card img {
-    width: 8rem;
+    width: 100%;
+    object-fit: contain;
   }
   
   .trending-artists {
-    background-image: url(src/assets/bg-trending-artists.png);
+    background-image: linear-gradient(#302518 0.48%, rgb(84 78 70 / 3%) 5.1%),url(src/assets/bg-trending-artists.png);
+    background-size: cover;
   }
-  
+
+  .trending-artists h2 {
+    text-align: center;
+    padding-top: 3rem;
+    margin: 0;
+  }
+
+.artists-card {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+article {
+    background-color: #302518;
+    color: #F5F5F5;
+    padding-bottom: 2rem;
+    box-shadow: rgb(17 17 26 / 20%) 0px 4px 16px, rgb(17 17 26 / 20%) 0px 8px 24px, rgb(17 17 26 / 20%) 0px 16px 56px;
+}
+
+.p-buttons {
+    align-items: center;
+    appearance: none;
+    background: linear-gradient(269.49deg, #7755F9 10.41%, #02AAFD 111.89%), linear-gradient(270.52deg, #DB6C2F -10.09%, #7755F9 90.46%);
+    border: 0;
+    border-radius: 1.25rem;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    height: 2.625rem;
+    width: 6.688rem;
+    justify-content: center;
+    overflow: hidden;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    text-align: left;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    margin-bottom: 3rem;
+    margin-top: 1.5rem;
+}
+
+.p-buttons:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.p-buttons:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+
+  .p-buttons:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  p {
+    margin: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
