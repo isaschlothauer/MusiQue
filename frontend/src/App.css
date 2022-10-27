@@ -1,56 +1,117 @@
+:root {
+  --colorDarkBG: #302518;
+  --colorBlackFonts: #131315;
+  --colorWhiteFonts: #f5f5f5;
+  --colorGray: #f6f6f6;
+  --colorLightblue: #4faeff;
+  --gradientBG: linear-gradient(270.64deg, #7755f9 -22.24%, #5f3971 109.3%);
+  --gradientButtons: linear-gradient(269.49deg, #7755f9 10.41%, #02aafd 111.89%),
+    linear-gradient(270.52deg, #db6c2f -10.09%, #7755f9 90.46%);
+  --fontPoppins: "Poppins", sans-serif;
+  --fontNoto: "Noto Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 auto;
+  max-width: 1440px;
+  min-width: 330px;
+  width: 100%;
+  padding: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+/*--------Fonts Mobile-----------*/
+
+h1 {
+  color: var(--white);
+  font-family: var(--fontPoppins);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2.125rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h2 {
+  font-family: var(--fontPoppins);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+}
+
+.p-text {
+  font-family: var(--fontNoto);
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+.p-title {
+  font-family: var(--fontNoto);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+.p-italic {
+  font-family: var(--fontNoto);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+.p-buttons {
+  font-family: var(--fontNoto);
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+/*--------Fonts Tablet/Desktop-----------*/
+
+@media screen and (min-width: 600px) {
+  h1 {
+    color: var(--white);
+    font-family: var(--fontPoppins);
+    font-weight: 700;
+    font-size: 2.75rem;
+    line-height: 4.125rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-button {
-  font-size: calc(10px + 2vmin);
+  h2 {
+    font-family: var(--fontPoppins);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .p-text {
+    font-family: var(--fontNoto);
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .p-title {
+    font-family: var(--fontNoto);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .p-italic {
+    font-family: var(--fontNoto);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .p-buttons {
+    font-family: var(--fontNoto);
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
 }
