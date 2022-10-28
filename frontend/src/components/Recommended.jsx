@@ -40,8 +40,3 @@ function Recommended() {
 }
 
 export default Recommended;
-
-// //<div className="rec">
-// <h2>Picked for you with ❤ </h2>
-// <div className= "recQuote"</div>
-// </div>;
