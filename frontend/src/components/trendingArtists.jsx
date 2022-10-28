@@ -1,5 +1,6 @@
 import React from "react";
 import TrendingArtCSS from "./trendingArtists.module.css";
+import ShuffleButton from "./shuffleButton";
 
 function TrendingArtists() {
   return (
@@ -36,12 +37,7 @@ function TrendingArtists() {
             <p className="pItalic">Tell me about it</p>
           </div>
         </article>
-        <button
-          type="button"
-          className={`${TrendingArtCSS.pButtons} ${"pButtons"}`}
-        >
-          SHUFFLE
-        </button>
+        <ShuffleButton />
       </div>
     </div>
   );

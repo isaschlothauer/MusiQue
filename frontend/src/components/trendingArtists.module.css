@@ -34,50 +34,6 @@ body {
     box-shadow: rgb(17 17 26 / 20%) 0px 4px 16px, rgb(17 17 26 / 20%) 0px 8px 24px, rgb(17 17 26 / 20%) 0px 16px 56px;
 }
 
-.pButtons {
-    align-items: center;
-    appearance: none;
-    background: linear-gradient(269.49deg, #7755F9 10.41%, #02AAFD 111.89%), linear-gradient(270.52deg, #DB6C2F -10.09%, #7755F9 90.46%);
-    border: 0;
-    border-radius: 1.25rem;
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-flex;
-    height: 2.625rem;
-    width: 6.688rem;
-    justify-content: center;
-    overflow: hidden;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    position: relative;
-    text-align: left;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow,transform;
-    margin:auto;
-    margin-bottom: 2rem;
-
-}
-
-.pButtons:focus {
-    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-}
-
-.pButtons:hover {
-    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-    transform: translateY(-2px);
-  }
-
-  .pButtons:active {
-    box-shadow: #3c4fe0 0 3px 7px inset;
-    transform: translateY(2px);
-  }
-
   p {
     margin: 0;
     padding-left: 1rem;
@@ -109,8 +65,7 @@ body {
    }
 
    .artistsCard img {
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
     overflow: hidden;
   }
 
