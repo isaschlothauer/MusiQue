@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
+import Header from "./components/header";
 
 function App() {
-  const [searchInput, setSearchInput] = useState("");
   return (
-    <div className="App">
-      
+    <div>
+      <Header />
     </div>
   );
 }
