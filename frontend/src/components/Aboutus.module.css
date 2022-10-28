@@ -1,0 +1,23 @@
+.aboutus {
+    background-color: #302518;
+    height:35.625rem;
+    color:white;
+    text-align: center;
+  }
+  
+  .aboutustitle {
+    font-size:1.25rem;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    padding-top: 3.125rem;
+  }
+  
+  .aboutustext {
+    font-size:1.125rem;
+    color: white;
+    text-align: center;
+    margin-left: 2.75rem;
+    margin-right: 2.75rem;
+  }
