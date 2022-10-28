@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Recommended.module.css";
 import "../App.css";
 import Profile from "../assets/Joao.jpg";
+import Logo from "../assets/spotify_logo_white.png";
 
 function Recommended() {
   return (
@@ -9,7 +10,7 @@ function Recommended() {
       <h2 className={`${styles.h2}`}>Picked for you with ❤</h2>
       <div className={styles.recQuote}>
         <div className={styles.imgContainer}>
-          <img className={styles.img} alt="Joao" src={Profile} />
+          <img className={styles.imgQuote} alt="Joao" src={Profile} />
           <div className={styles.quotation}>“</div>
         </div>
         <p className={`${styles.pText} ${"pText"}`}>
@@ -32,8 +33,11 @@ function Recommended() {
       </div>
       <p className={`${styles.pTextName} ${"pText"}`}>THE AWAY DAYS</p>
       <p className={`${styles.pItalic} ${"pItalic"}`}>Layers</p>
+
       <button type="button" className={styles.btn}>
-        Spotify Logo
+        <a className="active" href="https://open.spotify.com/">
+          <img className={styles.logo} alt="spotify logo" src={Logo} />
+        </a>
       </button>
     </div>
   );
