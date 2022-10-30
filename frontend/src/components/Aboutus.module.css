@@ -76,7 +76,7 @@
 
   .aboutus {
     background-color: #302518;
-    height:400px;
+    height:25rem;
     color:white;
     text-align: center;
     padding-bottom: 3rem;
@@ -90,8 +90,8 @@
   }
 
   .logo {
-    width: 250px;
-    height: 239px;
+    width: 15.625rem;
+    height: 14.938rem;
     margin-bottom:0rem;
     margin-top:7rem;
     margin-right: 1rem;
@@ -117,7 +117,7 @@
   }
 
   .container2{
-    width:300px;
+    width:18.75rem;
   }
 
 }
