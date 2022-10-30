@@ -1,41 +1,43 @@
 /*HEADER SECTION*/
 
 .header {
-    background-image:url(src/assets/backgroundHeader.png);
-    background-position: right 35% bottom 45%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 37.5rem;
+  background-image:url(src/assets/backgroundHeader.png);
+  background-position: right 35% bottom 45%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 37.5rem;
+
+}
   
-  }
-    
-  img {
-    height:8.125rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width:8.125rem;
-    margin-bottom: 1.875rem;
-  }
-  
-  
-  .headerFirsttext{
-  font-size:1.5rem;
+.image2 {
+  height:9.125rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:8.125rem;
+  margin-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+
+.headerFirsttext{
+color: white;
+text-align: center;
+margin-left: 2.75rem;
+margin-bottom: 3.125rem;
+margin-right:2.75rem; 
+
+
+}
+
+
+.headerSecondtext{
+  margin-left: 2.75rem;
+  margin-right:2.75rem; 
   color: white;
   text-align: center;
-  font-weight: 700;
-  margin-left: 2.75rem;
-  margin-right: 2.75rem;
-  margin-bottom: 3.125rem;
-  }
-  
-  .headerSecondtext{
-    margin-left: 2.75rem;
-    color: white;
-    margin-right: 2.75rem;
-    font-size:1.125rem;
-    font-style: italic;
-    text-align: center;
-    font-weight: 400;
-    margin-bottom: 31.25rem;
-  }
+  margin-bottom: 31.25rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+
+}
