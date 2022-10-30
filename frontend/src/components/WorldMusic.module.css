@@ -1,0 +1,165 @@
+/* Link style */
+a:link {
+    list-style-type: none;
+    text-decoration: none;
+    color: var(--colorWhiteFonts);
+}
+
+.musicContainer {
+    color: var(--colorWhiteFonts);   
+    background: var(--gradientBG);
+    width: 100%;
+    padding: 1.5rem 2rem 1.4rem 1.5rem; 
+}
+
+.musicContainer p,
+.recContainer h2 {
+    text-align: center;
+}
+
+.albumCover {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    margin: 1rem auto;
+    display: block;
+    margin: 1rem auto; 
+}
+
+.songTitle,
+.songDescription {
+    margin-top: .5rem;
+}
+
+.artist {
+    margin: 0.5rem auto;
+}
+
+.yearPub,
+.format {
+    font-size: 0.8rem;
+    display: block;
+}
+
+
+/* Spotify Logo/Link button */
+.shuffle {
+    width: 120px;
+    height: 40px;
+    margin: 1rem auto;
+    
+    /* margin-top: 2rem; */
+    /* margin-top: 2rem; */
+    background: linear-gradient(269.49deg, #7755F9 10.41%, #02AAFD 111.89%), linear-gradient(270.52deg, #DB6C2F -10.09%, #7755F9 90.46%);
+    border-radius: 20px;
+    position: relative;    
+}
+
+/* Spotify Logo  */
+.spotifyLink img{
+    width: 5rem;
+    position: absolute;
+    /* align-items: center; */
+}
+
+.listenMore {
+    display: flex;
+    margin: 2rem auto auto auto;
+}
+
+.listenMore p {
+    margin-left: auto;
+}
+
+.listenMore a {
+    margin-right: auto;
+}
+
+.listen {
+    margin: 0 auto; 
+    display: flex;
+    align-items: center;
+}
+
+.endTxt {
+    display: block;
+    font-size: 0.5rem;
+    /* text-align: center; */
+}
+
+.endTxt1 {
+    font-size: 1rem;
+}
+
+.spotifyLogo {
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 600px) {
+
+    .albumCover {
+        margin: initial;
+    }
+    
+    .recContainer {
+        width: 70%;
+        padding-top: 0.5rem;
+        margin: 0 auto;
+    }
+
+    .recContainer p,
+    .recContainer h2 {
+        text-align: initial;
+    }
+
+    .panelBlock {
+        display: flex;
+        margin-top: 1rem;
+    }
+
+    .panelBlock img {
+        max-height: 227px;
+    }
+
+    .songInfo {
+        /* margin: auto 0; */
+        margin-left: 4%;
+        display: flex-block; 
+    }
+
+
+    .songInfo a,
+    .songInfo p {
+        width: 130%;
+        /* border: 2px dotted red; */
+    }
+
+    .songTitle {
+        font-weight: 500;
+    }
+
+    .artist {
+        margin-top: 1rem;
+        margin-bottom: 0.6rem;
+    }
+
+
+    .yearPub {
+        margin-bottom: 1rem;
+    }
+
+    .songInfo .endTxt {
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    
+    .SpotifyLogo {
+        margin-top: auto;
+        margin-bottom: auto;
+    } 
+
+
+}
