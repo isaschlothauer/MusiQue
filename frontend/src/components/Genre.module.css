@@ -1,65 +1,188 @@
-
 .genre {
-    height: 28.313rem;
-    background-color: rgba(48, 37, 24, 1);
-    color: white;
-    text-align: center;
-    padding-top: 3.125rem;
-  }
+  height: auto;
+  background-color: rgba(48, 37, 24, 1);
+  color: white;
+  text-align: center;
+  padding-bottom: 5rem;
   
-  .genretext{
-    font-size: 1.25rem;
-  }
+}
+
+
+.btn2 {
+  display:none;
+  width:15.625rem;
+  height:15.625rem;
+}
+
+.btn {
+  align-items: center;
+  background-image: linear-gradient(144deg,rgba(2, 170, 253, 1),rgba(119, 85, 249, 1));
+  border: 1.25rem;
+  border-radius: 3rem;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 0.938rem 1.875rem -0.313rem;
+  box-sizing: border-box;
+  color: #4FAEFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 1.125rem;
+  justify-content: center;
+  line-height: 1em;
+  width: 6.25rem;
+  padding: 0.188rem;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0s;
+  font-weight: 700;
+ 
+
+ }
+ 
+ .btn:active,
+ .btn:hover {
+  outline: 0;
+  color: aliceblue;
+ }
+ 
+ .btn span {
+  background-color: rgba(48, 37, 24, 1);
+  padding: 1rem 1.5rem;
+  border-radius: 3rem;
+  height: 100%;
+  transition: 300ms;
+ }
+ 
+ .btn:hover span {
+  background: none;
+  color:aliceblue;
+ }
+ 
+ .btn:active {
+  transform: scale(0.9);
+ }
+
+
+ .buttonsdesk1{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+  gap:0rem;
+  justify-items: center;
+  margin-top: 2rem;
   
+ }
+
+ .btn:nth-child(1) {
+  grid-column-start: 1;
+grid-column-end: 3;
+grid-row-start: 1;
+  grid-row-end: 2;
+  width: 8.438rem;
+  margin-top: 1rem;
+  padding-top: 0.219rem;
+}
+
+.btn:nth-child(2) {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 9.063rem;
+  margin-top: 1rem;
+  padding-top: 0.219rem;
+
+ 
+}
+
+.btn:nth-child(3) {
+  margin-left: 3rem;
+  margin-top: 1rem;
+  padding-top: 0.219rem;
   
+}
+
+.btn:nth-child(4) {
+  width: 7.188rem;
+  margin-top: 1rem;
+  padding-top: 0.219rem;
   
-  button {
-    align-items: center;
-    background-image: linear-gradient(144deg,rgba(2, 170, 253, 1),rgba(119, 85, 249, 1));
-    border: 1.25rem;
-    border-radius: 1.25rem;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 0.938rem 1.875rem -0.313rem;
-    box-sizing: border-box;
-    color: #4FAEFF;
-    display: flex;
-    font-family: Phantomsans, sans-serif;
-    font-size: 1.125rem;
-    justify-content: center;
-    line-height: 1em;
-    max-width: 100%;
-    min-width: 8.75rem;
-    padding: 0.188rem;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: all 0s;
-    font-weight: 700;
+}
+
+.btn:nth-child(5) {
+  margin-right: 3rem;
+  width: 6.563rem;
+  margin-top: 1rem;
+  padding-top: 0.219rem;
   
-   }
-   
-   button:active,
-   button:hover {
-    outline: 0;
-    color: aliceblue;
-   }
-   
-   button span {
-    background-color: rgba(48, 37, 24, 1);
-    padding: 1rem 1.5rem;
-    border-radius: 1.25rem;
-    width: 100%;
-    height: 100%;
-    transition: 300ms;
-   }
-   
-   button:hover span {
-    background: none;
-    color:aliceblue;
-   }
-   
-   button:active {
-    transform: scale(0.9);
-   }
+}
+
+.btn:nth-child(6) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  width: 8.188rem;
+  margin-top: 1rem;
+  padding-top: 0.219rem;
+  
+}
+
+.btn:nth-child(7) {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  width: 8.438rem;
+  margin-top: 1rem;
+  padding-top: 0.219rem
+ 
+}
+
+.btn:nth-child(8) {
+width: 6.688rem;
+margin-left: 3rem;
+margin-top: 1rem;
+padding-top: 0.219rem;
+ 
+}
+
+.btn:nth-child(9) {
+width: 5.938rem;
+margin-top: 1rem;
+padding-top: 0.219rem;
+
+}
+
+.btn:nth-child(10) {
+margin-right: 3rem;
+width: 6.688rem;
+margin-top: 1rem;
+padding-top: 0.219rem;
+ 
+}
+
+.btn:nth-child(11) {
+grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  width: 8.75rem;
+  margin-top: 1rem;
+  padding-top: 0.219rem;
+  
+}
+
+.btn:nth-child(12) {
+grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  width: 7.188rem;
+  margin-top: 1rem;
+  padding-top: 0.219rem;
+  
+ 
+}
