@@ -4,6 +4,21 @@ import "../App.css";
 import Profile from "../assets/Joao.jpg";
 import Logo from "../assets/spotify_logo_white.png";
 
+const recs = {
+  author: "Joao, Germany/Portugal",
+  imgAuthor: { Profile },
+  content: `As soon the lyrics start, there is a mention of an individual that
+    isn’t “here”, but was greatly dear, which is most likely Syd
+    Barrett. Not only they miss him, but also the time when they were
+    close. Bound not by blood, but music. Life goes on: we shouldn’t
+    hold on for nostalgia, but learn with our past. Sometimes, things
+    can’t be avoided, but we can surely learn from them.`,
+  songID: "6mFkJmJqdDVQ1REhVfGgd1",
+  song: "Wish you were here",
+  artist: "PINK FLOYD",
+  spotifyUrl: "https://open.spotify.com/track/6mFkJmJqdDVQ1REhVfGgd1",
+  previewUrl: "https://open.spotify.com/track/6mFkJmJqdDVQ1REhVfGgd1",
+};
 function Recommended() {
   return (
     <div className={styles.container}>
@@ -17,35 +32,26 @@ function Recommended() {
             </div>
             <div className={`${styles.nameDesktop} ${"pText"}`}>
               {" "}
-              Joao, Germany/Portugal
+              {recs.author}
             </div>
           </div>
 
-          <p className={`${styles.pText} ${"pText"}`}>
-            As soon the lyrics start, there is a mention of an individual that
-            isn’t “here”, but was greatly dear, which is most likely Syd
-            Barrett. Not only they miss him, but also the time when they were
-            close. Bound not by blood, but music. Life goes on: we shouldn’t
-            hold on for nostalgia, but learn with our past. Sometimes, things
-            can’t be avoided, but we can surely learn from them.
-          </p>
-          <p className={`${styles.artistMobile} ${"pText"}`}>
-            Joao, Germany/Portugal
-          </p>
+          <p className={`${styles.pText} ${"pText"}`}>{recs.content}</p>
+          <p className={`${styles.nameMobile} ${"pText"}`}>{recs.author}</p>
         </div>
 
         <div className={styles.song}>
           <p className={`${styles.songHeadline}`}>Song</p>
-          <p className={`${styles.songTitle} ${"pText"}`}>Wish you were here</p>
+          <p className={`${styles.songTitle} ${"pText"}`}>{recs.song}</p>
           <p className={`${styles.artistHeadline}`}>Artist</p>
-          <p className={`${styles.artistTitle} ${"pText"}`}>Pink Floyd</p>
+          <p className={`${styles.artistTitle} ${"pText"}`}>{recs.artist}</p>
           <figure>
             {/* eslint-disable jsx-a11y/media-has-caption */}
             <audio controls src="" />
           </figure>
-          <p className={`${styles.artistMobile} ${"pText"}`}>PINK FLOYD</p>
+          <p className={`${styles.artistMobile} ${"pText"}`}>{recs.artist}</p>
           <p className={`${styles.songTitleMobile} ${"pItalic"}`}>
-            Wish you were here
+            {recs.song}
           </p>
 
           <button type="button" className={styles.btn}>

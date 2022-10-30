@@ -42,6 +42,11 @@
   filter: grayscale(100%);
 }
 
+.nameMobile {
+  color: var(--colorWhiteFonts);
+  font-weight: 700;
+  font-size: 1rem;
+}
 .nameDesktop {
   display: none;
 }
@@ -133,6 +138,9 @@ audio {
     margin-right: 40px;
   }
   .artistMobile {
+    display: none;
+  }
+  .nameMobile {
     display: none;
   }
 
