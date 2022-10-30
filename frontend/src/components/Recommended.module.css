@@ -120,7 +120,7 @@ audio {
 
 @media screen and (min-width: 500px) {
   .rec {
-    padding: 3rem;
+    padding: 0 3rem;
   }
 }
 
@@ -145,6 +145,7 @@ audio {
   .rec {
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 0 calc(5px + 10%);
     max-width: 1300px;
     padding-left: 3rem;
