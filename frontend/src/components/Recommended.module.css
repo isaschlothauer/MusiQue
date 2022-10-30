@@ -121,11 +121,14 @@ audio {
   display: none;
 }
 
-/*--------Padding Tablet-----------*/
+/*--------Transitionary Styling Mobile-> Tablet/Dekstop-----------*/
 
 @media screen and (min-width: 500px) {
   .rec {
     padding: 0 3rem;
+  }
+  .nameMobile {
+    font-size: 1.125rem;
   }
 }
 
