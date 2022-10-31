@@ -8,7 +8,7 @@ import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
 const client_id = "d6b767f2085441d5bd7a2c4b59b009a6";
 // eslint-disable-next-line camelcase
 const client_secret = "3db89dc2644044a3baa93a83ca6f7f6c";
-const artistName = "John Jor";
+const artistName = "Motley Crue";
 
 // TO DO LIST
 // 1. Randomized artist selector
@@ -22,6 +22,7 @@ function WorldMusic() {
   const [searchInput, setSearchInput] = useState("");
   const [accessToken, setAccessToken] = useState("");
   const [musicData, setMusicData] = useState("");
+  const [musicDataImage, setMusicDataImage] = useState("");
   useEffect(() => {
     // API Access Token
     const authParameters = {
@@ -57,17 +58,13 @@ function WorldMusic() {
         .then((response) => response.json())
         .then((data) => {
           // console.log(data);
-          return setMusicData(data.artists.items[0]);
+          setMusicData(data.artists.items[0]);
+          setMusicDataImage(data.artists.items[0].images[1].url); // This needs to be set, otherwise causes rendering issue.
         });
     }, []);
   }
 
-  // console.log(musicData);
   gerateArtistData();
-  // eslint-disable-next-line no-restricted-syntax
-  console.log(musicData);
-  // gerateArtistData();
-  // console.log(musicData)
 
   return (
     <div className={MusicCSS.musicContainer}>
@@ -78,7 +75,7 @@ function WorldMusic() {
           </h2>
           <div className={MusicCSS.panelBlock}>
             <img
-              src={musicData.images[1].url} // ERROR PRONE
+              src={musicDataImage} // ERROR PRONE
               alt="Album cover"
               className={MusicCSS.albumCover}
             />
