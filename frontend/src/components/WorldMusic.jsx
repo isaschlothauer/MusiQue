@@ -80,7 +80,7 @@ function WorldMusic() {
       };
 
       // PLaylist fetcher
-      const currentPlayList = fetch(
+      fetch(
         `https://api.spotify.com/v1/playlists/${randomizer(3)}`,
         artistParameters
       )
