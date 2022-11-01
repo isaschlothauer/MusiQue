@@ -185,7 +185,7 @@ function WorldMusic() {
           <div className={MusicCSS.panel3}>
             <div className={MusicCSS.mainImg}>
               <img
-                src={musicData1.panel1Image}
+                src={musicData3.panel3Image}
                 alt="Arist/Album Cover image1"
               />
             </div>
