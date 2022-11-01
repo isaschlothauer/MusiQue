@@ -18,6 +18,12 @@ a:link {
     margin: 0 auto;
 }
 
+.panel1,
+.panel2, 
+.panel3 {
+    max-width: 330px;
+}
+
 .panel2,
 .panel3 {
     display: none;

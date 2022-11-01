@@ -19,6 +19,7 @@ const client_secret = "3db89dc2644044a3baa93a83ca6f7f6c";
 // 3. Play List and song picker still needs to be implemented
 // 4. Figure out dynamic external linking
 // 5. Implement error handing on null or undefined response
+// 6. Add default songs for at load.
 
 // Find a way to get song tracks
 const playLists = [
@@ -45,13 +46,9 @@ function WorldMusic() {
   // eslint-disable-next-line no-unused-vars
   const [searchInput, setSearchInput] = useState("");
   const [accessToken, setAccessToken] = useState("");
-  const [musicData, setMusicData] = useState("");
-  // const [musicDataArtists, setMusicDataArtists] = useState("");
-  // const [musicDataSongTitle, setMusicDataSongTitle] = useState("");
-  // const [musicDataImage, setMusicDataImage] = useState("");
-  // const [musicDataYear, setMusicDataYear] = useState("");
-  // const [musicCountry, setMusicCountry] = useState("");
-  // const [playListData, setPlayListData] = useState("");
+  const [musicData1, setMusicData1] = useState("");
+  const [musicData2, setMusicData2] = useState("");
+  const [musicData3, setMusicData3] = useState("");
   useEffect(() => {
     // API Access Token
     const authParameters = {
@@ -68,7 +65,7 @@ function WorldMusic() {
       .then((data) => setAccessToken(data.access_token));
   }, []);
 
-  async function gerateArtistData() {
+  async function generateArtistData() {
     useEffect(() => {
       // Authentication mechanism
       const artistParameters = {
@@ -87,21 +84,51 @@ function WorldMusic() {
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
-          const n = Math.floor(Math.random() * 50);
-          const stringPath = data.tracks.items[n].track;
-          // setMusicDataArtists(stringPath.album.artists[0].name);
-          // setMusicDataSongTitle(stringPath.name);
-          // setMusicDataImage(stringPath.album.images[1].url);
-          // setMusicDataYear(stringPath.album.release_date);
-          console.log(stringPath);
+          // console.log(data);
+          const n = Math.floor(Math.random() * 48);
+          const stringPath1 = data.tracks.items[n].track;
+          const stringPath2 = data.tracks.items[n + 1].track;
+          const stringPath3 = data.tracks.items[n + 2].track;
 
-          // setMusicData(stringPath);
+          // Panel 1 data
+          const panel1 = {
+            panel1Title: stringPath1.name,
+            panel1Artists: stringPath1.artists[0].name,
+            panel1Album: stringPath1.album.name,
+            panel1Release: stringPath1.album.release_date,
+            panel1Image: stringPath1.album.images[1].url,
+          };
+
+          // Panel 2 data
+          const panel2 = {
+            panel2Title: stringPath2.name,
+            panel2Artists: stringPath2.artists[0].name,
+            panel2Album: stringPath2.album.name,
+            panel2Release: stringPath2.album.release_date,
+            panel2Image: stringPath2.album.images[1].url,
+          };
+
+          // Panel 3 data
+          const panel3 = {
+            panel3Title: stringPath3.name,
+            panel3Artists: stringPath3.artists[0].name,
+            panel3Album: stringPath3.album.name,
+            panel3Release: stringPath3.album.release_date,
+            panel3Image: stringPath3.album.images[1].url,
+          };
+
+          // Savimg panel objects to state
+          setMusicData1(panel1);
+          setMusicData2(panel2);
+          setMusicData3(panel3);
         });
     }, []);
-    // console.log(musicData);
+    // Check if state is filled
   }
-  gerateArtistData();
+  // console.log(musicData.name);
+  // console.log(musicData.artists[0].name);
+
+  generateArtistData();
   // setTimeout(gerateArtistData(), 3000);
   // console.log(musicData);
   // console.log(playLists[Math.floor(Math.random() * 4)]);
@@ -113,32 +140,68 @@ function WorldMusic() {
         <div className={MusicCSS.panelContainer}>
           <div className={MusicCSS.panel1}>
             <div className={MusicCSS.mainImg}>
-              <img src={Probass} alt="Arist/Album Cover image1" />
+              <img
+                src={musicData1.panel1Image}
+                alt="Arist/Album Cover image1"
+              />
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>song title</h2>
-            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>artists</p>
-            <p className={`${MusicCSS.country} ${["pText"]}`}>Country: </p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: </p>
+            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+              {musicData1.panel1Title}
+            </h2>
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+              {musicData1.panel1Artists}
+            </p>
+            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Album: {musicData1.panel1Album}
+            </p>
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Release: {musicData1.panel1Release}
+            </p>
           </div>
 
           <div className={MusicCSS.panel2}>
             <div className={MusicCSS.mainImg}>
-              <img src={Probass} alt="Artist image1" />
+              <img
+                src={musicData2.panel2Image}
+                alt="Arist/Album Cover image1"
+              />
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>song title</h2>
-            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>artists</p>
-            <p className={`${MusicCSS.country} ${["pText"]}`}>Country: </p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: </p>
+            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+              {musicData2.panel2Title}
+            </h2>
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+              {musicData2.panel2Artists}
+            </p>
+            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Album: {musicData2.panel2Album}
+            </p>
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Release: {musicData2.panel2Release}
+            </p>
           </div>
 
           <div className={MusicCSS.panel3}>
             <div className={MusicCSS.mainImg}>
-              <img src={Probass} alt="Arist/Album Cover Image2" />
+              <img
+                src={musicData1.panel1Image}
+                alt="Arist/Album Cover image1"
+              />
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>song title</h2>
-            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>artists</p>
-            <p className={`${MusicCSS.country} ${["pText"]}`}>Country: </p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: </p>
+            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+              {musicData3.panel3Title}
+            </h2>
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+              {musicData3.panel3Artists}
+            </p>
+            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Album: {musicData3.panel3Album}
+            </p>
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Release: {musicData3.panel3Release}
+            </p>
           </div>
         </div>
         <div className={MusicCSS.shuffle} />
