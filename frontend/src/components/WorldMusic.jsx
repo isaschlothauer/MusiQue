@@ -41,6 +41,7 @@ function randomizer(num) {
   return playListData;
 }
 
+
 function WorldMusic() {
   // eslint-disable-next-line no-unused-vars
   const [searchInput, setSearchInput] = useState("");
@@ -80,7 +81,7 @@ function WorldMusic() {
       };
 
       // PLaylist fetcher
-      fetch(
+      let currentPlayList = fetch(
         `https://api.spotify.com/v1/playlists/${randomizer(3)}`,
         artistParameters
       )
@@ -94,12 +95,14 @@ function WorldMusic() {
           // setMusicDataImage(stringPath.album.images[1].url);
           // setMusicDataYear(stringPath.album.release_date);
           console.log(stringPath);
-          setMusicData(stringPath);
+          
+          // setMusicData(stringPath);
         });
     }, []);
+    // console.log(musicData);
   }
-
   gerateArtistData();
+  // setTimeout(gerateArtistData(), 3000);
   // console.log(musicData);
   // console.log(playLists[Math.floor(Math.random() * 4)]);
 

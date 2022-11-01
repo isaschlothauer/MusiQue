@@ -11,6 +11,7 @@ a:link {
     /* width: 100%; */
 }
 
+
 .panelContainer {
     display: block;
     max-width: 100%;
@@ -119,7 +120,9 @@ a:link {
     }
     
     .panel2 {
-        margin: 0 7vw;
+        /* margin: 0 7vw; */
+        margin-left: initial;
+        margin: 0 auto;
     }
 
     .panel3 {
