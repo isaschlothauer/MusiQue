@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 
 import WorldMusic from "./components/WorldMusic";
 import Header from "./components/header";
+import GenreSection from "./components/genre";
 import Footer from "./components/footer";
 
 import Recommended from "./components/Recommended";
@@ -19,6 +20,7 @@ function App() {
           element={
             <div>
               <Header />
+              <GenreSection />
               <Recommended />
               <WorldMusic />
               <Footer />
