@@ -1,11 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-restricted-syntax */
 import "../App.css";
-// eslint-disable-next-line no-unused-vars
 import { useState, useEffect } from "react";
+// eslint-disable-next-line no-unused-vars
 import MusicCSS from "./WorldMusic.module.css";
 import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
 import Probass from "../assets/ProbassHardi.png";
+import Turmio from "../assets/turmio.png";
+import panel3IMG from "../assets/Screenshot_2022-11-02_09-06-16.png";
+import shimaUta from "../assets/shimauta.png";
 
 // eslint-disable-next-line camelcase
 const client_id = "d6b767f2085441d5bd7a2c4b59b009a6";
@@ -37,13 +40,25 @@ const playLists = [
   },
 ];
 
+// const defaultList = {
+
+// }
+
+const playListSize = 3;
+
 function randomizer(num) {
   const playListData = playLists[Math.floor(Math.random() * num)].playListId;
   return playListData;
 }
 
+function randomNumGenerator(num) {
+  const randomNum = Math.floor(Math.random() * num);
+  return randomNum;
+}
+
 function WorldMusic() {
   // eslint-disable-next-line no-unused-vars
+  const [count, setCount] = useState(0);
   const [searchInput, setSearchInput] = useState("");
   const [accessToken, setAccessToken] = useState("");
   const [musicData1, setMusicData1] = useState("");
@@ -123,15 +138,10 @@ function WorldMusic() {
           setMusicData3(panel3);
         });
     }, []);
+
     // Check if state is filled
   }
-  // console.log(musicData.name);
-  // console.log(musicData.artists[0].name);
-
   generateArtistData();
-  // setTimeout(gerateArtistData(), 3000);
-  // console.log(musicData);
-  // console.log(playLists[Math.floor(Math.random() * 4)]);
 
   return (
     <div className={MusicCSS.musicContainer}>
@@ -140,76 +150,55 @@ function WorldMusic() {
         <div className={MusicCSS.panelContainer}>
           <div className={MusicCSS.panel1}>
             <div className={MusicCSS.mainImg}>
-              <img
-                src={musicData1.panel1Image}
-                alt="Arist/Album Cover image1"
-              />
+              <img src={Probass} alt="Arist/Album Cover image1" />
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
-              {musicData1.panel1Title}
+              ДОБРОГО ВЕЧОРА (WHERE ARE YOU FROM?)
             </h2>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-              {musicData1.panel1Artists}
+              PROBASS ∆ HARDI
             </p>
-            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
-            <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Album: {musicData1.panel1Album}
+            <p className={`${MusicCSS.country} ${["pText"]}`}>
+              Country: Ukraine
             </p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Release: {musicData1.panel1Release}
-            </p>
+            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: 2021</p>
           </div>
 
           <div className={MusicCSS.panel2}>
             <div className={MusicCSS.mainImg}>
-              <img
-                src={musicData2.panel2Image}
-                alt="Arist/Album Cover image1"
-              />
+              <img src={Turmio} alt="Arist/Album Cover image1" />
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
-              {musicData2.panel2Title}
-            </h2>
+            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>Turmio</h2>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-              {musicData2.panel2Artists}
+              Okra Playground
             </p>
-            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
-            <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Album: {musicData2.panel2Album}
+            <p className={`${MusicCSS.country} ${["pText"]}`}>
+              Country: Finland
             </p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Release: {musicData2.panel2Release}
-            </p>
+            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: 2016</p>
           </div>
 
           <div className={MusicCSS.panel3}>
             <div className={MusicCSS.mainImg}>
-              <img
-                src={musicData3.panel3Image}
-                alt="Arist/Album Cover image1"
-              />
+              <img src={shimaUta} alt="Arist/Album Cover image1" />
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
-              {musicData3.panel3Title}
-            </h2>
-            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-              {musicData3.panel3Artists}
-            </p>
-            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
-            <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Album: {musicData3.panel3Album}
-            </p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Release: {musicData3.panel3Release}
-            </p>
+            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>Shima Uta</h2>
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>Clare Uchima</p>
+            <p className={`${MusicCSS.country} ${["pText"]}`}>Country: Japan</p>
+            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: 2018</p>
           </div>
         </div>
-        <div className={MusicCSS.shuffle} />
-
+        <div className={MusicCSS.btnContainer}>
+          <button
+            className={`${MusicCSS.pButtons} ${"pButtons"}`}
+            type="button"
+            onClick={generateArtistData}
+          >
+            SHUFFLE
+          </button>
+        </div>
         <div className={MusicCSS.endTxt}>
-          <p className={`${MusicCSS.endTxt1} ${["pText"]}`}>
-            More on <span>this artist</span> at{" "}
-          </p>
+          <p className={`${MusicCSS.endTxt1} ${["pText"]}`}>Find more on</p>
           <a href="https://www.spotify.com">
             <img
               src={SpotifyLogo}
