@@ -5,7 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import Recommended from "./components/Recommended";
 import WorldMusic from "./components/WorldMusic";
 import Header from "./components/header";
-import Footer from "./components/footer";
+import GenreSection from "./components/genre";
+/* import Footer from "./components/footer"; */
 
 import Rock from "./pages/Rock";
 
@@ -15,10 +16,10 @@ function App() {
       <Routes>
         <Route>
           <Header />
+          <GenreSection />
           <Route path="/rock/*" element={<Rock />} />
           <Recommended />
           <WorldMusic />
-          <Footer />
         </Route>
       </Routes>
     </div>
