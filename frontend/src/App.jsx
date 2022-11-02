@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.css";
 
+import { Route, Routes } from "react-router-dom";
 import Recommended from "./components/Recommended";
-import WorldMusic from "@components/WorldMusic";
+import WorldMusic from "./components/WorldMusic";
 import Header from "./components/header";
 import Footer from "./components/footer";
-
-import { Route, Routes } from "react-router-dom";
 
 import Rock from "./pages/Rock";
 
