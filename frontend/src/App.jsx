@@ -1,10 +1,15 @@
 import React from "react";
 import "./App.css";
-// eslint-disable-next-line import/no-unresolved
+import Recommended from "./components/Recommended";
 import WorldMusic from "@components/WorldMusic";
 
 function App() {
-  return <WorldMusic />;
+  return (
+    <div className="App">
+      <Recommended />
+      <WorldMusic />
+    </div>
+  );
 }
 
 export default App;
