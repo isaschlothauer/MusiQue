@@ -7,7 +7,7 @@ import WorldMusic from "./components/WorldMusic";
 import Header from "./components/header";
 import GenreSection from "./components/genre";
 import AboutUs from "./components/aboutus";
-/* mport Footer from "./components/footer"; */
+import Footer from "./components/footer"; 
 
 import Rock from "./pages/Rock";
 
@@ -24,6 +24,7 @@ function App() {
               <Recommended />
               <WorldMusic />
               <AboutUs />
+              <Footer />
             </div>
           }
         />
