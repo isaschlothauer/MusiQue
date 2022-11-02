@@ -1,4 +1,3 @@
-import React from "react";
 import TrendingArtCSS from "./trendingArtists.module.css";
 import ShuffleButton from "./shuffleButton";
 
