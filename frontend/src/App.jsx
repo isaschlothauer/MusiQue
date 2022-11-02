@@ -13,11 +13,13 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Header />
-        <Route path="/rock/*" element={<Rock />} />
-        <Recommended />
-        <WorldMusic />
-        <Footer />
+        <Route>
+          <Header />
+          <Route path="/rock/*" element={<Rock />} />
+          <Recommended />
+          <WorldMusic />
+          <Footer />
+        </Route>
       </Routes>
     </div>
   );
