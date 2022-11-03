@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import MusicCSS from "./WorldMusic.module.css";
 import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
-import Probass from "../assets/ProbassHardi.png"
+import Probass from "../assets/ProbassHardi.png";
 import panel1IMG from "../assets/Screenshot_2022-11-02_09-05-32.png";
 import panel2IMG from "../assets/Screenshot_2022-11-02_09-05-53.png";
 import panel3IMG from "../assets/Screenshot_2022-11-02_09-06-16.png";
@@ -15,7 +15,7 @@ const client_id = "d6b767f2085441d5bd7a2c4b59b009a6";
 // eslint-disable-next-line camelcase
 const client_secret = "3db89dc2644044a3baa93a83ca6f7f6c";
 // const artistName = "The Beatles";
-  
+
 // TO DO LIST
 // 1. Randomized artist selector
 // 2. Figure out the image problem************
@@ -41,7 +41,7 @@ const playLists = [
 ];
 
 // const defaultList = {
- 
+
 // }
 
 const playListSize = 3;
@@ -55,7 +55,7 @@ function randomNumGenerator(num) {
   const randomNum = Math.floor(Math.random() * num);
   return randomNum;
 }
- 
+
 function WorldMusic() {
   // eslint-disable-next-line no-unused-vars
   const [count, setCount] = useState(0);
@@ -223,9 +223,7 @@ function WorldMusic() {
           </button>
         </div>
         <div className={MusicCSS.endTxt}>
-          <p className={`${MusicCSS.endTxt1} ${["pText"]}`}>
-            Find more on
-          </p>
+          <p className={`${MusicCSS.endTxt1} ${["pText"]}`}>Find more on</p>
           <a href="https://www.spotify.com">
             <img
               src={SpotifyLogo}
