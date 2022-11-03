@@ -13,7 +13,7 @@ import styles from "./genres.module.css";
 const CLIENT_ID = "d6b767f2085441d5bd7a2c4b59b009a6";
 const CLIENT_SECRET = "3db89dc2644044a3baa93a83ca6f7f6c";
 
-function App() {
+function Rock() {
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [accessToken, setAccessToken] = useState("");
@@ -71,7 +71,6 @@ function App() {
                     </div>
                   }
                 />
-                <Route path="/rock/*" element={<App />} />
               </Routes>
             </div>
           </div>
@@ -209,4 +208,4 @@ function App() {
     </div>
   );
 }
-export default App;
+export default Rock;
