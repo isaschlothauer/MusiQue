@@ -5,17 +5,17 @@ import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import MusicCSS from "./WorldMusic.module.css";
 import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
-import Probass from "../assets/ProbassHardi.png";
-import Turmio from "../assets/turmio.png";
+import Probass from "../assets/ProbassHardi.png"
+import panel1IMG from "../assets/Screenshot_2022-11-02_09-05-32.png";
+import panel2IMG from "../assets/Screenshot_2022-11-02_09-05-53.png";
 import panel3IMG from "../assets/Screenshot_2022-11-02_09-06-16.png";
-import shimaUta from "../assets/shimauta.png";
 
 // eslint-disable-next-line camelcase
 const client_id = "d6b767f2085441d5bd7a2c4b59b009a6";
 // eslint-disable-next-line camelcase
 const client_secret = "3db89dc2644044a3baa93a83ca6f7f6c";
 // const artistName = "The Beatles";
-
+  
 // TO DO LIST
 // 1. Randomized artist selector
 // 2. Figure out the image problem************
@@ -41,7 +41,7 @@ const playLists = [
 ];
 
 // const defaultList = {
-
+ 
 // }
 
 const playListSize = 3;
@@ -55,7 +55,7 @@ function randomNumGenerator(num) {
   const randomNum = Math.floor(Math.random() * num);
   return randomNum;
 }
-
+ 
 function WorldMusic() {
   // eslint-disable-next-line no-unused-vars
   const [count, setCount] = useState(0);
@@ -142,7 +142,6 @@ function WorldMusic() {
     // Check if state is filled
   }
   generateArtistData();
-
   return (
     <div className={MusicCSS.musicContainer}>
       <div className={MusicCSS.recContainer}>
@@ -150,42 +149,68 @@ function WorldMusic() {
         <div className={MusicCSS.panelContainer}>
           <div className={MusicCSS.panel1}>
             <div className={MusicCSS.mainImg}>
-              <img src={Probass} alt="Arist/Album Cover image1" />
+              <img
+                src={musicData1.panel1Image}
+                alt="Arist/Album Cover image1"
+              />
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
-              ДОБРОГО ВЕЧОРА (WHERE ARE YOU FROM?)
+              {musicData1.panel1Title}
             </h2>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-              PROBASS ∆ HARDI
+              {musicData1.panel1Artists}
             </p>
-            <p className={`${MusicCSS.country} ${["pText"]}`}>
-              Country: Ukraine
+            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Album: {musicData1.panel1Album}
             </p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: 2021</p>
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Release: {musicData1.panel1Release}
+            </p>
           </div>
 
           <div className={MusicCSS.panel2}>
             <div className={MusicCSS.mainImg}>
-              <img src={Turmio} alt="Arist/Album Cover image1" />
+              <img
+                src={musicData2.panel2Image}
+                alt="Arist/Album Cover image1"
+              />
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>Turmio</h2>
+            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+              {musicData2.panel2Title}
+            </h2>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-              Okra Playground
+              {musicData2.panel2Artists}
             </p>
-            <p className={`${MusicCSS.country} ${["pText"]}`}>
-              Country: Finland
+            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Album: {musicData2.panel2Album}
             </p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: 2016</p>
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Release: {musicData2.panel2Release}
+            </p>
           </div>
 
           <div className={MusicCSS.panel3}>
             <div className={MusicCSS.mainImg}>
-              <img src={shimaUta} alt="Arist/Album Cover image1" />
+              <img
+                src={musicData3.panel3Image}
+                alt="Arist/Album Cover image1"
+              />
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>Shima Uta</h2>
-            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>Clare Uchima</p>
-            <p className={`${MusicCSS.country} ${["pText"]}`}>Country: Japan</p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: 2018</p>
+            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+              {musicData3.panel3Title}
+            </h2>
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+              {musicData3.panel3Artists}
+            </p>
+            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Album: {musicData3.panel3Album}
+            </p>
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Release: {musicData3.panel3Release}
+            </p>
           </div>
         </div>
         <div className={MusicCSS.btnContainer}>
@@ -198,7 +223,9 @@ function WorldMusic() {
           </button>
         </div>
         <div className={MusicCSS.endTxt}>
-          <p className={`${MusicCSS.endTxt1} ${["pText"]}`}>Find more on</p>
+          <p className={`${MusicCSS.endTxt1} ${["pText"]}`}>
+            Find more on
+          </p>
           <a href="https://www.spotify.com">
             <img
               src={SpotifyLogo}
