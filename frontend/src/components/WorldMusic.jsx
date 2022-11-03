@@ -99,7 +99,7 @@ function WorldMusic() {
       )
         .then((res) => res.json())
         .then((data) => {
-          // console.log(data);
+          console.log(data);
           const n = Math.floor(Math.random() * 48);
           const stringPath1 = data.tracks.items[n].track;
           const stringPath2 = data.tracks.items[n + 1].track;
