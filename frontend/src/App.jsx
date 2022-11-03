@@ -7,8 +7,8 @@ import Header from "./components/header";
 import GenreSection from "./components/genre";
 import AboutUs from "./components/aboutus";
 import Footer from "./components/footer";
-
 import Recommended from "./components/Recommended";
+import TrendingArtists from "./components/trendingArtists";
 
 import Rock from "./pages/Rock";
 
@@ -22,6 +22,7 @@ function App() {
             <div>
               <Header />
               <GenreSection />
+              <TrendingArtists />
               <Recommended />
               <WorldMusic />
               <AboutUs />
