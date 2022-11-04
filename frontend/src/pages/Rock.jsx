@@ -173,26 +173,12 @@ function Rock() {
               alt="trending-img"
               src="src\assets\musiQue-imgs\artistImage2.PNG"
             />
-            <h2>Jacky Huang</h2>
-            <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
-              alt="spotify-icon"
-              className={styles.spotifyIcon}
-              width={28}
-            />
           </div>
           <div className={styles.trendingArtistsDiv}>
             <img
               id={styles.trendingImg}
               alt="trending-img"
               src="src\assets\musiQue-imgs\artistImage2.PNG"
-            />
-            <h2>Jacky Huang</h2>
-            <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
-              alt="spotify-icon"
-              className={styles.spotifyIcon}
-              width={28}
             />
           </div>
         </div>
