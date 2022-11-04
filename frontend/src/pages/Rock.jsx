@@ -168,17 +168,60 @@ function Rock() {
         <h1>Trending Artists</h1>
         <div className={styles.trendingArtistsContainer}>
           <div className={styles.trendingArtistsDiv}>
+            <p className={styles.text}>Hey</p>
             <img
               id={styles.trendingImg}
               alt="trending-img"
-              src="src\assets\musiQue-imgs\artistImage2.PNG"
+              src="src\assets\musiQue-imgs\ALBUM COVER2.PNG"
             />
           </div>
           <div className={styles.trendingArtistsDiv}>
             <img
               id={styles.trendingImg}
               alt="trending-img"
-              src="src\assets\musiQue-imgs\artistImage2.PNG"
+              src="src\assets\musiQue-imgs\amlbum cover3.PNG"
+            />
+          </div>
+          <div className={styles.trendingArtistsDiv}>
+            <img
+              id={styles.trendingImg}
+              alt="trending-img"
+              src="src\assets\musiQue-imgs\albumCover4.PNG"
+            />
+          </div>
+          <div className={styles.trendingArtistsDiv}>
+            <img
+              id={styles.trendingImg}
+              alt="trending-img"
+              src="src\assets\musiQue-imgs\albumCover.PNG"
+            />
+          </div>
+          <div className={styles.trendingArtistsDiv}>
+            <img
+              id={styles.trendingImg}
+              alt="trending-img"
+              src="src\assets\musiQue-imgs\ALBUM COVER2.PNG"
+            />
+          </div>
+          <div className={styles.trendingArtistsDiv}>
+            <img
+              id={styles.trendingImg}
+              alt="trending-img"
+              src="src\assets\musiQue-imgs\amlbum cover3.PNG"
+            />
+          </div>
+          <div className={styles.trendingArtistsDiv}>
+            <img
+              id={styles.trendingImg}
+              alt="trending-img"
+              src="src\assets\musiQue-imgs\albumCover4.PNG"
+            />
+          </div>
+          <div className={styles.trendingArtistsDiv}>
+            <img
+              id={styles.trendingImg}
+              alt="trending-img"
+              src="src\assets\musiQue-imgs\albumCover.PNG"
             />
           </div>
         </div>
