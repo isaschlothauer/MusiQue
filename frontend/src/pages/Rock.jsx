@@ -185,10 +185,10 @@ function Rock() {
       </section>
       <footer>
         <img
+          className={styles.footerimage}
           // eslint-disable-next-line no-octal-escape
           src="src\assets\spotify-icons-logos\logos\01_RGB\02_PNG\Spotify_Logo_RGB_Black.png"
           alt="spotify-logo"
-          width={150}
         />
       </footer>
     </div>
