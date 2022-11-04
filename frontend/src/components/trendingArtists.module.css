@@ -1,18 +1,17 @@
 .coversongContainer img {
-  width: 100%;
-  align-self: center;
+  height: 230px;
+  width: 250px;
+  object-fit: cover;
   }
 
   .trendingArtists {
-    background-image: linear-gradient(#302518 0.48%, rgb(84 78 70 / 3%) 5.1%),url(src/assets/bg-trending-artists.png);
+    background-image: linear-gradient(#302518 0.48%, rgb(84 78 70 / 3%) 5.1%, rgba(161, 159, 155, 0.237391) 100%),url(src/assets/bg-trending-artists.png);
     background-size: cover;
   }
 
 .artistsCard {
     padding-top: 3rem;
     display: flex;
-    padding-left: 5rem;
-    padding-right: 5rem;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
@@ -79,32 +78,50 @@
     margin-bottom: 1rem;
   }
 
+  .spotifyIconLittleBlack {
+    display: none;
+  }
+
+  .sectionTitle {
+    text-align: center;
+    padding-top: 3rem;
+  }
+   
+  @media screen and (min-width: 450px) {
+    .coversongContainer img {
+      width: 300px;
+      }
+  }
+
   @media screen and (min-width: 600px) {
 
    .trendingArtists {
      background: #F6F6F6;
-     background-image: none;
-     padding-left: 3rem;
-     padding-right: 3rem;
+     padding-left: 5rem;
+     padding-right: 5rem;
    }
 
    .articles {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
     background-color: #FFFFFF;
-    border-radius: 0.93rem;
+    border-radius: 15px;
     color: #131315;
     box-shadow: none;
+    width: 100%;
+    gap: 0;
    }
 
    .coversongContainer img {
     width: 150px;
+    height: 150px;
     overflow: hidden;
   }
 
   .artistsCard {
-    padding-left: 5rem;
-    padding-right: 5rem;
     padding-top: 1.5rem;
     border-radius: 15px;
   }
@@ -112,11 +129,55 @@
   .albumText {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: flex-start;
   }
 
-  .spotifyIconLittle {
-    display: none;
+  .albumAndTextContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
   }
+
+  .spotifyIconLittleBlack {
+    display: block;
+    align-self: flex-end;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .songTitle {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  
+  .songName {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    text-align: left;
+  }
+
+
+
+  }
+
+  @media screen and (min-width: 800px) {
+    .spotifyIconLittleBlack {
+      display: none;
+    }
+
+    .songTitle {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    
+    .songName {
+      font-weight: 400;
+      font-size: 1.25rem;
+    }
+
 
   }
