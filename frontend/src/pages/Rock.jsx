@@ -19,7 +19,7 @@ function Rock() {
   const [accessToken, setAccessToken] = useState("");
   const [hidden, setHidden] = useState(false);
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     setHidden((current) => !current);
   };
 
