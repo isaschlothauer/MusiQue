@@ -263,6 +263,11 @@ function Rock() {
         <button
           type="button"
           className={`${styles.btn3}`}
+          style={{
+            transform: hidden ? "rotate(225deg)" : "rotate(45deg)",
+            marginTop: hidden ? "5rem" : "4rem",
+            marginBottom: hidden ? "1rem" : "2rem",
+          }}
           onClick={handleClick}
         >
           h
