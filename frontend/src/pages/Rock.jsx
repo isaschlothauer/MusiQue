@@ -17,7 +17,12 @@ function Rock() {
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [accessToken, setAccessToken] = useState("");
-  // const [hidden, setHidden] = useState(true);
+  const [hidden, setHidden] = useState(false);
+
+  const handleClick = (event) => {
+    setHidden((current) => !current);
+  };
+
   useEffect(() => {
     // API Access Token
     const authParameters = {
@@ -205,44 +210,63 @@ function Rock() {
               src="src\assets\musiQue-imgs\albumCover.PNG"
             />
           </div>
-          <div className={styles.trendingArtistsDiv}>
-            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-            <p className={styles.trendingtext2}>1,000,000 listeners</p>
-            <img
-              id={styles.trendingImg}
-              alt="trending-img"
-              src="src\assets\musiQue-imgs\ALBUM COVER2.PNG"
-            />
-          </div>
-          <div className={styles.trendingArtistsDiv}>
-            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-            <p className={styles.trendingtext2}>1,000,000 listeners</p>
-            <img
-              id={styles.trendingImg}
-              alt="trending-img"
-              src="src\assets\musiQue-imgs\amlbum cover3.PNG"
-            />
-          </div>
-          <div className={styles.trendingArtistsDiv}>
-            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-            <p className={styles.trendingtext2}>1,000,000 listeners</p>
-            <img
-              id={styles.trendingImg}
-              alt="trending-img"
-              src="src\assets\musiQue-imgs\albumCover4.PNG"
-            />
-          </div>
-          <div className={styles.trendingArtistsDiv}>
-            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-            <p className={styles.trendingtext2}>1,000,000 listeners</p>
-            <img
-              id={styles.trendingImg}
-              alt="trending-img"
-              src="src\assets\musiQue-imgs\albumCover.PNG"
-            />
+          <div className={styles.trendingArtistsContainer}>
+            <div className={styles.trendingArtistsDiv}>
+              <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+              <p className={styles.trendingtext2}>1,000,000 listeners</p>
+              <img
+                id={styles.trendingImg}
+                alt="trending-img"
+                src="src\assets\musiQue-imgs\ALBUM COVER2.PNG"
+              />
+            </div>
           </div>
         </div>
-        <button type="button" className={`${styles.btn3}`}>
+        {hidden && (
+          <div className={styles.trendingArtistsContainer}>
+            <div className={styles.trendingArtistsDiv}>
+              <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+              <p className={styles.trendingtext2}>1,000,000 listeners</p>
+              <img
+                id={styles.trendingImg}
+                alt="trending-img"
+                src="src\assets\musiQue-imgs\ALBUM COVER2.PNG"
+              />
+            </div>
+            <div className={styles.trendingArtistsDiv}>
+              <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+              <p className={styles.trendingtext2}>1,000,000 listeners</p>
+              <img
+                id={styles.trendingImg}
+                alt="trending-img"
+                src="src\assets\musiQue-imgs\amlbum cover3.PNG"
+              />
+            </div>
+            <div className={styles.trendingArtistsDiv}>
+              <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+              <p className={styles.trendingtext2}>1,000,000 listeners</p>
+              <img
+                id={styles.trendingImg}
+                alt="trending-img"
+                src="src\assets\musiQue-imgs\albumCover4.PNG"
+              />
+            </div>
+            <div className={styles.trendingArtistsDiv}>
+              <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+              <p className={styles.trendingtext2}>1,000,000 listeners</p>
+              <img
+                id={styles.trendingImg}
+                alt="trending-img"
+                src="src\assets\musiQue-imgs\albumCover.PNG"
+              />
+            </div>
+          </div>
+        )}
+        <button
+          type="button"
+          className={`${styles.btn3}`}
+          onClick={handleClick}
+        >
           h
         </button>
       </section>

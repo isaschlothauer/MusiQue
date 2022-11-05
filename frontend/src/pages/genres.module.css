@@ -315,6 +315,10 @@ footer {
   height: 0;
 }
 
+.trendingArtistsDiv:nth-child(5) {
+display:none;
+}
+
 
 
 
