@@ -17,6 +17,7 @@ function Rock() {
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [accessToken, setAccessToken] = useState("");
+  // const [hidden, setHidden] = useState(true);
   useEffect(() => {
     // API Access Token
     const authParameters = {
@@ -40,6 +41,7 @@ function Rock() {
         console.log(err);
       });
   }, []);
+
   return (
     <div className={styles.App}>
       <header className={styles.headerGenres}>
@@ -240,7 +242,9 @@ function Rock() {
             />
           </div>
         </div>
-        <div className={`${styles.btn3}`} />
+        <button type="button" className={`${styles.btn3}`}>
+          h
+        </button>
       </section>
       <footer>
         <img
@@ -253,4 +257,5 @@ function Rock() {
     </div>
   );
 }
+
 export default Rock;

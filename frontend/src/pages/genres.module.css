@@ -328,7 +328,8 @@ footer {
   transform: rotate(45deg);
   transition: border-width 150ms ease-in-out;
   margin-top: 3rem;
-  margin-left: 50%;
+  margin-left: 45%;
+  background-color: #302518;
 }
 
 .btn3:hover {
