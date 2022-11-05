@@ -168,7 +168,8 @@ function Rock() {
         <h1>Trending Artists</h1>
         <div className={styles.trendingArtistsContainer}>
           <div className={styles.trendingArtistsDiv}>
-            <p className={styles.text}>Hey</p>
+            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+            <p className={styles.trendingtext2}>1,000,000 listeners</p>
             <img
               id={styles.trendingImg}
               alt="trending-img"
@@ -176,6 +177,8 @@ function Rock() {
             />
           </div>
           <div className={styles.trendingArtistsDiv}>
+            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+            <p className={styles.trendingtext2}>1,000,000 listeners</p>
             <img
               id={styles.trendingImg}
               alt="trending-img"
@@ -183,6 +186,8 @@ function Rock() {
             />
           </div>
           <div className={styles.trendingArtistsDiv}>
+            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+            <p className={styles.trendingtext2}>1,000,000 listeners</p>
             <img
               id={styles.trendingImg}
               alt="trending-img"
@@ -190,6 +195,8 @@ function Rock() {
             />
           </div>
           <div className={styles.trendingArtistsDiv}>
+            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+            <p className={styles.trendingtext2}>1,000,000 listeners</p>
             <img
               id={styles.trendingImg}
               alt="trending-img"
@@ -197,6 +204,8 @@ function Rock() {
             />
           </div>
           <div className={styles.trendingArtistsDiv}>
+            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+            <p className={styles.trendingtext2}>1,000,000 listeners</p>
             <img
               id={styles.trendingImg}
               alt="trending-img"
@@ -204,6 +213,8 @@ function Rock() {
             />
           </div>
           <div className={styles.trendingArtistsDiv}>
+            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+            <p className={styles.trendingtext2}>1,000,000 listeners</p>
             <img
               id={styles.trendingImg}
               alt="trending-img"
@@ -211,6 +222,8 @@ function Rock() {
             />
           </div>
           <div className={styles.trendingArtistsDiv}>
+            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+            <p className={styles.trendingtext2}>1,000,000 listeners</p>
             <img
               id={styles.trendingImg}
               alt="trending-img"
@@ -218,6 +231,8 @@ function Rock() {
             />
           </div>
           <div className={styles.trendingArtistsDiv}>
+            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+            <p className={styles.trendingtext2}>1,000,000 listeners</p>
             <img
               id={styles.trendingImg}
               alt="trending-img"
@@ -225,6 +240,7 @@ function Rock() {
             />
           </div>
         </div>
+        <div className={`${styles.btn3}`} />
       </section>
       <footer>
         <img

@@ -256,7 +256,7 @@ h2 {
   background: #302518;
   color: #f5f5f5;
   height: auto;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
 }
 
 .trendingArtistsContainer {
@@ -296,12 +296,77 @@ footer {
   padding-left: 1.5rem;
 }
 
+.trendingtext{
+  position: relative;
+  top:85%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 12px;
+  height: 0;
+  font-weight: 700;
+}
+
+.trendingtext2 {
+  position: relative;
+  top: 90%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 10px;
+  height: 0;
+}
+
+
+
+
+.btn3{
+  box-sizing: border-box;
+  height: 10vw;
+  width: 10vw;
+  border-style: solid;
+  border-color: white;
+  border-width: 0px 2px 2px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+  margin-top: 3rem;
+  margin-left: 50%;
+}
+
+.btn3:hover {
+  border-bottom-width: 5px;
+  border-right-width: 5px;
+}
+
+
+
+
 /*
 
 background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2%, rgba(141, 138, 133, 0.322174) 59.48%, rgba(161, 159, 155, 0.237391) 84.6%, rgba(217, 217, 217, 0) 2.64%), url(assets/background3.png);
 */
 
 /*--------Fonts Tablet/Desktop-----------*/
+
+
+@media screen and (max-width: 440px) {
+  .trendingtext{
+  position: relative;
+  top:85%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 8px;
+  height: 0;
+  font-weight: 700;
+}
+
+.trendingtext2 {
+  position: relative;
+  top: 90%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 6px;
+  height: 0;
+}
+}
 
 @media screen and (min-width: 600px) {
   h1 {
@@ -440,6 +505,50 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     display: none;
   }
 
+  .trending {
+    padding-bottom: 2rem;
+  }
+  .trendingtext{
+    position: relative;
+    top:80%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 12px;
+    height: 0;
+    font-weight: 700;
+  }
+  
+  .trendingtext2 {
+    position: relative;
+    top: 88%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 10px;
+    height: 0;
+  }
+  
+  .trendingArtistsDiv:nth-child(1) .trendingtext{
+    position: relative;
+    top:85%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+   }
+  
+   .trendingArtistsDiv:nth-child(1) .trendingtext2 {
+    position: relative;
+    top:90%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 12px;
+    height: 0;
+   }
+
+   .btn3 {
+    display: none;
+  }
+  
 
 }
 
@@ -447,4 +556,41 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   .rockImg img {
     width: 30rem;
   }
+
+  .trendingtext{
+    position: relative;
+    top:80%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 16px;
+    height: 0;
+    font-weight: 700;
+  }
+  
+  .trendingtext2 {
+    position: relative;
+    top: 88%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+  }
+  
+  .trendingArtistsDiv:nth-child(1) .trendingtext{
+    position: relative;
+    top:85%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 22px;
+    height: 0;
+   }
+  
+   .trendingArtistsDiv:nth-child(1) .trendingtext2 {
+    position: relative;
+    top:90%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 20px;
+    height: 0;
+   }
 }
