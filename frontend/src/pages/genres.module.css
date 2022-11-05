@@ -319,8 +319,29 @@ footer {
 display:none;
 }
 
+.trendingArtistsContainerhid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
+.trendingtexthid{
+  position: relative;
+  top:85%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 12px;
+  height: 0;
+  font-weight: 700;
+}
 
+.trendingtext2hid {
+  position: relative;
+  top: 90%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 10px;
+  height: 0;
+}
 
 .btn3{
   box-sizing: border-box;
@@ -493,22 +514,18 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     grid-row-end: 3;
   }
   .trendingArtistsDiv:nth-child(5) {
+    display: block;
     width:100%;
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
   }
+  .trendingArtistsContainerhid{
+    display: none;
+  }
 
-  .trendingArtistsDiv:nth-child(6) {
-    display: none;
-  }
-  .trendingArtistsDiv:nth-child(7) {
-    display: none;
-  }
-  .trendingArtistsDiv:nth-child(8) {
-    display: none;
-  }
+
 
   .trending {
     padding-bottom: 2rem;

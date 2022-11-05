@@ -210,50 +210,48 @@ function Rock() {
               src="src\assets\musiQue-imgs\albumCover.PNG"
             />
           </div>
-          <div className={styles.trendingArtistsContainer}>
-            <div className={styles.trendingArtistsDiv}>
-              <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-              <p className={styles.trendingtext2}>1,000,000 listeners</p>
-              <img
-                id={styles.trendingImg}
-                alt="trending-img"
-                src="src\assets\musiQue-imgs\ALBUM COVER2.PNG"
-              />
-            </div>
+          <div className={styles.trendingArtistsDiv}>
+            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
+            <p className={styles.trendingtext2}>1,000,000 listeners</p>
+            <img
+              id={styles.trendingImg}
+              alt="trending-img"
+              src="src\assets\musiQue-imgs\ALBUM COVER2.PNG"
+            />
           </div>
         </div>
         {hidden && (
-          <div className={styles.trendingArtistsContainer}>
-            <div className={styles.trendingArtistsDiv}>
-              <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-              <p className={styles.trendingtext2}>1,000,000 listeners</p>
+          <div className={styles.trendingArtistsContainerhid}>
+            <div className={styles.trendingArtistsDivhid}>
+              <p className={styles.trendingtexthid}>THEA WANG, OTHER ARTIST</p>
+              <p className={styles.trendingtext2hid}>1,000,000 listeners</p>
               <img
                 id={styles.trendingImg}
                 alt="trending-img"
                 src="src\assets\musiQue-imgs\ALBUM COVER2.PNG"
               />
             </div>
-            <div className={styles.trendingArtistsDiv}>
-              <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-              <p className={styles.trendingtext2}>1,000,000 listeners</p>
+            <div className={styles.trendingArtistsDivhid}>
+              <p className={styles.trendingtexthid}>THEA WANG, OTHER ARTIST</p>
+              <p className={styles.trendingtext2hid}>1,000,000 listeners</p>
               <img
                 id={styles.trendingImg}
                 alt="trending-img"
                 src="src\assets\musiQue-imgs\amlbum cover3.PNG"
               />
             </div>
-            <div className={styles.trendingArtistsDiv}>
-              <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-              <p className={styles.trendingtext2}>1,000,000 listeners</p>
+            <div className={styles.trendingArtistsDivhid}>
+              <p className={styles.trendingtexthid}>THEA WANG, OTHER ARTIST</p>
+              <p className={styles.trendingtext2hid}>1,000,000 listeners</p>
               <img
                 id={styles.trendingImg}
                 alt="trending-img"
                 src="src\assets\musiQue-imgs\albumCover4.PNG"
               />
             </div>
-            <div className={styles.trendingArtistsDiv}>
-              <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-              <p className={styles.trendingtext2}>1,000,000 listeners</p>
+            <div className={styles.trendingArtistsDivhid}>
+              <p className={styles.trendingtexthid}>THEA WANG, OTHER ARTIST</p>
+              <p className={styles.trendingtext2hid}>1,000,000 listeners</p>
               <img
                 id={styles.trendingImg}
                 alt="trending-img"
