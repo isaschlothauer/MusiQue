@@ -9,6 +9,7 @@ import Probass from "../assets/ProbassHardi.png";
 import panel1IMG from "../assets/Screenshot_2022-11-02_09-05-32.png";
 import panel2IMG from "../assets/Screenshot_2022-11-02_09-05-53.png";
 import panel3IMG from "../assets/Screenshot_2022-11-02_09-06-16.png";
+import ShuffleButton from "./shuffleButton";
 
 // eslint-disable-next-line camelcase
 const client_id = "d6b767f2085441d5bd7a2c4b59b009a6";
@@ -214,13 +215,14 @@ function WorldMusic() {
           </div>
         </div>
         <div className={MusicCSS.btnContainer}>
-          <button
+          <ShuffleButton className={MusicCSS.shuffleBtn} />
+          {/* <button
             className={`${MusicCSS.pButtons} ${"pButtons"}`}
             type="button"
             onClick={generateArtistData}
           >
             SHUFFLE
-          </button>
+          </button> */}
         </div>
         <div className={MusicCSS.endTxt}>
           <p className={`${MusicCSS.endTxt1} ${["pText"]}`}>Find more on</p>
