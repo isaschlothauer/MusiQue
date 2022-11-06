@@ -172,7 +172,7 @@ function Rock() {
         </button>
       </section>
       <section className={styles.trending}>
-        <h1>Trending Artists</h1>
+        <h2 className={styles.h2trend}>Trending Artists</h2>
         <div className={styles.trendingArtistsContainer}>
           <div className={styles.trendingArtistsDiv}>
             <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>

@@ -290,10 +290,11 @@ footer {
   margin-right: auto;
 }
 
-.trending h1 {
-  padding-top: 2rem;
+.h2trend {
+  padding-top: 1.5rem;
   padding-bottom: 2rem;
   padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .trendingtext{
@@ -362,7 +363,9 @@ display:none;
   border-right-width: 5px;
 }
 
-
+#trendingImg:hover{
+  opacity: 0.3;
+}
 
 
 /*
@@ -392,6 +395,42 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   font-size: 6px;
   height: 0;
 }
+
+.trendingtexthid{
+  position: relative;
+  top:85%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 8px;
+  height: 0;
+  font-weight: 700;
+}
+
+.trendingtext2hid {
+  position: relative;
+  top: 90%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 6px;
+  height: 0;
+}
+
+
+.btn3{
+  box-sizing: border-box;
+  height: 12vw;
+  width: 12vw;
+  border-style: solid;
+  border-color: white;
+  border-width: 0px 2px 2px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+  margin-top: 3rem;
+  margin-left: 45%;
+  background-color: #302518;
+}
+
+
 }
 
 @media screen and (min-width: 600px) {
@@ -444,6 +483,10 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     padding-left: 5rem;
     padding-right: 5rem;
   }
+  .h2trend {
+  padding-left: 5rem;
+    padding-right: 5rem;
+  }
 
   .genreTextAndImg {
     padding-left: 3.5rem;
@@ -463,6 +506,9 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     gap: 5rem;
   }
 }
+
+
+
 
 @media screen and (min-width: 500px) {
   .mostPopularSongsContainer {
