@@ -23,6 +23,7 @@ a:link {
 .panel3 {
     max-width: 330px;
     margin: 0;
+    flex: 1;
 }
 
 .panel1 {
@@ -86,7 +87,7 @@ a:link {
 
 .endTxt {
     padding-bottom: 1.4rem;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 .endTxt p {
@@ -109,6 +110,11 @@ a:link {
 
 .shuffleBtn {
     margin-top: 2rem;
+}
+
+.btnContainer {
+    margin-top: 2rem;
+    margin-bottom: -1rem;
 }
 
 @media screen and (min-width: 600px)  {
