@@ -52,10 +52,11 @@ function randomizer(num) {
   return playListData;
 }
 
-function randomNumGenerator(num) {
-  const randomNum = Math.floor(Math.random() * num);
-  return randomNum;
-}
+// Test random num gen
+// function randomNumGenerator(num) {
+//   const randomNum = Math.floor(Math.random() * num);
+//   return randomNum;
+// }
 
 function WorldMusic() {
   // eslint-disable-next-line no-unused-vars
@@ -65,6 +66,8 @@ function WorldMusic() {
   const [musicData1, setMusicData1] = useState("");
   const [musicData2, setMusicData2] = useState("");
   const [musicData3, setMusicData3] = useState("");
+  const [musicData4, setMusicData4] = useState("");
+
   useEffect(() => {
     // API Access Token
     const authParameters = {
@@ -101,10 +104,11 @@ function WorldMusic() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          const n = Math.floor(Math.random() * 48);
+          const n = Math.floor(Math.random() * 45);
           const stringPath1 = data.tracks.items[n].track;
           const stringPath2 = data.tracks.items[n + 1].track;
           const stringPath3 = data.tracks.items[n + 2].track;
+          const stringPath4 = data.tracks.items[n + 3].track;
 
           // Panel 1 data
           const panel1 = {
@@ -133,10 +137,20 @@ function WorldMusic() {
             panel3Image: stringPath3.album.images[1].url,
           };
 
+          // Panel 3 data
+          const panel4 = {
+            panel4Title: stringPath4.name,
+            panel4Artists: stringPath4.artists[0].name,
+            panel4Album: stringPath4.album.name,
+            panel4Release: stringPath4.album.release_date,
+            panel4Image: stringPath4.album.images[1].url,
+          };
+
           // Savimg panel objects to state
           setMusicData1(panel1);
           setMusicData2(panel2);
           setMusicData3(panel3);
+          setMusicData4(panel4);
         });
     }, []);
 
@@ -211,6 +225,28 @@ function WorldMusic() {
             </p>
             <p className={`${MusicCSS.release} ${["pText"]}`}>
               Release: {musicData3.panel3Release}
+            </p>
+          </div>
+
+          <div className={MusicCSS.panel4}>
+            <div className={MusicCSS.mainImg}>
+              <img
+                src={musicData4.panel4Image}
+                alt="Arist/Album Cover image1"
+              />
+            </div>
+            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+              {musicData4.panel4Title}
+            </h2>
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+              {musicData4.panel4Artists}
+            </p>
+            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Album: {musicData4.panel4Album}
+            </p>
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Release: {musicData4.panel4Release}
             </p>
           </div>
         </div>

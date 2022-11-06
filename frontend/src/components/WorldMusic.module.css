@@ -16,11 +16,13 @@ a:link {
     display: block;
     max-width: 100%;
     margin: 0 auto;
+    padding: 0 3rem;
 }
 
 .panel1,
 .panel2, 
-.panel3 {
+.panel3,
+.panel4 {
     max-width: 330px;
     margin: 0;
     flex: 1;
@@ -31,7 +33,8 @@ a:link {
 }
 
 .panel2,
-.panel3 {
+.panel3,
+.panel4 {
     display: none;
 }
 
@@ -144,4 +147,19 @@ a:link {
     .panel3 {
         margin: 0 auto;
     }
+
+@media screen and (min-width: 1200px) {
+    .panel4{
+        display: inline;
+    }
+
+    .panel1,
+    .panel2,
+    .panel3,
+    .panel4 {
+        margin: 0 auto;
+    }
+
+}
+
 }
