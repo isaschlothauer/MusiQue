@@ -121,19 +121,20 @@ a:link {
 }
 
 @media screen and (min-width: 600px)  {
-    .musicDiscover {
-        text-align: initial;
-        padding-left: 12%;
-    }
 
     .panelContainer {
         display: flex;
-        padding: 0 auto;
     }
 
     .panel2 {
         display: inline;
-        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .musicDiscover {
+        text-align: initial;
+        padding-left: 3rem;
     }
 }
 
@@ -142,24 +143,10 @@ a:link {
         display: inline;
     }
 
-    .panel1,
-    .panel2,
-    .panel3 {
-        margin: 0 auto;
-    }
-
-@media screen and (min-width: 1200px) {
-    .panel4{
-        display: inline;
-    }
-
-    .panel1,
-    .panel2,
-    .panel3,
-    .panel4 {
-        margin: 0 auto;
-    }
-
 }
 
+@media screen and (min-width: 1200px) {
+    .panel4 { 
+        display: inline;
+    }
 }
