@@ -1,22 +1,25 @@
 /* eslint-disable import/no-unresolved */
 // eslint-disable-next-line import/no-unresolved
 import React, { useState, useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import axios from "axios";
 
-import SpotifyLogoButton from "@components/SpotifyLogoButton";
+import TopGenres from "../components/TopGenres";
+import SpotifyLogoButton from "../components/SpotifyLogoButton";
+import Footer from "../components/footer";
 
 import styles from "./genres.module.css";
-
-// import "./genres.css";
-// import axios from "axios";
 
 const CLIENT_ID = "d6b767f2085441d5bd7a2c4b59b009a6";
 const CLIENT_SECRET = "3db89dc2644044a3baa93a83ca6f7f6c";
 
+// const PLAYLIST_ENDPOINT = "https://api.spotify.com/v1/me/playlists";
+const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
+
 function Rock() {
-  const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [accessToken, setAccessToken] = useState("");
+  const [genres, setGenres] = useState([]);
+
   useEffect(() => {
     // API Access Token
     const authParameters = {
@@ -31,49 +34,35 @@ function Rock() {
         "&client_secret=" +
         CLIENT_SECRET,
     };
-    fetch("https://accounts.spotify.com/api/token", authParameters)
+
+    fetch(TOKEN_ENDPOINT, authParameters)
       .then((res) => res.json())
       // eslint-disable-next-line no-restricted-syntax
-      .then((data) => setAccessToken(data.access_token))
+      .then((info) => setAccessToken(info.access_token))
       .catch((err) => {
         // eslint-disable-next-line no-restricted-syntax
         console.log(err);
       });
+
+    fetch("https://api.spotify.com/v1/recommendations/available-genre-seeds", {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + accessToken,
+      },
+    })
+      .then((res) => res.json())
+      .then((info) => console.log(info.genres[99]));
   }, []);
+
   return (
-    <div className={styles.App}>
+    <div className={styles.Rock}>
+      <button type="button" onClick={() => {}}>
+        Get Playlists
+      </button>
+
       <header className={styles.headerGenres}>
         <section className={styles.genreMain}>
-          <div className={styles.logoButtonBack}>
-            <div className={styles.logo}>
-              <img
-                src="src\assets\musiQue-imgs\MusiQueLogo.png"
-                alt="go-back-home"
-                width={150}
-              />
-            </div>
-            <div className={styles.buttonBack}>
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-                    <div
-                      className={styles.buttonBackDiv}
-                      onClick={() => navigate("/")}
-                    >
-                      <img
-                        src="src\assets\musiQue-imgs\go-back-home.png"
-                        alt="go-back-home"
-                        className="buttonBack"
-                        width={25}
-                      />
-                    </div>
-                  }
-                />
-              </Routes>
-            </div>
-          </div>
+          <TopGenres />
           <div className={styles.genreTextAndImg}>
             <div className={styles.genreText}>
               <h1>Rock</h1>
@@ -197,14 +186,7 @@ function Rock() {
           </div>
         </div>
       </section>
-      <footer>
-        <img
-          // eslint-disable-next-line no-octal-escape
-          src="src\assets\spotify-icons-logos\logos\01_RGB\02_PNG\Spotify_Logo_RGB_Black.png"
-          alt="spotify-logo"
-          width={150}
-        />
-      </footer>
+      <Footer />
     </div>
   );
 }
