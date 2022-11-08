@@ -12,9 +12,11 @@ import panel3IMG from "../assets/Screenshot_2022-11-02_09-06-16.png";
 import ShuffleButton from "./shuffleButton";
 
 // eslint-disable-next-line camelcase
-const client_id = "d6b767f2085441d5bd7a2c4b59b009a6";
+// ENV VAR CLENT_ID;
+const client_id = CLIENT_ID;
 // eslint-disable-next-line camelcase
-const client_secret = "3db89dc2644044a3baa93a83ca6f7f6c";
+// ENV VAR CLIENT_SECRET
+const client_secret = CLIENT_SECRET;
 // const artistName = "The Beatles";
 
 // TO DO LIST
