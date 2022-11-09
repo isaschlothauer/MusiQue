@@ -6,8 +6,6 @@ import { useState, useEffect } from "react";
 import MusicCSS from "./WorldMusic.module.css";
 import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
 
-// import meta from 'env';
-
 // eslint-disable-next-line camelcase
 // ENV VAR CLENT_ID;
 // eslint-disable-next-line camelcase
