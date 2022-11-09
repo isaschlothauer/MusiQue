@@ -1,11 +1,10 @@
 /* eslint-disable import/no-unresolved */
 // eslint-disable-next-line import/no-unresolved
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-
 import TopGenres from "../components/TopGenres";
 import SpotifyLogoButton from "../components/SpotifyLogoButton";
 import Footer from "../components/footer";
+import Player from "../components/Player";
 
 import styles from "./genres.module.css";
 
@@ -18,7 +17,7 @@ const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 function Rock() {
   // eslint-disable-next-line no-unused-vars
   const [accessToken, setAccessToken] = useState("");
-  const [genres, setGenres] = useState([]);
+  const [popular, SetPopular] = useState("");
 
   useEffect(() => {
     // API Access Token
@@ -43,16 +42,48 @@ function Rock() {
         // eslint-disable-next-line no-restricted-syntax
         console.log(err);
       });
+  }, []);
 
-    fetch("https://api.spotify.com/v1/recommendations/available-genre-seeds", {
+  useEffect(() => {
+    if (accessToken == null) return;
+    fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DWZryfp6NSvtz", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => SetPopular(result));
+  }, [accessToken]);
+
+  /*
+  useEffect(() => {
+    fetch("https://api.spotify.com/v1/recommendations?seed_genres=rock&limit=5&target_popularity=80", {
       method: "GET",
       headers: {
         Authorization: "Bearer " + accessToken,
       },
     })
       .then((res) => res.json())
-      .then((info) => console.log(info.genres[99]));
-  }, []);
+      .then((info) => console.log(info));
+  }, [accessToken]);
+*/
+
+  /*
+  useEffect(() => {
+    fetch(
+      "https://api.spotify.com/v1/search?type=track&q=year:2022%20genre:rock&limit=5",
+      {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + accessToken,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((info) => console.log(info));
+  }, [accessToken]);
+  */
 
   return (
     <div className={styles.Rock}>
@@ -88,70 +119,210 @@ function Rock() {
       </header>
       <section className={styles.mostPopular}>
         <h2>Most Popular</h2>
-        <div className={styles.mostPopularSongsContainer}>
-          <div id={styles.popularCoverAndPopularText}>
-            <div className={styles.mostPopularSongsCoverSong}>
+        {popular.tracks != null && popular.tracks.items != null ? (
+          <>
+            <div className={styles.mostPopularSongsContainer}>
+              <div id={styles.popularCoverAndPopularText}>
+                <div className={styles.mostPopularSongsCoverSong}>
+                  <img
+                    className={styles.mostPopularSongsImg}
+                    src={popular.tracks.items[0].track.album.images[1].url}
+                    alt="most-popular-song"
+                    width={150}
+                  />
+                  <div className={styles.playButton} />
+                </div>
+                <div className={styles.mostPopularSongsText}>
+                  <h2>{popular.tracks.items[0].track.name}</h2>
+                  <p className={styles.pText}>
+                    {popular.tracks.items[0].track.artists[0].name}
+                  </p>
+                </div>
+              </div>
               <img
-                className={styles.mostPopularSongsImg}
-                src="src\assets\musiQue-imgs\albumCover4.PNG"
-                alt="most-popular-song"
-                width={150}
+                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+                alt="spotify-icon"
+                className={styles.spotifyIconLittle}
+                width={28}
               />
-              <div className={styles.playButton} />
+              <SpotifyLogoButton />
             </div>
-            <div className={styles.mostPopularSongsText}>
-              <h2>Song</h2>
-              <p className={styles.pText}>Something about the song</p>
-            </div>
-          </div>
-          <img
-            src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-            alt="spotify-icon"
-            className={styles.spotifyIconLittle}
-            width={28}
-          />
-          <SpotifyLogoButton />
-        </div>
-        <div className={styles.mostPopularSongsContainer}>
-          <div id={styles.popularCoverAndPopularText}>
-            <div className={styles.mostPopularSongsCoverSong}>
+            <div className={styles.mostPopularSongsContainer}>
+              <div id={styles.popularCoverAndPopularText}>
+                <div className={styles.mostPopularSongsCoverSong}>
+                  <img
+                    className={styles.mostPopularSongsImg}
+                    src={popular.tracks.items[1].track.album.images[1].url}
+                    alt="most-popular-song"
+                    width={150}
+                  />
+                  <div className={styles.playButton} />
+                </div>
+                <div className={styles.mostPopularSongsText}>
+                  <h2>{popular.tracks.items[1].track.name}</h2>
+                  <p className={styles.pText}>
+                    {popular.tracks.items[1].track.artists[0].name}
+                  </p>
+                </div>
+              </div>
               <img
-                className={styles.mostPopularSongsImg}
-                src="src\assets\musiQue-imgs\albumCover4.PNG"
-                alt="most-popular-song"
-                width={150}
+                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+                alt="spotify-icon"
+                className={styles.spotifyIconLittle}
+                width={28}
               />
-              <div className={styles.playButton} />
+              <SpotifyLogoButton />
             </div>
-            <div className={styles.mostPopularSongsText}>
-              <h2>Song</h2>
-              <p className={styles.pText}>Something about the song</p>
+            <div className={styles.mostPopularSongsContainer}>
+              <div id={styles.popularCoverAndPopularText}>
+                <div className={styles.mostPopularSongsCoverSong}>
+                  <img
+                    className={styles.mostPopularSongsImg}
+                    src={popular.tracks.items[2].track.album.images[1].url}
+                    alt="most-popular-song"
+                    width={150}
+                  />
+                  <div className={styles.playButton} />
+                </div>
+                <div className={styles.mostPopularSongsText}>
+                  <h2>{popular.tracks.items[2].track.name}</h2>
+                  <p className={styles.pText}>
+                    {popular.tracks.items[2].track.artists[0].name}
+                  </p>
+                </div>
+              </div>
+              <img
+                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+                alt="spotify-icon"
+                className={styles.spotifyIconLittle}
+                width={28}
+              />
+              <SpotifyLogoButton />
             </div>
-          </div>
-          <img
-            src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-            alt="spotify-icon"
-            className={styles.spotifyIconLittle}
-            width={28}
-          />
-          <SpotifyLogoButton />
-        </div>
-        <button
-          className={`${styles.shuffle} ${styles.pButtons}`}
-          type="button"
-          onClick={() => {
-            // eslint-disable-next-line no-restricted-syntax
-            console.log("I was clicked");
-          }}
-        >
-          <img
-            alt="spotify-icon-shuffle"
-            // eslint-disable-next-line no-octal-escape
-            src="src\assets\spotify-icons-logos\icons\01_RGB\02_PNG\Spotify_Icon_RGB_White.png"
-            width={20}
-          />
-          SHUFFLE
-        </button>
+            <div className={styles.mostPopularSongsContainer}>
+              <div id={styles.popularCoverAndPopularText}>
+                <div className={styles.mostPopularSongsCoverSong}>
+                  <img
+                    className={styles.mostPopularSongsImg}
+                    src={popular.tracks.items[3].track.album.images[1].url}
+                    alt="most-popular-song"
+                    width={150}
+                  />
+                  <div className={styles.playButton} />
+                </div>
+                <div className={styles.mostPopularSongsText}>
+                  <h2>{popular.tracks.items[3].track.name}</h2>
+                  <p className={styles.pText}>
+                    {popular.tracks.items[3].track.artists[0].name}
+                  </p>
+                </div>
+              </div>
+              <img
+                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+                alt="spotify-icon"
+                className={styles.spotifyIconLittle}
+                width={28}
+              />
+              <SpotifyLogoButton />
+            </div>
+            <div className={styles.mostPopularSongsContainer}>
+              <div id={styles.popularCoverAndPopularText}>
+                <div className={styles.mostPopularSongsCoverSong}>
+                  <img
+                    className={styles.mostPopularSongsImg}
+                    src={popular.tracks.items[4].track.album.images[1].url}
+                    alt="most-popular-song"
+                    width={150}
+                  />
+                  <div className={styles.playButton} />
+                </div>
+                <div className={styles.mostPopularSongsText}>
+                  <h2>{popular.tracks.items[4].track.name}</h2>
+                  <p className={styles.pText}>
+                    {popular.tracks.items[4].track.artists[0].name}
+                  </p>
+                </div>
+              </div>
+              <img
+                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+                alt="spotify-icon"
+                className={styles.spotifyIconLittle}
+                width={28}
+              />
+              <SpotifyLogoButton />
+            </div>
+            <div className={styles.mostPopularSongsContainer}>
+              <div id={styles.popularCoverAndPopularText}>
+                <div className={styles.mostPopularSongsCoverSong}>
+                  <img
+                    className={styles.mostPopularSongsImg}
+                    src={popular.tracks.items[5].track.album.images[1].url}
+                    alt="most-popular-song"
+                    width={150}
+                  />
+                  <div className={styles.playButton} />
+                </div>
+                <div className={styles.mostPopularSongsText}>
+                  <h2>{popular.tracks.items[5].track.name}</h2>
+                  <p className={styles.pText}>
+                    {popular.tracks.items[5].track.artists[0].name}
+                  </p>
+                </div>
+              </div>
+              <img
+                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+                alt="spotify-icon"
+                className={styles.spotifyIconLittle}
+                width={28}
+              />
+              <SpotifyLogoButton />
+            </div>
+            <div className={styles.mostPopularSongsContainer}>
+              <div id={styles.popularCoverAndPopularText}>
+                <div className={styles.mostPopularSongsCoverSong}>
+                  <img
+                    className={styles.mostPopularSongsImg}
+                    src={popular.tracks.items[2].track.album.images[1].url}
+                    alt="most-popular-song"
+                    width={150}
+                  />
+                  <div className={styles.playButton} />
+                </div>
+                <div className={styles.mostPopularSongsText}>
+                  <h2>{popular.tracks.items[2].track.name}</h2>
+                  <p className={styles.pText}>
+                    {popular.tracks.items[2].track.artists[0].name}
+                  </p>
+                </div>
+              </div>
+              <img
+                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+                alt="spotify-icon"
+                className={styles.spotifyIconLittle}
+                width={28}
+              />
+              <SpotifyLogoButton />
+            </div>
+            <button
+              className={`${styles.shuffle} ${styles.pButtons}`}
+              type="button"
+              onClick={() => {
+                // eslint-disable-next-line no-restricted-syntax
+                console.log("I was clicked");
+              }}
+            >
+              <img
+                alt="spotify-icon-shuffle"
+                // eslint-disable-next-line no-octal-escape
+                src="src\assets\spotify-icons-logos\icons\01_RGB\02_PNG\Spotify_Icon_RGB_White.png"
+                width={20}
+              />
+              SHUFFLE
+            </button>
+          </>
+        ) : (
+          <h2>Tracks loading...</h2>
+        )}
       </section>
       <section className={styles.trending}>
         <h1>Trending Artists</h1>
@@ -187,6 +358,7 @@ function Rock() {
         </div>
       </section>
       <Footer />
+      <Player accessToken={accessToken} />
     </div>
   );
 }
