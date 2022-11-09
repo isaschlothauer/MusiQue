@@ -6,10 +6,15 @@ import { useState, useEffect } from "react";
 import MusicCSS from "./WorldMusic.module.css";
 import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
 import Probass from "../assets/ProbassHardi.png";
-import Turmio from "../assets/turmio.png";
+import panel1IMG from "../assets/Screenshot_2022-11-02_09-05-32.png";
+import panel2IMG from "../assets/Screenshot_2022-11-02_09-05-53.png";
 import panel3IMG from "../assets/Screenshot_2022-11-02_09-06-16.png";
-import shimaUta from "../assets/shimauta.png";
+import ShuffleButton from "./shuffleButton";
 
+// import meta from 'env';
+
+// eslint-disable-next-line camelcase
+// ENV VAR CLENT_ID;
 // eslint-disable-next-line camelcase
 const client_id = "d6b767f2085441d5bd7a2c4b59b009a6";
 // eslint-disable-next-line camelcase
@@ -40,21 +45,16 @@ const playLists = [
   },
 ];
 
-// const defaultList = {
-
-// }
-
-const playListSize = 3;
-
 function randomizer(num) {
   const playListData = playLists[Math.floor(Math.random() * num)].playListId;
   return playListData;
 }
 
-function randomNumGenerator(num) {
-  const randomNum = Math.floor(Math.random() * num);
-  return randomNum;
-}
+// Test random num gen
+// function randomNumGenerator(num) {
+//   const randomNum = Math.floor(Math.random() * num);
+//   return randomNum;
+// }
 
 function WorldMusic() {
   // eslint-disable-next-line no-unused-vars
@@ -64,18 +64,19 @@ function WorldMusic() {
   const [musicData1, setMusicData1] = useState("");
   const [musicData2, setMusicData2] = useState("");
   const [musicData3, setMusicData3] = useState("");
+  const [musicData4, setMusicData4] = useState("");
+  const [counter, setCounter] = useState(0);
+
   useEffect(() => {
     // API Access Token
-    const authParameters = {
+    fetch("https://accounts.spotify.com/api/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       // eslint-disable-next-line camelcase
       body: `grant_type=client_credentials&client_id=${client_id}&client_secret=${client_secret}`,
-    };
-
-    fetch("https://accounts.spotify.com/api/token", authParameters)
+    })
       .then((result) => result.json())
       .then((data) => setAccessToken(data.access_token));
   }, []);
@@ -97,20 +98,22 @@ function WorldMusic() {
         `https://api.spotify.com/v1/playlists/${randomizer(3)}`,
         artistParameters
       )
+        // playListXXXXXXXXX[].tracks.items[Math.floor(Math.random() * 50).track]
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
-          const n = Math.floor(Math.random() * 48);
+          const n = Math.floor(Math.random() * 45);
           const stringPath1 = data.tracks.items[n].track;
           const stringPath2 = data.tracks.items[n + 1].track;
           const stringPath3 = data.tracks.items[n + 2].track;
+          const stringPath4 = data.tracks.items[n + 3].track;
 
           // Panel 1 data
           const panel1 = {
             panel1Title: stringPath1.name,
             panel1Artists: stringPath1.artists[0].name,
             panel1Album: stringPath1.album.name,
-            panel1Release: stringPath1.album.release_date,
+            panel1Release: stringPath1.album.release_date.split("-")[0],
             panel1Image: stringPath1.album.images[1].url,
           };
 
@@ -119,7 +122,7 @@ function WorldMusic() {
             panel2Title: stringPath2.name,
             panel2Artists: stringPath2.artists[0].name,
             panel2Album: stringPath2.album.name,
-            panel2Release: stringPath2.album.release_date,
+            panel2Release: stringPath2.album.release_date.split("-")[0],
             panel2Image: stringPath2.album.images[1].url,
           };
 
@@ -128,21 +131,29 @@ function WorldMusic() {
             panel3Title: stringPath3.name,
             panel3Artists: stringPath3.artists[0].name,
             panel3Album: stringPath3.album.name,
-            panel3Release: stringPath3.album.release_date,
+            panel3Release: stringPath3.album.release_date.split("-")[0],
             panel3Image: stringPath3.album.images[1].url,
+          };
+
+          // Panel 4 data
+          const panel4 = {
+            panel4Title: stringPath4.name,
+            panel4Artists: stringPath4.artists[0].name,
+            panel4Album: stringPath4.album.name,
+            panel4Release: stringPath4.album.release_date.split("-")[0],
+            panel4Image: stringPath4.album.images[1].url,
           };
 
           // Savimg panel objects to state
           setMusicData1(panel1);
           setMusicData2(panel2);
           setMusicData3(panel3);
+          setMusicData4(panel4);
         });
-    }, []);
-
-    // Check if state is filled
+    }, [counter, accessToken]);
   }
-  generateArtistData();
 
+  generateArtistData();
   return (
     <div className={MusicCSS.musicContainer}>
       <div className={MusicCSS.recContainer}>
@@ -150,49 +161,99 @@ function WorldMusic() {
         <div className={MusicCSS.panelContainer}>
           <div className={MusicCSS.panel1}>
             <div className={MusicCSS.mainImg}>
-              <img src={Probass} alt="Arist/Album Cover image1" />
+              <img
+                src={musicData1.panel1Image}
+                alt="Arist/Album Cover image1"
+              />
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
-              ДОБРОГО ВЕЧОРА (WHERE ARE YOU FROM?)
+              {musicData1.panel1Title}
             </h2>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-              PROBASS ∆ HARDI
+              {musicData1.panel1Artists}
             </p>
-            <p className={`${MusicCSS.country} ${["pText"]}`}>
-              Country: Ukraine
+            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
+            {/* <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Album: {musicData1.panel1Album}
+            </p> */}
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Release: {musicData1.panel1Release}
             </p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: 2021</p>
           </div>
 
           <div className={MusicCSS.panel2}>
             <div className={MusicCSS.mainImg}>
-              <img src={Turmio} alt="Arist/Album Cover image1" />
+              <img
+                src={musicData2.panel2Image}
+                alt="Arist/Album Cover image1"
+              />
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>Turmio</h2>
+            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+              {musicData2.panel2Title}
+            </h2>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-              Okra Playground
+              {musicData2.panel2Artists}
             </p>
-            <p className={`${MusicCSS.country} ${["pText"]}`}>
-              Country: Finland
+            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
+            {/* <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Album: {musicData2.panel2Album}
+            </p> */}
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Release: {musicData2.panel2Release}
             </p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: 2016</p>
           </div>
 
           <div className={MusicCSS.panel3}>
             <div className={MusicCSS.mainImg}>
-              <img src={shimaUta} alt="Arist/Album Cover image1" />
+              <img
+                src={musicData3.panel3Image}
+                alt="Arist/Album Cover image1"
+              />
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>Shima Uta</h2>
-            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>Clare Uchima</p>
-            <p className={`${MusicCSS.country} ${["pText"]}`}>Country: Japan</p>
-            <p className={`${MusicCSS.release} ${["pText"]}`}>Release: 2018</p>
+            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+              {musicData3.panel3Title}
+            </h2>
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+              {musicData3.panel3Artists}
+            </p>
+            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
+            {/* <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Album: {musicData3.panel3Album}
+            </p> */}
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Release: {musicData3.panel3Release}
+            </p>
+          </div>
+
+          <div className={MusicCSS.panel4}>
+            <div className={MusicCSS.mainImg}>
+              <img
+                src={musicData4.panel4Image}
+                alt="Arist/Album Cover image1"
+              />
+            </div>
+            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+              {musicData4.panel4Title}
+            </h2>
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+              {musicData4.panel4Artists}
+            </p>
+            {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
+            {/* <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Album: {musicData4.panel4Album}
+            </p> */}
+            <p className={`${MusicCSS.release} ${["pText"]}`}>
+              Release: {musicData4.panel4Release}
+            </p>
           </div>
         </div>
         <div className={MusicCSS.btnContainer}>
+          {/* <button className={MusicCSS.clickable} onClick={() => setCounter(counter+1)} className={MusicCSS.shuffleBtn}><div className={MusicCSS.shufflebtn}/></button>
+          {/* <button */}
           <button
+            onClick={() => setCounter(counter + 1)}
             className={`${MusicCSS.pButtons} ${"pButtons"}`}
             type="button"
-            onClick={generateArtistData}
           >
             SHUFFLE
           </button>

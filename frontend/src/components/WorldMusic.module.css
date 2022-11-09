@@ -8,21 +8,22 @@ a:link {
 .musicContainer {
     color: var(--colorWhiteFonts);   
     background: var(--gradientBG);
-    /* width: 100%; */
 }
-
 
 .panelContainer {
     display: block;
     max-width: 100%;
     margin: 0 auto;
+    padding: 0 3rem;
 }
 
 .panel1,
 .panel2, 
-.panel3 {
+.panel3,
+.panel4 {
     max-width: 330px;
     margin: 0;
+    flex: 1;
 }
 
 .panel1 {
@@ -30,7 +31,8 @@ a:link {
 }
 
 .panel2,
-.panel3 {
+.panel3,
+.panel4 {
     display: none;
 }
 
@@ -74,7 +76,7 @@ a:link {
     margin-top: 1rem;
 }
 
-.shuffle {
+.shufflebtn {
     width: 120px;
     height: 40px;
     margin: 1rem auto;
@@ -84,9 +86,10 @@ a:link {
     position: relative;    
 }
 
+
 .endTxt {
     padding-bottom: 1.4rem;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 .endTxt p {
@@ -107,20 +110,69 @@ a:link {
     width: 5rem;
 }
 
+.shuffleBtn {
+    margin-top: 2rem;
+}
+
+.btnContainer {
+    margin-top: 2rem;
+    margin-bottom: -1rem;
+}
+
+.pButtons {
+    align-items: center;
+    background: linear-gradient(269.49deg, #7755F9 10.41%, #02AAFD 111.89%), linear-gradient(270.52deg, #DB6C2F -10.09%, #7755F9 90.46%);
+    border: 0;
+    border-radius: 1.25rem;
+    color: #fff;
+    cursor: pointer;
+    height: 2.625rem;
+    width: 6.688rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: left;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: box-shadow,transform;
+    margin:auto;
+    margin-bottom: 2rem;
+
+}
+
+.pButtons:hover {
+    transform: translateY(-2px);
+  }
+
+  .pButtons:active {
+    transform: translateY(2px);
+  }
+
+  .btnContainer {
+    display: flex;
+  }
+
 @media screen and (min-width: 600px)  {
-    .musicDiscover {
-        text-align: initial;
-        padding-left: 12%;
-    }
 
     .panelContainer {
         display: flex;
-        padding: 0 auto;
+        justify-content: space-evenly;
+    }
+
+    .panel1 {
+        margin: initial;
     }
 
     .panel2 {
         display: inline;
-        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .musicDiscover {
+        text-align: initial;
+        padding-left: 3rem;
     }
 }
 
@@ -129,48 +181,10 @@ a:link {
         display: inline;
     }
 
-    .panel1,
-    .panel2,
-    .panel3 {
-        margin: 0 auto;
+}
+
+@media screen and (min-width: 1200px) {
+    .panel4 { 
+        display: inline;
     }
 }
-
-.pButtons {
-    align-items: center;
-    background: linear-gradient(269.49deg, #7755F9 10.41%, #02AAFD 111.89%), linear-gradient(270.52deg, #DB6C2F -10.09%, #7755F9 90.46%);
-    border: 0;
-    border-radius: 1.25rem;
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    color: #fff;
-    cursor: pointer;
-    height: 2.625rem;
-    width: 6.688rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    will-change: box-shadow,transform;
-    margin:auto;
-}
-
-.pButtons:focus {
-    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-}
-
-.pButtons:hover {
-    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-    transform: translateY(-2px);
-  }
-
-  .pButtons:active {
-    box-shadow: #3c4fe0 0 3px 7px inset;
-    transform: translateY(2px);
-  }
-
-  .btnContainer {
-    display: flex;
-    margin-top: 1rem;
-  }
