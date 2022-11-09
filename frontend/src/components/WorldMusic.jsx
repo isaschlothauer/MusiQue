@@ -5,11 +5,6 @@ import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import MusicCSS from "./WorldMusic.module.css";
 import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
-import Probass from "../assets/ProbassHardi.png";
-import panel1IMG from "../assets/Screenshot_2022-11-02_09-05-32.png";
-import panel2IMG from "../assets/Screenshot_2022-11-02_09-05-53.png";
-import panel3IMG from "../assets/Screenshot_2022-11-02_09-06-16.png";
-import ShuffleButton from "./shuffleButton";
 
 // import meta from 'env';
 
@@ -65,7 +60,7 @@ function WorldMusic() {
   const [musicData2, setMusicData2] = useState("");
   const [musicData3, setMusicData3] = useState("");
   const [musicData4, setMusicData4] = useState("");
-  const [counter, setCounter] = useState(0);
+  const [renderCheck, setRenderCheck] = useState(false);
 
   useEffect(() => {
     // API Access Token
@@ -150,7 +145,7 @@ function WorldMusic() {
           setMusicData3(panel3);
           setMusicData4(panel4);
         });
-    }, [counter, accessToken]);
+    }, [renderCheck, accessToken]);
   }
 
   generateArtistData();
@@ -251,7 +246,12 @@ function WorldMusic() {
           {/* <button className={MusicCSS.clickable} onClick={() => setCounter(counter+1)} className={MusicCSS.shuffleBtn}><div className={MusicCSS.shufflebtn}/></button>
           {/* <button */}
           <button
-            onClick={() => setCounter(counter + 1)}
+            onClick={() => {
+              // eslint-disable-next-line no-unused-expressions
+              renderCheck !== true
+                ? setRenderCheck(true)
+                : setRenderCheck(false);
+            }}
             className={`${MusicCSS.pButtons} ${"pButtons"}`}
             type="button"
           >
