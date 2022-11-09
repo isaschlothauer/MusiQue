@@ -65,6 +65,7 @@ function WorldMusic() {
   const [musicData2, setMusicData2] = useState("");
   const [musicData3, setMusicData3] = useState("");
   const [musicData4, setMusicData4] = useState("");
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     // API Access Token
@@ -97,6 +98,7 @@ function WorldMusic() {
         `https://api.spotify.com/v1/playlists/${randomizer(3)}`,
         artistParameters
       )
+        // playListXXXXXXXXX[].tracks.items[Math.floor(Math.random() * 50).track]
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -133,7 +135,7 @@ function WorldMusic() {
             panel3Image: stringPath3.album.images[1].url,
           };
 
-          // Panel 3 data
+          // Panel 4 data
           const panel4 = {
             panel4Title: stringPath4.name,
             panel4Artists: stringPath4.artists[0].name,
@@ -148,8 +150,9 @@ function WorldMusic() {
           setMusicData3(panel3);
           setMusicData4(panel4);
         });
-    }, [accessToken]);
+    }, [counter, accessToken]);
   }
+
   generateArtistData();
   return (
     <div className={MusicCSS.musicContainer}>
@@ -170,9 +173,9 @@ function WorldMusic() {
               {musicData1.panel1Artists}
             </p>
             {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
-            <p className={`${MusicCSS.release} ${["pText"]}`}>
+            {/* <p className={`${MusicCSS.release} ${["pText"]}`}>
               Album: {musicData1.panel1Album}
-            </p>
+            </p> */}
             <p className={`${MusicCSS.release} ${["pText"]}`}>
               Release: {musicData1.panel1Release}
             </p>
@@ -192,9 +195,9 @@ function WorldMusic() {
               {musicData2.panel2Artists}
             </p>
             {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
-            <p className={`${MusicCSS.release} ${["pText"]}`}>
+            {/* <p className={`${MusicCSS.release} ${["pText"]}`}>
               Album: {musicData2.panel2Album}
-            </p>
+            </p> */}
             <p className={`${MusicCSS.release} ${["pText"]}`}>
               Release: {musicData2.panel2Release}
             </p>
@@ -214,9 +217,9 @@ function WorldMusic() {
               {musicData3.panel3Artists}
             </p>
             {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
-            <p className={`${MusicCSS.release} ${["pText"]}`}>
+            {/* <p className={`${MusicCSS.release} ${["pText"]}`}>
               Album: {musicData3.panel3Album}
-            </p>
+            </p> */}
             <p className={`${MusicCSS.release} ${["pText"]}`}>
               Release: {musicData3.panel3Release}
             </p>
@@ -236,23 +239,24 @@ function WorldMusic() {
               {musicData4.panel4Artists}
             </p>
             {/* <p className={`${MusicCSS.country} ${["pText"]}`}>Country: {musicData1.panel1Country}</p> */}
-            <p className={`${MusicCSS.release} ${["pText"]}`}>
+            {/* <p className={`${MusicCSS.release} ${["pText"]}`}>
               Album: {musicData4.panel4Album}
-            </p>
+            </p> */}
             <p className={`${MusicCSS.release} ${["pText"]}`}>
               Release: {musicData4.panel4Release}
             </p>
           </div>
         </div>
         <div className={MusicCSS.btnContainer}>
-          <ShuffleButton className={MusicCSS.shuffleBtn} />
-          {/* <button
+          {/* <button className={MusicCSS.clickable} onClick={() => setCounter(counter+1)} className={MusicCSS.shuffleBtn}><div className={MusicCSS.shufflebtn}/></button>
+          {/* <button */}
+          <button
+            onClick={() => setCounter(counter + 1)}
             className={`${MusicCSS.pButtons} ${"pButtons"}`}
             type="button"
-            onClick={generateArtistData}
           >
             SHUFFLE
-          </button> */}
+          </button>
         </div>
         <div className={MusicCSS.endTxt}>
           <p className={`${MusicCSS.endTxt1} ${["pText"]}`}>Find more on</p>
