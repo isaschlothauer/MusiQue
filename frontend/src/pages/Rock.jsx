@@ -74,7 +74,7 @@ function Rock() {
       }
     )
       .then((res) => res.json())
-      .then((result) => SetTrending(result) & console.log(result));
+      .then((result) => SetTrending(result));
   }, [accessToken]);
 
   /*
