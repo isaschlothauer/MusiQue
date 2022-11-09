@@ -3,8 +3,8 @@ import TrendingArtCSS from "./trendingArtists.module.css";
 import "../App.css";
 import SpotifyLogoButton from "./SpotifyLogoButton";
 
-const CLIENT_ID = "d6b767f2085441d5bd7a2c4b59b009a6";
-const CLIENT_SECRET = "3db89dc2644044a3baa93a83ca6f7f6c";
+const clientId = import.meta.env.VITE_CLIENT_ID;
+const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 
 /* const songparams = {
   artistName: "THEA WANG, OTHER ARTIST",
@@ -27,7 +27,7 @@ function TrendingArtists() {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: `grant_type=client_credentials&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`,
+      body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`,
     };
     fetch("https://accounts.spotify.com/api/token", authParams)
       .then((result) => result.json())
