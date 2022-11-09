@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route
-          path="/"
+          path="*"
           element={
             <div>
               <Header />

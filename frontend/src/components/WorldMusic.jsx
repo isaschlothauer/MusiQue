@@ -11,6 +11,8 @@ import panel2IMG from "../assets/Screenshot_2022-11-02_09-05-53.png";
 import panel3IMG from "../assets/Screenshot_2022-11-02_09-06-16.png";
 import ShuffleButton from "./shuffleButton";
 
+// import meta from 'env';
+
 // eslint-disable-next-line camelcase
 // ENV VAR CLENT_ID;
 // eslint-disable-next-line camelcase
@@ -43,12 +45,6 @@ const playLists = [
   },
 ];
 
-// const defaultList = {
-
-// }
-
-const playListSize = 3;
-
 function randomizer(num) {
   const playListData = playLists[Math.floor(Math.random() * num)].playListId;
   return playListData;
@@ -72,16 +68,14 @@ function WorldMusic() {
 
   useEffect(() => {
     // API Access Token
-    const authParameters = {
+    fetch("https://accounts.spotify.com/api/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       // eslint-disable-next-line camelcase
       body: `grant_type=client_credentials&client_id=${client_id}&client_secret=${client_secret}`,
-    };
-
-    fetch("https://accounts.spotify.com/api/token", authParameters)
+    })
       .then((result) => result.json())
       .then((data) => setAccessToken(data.access_token));
   }, []);
@@ -105,7 +99,7 @@ function WorldMusic() {
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           const n = Math.floor(Math.random() * 45);
           const stringPath1 = data.tracks.items[n].track;
           const stringPath2 = data.tracks.items[n + 1].track;
@@ -154,9 +148,7 @@ function WorldMusic() {
           setMusicData3(panel3);
           setMusicData4(panel4);
         });
-    }, []);
-
-    // Check if state is filled
+    }, [accessToken]);
   }
   generateArtistData();
   return (
