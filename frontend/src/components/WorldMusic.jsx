@@ -7,34 +7,34 @@ import MusicCSS from "./WorldMusic.module.css";
 import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
 
 // eslint-disable-next-line camelcase
-// ENV VAR CLENT_ID;
+const clientId = import.meta.env.VITE_CLIENT_ID;
 // eslint-disable-next-line camelcase
-const client_id = "d6b767f2085441d5bd7a2c4b59b009a6";
-// eslint-disable-next-line camelcase
-const client_secret = "3db89dc2644044a3baa93a83ca6f7f6c";
+const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 // const artistName = "The Beatles";
+
+console.log(clientId);
+console.log(clientSecret);
+
+// console.log(login);
 
 // TO DO LIST
 // 1. Randomized artist selector
-// 2. Figure out the image problem************
 // 3. Play List and song picker still needs to be implemented
-// 4. Figure out dynamic external linking
 // 5. Implement error handing on null or undefined response
-// 6. Add default songs for at load.
 
 // Find a way to get song tracks
 const playLists = [
   {
-    playListId: "37i9dQZEVXbIVYVBNw9D5K",
+    playListId: "37i9dQZF1DX0FGW2dUyDef",
     country: "Turkey",
   },
   {
-    playListId: "37i9dQZEVXbKkidEfWYRuD",
+    playListId: "1InkWO5fnA7rMZJXCc6s7S",
     country: "Ukraine",
   },
   {
-    playListId: "37i9dQZEVXbKyJS56d1pgi",
-    country: "Portugal",
+    playListId: "72U9wNe1fkxYW68gh0TbO3",
+    country: "Iceland",
   },
 ];
 
@@ -44,10 +44,12 @@ function randomizer(num) {
 }
 
 // Test random num gen
-// function randomNumGenerator(num) {
-//   const randomNum = Math.floor(Math.random() * num);
-//   return randomNum;
-// }
+function randNumGen(num) {
+  const randomNum = Math.floor(Math.random() * num);
+  return randomNum;
+}
+
+console.log(randNumGen(3));
 
 function WorldMusic() {
   // eslint-disable-next-line no-unused-vars
@@ -68,7 +70,7 @@ function WorldMusic() {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       // eslint-disable-next-line camelcase
-      body: `grant_type=client_credentials&client_id=${client_id}&client_secret=${client_secret}`,
+      body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`,
     })
       .then((result) => result.json())
       .then((data) => setAccessToken(data.access_token));
@@ -85,13 +87,11 @@ function WorldMusic() {
         },
       };
 
-      // PLaylist fetcher
       // eslint-disable-next-line prefer-const
       let currentPlayList = fetch(
         `https://api.spotify.com/v1/playlists/${randomizer(3)}`,
         artistParameters
       )
-        // playListXXXXXXXXX[].tracks.items[Math.floor(Math.random() * 50).track]
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
