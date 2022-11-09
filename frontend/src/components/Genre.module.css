@@ -352,9 +352,9 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 600px) {
   .genre {
-    height: 87.5rem;
+    /* height: 87.5rem; */
     background-image: linear-gradient(
         #302518 0.48%,
         rgba(84, 78, 70, 0.565217) 3.2%,
@@ -376,11 +376,181 @@
 
   .buttonsdesk1 {
     display: none;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     gap: 1.25rem;
     justify-items: center;
-    margin-top: 4rem;
+    margin-top: 4rem; */
+  }
+
+  .buttonsdesk {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .btn2 {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    border: none;
+    color: azure;
+    font-size: 1.5rem;
+    font-weight: 700;
+    /* margin-bottom: 2.75rem; */
+    /* margin-left: 1.3rem;
+    margin-right: 1.3rem; */
+    box-shadow: rgb(17 17 26 / 20%) 0px 4px 16px,
+      rgb(17 17 26 / 20%) 0px 8px 24px, rgb(17 17 26 / 20%) 0px 16px 56px;
+  }
+
+  .btn2:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+
+  .btn2:nth-child(1) {
+    background: url(src/assets/genres/Rectangle14.png);
+    /* margin-left: 1.3rem; */
+  }
+
+  .btn2:nth-child(2) {
+    background: url(src/assets/genres/Rectangle24.png);
+  }
+
+  .btn2:nth-child(3) {
+    background: url(src/assets/genres/Rectangle16.png);
+  }
+
+  .btn2:nth-child(4) {
+    background: url(src/assets/genres/Rectangle2.jpeg);
+    /* margin-right: 1.3rem; */
+  }
+
+  .btn2:nth-child(5) {
+    background: url(src/assets/genres/Rectangle18.png);
+    /* margin-left: 1.3rem; */
+  }
+
+  .btn2:nth-child(6) {
+    background: url(src/assets/genres/Rectangle19.png);
+  }
+
+  .btn2:nth-child(7) {
+    background: url(src/assets/genres/Rectangle26.png);
+  }
+
+  .btn2:nth-child(8) {
+    background: url(src/assets/genres/Rectangle21.png);
+    /* margin-right: 1.3rem; */
+  }
+
+  .btn2:nth-child(9) {
+    background: url(src/assets/genres/Rectangle22.png);
+    /* margin-left: 1.3rem; */
+  }
+
+  .btn2:nth-child(10) {
+    background: url(src/assets/genres/Rectangle23.png);
+  }
+
+  .btn2:nth-child(11) {
+    background: url(src/assets/genres/Rectangle15.png);
+  }
+
+  .btn2:nth-child(12) {
+    background: url(src/assets/genres/Rectangle25.png);
+    /* margin-right: 1.3rem; */
+  }
+
+  .btn {
+    display: none;
+    align-items: center;
+    background-image: linear-gradient(
+      144deg,
+      rgba(2, 170, 253, 1),
+      rgba(119, 85, 249, 1)
+    );
+    border: 1.25rem;
+    border-radius: 1.25rem;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 0.938rem 1.875rem -0.313rem;
+    box-sizing: border-box;
+    color: #4faeff;
+    max-width: 100%;
+    min-width: 8.75rem;
+    padding: 0.188rem;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0s;
+  }
+
+  .btn:active,
+  .btn:hover {
+    display: none;
+    outline: 0;
+    color: aliceblue;
+  }
+
+  .btn span {
+    display: none;
+    background-image: url(frontend\src\assets\genres\Rectangle14.png);
+    padding: 1rem 1.5rem;
+    border-radius: 1.25rem;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+
+  .btn:hover span {
+    display: none;
+    background: none;
+    color: aliceblue;
+  }
+
+  .btn:active {
+    display: none;
+    transform: scale(0.9);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .genre {
+    height: 65.625rem;
+    background-image: linear-gradient(
+        #302518 0.48%,
+        rgba(84, 78, 70, 0.565217) 3.2%,
+        rgba(141, 140, 133, 0.322174) 6.48%,
+        rgba(217, 217, 217, 0) 11.64%
+      ),
+      url(src/assets/5.jpeg);
+    color: black;
+    font-size: 2rem;
+    text-align: left;
+    padding-top: 3.125rem;
+  }
+
+  .title {
+    margin-left: 3.5rem;
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+  }
+
+  .buttonsdesk1 {
+    display: none;
+    /* grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1.25rem;
+    justify-items: center;
+    margin-top: 4rem; */
   }
 
   .buttonsdesk {
@@ -391,6 +561,7 @@
     margin-top: 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    max-width: 1300px;
   }
 
   .btn2 {
@@ -403,12 +574,7 @@
     margin-bottom: 2.75rem;
     margin-left: 1.3rem;
     margin-right: 1.3rem;
-  }
-
-  .btn2:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
   }
 
   .btn2:nth-child(1) {
@@ -519,164 +685,15 @@
   }
 }
 
-@media screen and (min-width: 1230px) {
-  .genre {
-    height: 65.625rem;
-    background-image: linear-gradient(
-        #302518 0.48%,
-        rgba(84, 78, 70, 0.565217) 3.2%,
-        rgba(141, 140, 133, 0.322174) 6.48%,
-        rgba(217, 217, 217, 0) 11.64%
-      ),
-      url(src/assets/5.jpeg);
-    color: black;
+@media screen and (min-width: 980px) {
+  .btn2 {
+    width: 12.5rem;
+    height: 12.5rem;
     font-size: 2rem;
-    text-align: left;
-    padding-top: 3.125rem;
-  }
-
-  .title {
-    margin-left: 3.5rem;
-    margin-bottom: 0rem;
-    margin-top: 1rem;
-  }
-
-  .buttonsdesk1 {
-    display: none;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 1.25rem;
-    justify-items: center;
-    margin-top: 4rem;
   }
 
   .buttonsdesk {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 0rem;
-    justify-content: center;
-    margin-top: 2rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-
-  .btn2 {
-    display: block;
-    width: 15.625rem;
-    height: 15.625rem;
-    color: azure;
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 2.75rem;
-    margin-left: 1.3rem;
-    margin-right: 1.3rem;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  }
-
-  .btn2:nth-child(1) {
-    background: url(src/assets/genres/Rectangle14.png);
-    margin-left: 1.3rem;
-  }
-
-  .btn2:nth-child(2) {
-    background: url(src/assets/genres/Rectangle24.png);
-  }
-
-  .btn2:nth-child(3) {
-    background: url(src/assets/genres/Rectangle16.png);
-  }
-
-  .btn2:nth-child(4) {
-    background: url(src/assets/genres/Rectangle2.jpeg);
-    margin-right: 1.3rem;
-  }
-
-  .btn2:nth-child(5) {
-    background: url(src/assets/genres/Rectangle18.png);
-    margin-left: 1.3rem;
-  }
-
-  .btn2:nth-child(6) {
-    background: url(src/assets/genres/Rectangle19.png);
-  }
-
-  .btn2:nth-child(7) {
-    background: url(src/assets/genres/Rectangle26.png);
-  }
-
-  .btn2:nth-child(8) {
-    background: url(src/assets/genres/Rectangle21.png);
-    margin-right: 1.3rem;
-  }
-
-  .btn2:nth-child(9) {
-    background: url(src/assets/genres/Rectangle22.png);
-    margin-left: 1.3rem;
-  }
-
-  .btn2:nth-child(10) {
-    background: url(src/assets/genres/Rectangle23.png);
-  }
-
-  .btn2:nth-child(11) {
-    background: url(src/assets/genres/Rectangle15.png);
-  }
-
-  .btn2:nth-child(12) {
-    background: url(src/assets/genres/Rectangle25.png);
-    margin-right: 1.3rem;
-  }
-
-  .btn {
-    display: none;
-    align-items: center;
-    background-image: linear-gradient(
-      144deg,
-      rgba(2, 170, 253, 1),
-      rgba(119, 85, 249, 1)
-    );
-    border: 1.25rem;
-    border-radius: 1.25rem;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 0.938rem 1.875rem -0.313rem;
-    box-sizing: border-box;
-    color: #4faeff;
-    max-width: 100%;
-    min-width: 8.75rem;
-    padding: 0.188rem;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: all 0s;
-  }
-
-  .btn:active,
-  .btn:hover {
-    display: none;
-    outline: 0;
-    color: aliceblue;
-  }
-
-  .btn span {
-    display: none;
-    background-image: url(frontend\src\assets\genres\Rectangle14.png);
-    padding: 1rem 1.5rem;
-    border-radius: 1.25rem;
-    width: 100%;
-    height: 100%;
-    transition: 300ms;
-  }
-
-  .btn:hover span {
-    display: none;
-    background: none;
-    color: aliceblue;
-  }
-
-  .btn:active {
-    display: none;
-    transform: scale(0.9);
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
 }
