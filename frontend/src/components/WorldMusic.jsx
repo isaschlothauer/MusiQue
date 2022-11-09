@@ -117,7 +117,7 @@ function WorldMusic() {
             panel1Title: stringPath1.name,
             panel1Artists: stringPath1.artists[0].name,
             panel1Album: stringPath1.album.name,
-            panel1Release: stringPath1.album.release_date,
+            panel1Release: stringPath1.album.release_date.split("-")[0],
             panel1Image: stringPath1.album.images[1].url,
           };
 
@@ -126,7 +126,7 @@ function WorldMusic() {
             panel2Title: stringPath2.name,
             panel2Artists: stringPath2.artists[0].name,
             panel2Album: stringPath2.album.name,
-            panel2Release: stringPath2.album.release_date,
+            panel2Release: stringPath2.album.release_date.split("-")[0],
             panel2Image: stringPath2.album.images[1].url,
           };
 
@@ -135,7 +135,7 @@ function WorldMusic() {
             panel3Title: stringPath3.name,
             panel3Artists: stringPath3.artists[0].name,
             panel3Album: stringPath3.album.name,
-            panel3Release: stringPath3.album.release_date,
+            panel3Release: stringPath3.album.release_date.split("-")[0],
             panel3Image: stringPath3.album.images[1].url,
           };
 
@@ -144,7 +144,7 @@ function WorldMusic() {
             panel4Title: stringPath4.name,
             panel4Artists: stringPath4.artists[0].name,
             panel4Album: stringPath4.album.name,
-            panel4Release: stringPath4.album.release_date,
+            panel4Release: stringPath4.album.release_date.split("-")[0],
             panel4Image: stringPath4.album.images[1].url,
           };
 
