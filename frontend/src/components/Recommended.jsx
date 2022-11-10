@@ -4,8 +4,9 @@ import styles from "./Recommended.module.css";
 import "../App.css";
 import Profile from "../assets/Joao.jpg";
 import Logo from "../assets/spotify_logo_white.png";
-import { CLIENT_ID, CLIENT_SECRET } from "./secret";
 
+const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
+const CLIENT_SECRET = import.meta.env.VITE_CLIENT_SECRET;
 const recs = {
   author: "Joao, Germany/Portugal",
   imgAuthor: { Profile },
