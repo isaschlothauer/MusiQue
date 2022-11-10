@@ -170,6 +170,28 @@ function WorldMusic() {
 
           currentPlayList3.then((test4) => {
             const pListIndex4 = numGen(playLists.length);
+            const currentPlayList4 = fetch(
+              `https://api.spotify.com/v1/playlists/${playLists[pListIndex4].playListId}`,
+              artistParameters
+            )
+              .then((res) => res.json())
+              .then((data) => {
+                const stringPath4 =
+                  data.tracks.items[Math.floor(Math.random() * 50)].track;
+
+                // Panel 1 data
+                const panel4 = {
+                  panel4Title: stringPath4.name,
+                  panel4Artists: stringPath4.artists[0].name,
+                  panel4Album: stringPath4.album.name,
+                  panel4Release: stringPath4.album.release_date.split("-")[0],
+                  panel4Image: stringPath4.album.images[1].url,
+                  panel4Country: playLists[pListIndex4].country,
+                };
+                // Savimg panel objects to state
+                setMusicData4(panel4);
+              })
+              .catch((err) => console.error(err));
           });
         });
       });
