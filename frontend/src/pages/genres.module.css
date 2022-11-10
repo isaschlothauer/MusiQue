@@ -171,8 +171,8 @@ h2 {
   background: #ffffff;
   border-radius: 15px;
   margin-top: 1rem;
-  max-width: 100%;
   min-width: 100%;
+  padding: 1rem;
 }
 
 .mostPopularSongsContainer h2 {
@@ -218,19 +218,12 @@ h2 {
   opacity: 1;
 }
 
-.spotifyIconLittle {
-  align-self: flex-end;
-  margin: 1rem;
+.linkBig {
+  display: none;
 }
 
-.shuffle {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: rem;
-  width: 8rem;
-  margin: 1rem;
-  align-self: center;
+.linkBig {
+  display: contents;
 }
 
 .trending {
@@ -493,10 +486,6 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     display: contents;
   }
 
-  .spotifyIconLittle {
-    display: none;
-  }
-
   .trendingArtistsContainer {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -584,6 +573,13 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   }
 
   .btn3 {
+    display: none;
+  }
+
+  .linkBig {
+    display: contents;
+  }
+  .linkLittle {
     display: none;
   }
 }
