@@ -171,8 +171,8 @@ h2 {
   background: #ffffff;
   border-radius: 15px;
   margin-top: 1rem;
-  max-width: 100%;
   min-width: 100%;
+  padding: 1rem;
 }
 
 .mostPopularSongsContainer h2 {
@@ -219,8 +219,9 @@ h2 {
 }
 
 .spotifyIconLittle {
-  align-self: flex-end;
+  justify-content: flex-end;
   margin: 1rem;
+  align-self: flex-end;
 }
 
 .shuffle {
@@ -231,6 +232,10 @@ h2 {
   width: 8rem;
   margin: 1rem;
   align-self: center;
+}
+
+.linkBig {
+  display: none;
 }
 
 .trending {
@@ -541,6 +546,10 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   }
   .trendingArtistsContainerhid {
     display: none;
+  }
+
+  .linkBig {
+    display: contents;
   }
 
   .trending {

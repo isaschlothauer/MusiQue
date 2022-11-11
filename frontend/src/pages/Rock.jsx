@@ -17,6 +17,11 @@ function Rock() {
   // eslint-disable-next-line no-unused-vars
   const [accessToken, setAccessToken] = useState("");
   const [popular, SetPopular] = useState("");
+  const [hidden, setHidden] = useState(false);
+
+  const handleClick = () => {
+    setHidden((current) => !current);
+  };
 
   useEffect(() => {
     // API Access Token
@@ -52,42 +57,10 @@ function Rock() {
       },
     })
       .then((res) => res.json())
-      .then((result) => SetPopular(result) && console.log(result));
+      // eslint-disable-next-line no-bitwise
+      .then((result) => SetPopular(result) & console.log(result));
   }, [accessToken]);
 
-  /*
-  useEffect(() => {
-    fetch("https://api.spotify.com/v1/recommendations?seed_genres=rock&limit=5&target_popularity=80", {
-      method: "GET",
-      headers: {
-        Authorization: "Bearer " + accessToken,
-      },
-    })
-      .then((res) => res.json())
-      .then((info) => console.log(info));
-  }, [accessToken]);
-*/
-
-  /*
-  useEffect(() => {
-    fetch(
-      "https://api.spotify.com/v1/search?type=track&q=year:2022%20genre:rock&limit=5",
-      {
-        method: "GET",
-        headers: {
-          Authorization: "Bearer " + accessToken,
-        },
-      }
-    )
-      .then((res) => res.json())
-      .then((info) => console.log(info));
-  }, [accessToken]);
-  */
-  const [hidden, setHidden] = useState(false);
-
-  const handleClick = () => {
-    setHidden((current) => !current);
-  };
   return (
     <div className={styles.Rock}>
       <header className={styles.headerGenres}>
@@ -144,7 +117,10 @@ function Rock() {
                 className={styles.spotifyIconLittle}
                 width={28}
               />
-              <a href={popular.tracks.items[0].track.external_urls.spotify}>
+              <a
+                href={popular.tracks.items[0].track.external_urls.spotify}
+                className={styles.linkBig}
+              >
                 <SpotifyLogoButton />
               </a>
             </div>
@@ -172,7 +148,10 @@ function Rock() {
                 className={styles.spotifyIconLittle}
                 width={28}
               />
-              <a href={popular.tracks.items[1].track.external_urls.spotify}>
+              <a
+                href={popular.tracks.items[1].track.external_urls.spotify}
+                className={styles.linkBig}
+              >
                 <SpotifyLogoButton />
               </a>
             </div>
@@ -200,7 +179,10 @@ function Rock() {
                 className={styles.spotifyIconLittle}
                 width={28}
               />
-              <a href={popular.tracks.items[2].track.external_urls.spotify}>
+              <a
+                href={popular.tracks.items[2].track.external_urls.spotify}
+                className={styles.linkBig}
+              >
                 <SpotifyLogoButton />
               </a>
             </div>
@@ -228,7 +210,10 @@ function Rock() {
                 className={styles.spotifyIconLittle}
                 width={28}
               />
-              <a href={popular.tracks.items[3].track.external_urls.spotify}>
+              <a
+                href={popular.tracks.items[3].track.external_urls.spotify}
+                className={styles.linkBig}
+              >
                 <SpotifyLogoButton />
               </a>
             </div>
@@ -256,7 +241,10 @@ function Rock() {
                 className={styles.spotifyIconLittle}
                 width={28}
               />
-              <a href={popular.tracks.items[4].track.external_urls.spotify}>
+              <a
+                href={popular.tracks.items[4].track.external_urls.spotify}
+                className={styles.linkBig}
+              >
                 <SpotifyLogoButton />
               </a>
             </div>
@@ -284,7 +272,10 @@ function Rock() {
                 className={styles.spotifyIconLittle}
                 width={28}
               />
-              <a href={popular.tracks.items[5].track.external_urls.spotify}>
+              <a
+                href={popular.tracks.items[5].track.external_urls.spotify}
+                className={styles.linkBig}
+              >
                 <SpotifyLogoButton />
               </a>
             </div>
@@ -312,7 +303,10 @@ function Rock() {
                 className={styles.spotifyIconLittle}
                 width={28}
               />
-              <a href={popular.tracks.items[6].track.external_urls.spotify}>
+              <a
+                href={popular.tracks.items[6].track.external_urls.spotify}
+                className={styles.linkBig}
+              >
                 <SpotifyLogoButton />
               </a>
             </div>
