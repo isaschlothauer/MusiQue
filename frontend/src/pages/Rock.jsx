@@ -1,16 +1,20 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable import/no-unresolved */
 // eslint-disable-next-line import/no-unresolved
 import React, { useState, useEffect } from "react";
+import TopGenres from "../components/TopGenres";
 import SpotifyLogoButton from "../components/SpotifyLogoButton";
+import Footer from "../components/footer";
+import SpotifyLogoLittle from "../components/SpotifyLogoLittle";
+import ShuffleButton from "../components/shuffleButton";
+
+// import MostPopular from "./MostPopular";
+
 import styles from "./genres.module.css";
 
-// import "./genres.css";
-// import axios from "axios";
+const clientId = import.meta.env.VITE_CLIENT_ID;
+const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 
-const CLIENT_ID = "d6b767f2085441d5bd7a2c4b59b009a6";
-const CLIENT_SECRET = "3db89dc2644044a3baa93a83ca6f7f6c";
-
-// const PLAYLIST_ENDPOINT = "https://api.spotify.com/v1/me/playlists";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 
 function Rock() {
@@ -35,9 +39,9 @@ function Rock() {
       body:
         // eslint-disable-next-line prefer-template
         "grant_type=client_credentials&client_id=" +
-        CLIENT_ID +
+        clientId +
         "&client_secret=" +
-        CLIENT_SECRET,
+        clientSecret,
     };
 
     fetch(TOKEN_ENDPOINT, authParameters)
@@ -59,7 +63,8 @@ function Rock() {
       },
     })
       .then((res) => res.json())
-      .then((result) => SetPopular(result));
+      // eslint-disable-next-line no-bitwise
+      .then((result) => SetPopular(result) & console.log(result));
   }, [accessToken]);
 
   useEffect(() => {
@@ -77,42 +82,10 @@ function Rock() {
       .then((result) => SetTrending(result));
   }, [accessToken]);
 
-  /*
-  useEffect(() => {
-    fetch("https://api.spotify.com/v1/recommendations?seed_genres=rock&limit=5&target_popularity=80", {
-      method: "GET",
-      headers: {
-        Authorization: "Bearer " + accessToken,
-      },
-    })
-      .then((res) => res.json())
-      .then((info) => console.log(info));
-  }, [accessToken]);
-*/
-
-  /*
-  useEffect(() => {
-    fetch(
-      "https://api.spotify.com/v1/search?type=track&q=year:2022%20genre:rock&limit=5",
-      {
-        method: "GET",
-        headers: {
-          Authorization: "Bearer " + accessToken,
-        },
-      }
-    )
-      .then((res) => res.json())
-      .then((info) => console.log(info));
-  }, [accessToken]);
-  */
-
   return (
     <div className={styles.Rock}>
-      <button type="button" onClick={() => {}}>
-        Get Playlists
-      </button>
-
       <header className={styles.headerGenres}>
+        <TopGenres />
         <section className={styles.genreMain}>
           <div className={styles.genreTextAndImg}>
             <div className={styles.genreText}>
@@ -139,7 +112,7 @@ function Rock() {
       </header>
       <section className={styles.mostPopular}>
         <h2>Most Popular</h2>
-        {popular.tracks != null && popular.tracks.items != null ? (
+        {popular.tracks != null && (popular.tracks.items != null) != null ? (
           <>
             <div className={styles.mostPopularSongsContainer}>
               <div id={styles.popularCoverAndPopularText}>
@@ -159,13 +132,22 @@ function Rock() {
                   </p>
                 </div>
               </div>
-              <img
-                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-                alt="spotify-icon"
-                className={styles.spotifyIconLittle}
-                width={28}
-              />
-              <SpotifyLogoButton />
+              <a
+                href={popular.tracks.items[0].track.external_urls.spotify}
+                className={styles.linkLittle}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoLittle />
+              </a>
+              <a
+                href={popular.tracks.items[0].track.external_urls.spotify}
+                className={styles.linkBig}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoButton />
+              </a>
             </div>
             <div className={styles.mostPopularSongsContainer}>
               <div id={styles.popularCoverAndPopularText}>
@@ -185,13 +167,22 @@ function Rock() {
                   </p>
                 </div>
               </div>
-              <img
-                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-                alt="spotify-icon"
-                className={styles.spotifyIconLittle}
-                width={28}
-              />
-              <SpotifyLogoButton />
+              <a
+                href={popular.tracks.items[1].track.external_urls.spotify}
+                className={styles.linkLittle}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoLittle className={styles.linkLittle} />
+              </a>
+              <a
+                href={popular.tracks.items[1].track.external_urls.spotify}
+                className={styles.linkBig}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoButton />
+              </a>
             </div>
             <div className={styles.mostPopularSongsContainer}>
               <div id={styles.popularCoverAndPopularText}>
@@ -211,13 +202,22 @@ function Rock() {
                   </p>
                 </div>
               </div>
-              <img
-                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-                alt="spotify-icon"
-                className={styles.spotifyIconLittle}
-                width={28}
-              />
-              <SpotifyLogoButton />
+              <a
+                href={popular.tracks.items[2].track.external_urls.spotify}
+                className={styles.linkLittle}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoLittle className={styles.linkLittle} />
+              </a>
+              <a
+                href={popular.tracks.items[2].track.external_urls.spotify}
+                className={styles.linkBig}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoButton />
+              </a>
             </div>
             <div className={styles.mostPopularSongsContainer}>
               <div id={styles.popularCoverAndPopularText}>
@@ -237,13 +237,22 @@ function Rock() {
                   </p>
                 </div>
               </div>
-              <img
-                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-                alt="spotify-icon"
-                className={styles.spotifyIconLittle}
-                width={28}
-              />
-              <SpotifyLogoButton />
+              <a
+                href={popular.tracks.items[3].track.external_urls.spotify}
+                className={styles.linkLittle}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoLittle className={styles.linkLittle} />
+              </a>
+              <a
+                href={popular.tracks.items[3].track.external_urls.spotify}
+                className={styles.linkBig}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoButton />
+              </a>
             </div>
             <div className={styles.mostPopularSongsContainer}>
               <div id={styles.popularCoverAndPopularText}>
@@ -263,13 +272,22 @@ function Rock() {
                   </p>
                 </div>
               </div>
-              <img
-                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-                alt="spotify-icon"
-                className={styles.spotifyIconLittle}
-                width={28}
-              />
-              <SpotifyLogoButton />
+              <a
+                href={popular.tracks.items[4].track.external_urls.spotify}
+                className={styles.linkLittle}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoLittle className={styles.linkLittle} />
+              </a>
+              <a
+                href={popular.tracks.items[4].track.external_urls.spotify}
+                className={styles.linkBig}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoButton />
+              </a>
             </div>
             <div className={styles.mostPopularSongsContainer}>
               <div id={styles.popularCoverAndPopularText}>
@@ -289,56 +307,59 @@ function Rock() {
                   </p>
                 </div>
               </div>
-              <img
-                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-                alt="spotify-icon"
-                className={styles.spotifyIconLittle}
-                width={28}
-              />
-              <SpotifyLogoButton />
+              <a
+                href={popular.tracks.items[5].track.external_urls.spotify}
+                className={styles.linkLittle}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoLittle className={styles.linkLittle} />
+              </a>
+              <a
+                href={popular.tracks.items[5].track.external_urls.spotify}
+                className={styles.linkBig}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoButton />
+              </a>
             </div>
             <div className={styles.mostPopularSongsContainer}>
               <div id={styles.popularCoverAndPopularText}>
                 <div className={styles.mostPopularSongsCoverSong}>
                   <img
                     className={styles.mostPopularSongsImg}
-                    src={popular.tracks.items[2].track.album.images[1].url}
+                    src={popular.tracks.items[6].track.album.images[1].url}
                     alt="most-popular-song"
                     width={150}
                   />
                   <div className={styles.playButton} />
                 </div>
                 <div className={styles.mostPopularSongsText}>
-                  <h2>{popular.tracks.items[2].track.name}</h2>
+                  <h2>{popular.tracks.items[6].track.name}</h2>
                   <p className={styles.pText}>
-                    {popular.tracks.items[2].track.artists[0].name}
+                    {popular.tracks.items[6].track.artists[0].name}
                   </p>
                 </div>
               </div>
-              <img
-                src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-                alt="spotify-icon"
-                className={styles.spotifyIconLittle}
-                width={28}
-              />
-              <SpotifyLogoButton />
+              <a
+                href={popular.tracks.items[6].track.external_urls.spotify}
+                className={styles.linkLittle}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoLittle />
+              </a>
+              <a
+                href={popular.tracks.items[6].track.external_urls.spotify}
+                className={styles.linkBig}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SpotifyLogoButton />
+              </a>
             </div>
-            <button
-              className={`${styles.shuffle} ${styles.pButtons}`}
-              type="button"
-              onClick={() => {
-                // eslint-disable-next-line no-restricted-syntax
-                console.log("I was clicked");
-              }}
-            >
-              <img
-                alt="spotify-icon-shuffle"
-                // eslint-disable-next-line no-octal-escape
-                src="src\assets\spotify-icons-logos\icons\01_RGB\02_PNG\Spotify_Icon_RGB_White.png"
-                width={20}
-              />
-              SHUFFLE
-            </button>
+            <ShuffleButton className={styles.suffle} />
           </>
         ) : (
           <h2>Tracks loading...</h2>
@@ -490,14 +511,7 @@ function Rock() {
           <h2>Tracks loading...</h2>
         )}
       </section>
-      <footer>
-        <img
-          className={styles.footerimage}
-          // eslint-disable-next-line no-octal-escape
-          src="src\assets\spotify-icons-logos\logos\01_RGB\02_PNG\Spotify_Logo_RGB_Black.png"
-          alt="spotify-logo"
-        />
-      </footer>
+      <Footer />
     </div>
   );
 }

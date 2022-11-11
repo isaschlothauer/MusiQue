@@ -1,191 +1,187 @@
 /* Link style */
 a:link {
-    list-style-type: none;
-    text-decoration: none;
-    color: var(--colorWhiteFonts);
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--colorWhiteFonts);
 }
 
 .musicContainer {
-    color: var(--colorWhiteFonts);   
-    background: var(--gradientBG);
+  color: var(--colorWhiteFonts);
+  background: var(--gradientBG);
 }
 
 .panelContainer {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 3rem;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
 }
 
 .panel1,
-.panel2, 
+.panel2,
 .panel3,
 .panel4 {
-    max-width: 330px;
-    margin: 0;
-    flex: 1;
+  max-width: 330px;
+  margin: 0;
+  flex: 1;
 }
 
 .panel1 {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .panel2,
 .panel3,
 .panel4 {
-    display: none;
+  display: none;
 }
 
-
 .musicDiscover {
-    padding-top: 2rem;
-    text-align: center;
+  padding-top: 2rem;
+  text-align: center;
 }
 
 .mainImg {
-    display: flex;
+  display: flex;
 }
 
 .mainImg img {
-    margin: 2rem auto;   
-    margin-bottom: 1rem;
-    width: 250px;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  margin: 2rem auto;
+  margin-bottom: 1rem;
+  width: 250px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
-.songTitle, 
-.artists, 
+.songTitle,
+.artists,
 .country,
 .format,
 .release {
-    text-align: center;
-    font-weight: 500;
+  text-align: center;
+  font-weight: 500;
 }
 
 .release,
 .country {
-    font-size: 1rem;
-    margin-top: 1rem;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 .artists {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .country {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .shufflebtn {
-    width: 120px;
-    height: 40px;
-    margin: 1rem auto;
-    margin-top: 3rem;
-    background: linear-gradient(269.49deg, #7755F9 10.41%, #02AAFD 111.89%), linear-gradient(270.52deg, #DB6C2F -10.09%, #7755F9 90.46%);
-    border-radius: 20px;
-    position: relative;    
+  width: 120px;
+  height: 40px;
+  margin: 1rem auto;
+  margin-top: 3rem;
+  background: linear-gradient(269.49deg, #7755f9 10.41%, #02aafd 111.89%),
+    linear-gradient(270.52deg, #db6c2f -10.09%, #7755f9 90.46%);
+  border-radius: 20px;
+  position: relative;
 }
 
-
 .endTxt {
-    padding-bottom: 1.4rem;
-    /* margin-top: 1rem; */
+  padding-bottom: 1.4rem;
+  /* margin-top: 1rem; */
 }
 
 .endTxt p {
-    text-align: center;
+  text-align: center;
 }
 
 .endTxt a,
 .endTxt img {
-    display: flex;
-    margin: 0 auto;
+  display: flex;
+  margin: 0 auto;
 }
 
 .endTxt1 {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .spotifyLogo {
-    width: 5rem;
+  width: 5rem;
 }
 
 .shuffleBtn {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .btnContainer {
-    margin-top: 2rem;
-    margin-bottom: -1rem;
+  margin-top: 2rem;
+  margin-bottom: -1rem;
 }
 
 .pButtons {
-    align-items: center;
-    background: linear-gradient(269.49deg, #7755F9 10.41%, #02AAFD 111.89%), linear-gradient(270.52deg, #DB6C2F -10.09%, #7755F9 90.46%);
-    border: 0;
-    border-radius: 1.25rem;
-    color: #fff;
-    cursor: pointer;
-    height: 2.625rem;
-    width: 6.688rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    text-align: left;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    will-change: box-shadow,transform;
-    margin:auto;
-    margin-bottom: 2rem;
-
+  align-items: center;
+  background: linear-gradient(269.49deg, #7755f9 10.41%, #02aafd 111.89%),
+    linear-gradient(270.52deg, #db6c2f -10.09%, #7755f9 90.46%);
+  border: 0;
+  border-radius: 1.25rem;
+  color: #fff;
+  cursor: pointer;
+  height: 2.625rem;
+  width: 6.688rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: left;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: box-shadow, transform;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 
 .pButtons:hover {
-    transform: translateY(-2px);
-  }
+  transform: translateY(-2px);
+}
 
-  .pButtons:active {
-    transform: translateY(2px);
-  }
+.pButtons:active {
+  transform: translateY(2px);
+}
 
-  .btnContainer {
+.btnContainer {
+  display: flex;
+}
+
+@media screen and (min-width: 600px) {
+  .panelContainer {
     display: flex;
+    justify-content: space-evenly;
   }
 
-@media screen and (min-width: 600px)  {
+  .panel1 {
+    margin: initial;
+  }
 
-    .panelContainer {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .panel1 {
-        margin: initial;
-    }
-
-    .panel2 {
-        display: inline;
-    }
+  .panel2 {
+    display: inline;
+  }
 }
 
 @media screen and (min-width: 850px) {
-    .musicDiscover {
-        text-align: initial;
-        padding-left: 3rem;
-    }
+  .musicDiscover {
+    text-align: initial;
+    padding-left: 3rem;
+  }
 }
 
 @media screen and (min-width: 900px) {
-    .panel3 {
-        display: inline;
-    }
-
+  .panel3 {
+    display: inline;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    .panel4 { 
-        display: inline;
-    }
+  .panel4 {
+    display: inline;
+  }
 }
-

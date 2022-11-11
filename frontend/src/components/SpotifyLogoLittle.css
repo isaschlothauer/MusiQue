@@ -1,0 +1,13 @@
+.spotifyIconLittle {
+  justify-content: flex-end;
+  margin: 1rem;
+  align-self: flex-end;
+}
+
+  
+@media screen and (min-width: 800px) {
+  .spotifyIconLittle {
+    display: none;
+  }
+}
+
