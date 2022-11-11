@@ -91,9 +91,11 @@ function WorldMusic() {
         },
       };
 
+      const playListUrl = "https://api.spotify.com/v1/playlists/";
+
       const pListIndex1 = numGen(playLists.length);
       const currentPlayList1 = fetch(
-        `https://api.spotify.com/v1/playlists/${playLists[pListIndex1].playListId}`,
+        `${playListUrl}${playLists[pListIndex1].playListId}`,
         artistParameters
       )
         .then((res) => res.json())
@@ -119,7 +121,7 @@ function WorldMusic() {
 
       const pListIndex2 = numGen(playLists.length);
       const currentPlayList2 = fetch(
-        `https://api.spotify.com/v1/playlists/${playLists[pListIndex2].playListId}`,
+        `${playListUrl}${playLists[pListIndex2].playListId}`,
         artistParameters
       )
         .then((res) => res.json())
@@ -144,7 +146,7 @@ function WorldMusic() {
 
       const pListIndex3 = numGen(playLists.length);
       const currentPlayList3 = fetch(
-        `https://api.spotify.com/v1/playlists/${playLists[pListIndex3].playListId}`,
+        `${playListUrl}${playLists[pListIndex3].playListId}`,
         artistParameters
       )
         .then((res) => res.json())
@@ -168,7 +170,7 @@ function WorldMusic() {
 
       const pListIndex4 = numGen(playLists.length);
       const currentPlayList4 = fetch(
-        `https://api.spotify.com/v1/playlists/${playLists[pListIndex4].playListId}`,
+        `${playListUrl}${playLists[pListIndex4].playListId}`,
         artistParameters
       )
         .then((res) => res.json())
