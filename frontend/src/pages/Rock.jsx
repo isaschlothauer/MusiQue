@@ -17,6 +17,8 @@ function Rock() {
   // eslint-disable-next-line no-unused-vars
   const [accessToken, setAccessToken] = useState("");
   const [popular, SetPopular] = useState("");
+  const [trending, SetTrending] = useState("");
+
   const [hidden, setHidden] = useState(false);
 
   const handleClick = () => {
@@ -61,11 +63,26 @@ function Rock() {
       .then((result) => SetPopular(result) & console.log(result));
   }, [accessToken]);
 
+  useEffect(() => {
+    if (accessToken == null) return;
+    fetch(
+      "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:rock",
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((result) => SetTrending(result));
+  }, [accessToken]);
+
   return (
     <div className={styles.Rock}>
       <header className={styles.headerGenres}>
+        <TopGenres />
         <section className={styles.genreMain}>
-          <TopGenres />
           <div className={styles.genreTextAndImg}>
             <div className={styles.genreText}>
               <h1>Rock</h1>
@@ -331,107 +348,151 @@ function Rock() {
           <h2>Tracks loading...</h2>
         )}
       </section>
+
       <section className={styles.trending}>
         <h2 className={styles.h2trend}>Trending Artists</h2>
-        <div className={styles.trendingArtistsContainer}>
-          <div className={styles.trendingArtistsDiv}>
-            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-            <p className={styles.trendingtext2}>1,000,000 listeners</p>
-            <img
-              id={styles.trendingImg}
-              alt="trending-img"
-              src="src\assets\musiQue-imgs\ALBUM COVER2.PNG"
-            />
-          </div>
-          <div className={styles.trendingArtistsDiv}>
-            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-            <p className={styles.trendingtext2}>1,000,000 listeners</p>
-            <img
-              id={styles.trendingImg}
-              alt="trending-img"
-              src="src\assets\musiQue-imgs\amlbum cover3.PNG"
-            />
-          </div>
-          <div className={styles.trendingArtistsDiv}>
-            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-            <p className={styles.trendingtext2}>1,000,000 listeners</p>
-            <img
-              id={styles.trendingImg}
-              alt="trending-img"
-              src="src\assets\musiQue-imgs\albumCover4.PNG"
-            />
-          </div>
-          <div className={styles.trendingArtistsDiv}>
-            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-            <p className={styles.trendingtext2}>1,000,000 listeners</p>
-            <img
-              id={styles.trendingImg}
-              alt="trending-img"
-              src="src\assets\musiQue-imgs\albumCover.PNG"
-            />
-          </div>
-          <div className={styles.trendingArtistsDiv}>
-            <p className={styles.trendingtext}>THEA WANG, OTHER ARTIST</p>
-            <p className={styles.trendingtext2}>1,000,000 listeners</p>
-            <img
-              id={styles.trendingImg}
-              alt="trending-img"
-              src="src\assets\musiQue-imgs\ALBUM COVER2.PNG"
-            />
-          </div>
-        </div>
-        {hidden && (
-          <div className={styles.trendingArtistsContainerhid}>
-            <div className={styles.trendingArtistsDivhid}>
-              <p className={styles.trendingtexthid}>THEA WANG, OTHER ARTIST</p>
-              <p className={styles.trendingtext2hid}>1,000,000 listeners</p>
-              <img
-                id={styles.trendingImg}
-                alt="trending-img"
-                src="src\assets\musiQue-imgs\ALBUM COVER2.PNG"
-              />
+        {trending.artists != null &&
+        (trending.artists.items != null) != null ? (
+          <>
+            <div className={styles.trendingArtistsContainer}>
+              <div className={styles.trendingArtistsDiv}>
+                <p className={styles.trendingtext}>
+                  {trending.artists.items[0].name}
+                </p>
+                <p className={styles.trendingtext2}>
+                  {trending.artists.items[0].followers.total} followers
+                </p>
+                <img
+                  id={styles.trendingImg}
+                  alt="trending-img"
+                  src={trending.artists.items[0].images[0].url}
+                />
+              </div>
+              <div className={styles.trendingArtistsDiv}>
+                <p className={styles.trendingtext}>
+                  {trending.artists.items[1].name}
+                </p>
+                <p className={styles.trendingtext2}>
+                  {trending.artists.items[1].followers.total} followers
+                </p>
+                <img
+                  id={styles.trendingImg}
+                  alt="trending-img"
+                  src={trending.artists.items[1].images[0].url}
+                />
+              </div>
+              <div className={styles.trendingArtistsDiv}>
+                <p className={styles.trendingtext}>
+                  {trending.artists.items[2].name}
+                </p>
+                <p className={styles.trendingtext2}>
+                  {trending.artists.items[2].followers.total} followers
+                </p>
+                <img
+                  id={styles.trendingImg}
+                  alt="trending-img"
+                  src={trending.artists.items[2].images[0].url}
+                />
+              </div>
+              <div className={styles.trendingArtistsDiv}>
+                <p className={styles.trendingtext}>
+                  {trending.artists.items[3].name}
+                </p>
+                <p className={styles.trendingtext2}>
+                  {trending.artists.items[3].followers.total} followers
+                </p>
+                <img
+                  id={styles.trendingImg}
+                  alt="trending-img"
+                  src={trending.artists.items[3].images[0].url}
+                />
+              </div>
+              <div className={styles.trendingArtistsDiv}>
+                <p className={styles.trendingtext}>
+                  {trending.artists.items[4].name}
+                </p>
+                <p className={styles.trendingtext2}>
+                  {trending.artists.items[4].followers.total} followers
+                </p>
+                <img
+                  id={styles.trendingImg}
+                  alt="trending-img"
+                  src={trending.artists.items[4].images[0].url}
+                />
+              </div>
             </div>
-            <div className={styles.trendingArtistsDivhid}>
-              <p className={styles.trendingtexthid}>THEA WANG, OTHER ARTIST</p>
-              <p className={styles.trendingtext2hid}>1,000,000 listeners</p>
-              <img
-                id={styles.trendingImg}
-                alt="trending-img"
-                src="src\assets\musiQue-imgs\amlbum cover3.PNG"
-              />
-            </div>
-            <div className={styles.trendingArtistsDivhid}>
-              <p className={styles.trendingtexthid}>THEA WANG, OTHER ARTIST</p>
-              <p className={styles.trendingtext2hid}>1,000,000 listeners</p>
-              <img
-                id={styles.trendingImg}
-                alt="trending-img"
-                src="src\assets\musiQue-imgs\albumCover4.PNG"
-              />
-            </div>
-            <div className={styles.trendingArtistsDivhid}>
-              <p className={styles.trendingtexthid}>THEA WANG, OTHER ARTIST</p>
-              <p className={styles.trendingtext2hid}>1,000,000 listeners</p>
-              <img
-                id={styles.trendingImg}
-                alt="trending-img"
-                src="src\assets\musiQue-imgs\albumCover.PNG"
-              />
-            </div>
-          </div>
+            {hidden && (
+              <div className={styles.trendingArtistsContainerhid}>
+                <div className={styles.trendingArtistsDivhid}>
+                  <p className={styles.trendingtexthid}>
+                    {trending.artists.items[5].name}
+                  </p>
+                  <p className={styles.trendingtext2hid}>
+                    {trending.artists.items[5].followers.total} followers
+                  </p>
+                  <img
+                    id={styles.trendingImg}
+                    alt="trending-img"
+                    src={trending.artists.items[5].images[1].url}
+                  />
+                </div>
+                <div className={styles.trendingArtistsDivhid}>
+                  <p className={styles.trendingtexthid}>
+                    {trending.artists.items[11].name}
+                  </p>
+                  <p className={styles.trendingtext2hid}>
+                    {trending.artists.items[11].followers.total} followers
+                  </p>
+                  <img
+                    id={styles.trendingImg}
+                    alt="trending-img"
+                    src={trending.artists.items[11].images[2].url}
+                  />
+                </div>
+                <div className={styles.trendingArtistsDivhid}>
+                  <p className={styles.trendingtexthid}>
+                    {trending.artists.items[7].name}
+                  </p>
+                  <p className={styles.trendingtext2hid}>
+                    {trending.artists.items[7].followers.total} followers
+                  </p>
+                  <img
+                    id={styles.trendingImg}
+                    alt="trending-img"
+                    src={trending.artists.items[7].images[0].url}
+                  />
+                </div>
+                <div className={styles.trendingArtistsDivhid}>
+                  <p className={styles.trendingtexthid}>
+                    {trending.artists.items[12].name}
+                  </p>
+                  <p className={styles.trendingtext2hid}>
+                    {trending.artists.items[12].followers.total} followers
+                  </p>
+                  <img
+                    id={styles.trendingImg}
+                    alt="trending-img"
+                    src={trending.artists.items[12].images[0].url}
+                  />
+                </div>
+              </div>
+            )}
+            <button
+              type="button"
+              className={`${styles.btn3}`}
+              style={{
+                transform: hidden ? "rotate(225deg)" : "rotate(45deg)",
+                marginTop: hidden ? "5rem" : "4rem",
+                marginBottom: hidden ? "1rem" : "2rem",
+              }}
+              onClick={handleClick}
+            >
+              h
+            </button>
+          </>
+        ) : (
+          <h2>Tracks loading...</h2>
         )}
-        <button
-          type="button"
-          className={`${styles.btn3}`}
-          style={{
-            transform: hidden ? "rotate(225deg)" : "rotate(45deg)",
-            marginTop: hidden ? "5rem" : "4rem",
-            marginBottom: hidden ? "1rem" : "2rem",
-          }}
-          onClick={handleClick}
-        >
-          h
-        </button>
       </section>
       <Footer />
     </div>

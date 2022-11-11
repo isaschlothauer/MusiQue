@@ -252,9 +252,26 @@ h2 {
 
 #trendingImg {
   width: 100%;
-  -webkit-box-shadow: inset 0 0 10px 10px blue;
+  -webkit-box-shadow: inset 0 0 10px 10px blue;  
   -moz-box-shadow: inset 0 0 10px 10px blue;
   box-shadow: inset 0 0 10px 10px blue;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  position: sticky;
+  top: 100vh;
+  background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2%, rgba(141, 138, 133, 0.322174) 59.48%, rgba(161, 159, 155, 0.237391) 100%, rgba(217, 217, 217, 0) 2.64%), url(src/assets/backgroundWall.png);
+}
+
+.footerimage {
+  width:7.75rem;
+  height:2.375rem;
+  margin-bottom: 0rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .h2trend {
@@ -264,9 +281,9 @@ h2 {
   padding-right: 1.5rem;
 }
 
-.trendingtext {
+.trendingtext{
   position: relative;
-  top: 85%;
+  top:85%;
   left: 5%;
   font-family: var(--fontNoto);
   font-size: 12px;
@@ -284,7 +301,7 @@ h2 {
 }
 
 .trendingArtistsDiv:nth-child(5) {
-  display: none;
+display:none;
 }
 
 .trendingArtistsContainerhid {
@@ -292,9 +309,9 @@ h2 {
   grid-template-columns: 1fr 1fr;
 }
 
-.trendingtexthid {
+.trendingtexthid{
   position: relative;
-  top: 85%;
+  top:85%;
   left: 5%;
   font-family: var(--fontNoto);
   font-size: 12px;
@@ -311,7 +328,7 @@ h2 {
   height: 0;
 }
 
-.btn3 {
+.btn3{
   box-sizing: border-box;
   height: 10vw;
   width: 10vw;
@@ -330,31 +347,10 @@ h2 {
   border-right-width: 5px;
 }
 
-#trendingImg:hover {
+#trendingImg:hover{
   opacity: 0.3;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  position: sticky;
-  top: 100vh;
-  background-image: linear-gradient(
-      #302518 0.48%,
-      rgba(84, 78, 70, 0.565217) 33.2%,
-      rgba(141, 138, 133, 0.322174) 59.48%,
-      rgba(161, 159, 155, 0.237391) 100%,
-      rgba(217, 217, 217, 0) 2.64%
-    ),
-    url(src/assets/backgroundWall.png);
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  position: sticky;
-  top: 100vh;
-}
 
 /*
 
@@ -363,58 +359,62 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
 
 /*--------Fonts Tablet/Desktop-----------*/
 
+
 @media screen and (max-width: 440px) {
-  .trendingtext {
-    position: relative;
-    top: 85%;
-    left: 5%;
-    font-family: var(--fontNoto);
-    font-size: 8px;
-    height: 0;
-    font-weight: 700;
-  }
+  .trendingtext{
+  position: relative;
+  top:85%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 8px;
+  height: 0;
+  font-weight: 700;
+}
 
-  .trendingtext2 {
-    position: relative;
-    top: 90%;
-    left: 5%;
-    font-family: var(--fontNoto);
-    font-size: 6px;
-    height: 0;
-  }
+.trendingtext2 {
+  position: relative;
+  top: 90%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 6px;
+  height: 0;
+}
 
-  .trendingtexthid {
-    position: relative;
-    top: 85%;
-    left: 5%;
-    font-family: var(--fontNoto);
-    font-size: 8px;
-    height: 0;
-    font-weight: 700;
-  }
+.trendingtexthid{
+  position: relative;
+  top:85%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 8px;
+  height: 0;
+  font-weight: 700;
+}
 
-  .trendingtext2hid {
-    position: relative;
-    top: 90%;
-    left: 5%;
-    font-family: var(--fontNoto);
-    font-size: 6px;
-    height: 0;
-  }
+.trendingtext2hid {
+  position: relative;
+  top: 90%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 6px;
+  height: 0;
+}
 
-  .btn3 {
-    box-sizing: border-box;
-    height: 12vw;
-    width: 12vw;
-    border-style: solid;
-    border-color: white;
-    border-width: 0px 2px 2px 0px;
-    transform: rotate(45deg);
-    transition: border-width 150ms ease-in-out;
-    margin-top: 3rem;
-    margin-left: 45%;
-    background-color: #302518;
-  }
+
+.btn3{
+  box-sizing: border-box;
+  height: 12vw;
+  width: 12vw;
+  border-style: solid;
+  border-color: white;
+  border-width: 0px 2px 2px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+  margin-top: 3rem;
+  margin-left: 45%;
+  background-color: #302518;
+}
+
+
 }
 
 @media screen and (min-width: 600px) {
@@ -467,6 +467,10 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     padding-left: 5rem;
     padding-right: 5rem;
   }
+  .h2trend {
+  padding-left: 5rem;
+    padding-right: 5rem;
+  }
 
   .genreTextAndImg {
     padding-left: 3.5rem;
@@ -479,13 +483,16 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
 
   .trending {
     padding-left: 0rem;
-    padding-right: 0rem;
+    padding-right:0rem;
   }
 
   #popularCoverAndPopularText {
     gap: 5rem;
   }
 }
+
+
+
 
 @media screen and (min-width: 500px) {
   .mostPopularSongsContainer {
@@ -509,28 +516,28 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   }
 
   .trendingArtistsDiv:nth-child(1) {
-    width: 100%;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
+   width:100%;
+   grid-column-start: 1;
+   grid-column-end: 2;
+   grid-row-start: 1;
+   grid-row-end: 3;
   }
   .trendingArtistsDiv:nth-child(2) {
-    width: 100%;
+    width:100%;
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
   }
   .trendingArtistsDiv:nth-child(3) {
-    width: 100%;
+    width:100%;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
   }
   .trendingArtistsDiv:nth-child(4) {
-    width: 100%;
+    width:100%;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -538,13 +545,13 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   }
   .trendingArtistsDiv:nth-child(5) {
     display: block;
-    width: 100%;
+    width:100%;
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
   }
-  .trendingArtistsContainerhid {
+  .trendingArtistsContainerhid{
     display: none;
   }
 
@@ -555,16 +562,16 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   .trending {
     padding-bottom: 2rem;
   }
-  .trendingtext {
+  .trendingtext{
     position: relative;
-    top: 80%;
+    top:80%;
     left: 5%;
     font-family: var(--fontNoto);
     font-size: 12px;
     height: 0;
     font-weight: 700;
   }
-
+  
   .trendingtext2 {
     position: relative;
     top: 88%;
@@ -573,44 +580,47 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     font-size: 10px;
     height: 0;
   }
-
-  .trendingArtistsDiv:nth-child(1) .trendingtext {
+  
+  .trendingArtistsDiv:nth-child(1) .trendingtext{
     position: relative;
-    top: 85%;
+    top:85%;
     left: 5%;
     font-family: var(--fontNoto);
     font-size: 14px;
     height: 0;
-  }
-
-  .trendingArtistsDiv:nth-child(1) .trendingtext2 {
+   }
+  
+   .trendingArtistsDiv:nth-child(1) .trendingtext2 {
     position: relative;
-    top: 90%;
+    top:90%;
     left: 5%;
     font-family: var(--fontNoto);
     font-size: 12px;
     height: 0;
-  }
+   }
 
-  .btn3 {
+   .btn3 {
     display: none;
   }
+  
+
 }
 
 @media screen and (min-width: 1000px) {
   .rockImg img {
     width: 30rem;
   }
-  .trendingtext {
+
+  .trendingtext{
     position: relative;
-    top: 80%;
+    top:80%;
     left: 5%;
     font-family: var(--fontNoto);
     font-size: 16px;
     height: 0;
     font-weight: 700;
   }
-
+  
   .trendingtext2 {
     position: relative;
     top: 88%;
@@ -619,22 +629,22 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     font-size: 14px;
     height: 0;
   }
-
-  .trendingArtistsDiv:nth-child(1) .trendingtext {
+  
+  .trendingArtistsDiv:nth-child(1) .trendingtext{
     position: relative;
-    top: 85%;
+    top:85%;
     left: 5%;
     font-family: var(--fontNoto);
     font-size: 22px;
     height: 0;
-  }
-
-  .trendingArtistsDiv:nth-child(1) .trendingtext2 {
+   }
+  
+   .trendingArtistsDiv:nth-child(1) .trendingtext2 {
     position: relative;
-    top: 90%;
+    top:90%;
     left: 5%;
     font-family: var(--fontNoto);
     font-size: 20px;
     height: 0;
-  }
+   }
 }
