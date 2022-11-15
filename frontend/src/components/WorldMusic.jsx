@@ -67,6 +67,8 @@ function WorldMusic() {
   const [musicData3, setMusicData3] = useState("");
   const [musicData4, setMusicData4] = useState("");
   const [renderCheck, setRenderCheck] = useState(false);
+  const [song, setSong] = useState(undefined);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     // API Access Token
@@ -114,13 +116,18 @@ function WorldMusic() {
         // Panel 1 data
         const panel1 = {
           panel1Title: stringPath1.name,
-          panel1Artists: stringPath1.artists[0].name,
+          // panel1Artists: stringPath1.artists[0].name,
+          panel1Artists: stringPath1.artists
+            .map((artist) => artist.name)
+            .join(", "),
           panel1Album: stringPath1.album.name,
           panel1Release: stringPath1.album.release_date.split("-")[0],
           panel1Image: stringPath1.album.images[1].url,
           panel1Country: playLists[pListIndex1].country,
           panel1PreviewCheck: stringPath1.preview_url,
         };
+
+        console.log(panel1.panel1PreviewCheck);
 
         // Savimg panel objects to state
         setMusicData1(panel1);
@@ -141,7 +148,9 @@ function WorldMusic() {
         // Panel 2 data
         const panel2 = {
           panel2Title: stringPath2.name,
-          panel2Artists: stringPath2.artists[0].name,
+          panel2Artists: stringPath2.artists
+            .map((artist) => artist.name)
+            .join(", "),
           panel2Album: stringPath2.album.name,
           panel2Release: stringPath2.album.release_date.split("-")[0],
           panel2Image: stringPath2.album.images[1].url,
@@ -168,7 +177,9 @@ function WorldMusic() {
         // Panel 1 data
         const panel3 = {
           panel3Title: stringPath3.name,
-          panel3Artists: stringPath3.artists[0].name,
+          panel3Artists: stringPath3.artists
+            .map((artist) => artist.name)
+            .join(", "),
           panel3Album: stringPath3.album.name,
           panel3Release: stringPath3.album.release_date.split("-")[0],
           panel3Image: stringPath3.album.images[1].url,
@@ -194,7 +205,9 @@ function WorldMusic() {
         // Panel 1 data
         const panel4 = {
           panel4Title: stringPath4.name,
-          panel4Artists: stringPath4.artists[0].name,
+          panel4Artists: stringPath4.artists
+            .map((artist) => artist.name)
+            .join(", "),
           panel4Album: stringPath4.album.name,
           panel4Release: stringPath4.album.release_date.split("-")[0],
           panel4Image: stringPath4.album.images[1].url,
@@ -206,6 +219,11 @@ function WorldMusic() {
       })
       .catch((err) => console.error(err));
   }, [renderCheck, accessToken]);
+
+  function playPause() {
+    // setIsPlaying(!isPlaying);
+    console.log("Pausing or playing?");
+  }
 
   return (
     <div className={MusicCSS.musicContainer}>
@@ -219,7 +237,8 @@ function WorldMusic() {
                 alt="Arist/Album Cover image1"
               />
               {musicData1.panel1PreviewCheck != null ? (
-                <div className={MusicCSS.playButton} />
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+                <div className={MusicCSS.playButton} onClick={playPause} />
               ) : null}
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
