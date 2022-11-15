@@ -3,26 +3,20 @@
 // eslint-disable-next-line import/no-unresolved
 import React, { useState, useEffect } from "react";
 import TopGenres from "../components/TopGenres";
-import SpotifyLogoButton from "../components/SpotifyLogoButton";
-import Footer from "../components/footer";
-import SpotifyLogoLittle from "../components/SpotifyLogoLittle";
 import ShuffleButton from "../components/shuffleButton";
-
-// import MostPopular from "./MostPopular";
+import Footer from "../components/footer";
+import MostPopular from "./MostPopular";
 
 import styles from "./genres.module.css";
 
-const clientId = import.meta.env.VITE_CLIENT_ID;
-const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
-
-const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
-
 function Rock() {
   // eslint-disable-next-line no-unused-vars
+  const clientId = import.meta.env.VITE_CLIENT_ID;
+  const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
+  const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
   const [accessToken, setAccessToken] = useState("");
-  const [popular, SetPopular] = useState("");
-  const [trending, SetTrending] = useState("");
-
+  const [popular, setPopular] = useState("");
+  const [trending, setTrending] = useState("");
   const [hidden, setHidden] = useState(false);
 
   const handleClick = () => {
@@ -30,9 +24,12 @@ function Rock() {
   };
 
   useEffect(() => {
+    const abortController = new AbortController();
+    const abortSignal = abortController.signal;
     // API Access Token
     const authParameters = {
       method: "POST",
+      signal: abortSignal,
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
@@ -52,19 +49,34 @@ function Rock() {
         // eslint-disable-next-line no-restricted-syntax
         console.log(err);
       });
+    return () => {
+      // Cancelling fetch request
+      abortController.abort();
+    };
   }, []);
 
   useEffect(() => {
-    if (accessToken == null) return;
+    const abortController = new AbortController();
+    const abortSignal = abortController.signal;
+    if (!accessToken == null) return {};
     fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DWZryfp6NSvtz", {
       method: "GET",
+      signal: abortSignal,
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
     })
       .then((res) => res.json())
       // eslint-disable-next-line no-bitwise
-      .then((result) => SetPopular(result) & console.log(result));
+      .then((result) => setPopular(result) & console.log(result))
+      .catch((err) => {
+        // eslint-disable-next-line no-restricted-syntax
+        console.log(err);
+      });
+    return () => {
+      // Cancelling fetch request
+      abortController.abort();
+    };
   }, [accessToken]);
 
   useEffect(() => {
@@ -79,8 +91,39 @@ function Rock() {
       }
     )
       .then((res) => res.json())
-      .then((result) => SetTrending(result));
+      .then((result) => setTrending(result));
   }, [accessToken]);
+
+  const shuffle = (array) => {
+    const output = array;
+    for (let i = output.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = output[i];
+      output[i] = output[j];
+      output[j] = temp;
+    }
+    return output;
+  };
+
+  const handleShuffle = () => {
+    if (popular == null || popular === "") return;
+    // () => shuffle(popular.tracks.items)
+    // popular: object
+    // tracks: object
+    // items: array
+
+    // Way 1
+    setPopular({
+      ...popular,
+      tracks: { ...popular.tracks, items: shuffle(popular.tracks.items) },
+    });
+
+    // Way 2
+    // const newItems = shuffle(popular.tracks.items);
+    // const newTracks = { ...popular.tracks, items: newItems };
+    // const newPopular = { ...popular, tracks: newTracks };
+    // setPopular(newPopular);
+  };
 
   return (
     <div className={styles.Rock}>
@@ -114,252 +157,15 @@ function Rock() {
         <h2>Most Popular</h2>
         {popular.tracks != null && (popular.tracks.items != null) != null ? (
           <>
-            <div className={styles.mostPopularSongsContainer}>
-              <div id={styles.popularCoverAndPopularText}>
-                <div className={styles.mostPopularSongsCoverSong}>
-                  <img
-                    className={styles.mostPopularSongsImg}
-                    src={popular.tracks.items[0].track.album.images[1].url}
-                    alt="most-popular-song"
-                    width={150}
-                  />
-                  <div className={styles.playButton} />
-                </div>
-                <div className={styles.mostPopularSongsText}>
-                  <h2>{popular.tracks.items[0].track.name}</h2>
-                  <p className={styles.pText}>
-                    {popular.tracks.items[0].track.artists[0].name}
-                  </p>
-                </div>
-              </div>
-              <a
-                href={popular.tracks.items[0].track.external_urls.spotify}
-                className={styles.linkLittle}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoLittle />
-              </a>
-              <a
-                href={popular.tracks.items[0].track.external_urls.spotify}
-                className={styles.linkBig}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoButton />
-              </a>
-            </div>
-            <div className={styles.mostPopularSongsContainer}>
-              <div id={styles.popularCoverAndPopularText}>
-                <div className={styles.mostPopularSongsCoverSong}>
-                  <img
-                    className={styles.mostPopularSongsImg}
-                    src={popular.tracks.items[1].track.album.images[1].url}
-                    alt="most-popular-song"
-                    width={150}
-                  />
-                  <div className={styles.playButton} />
-                </div>
-                <div className={styles.mostPopularSongsText}>
-                  <h2>{popular.tracks.items[1].track.name}</h2>
-                  <p className={styles.pText}>
-                    {popular.tracks.items[1].track.artists[0].name}
-                  </p>
-                </div>
-              </div>
-              <a
-                href={popular.tracks.items[1].track.external_urls.spotify}
-                className={styles.linkLittle}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoLittle className={styles.linkLittle} />
-              </a>
-              <a
-                href={popular.tracks.items[1].track.external_urls.spotify}
-                className={styles.linkBig}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoButton />
-              </a>
-            </div>
-            <div className={styles.mostPopularSongsContainer}>
-              <div id={styles.popularCoverAndPopularText}>
-                <div className={styles.mostPopularSongsCoverSong}>
-                  <img
-                    className={styles.mostPopularSongsImg}
-                    src={popular.tracks.items[2].track.album.images[1].url}
-                    alt="most-popular-song"
-                    width={150}
-                  />
-                  <div className={styles.playButton} />
-                </div>
-                <div className={styles.mostPopularSongsText}>
-                  <h2>{popular.tracks.items[2].track.name}</h2>
-                  <p className={styles.pText}>
-                    {popular.tracks.items[2].track.artists[0].name}
-                  </p>
-                </div>
-              </div>
-              <a
-                href={popular.tracks.items[2].track.external_urls.spotify}
-                className={styles.linkLittle}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoLittle className={styles.linkLittle} />
-              </a>
-              <a
-                href={popular.tracks.items[2].track.external_urls.spotify}
-                className={styles.linkBig}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoButton />
-              </a>
-            </div>
-            <div className={styles.mostPopularSongsContainer}>
-              <div id={styles.popularCoverAndPopularText}>
-                <div className={styles.mostPopularSongsCoverSong}>
-                  <img
-                    className={styles.mostPopularSongsImg}
-                    src={popular.tracks.items[3].track.album.images[1].url}
-                    alt="most-popular-song"
-                    width={150}
-                  />
-                  <div className={styles.playButton} />
-                </div>
-                <div className={styles.mostPopularSongsText}>
-                  <h2>{popular.tracks.items[3].track.name}</h2>
-                  <p className={styles.pText}>
-                    {popular.tracks.items[3].track.artists[0].name}
-                  </p>
-                </div>
-              </div>
-              <a
-                href={popular.tracks.items[3].track.external_urls.spotify}
-                className={styles.linkLittle}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoLittle className={styles.linkLittle} />
-              </a>
-              <a
-                href={popular.tracks.items[3].track.external_urls.spotify}
-                className={styles.linkBig}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoButton />
-              </a>
-            </div>
-            <div className={styles.mostPopularSongsContainer}>
-              <div id={styles.popularCoverAndPopularText}>
-                <div className={styles.mostPopularSongsCoverSong}>
-                  <img
-                    className={styles.mostPopularSongsImg}
-                    src={popular.tracks.items[4].track.album.images[1].url}
-                    alt="most-popular-song"
-                    width={150}
-                  />
-                  <div className={styles.playButton} />
-                </div>
-                <div className={styles.mostPopularSongsText}>
-                  <h2>{popular.tracks.items[4].track.name}</h2>
-                  <p className={styles.pText}>
-                    {popular.tracks.items[4].track.artists[0].name}
-                  </p>
-                </div>
-              </div>
-              <a
-                href={popular.tracks.items[4].track.external_urls.spotify}
-                className={styles.linkLittle}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoLittle className={styles.linkLittle} />
-              </a>
-              <a
-                href={popular.tracks.items[4].track.external_urls.spotify}
-                className={styles.linkBig}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoButton />
-              </a>
-            </div>
-            <div className={styles.mostPopularSongsContainer}>
-              <div id={styles.popularCoverAndPopularText}>
-                <div className={styles.mostPopularSongsCoverSong}>
-                  <img
-                    className={styles.mostPopularSongsImg}
-                    src={popular.tracks.items[5].track.album.images[1].url}
-                    alt="most-popular-song"
-                    width={150}
-                  />
-                  <div className={styles.playButton} />
-                </div>
-                <div className={styles.mostPopularSongsText}>
-                  <h2>{popular.tracks.items[5].track.name}</h2>
-                  <p className={styles.pText}>
-                    {popular.tracks.items[5].track.artists[0].name}
-                  </p>
-                </div>
-              </div>
-              <a
-                href={popular.tracks.items[5].track.external_urls.spotify}
-                className={styles.linkLittle}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoLittle className={styles.linkLittle} />
-              </a>
-              <a
-                href={popular.tracks.items[5].track.external_urls.spotify}
-                className={styles.linkBig}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoButton />
-              </a>
-            </div>
-            <div className={styles.mostPopularSongsContainer}>
-              <div id={styles.popularCoverAndPopularText}>
-                <div className={styles.mostPopularSongsCoverSong}>
-                  <img
-                    className={styles.mostPopularSongsImg}
-                    src={popular.tracks.items[6].track.album.images[1].url}
-                    alt="most-popular-song"
-                    width={150}
-                  />
-                  <div className={styles.playButton} />
-                </div>
-                <div className={styles.mostPopularSongsText}>
-                  <h2>{popular.tracks.items[6].track.name}</h2>
-                  <p className={styles.pText}>
-                    {popular.tracks.items[6].track.artists[0].name}
-                  </p>
-                </div>
-              </div>
-              <a
-                href={popular.tracks.items[6].track.external_urls.spotify}
-                className={styles.linkLittle}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoLittle />
-              </a>
-              <a
-                href={popular.tracks.items[6].track.external_urls.spotify}
-                className={styles.linkBig}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SpotifyLogoButton />
-              </a>
-            </div>
-            <ShuffleButton className={styles.suffle} />
+            {popular.tracks.items.slice(0, 5).map((song) => (
+              <MostPopular
+                name={song.track.name}
+                image={song.track.album.images[1].url}
+                artist={song.track.artists[0].name}
+                url={song.track.external_urls.spotify}
+              />
+            ))}
+            <ShuffleButton className={styles.suffle} onClick={handleShuffle} />
           </>
         ) : (
           <h2>Tracks loading...</h2>
@@ -504,7 +310,7 @@ function Rock() {
               }}
               onClick={handleClick}
             >
-              h
+              {}
             </button>
           </>
         ) : (
