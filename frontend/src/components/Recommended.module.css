@@ -211,3 +211,11 @@ audio {
     color: var(--colorWhiteFonts);
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .rec {
+    gap: 0 calc(5px + 20%);
+    max-width: 1600px;
+    padding-left: 3rem;
+  }
+}
