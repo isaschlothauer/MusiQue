@@ -3,9 +3,9 @@
 import "../App.css";
 import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
+import ReactHowler from "react-howler";
 import MusicCSS from "./WorldMusic.module.css";
 import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
-
 // eslint-disable-next-line camelcase
 const clientId = import.meta.env.VITE_CLIENT_ID;
 // eslint-disable-next-line camelcase
@@ -67,8 +67,10 @@ function WorldMusic() {
   const [musicData3, setMusicData3] = useState("");
   const [musicData4, setMusicData4] = useState("");
   const [renderCheck, setRenderCheck] = useState(false);
-  const [song, setSong] = useState(undefined);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [playing1, setPlaying1] = useState(false);
+  const [playing2, setPlaying2] = useState(false);
+  const [playing3, setPlaying3] = useState(false);
+  const [playing4, setPlaying4] = useState(false);
 
   useEffect(() => {
     // API Access Token
@@ -88,7 +90,7 @@ function WorldMusic() {
   }, []);
 
   useEffect(() => {
-    if (accessToken === null) return;
+    if (accessToken === "") return;
     // Authentication mechanism
     const artistParameters = {
       method: "GET",
@@ -221,8 +223,7 @@ function WorldMusic() {
   }, [renderCheck, accessToken]);
 
   function playPause() {
-    // setIsPlaying(!isPlaying);
-    console.log("Pausing or playing?");
+    console.log("Hello");
   }
 
   return (
@@ -238,7 +239,17 @@ function WorldMusic() {
               />
               {musicData1.panel1PreviewCheck != null ? (
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-                <div className={MusicCSS.playButton} onClick={playPause} />
+                <button
+                  type="button"
+                  className={MusicCSS.playButton}
+                  onClick={() => setPlaying1(!playing1)}
+                >
+                  <ReactHowler
+                    src={musicData1.panel1PreviewCheck}
+                    html5
+                    playing={playing1}
+                  />
+                </button>
               ) : null}
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
@@ -262,7 +273,18 @@ function WorldMusic() {
                 alt="Arist/Album Cover image1"
               />
               {musicData2.panel2PreviewCheck != null ? (
-                <div className={MusicCSS.playButton} />
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+                <button
+                  type="button"
+                  className={MusicCSS.playButton}
+                  onClick={() => setPlaying2(!playing2)}
+                >
+                  <ReactHowler
+                    src={musicData2.panel2PreviewCheck}
+                    html5
+                    playing={playing2}
+                  />
+                </button>
               ) : null}
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
@@ -285,8 +307,19 @@ function WorldMusic() {
                 src={musicData3.panel3Image}
                 alt="Arist/Album Cover image1"
               />
-              {musicData3.panel4PreviewCheck != null ? (
-                <div className={MusicCSS.playButton} />
+              {musicData3.panel3PreviewCheck != null ? (
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+                <button
+                  type="button"
+                  className={MusicCSS.playButton}
+                  onClick={() => setPlaying3(!playing3)}
+                >
+                  <ReactHowler
+                    src={musicData3.panel3PreviewCheck}
+                    html5
+                    playing={playing3}
+                  />
+                </button>
               ) : null}
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
@@ -310,7 +343,18 @@ function WorldMusic() {
                 alt="Arist/Album Cover image1"
               />
               {musicData4.panel4PreviewCheck != null ? (
-                <div className={MusicCSS.playButton} />
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+                <button
+                  type="button"
+                  className={MusicCSS.playButton}
+                  onClick={() => setPlaying4(!playing4)}
+                >
+                  <ReactHowler
+                    src={musicData4.panel4PreviewCheck}
+                    html5
+                    playing={playing4}
+                  />
+                </button>
               ) : null}
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
