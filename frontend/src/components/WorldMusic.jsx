@@ -91,9 +91,11 @@ function WorldMusic() {
         },
       };
 
+      const playListUrl = "https://api.spotify.com/v1/playlists/";
+
       const pListIndex1 = numGen(playLists.length);
       const currentPlayList1 = fetch(
-        `https://api.spotify.com/v1/playlists/${playLists[pListIndex1].playListId}`,
+        `${playListUrl}${playLists[pListIndex1].playListId}`,
         artistParameters
       )
         .then((res) => res.json())
@@ -117,84 +119,78 @@ function WorldMusic() {
         })
         .catch((err) => console.error(err));
 
-      currentPlayList1.then((test) => {
-        const pListIndex2 = numGen(playLists.length);
-        const currentPlayList2 = fetch(
-          `https://api.spotify.com/v1/playlists/${playLists[pListIndex2].playListId}`,
-          artistParameters
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            const stringPath2 =
-              data.tracks.items[Math.floor(Math.random() * 50)].track;
+      const pListIndex2 = numGen(playLists.length);
+      const currentPlayList2 = fetch(
+        `${playListUrl}${playLists[pListIndex2].playListId}`,
+        artistParameters
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          const stringPath2 =
+            data.tracks.items[Math.floor(Math.random() * 50)].track;
 
-            // Panel 1 data
-            const panel2 = {
-              panel2Title: stringPath2.name,
-              panel2Artists: stringPath2.artists[0].name,
-              panel2Album: stringPath2.album.name,
-              panel2Release: stringPath2.album.release_date.split("-")[0],
-              panel2Image: stringPath2.album.images[1].url,
-              panel2Country: playLists[pListIndex2].country,
-            };
+          // Panel 1 data
+          const panel2 = {
+            panel2Title: stringPath2.name,
+            panel2Artists: stringPath2.artists[0].name,
+            panel2Album: stringPath2.album.name,
+            panel2Release: stringPath2.album.release_date.split("-")[0],
+            panel2Image: stringPath2.album.images[1].url,
+            panel2Country: playLists[pListIndex2].country,
+          };
 
-            // Savimg panel objects to state
-            setMusicData2(panel2);
-          })
-          .catch((err) => console.error(err));
+          // Savimg panel objects to state
+          setMusicData2(panel2);
+        })
+        .catch((err) => console.error(err));
 
-        currentPlayList2.then((test3) => {
-          const pListIndex3 = numGen(playLists.length);
-          const currentPlayList3 = fetch(
-            `https://api.spotify.com/v1/playlists/${playLists[pListIndex3].playListId}`,
-            artistParameters
-          )
-            .then((res) => res.json())
-            .then((data) => {
-              const stringPath3 =
-                data.tracks.items[Math.floor(Math.random() * 50)].track;
+      const pListIndex3 = numGen(playLists.length);
+      const currentPlayList3 = fetch(
+        `${playListUrl}${playLists[pListIndex3].playListId}`,
+        artistParameters
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          const stringPath3 =
+            data.tracks.items[Math.floor(Math.random() * 50)].track;
 
-              // Panel 1 data
-              const panel3 = {
-                panel3Title: stringPath3.name,
-                panel3Artists: stringPath3.artists[0].name,
-                panel3Album: stringPath3.album.name,
-                panel3Release: stringPath3.album.release_date.split("-")[0],
-                panel3Image: stringPath3.album.images[1].url,
-                panel3Country: playLists[pListIndex3].country,
-              };
-              // Savimg panel objects to state
-              setMusicData3(panel3);
-            })
-            .catch((err) => console.error(err));
+          // Panel 1 data
+          const panel3 = {
+            panel3Title: stringPath3.name,
+            panel3Artists: stringPath3.artists[0].name,
+            panel3Album: stringPath3.album.name,
+            panel3Release: stringPath3.album.release_date.split("-")[0],
+            panel3Image: stringPath3.album.images[1].url,
+            panel3Country: playLists[pListIndex3].country,
+          };
+          // Savimg panel objects to state
+          setMusicData3(panel3);
+        })
+        .catch((err) => console.error(err));
 
-          currentPlayList3.then((test4) => {
-            const pListIndex4 = numGen(playLists.length);
-            const currentPlayList4 = fetch(
-              `https://api.spotify.com/v1/playlists/${playLists[pListIndex4].playListId}`,
-              artistParameters
-            )
-              .then((res) => res.json())
-              .then((data) => {
-                const stringPath4 =
-                  data.tracks.items[Math.floor(Math.random() * 50)].track;
+      const pListIndex4 = numGen(playLists.length);
+      const currentPlayList4 = fetch(
+        `${playListUrl}${playLists[pListIndex4].playListId}`,
+        artistParameters
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          const stringPath4 =
+            data.tracks.items[Math.floor(Math.random() * 50)].track;
 
-                // Panel 1 data
-                const panel4 = {
-                  panel4Title: stringPath4.name,
-                  panel4Artists: stringPath4.artists[0].name,
-                  panel4Album: stringPath4.album.name,
-                  panel4Release: stringPath4.album.release_date.split("-")[0],
-                  panel4Image: stringPath4.album.images[1].url,
-                  panel4Country: playLists[pListIndex4].country,
-                };
-                // Savimg panel objects to state
-                setMusicData4(panel4);
-              })
-              .catch((err) => console.error(err));
-          });
-        });
-      });
+          // Panel 1 data
+          const panel4 = {
+            panel4Title: stringPath4.name,
+            panel4Artists: stringPath4.artists[0].name,
+            panel4Album: stringPath4.album.name,
+            panel4Release: stringPath4.album.release_date.split("-")[0],
+            panel4Image: stringPath4.album.images[1].url,
+            panel4Country: playLists[pListIndex4].country,
+          };
+          // Savimg panel objects to state
+          setMusicData4(panel4);
+        })
+        .catch((err) => console.error(err));
     }, [renderCheck, accessToken]);
   }
 

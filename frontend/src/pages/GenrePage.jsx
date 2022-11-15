@@ -2,14 +2,23 @@
 /* eslint-disable import/no-unresolved */
 // eslint-disable-next-line import/no-unresolved
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import TopGenres from "../components/TopGenres";
 import ShuffleButton from "../components/shuffleButton";
 import Footer from "../components/footer";
 import MostPopular from "./MostPopular";
 
 import styles from "./genres.module.css";
+// import TrendingArtists from "./rendingArtists";
 
-function Rock() {
+function GenrePage({ title, mainText, image, link, Tlink }) {
+  GenrePage.propTypes = {
+    title: PropTypes.string.isRequired,
+    mainText: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    Tlink: PropTypes.string.isRequired,
+  };
   // eslint-disable-next-line no-unused-vars
   const clientId = import.meta.env.VITE_CLIENT_ID;
   const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
@@ -59,7 +68,7 @@ function Rock() {
     const abortController = new AbortController();
     const abortSignal = abortController.signal;
     if (!accessToken == null) return {};
-    fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DWZryfp6NSvtz", {
+    fetch(link, {
       method: "GET",
       signal: abortSignal,
       headers: {
@@ -81,15 +90,12 @@ function Rock() {
 
   useEffect(() => {
     if (accessToken == null) return;
-    fetch(
-      "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:rock",
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
-    )
+    fetch(Tlink, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
       .then((res) => res.json())
       .then((result) => setTrending(result));
   }, [accessToken]);
@@ -132,23 +138,11 @@ function Rock() {
         <section className={styles.genreMain}>
           <div className={styles.genreTextAndImg}>
             <div className={styles.genreText}>
-              <h1>Rock</h1>
-              <p className={styles.pText}>
-                A fan favourite in musical genres, rock originated in the
-                40’s/50’s in North America, the land of “rock n’ roll”! Broadly
-                mentioning, rock branches in blues, folk, R&B, country, metal,
-                punk, and even fuses with jazz, funk or electronic music, just
-                to mention a few. However, we can find a generalized common
-                ground, with songs that bear rhythmic drums, a tenderizing
-                electric guitar, a sturdy bass and a charismatic lead singer.
-              </p>
+              <h1>{title}</h1>
+              <p className={styles.pText}>{mainText}</p>
             </div>
             <div className={styles.rockImg}>
-              <img
-                alt="electric-guitar"
-                src="src\assets\genres-imgs\electricGuitar.png"
-                width={350}
-              />
+              <img alt="electric-guitar" src={image} width={350} />
             </div>
           </div>
         </section>
@@ -323,4 +317,4 @@ function Rock() {
   );
 }
 
-export default Rock;
+export default GenrePage;
