@@ -2,15 +2,18 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Recommended.module.css";
 import "../App.css";
-import Profile from "../assets/Joao.jpg";
+import Joao from "../assets/recommended/Joao.jpg";
+import Isamu from "../assets/recommended/Isamu.jpg";
+import Iryna from "../assets/recommended/Iryna.png";
+import Elif from "../assets/recommended/Elif.png";
 import Logo from "../assets/spotify_logo_white.png";
 
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 const CLIENT_SECRET = import.meta.env.VITE_CLIENT_SECRET;
 const recs = [
   {
-    author: "Joao, Germany/Portugal",
-    imgAuthor: { Profile },
+    author: "João, Germany/Portugal",
+    imgAuthor: Joao,
     content: `As soon the lyrics start, there is a mention of an individual that
       isn’t “here”, but was greatly dear, which is most likely Syd
       Barrett. Not only they miss him, but also the time when they were
@@ -21,19 +24,19 @@ const recs = [
   },
   {
     author: "Isamu, Germany/Japan",
-    imgAuthor: { Profile },
+    imgAuthor: Isamu,
     content: `A song that takes you somewhere far away and unfamiliar, yet fills you with sense of nostalgia. Sound is airy and mystical, almost spiritual even. It is an aural delight and unforgettable emotional experience through sound. Whatever your preference in music may be, give yourself a chance to see where this music will take you.`,
     id: "2HHAxkrJbuWZ7JWdxYbsWO",
   },
   {
     author: "Elif, Germany",
-    imgAuthor: { Profile },
+    imgAuthor: Elif,
     content: `Just by the rythm and singing, this song conveys a feeling of self-assurance and freedom for me - without understanding any of the words. It’s one of those songs, that lifts your mood up. It even feels cathartic (I mean, just listen to 2:19-3:10).`,
     id: "3f8iimOXaVgOolPrAOrrFS",
   },
   {
     author: "Iryna, Ukraine/Germany",
-    imgAuthor: { Profile },
+    imgAuthor: Iryna,
     content: `What do I love most about the song?... You can listen to it at any moment of your life and it will give you this nice feeling that
     everything is going to be okay. I like the fact that lyrics can be about
     your loved one, your parents, your friends, your kids, etc. Even
@@ -43,7 +46,7 @@ const recs = [
   },
   {
     author: "Iryna, Ukraine/Germany",
-    imgAuthor: { Profile },
+    imgAuthor: Iryna,
     content: `If someone tells you that Ukrainian rap is dead - feel free to play this song. It was released in 2021 by the famous Ukrainian band
     “KALUSH” which won Eurovision in 2022. This is a story about the
     daily struggle with our addictions, in which we are in the ring. Our
@@ -52,13 +55,13 @@ const recs = [
   },
   {
     author: "Isamu, Germany/Japan",
-    imgAuthor: { Profile },
+    imgAuthor: Isamu,
     content: `I can't recommend this piece enough. This dazzling, yet poetically beautiful rendition by Gould has been among my most favorites for a long time. Carefully woven among his signature style, a glimpse of intimacy or poetic softness that can melt your heart. Simply wonderful performance.`,
     id: "0sCl0tOYBfDJuMUHRiCeBZ",
   },
   {
     author: "Elif, Germany",
-    imgAuthor: { Profile },
+    imgAuthor: Elif,
     content: `"My branches scrape the sea of stars, My roots dig deep into this world of ours, I'm grounded”. I love the lyrics of this song. When I listen to it, I imagine myself dancing. My feet touching the ground to then again lift off - oscillating between imagination and reality. To not lose touch with the ground, nor with the sky. Can they exist at the same time?`,
     id: "7cYod6eQvKmiyLwOjBgYR6",
   },
@@ -118,7 +121,7 @@ function Recommended() {
         // console.log(fetchedSongs);
         const randomSong =
           fetchedSongs[Math.floor(Math.random() * fetchedSongs.length)];
-        console.log(randomSong);
+        // console.log(randomSong);
         const {
           track: { id },
           track: { name: songTitle },
@@ -137,7 +140,7 @@ function Recommended() {
           previewUrl,
           spotifyLink,
         };
-        console.log(songData);
+        // console.log(songData);
         setSong(songData);
       });
   }, [accessToken]);
@@ -149,7 +152,11 @@ function Recommended() {
         <div className={styles.recQuote}>
           <div className={styles.profileQuote}>
             <div className={styles.imgContainer}>
-              <img className={styles.imgQuote} alt="Joao" src={Profile} />
+              <img
+                className={styles.imgQuote}
+                alt={song.author}
+                src={song.imgAuthor}
+              />
               <div className={styles.quotation}>“</div>
             </div>
             <div className={`${styles.nameDesktop} ${"pText"}`}>

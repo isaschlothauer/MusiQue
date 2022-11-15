@@ -97,6 +97,7 @@ audio {
 
 .songTitleMobile {
   color: var(--colorWhiteFonts);
+  text-align: center;
 }
 
 .logo {
