@@ -163,6 +163,7 @@ function Rock() {
                 image={song.track.album.images[1].url}
                 artist={song.track.artists[0].name}
                 url={song.track.external_urls.spotify}
+                preview={song.track.preview_url}
               />
             ))}
             <ShuffleButton className={styles.suffle} onClick={handleShuffle} />

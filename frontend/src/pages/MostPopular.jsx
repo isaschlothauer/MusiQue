@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import React from "react";
+import ReactPlayer from "react-player";
 import styles from "./genres.module.css";
 import SpotifyLogoButton from "../components/SpotifyLogoButton";
 import SpotifyLogoLittle from "../components/SpotifyLogoLittle";
 
-export default function MostPopular({ name, image, artist, url }) {
+export default function MostPopular({ name, image, artist, url, preview }) {
   return (
     <div className={styles.mostPopularSongsContainer}>
       <div id={styles.popularCoverAndPopularText}>
@@ -20,6 +22,13 @@ export default function MostPopular({ name, image, artist, url }) {
           <p className={styles.pTitle}>{name}</p>
           <p className={styles.pText}>{artist}</p>
         </div>
+        <ReactPlayer
+          url="https://freesound.org/people/AndreAngelo/sounds/246231.wav"
+          width="400px"
+          height="50px"
+          playing={true}
+          controls={true}
+        />
       </div>
       <a
         href={url}

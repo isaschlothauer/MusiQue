@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import { useState, useEffect } from "react";
 
 const clientId = import.meta.env.VITE_CLIENT_ID;
 const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 
+// eslint-disable-next-line no-unused-vars
 export default function useAuth({ code }) {
   const [accessToken, setAccessToken] = useState("");
   useEffect(() => {
