@@ -51,10 +51,6 @@ const playLists = [
     playListId: "0gorsfrZ74eaEYwR552r3w",
     country: "Syria",
   },
-  {
-    playListId: "1Wx9FRJixPEEHdWRgOJNIZ",
-    country: "Tunisia",
-  },
 ];
 
 // Multi purpose random nunerator
@@ -113,6 +109,7 @@ function WorldMusic() {
         const dataLength = data.tracks.items.length;
         const stringPath1 =
           data.tracks.items[Math.floor(Math.random() * dataLength)].track;
+        console.log(stringPath1);
 
         // Panel 1 data
         const panel1 = {
@@ -122,6 +119,7 @@ function WorldMusic() {
           panel1Release: stringPath1.album.release_date.split("-")[0],
           panel1Image: stringPath1.album.images[1].url,
           panel1Country: playLists[pListIndex1].country,
+          panel1PreviewCheck: stringPath1.preview_url,
         };
 
         // Savimg panel objects to state
@@ -148,6 +146,7 @@ function WorldMusic() {
           panel2Release: stringPath2.album.release_date.split("-")[0],
           panel2Image: stringPath2.album.images[1].url,
           panel2Country: playLists[pListIndex2].country,
+          panel2PreviewCheck: stringPath2.preview_url,
         };
 
         // Savimg panel objects to state
@@ -174,6 +173,7 @@ function WorldMusic() {
           panel3Release: stringPath3.album.release_date.split("-")[0],
           panel3Image: stringPath3.album.images[1].url,
           panel3Country: playLists[pListIndex3].country,
+          panel3PreviewCheck: stringPath3.preview_url,
         };
         // Savimg panel objects to state
         setMusicData3(panel3);
@@ -199,6 +199,7 @@ function WorldMusic() {
           panel4Release: stringPath4.album.release_date.split("-")[0],
           panel4Image: stringPath4.album.images[1].url,
           panel4Country: playLists[pListIndex4].country,
+          panel4PreviewCheck: stringPath4.preview_url,
         };
         // Savimg panel objects to state
         setMusicData4(panel4);
@@ -217,6 +218,9 @@ function WorldMusic() {
                 src={musicData1.panel1Image}
                 alt="Arist/Album Cover image1"
               />
+              {musicData1.panel1PreviewCheck != null ? (
+                <div className={MusicCSS.playButton} />
+              ) : null}
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
               {musicData1.panel1Title}
@@ -238,6 +242,9 @@ function WorldMusic() {
                 src={musicData2.panel2Image}
                 alt="Arist/Album Cover image1"
               />
+              {musicData2.panel2PreviewCheck != null ? (
+                <div className={MusicCSS.playButton} />
+              ) : null}
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
               {musicData2.panel2Title}
@@ -259,6 +266,9 @@ function WorldMusic() {
                 src={musicData3.panel3Image}
                 alt="Arist/Album Cover image1"
               />
+              {musicData3.panel4PreviewCheck != null ? (
+                <div className={MusicCSS.playButton} />
+              ) : null}
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
               {musicData3.panel3Title}
@@ -280,6 +290,9 @@ function WorldMusic() {
                 src={musicData4.panel4Image}
                 alt="Arist/Album Cover image1"
               />
+              {musicData4.panel4PreviewCheck != null ? (
+                <div className={MusicCSS.playButton} />
+              ) : null}
             </div>
             <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
               {musicData4.panel4Title}

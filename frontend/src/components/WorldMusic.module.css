@@ -44,6 +44,7 @@ a:link {
 
 .mainImg {
     display: flex;
+    position: relative;
 }
 
 .mainImg img {
@@ -51,6 +52,7 @@ a:link {
     margin-bottom: 1rem;
     width: 200px;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+
 }
 
 .songTitle, 
@@ -150,6 +152,27 @@ a:link {
 
 .btnContainer {
     display: flex;
+}
+
+.playButton {
+    position: absolute;
+    align-self: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transition: 0.3s;
+    padding: 30px;
+    cursor: pointer;
+    background-image: url("./src/assets/musiQue-imgs/playButton.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.playButton:hover {
+    opacity: 1;
 }
 
 @media screen and (min-width: 600px)  {
