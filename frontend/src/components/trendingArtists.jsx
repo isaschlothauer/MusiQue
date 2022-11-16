@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactHowler from "react-howler";
 import TrendingArtCSS from "./trendingArtists.module.css";
 import "../App.css";
 import SpotifyLogoButton from "./SpotifyLogoButton";
@@ -6,19 +7,15 @@ import SpotifyLogoButton from "./SpotifyLogoButton";
 const clientId = import.meta.env.VITE_CLIENT_ID;
 const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 
-/* const songparams = {
-  artistName: "THEA WANG, OTHER ARTIST",
-  songName: "Tell me about it",
-  image:
-    "https://images.unsplash.com/photo-1619983081593-e2ba5b543168?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-}; */
-
 function TrendingArtists() {
   const [token, setToken] = useState("");
   const [artistSong1, setArtistSong1] = useState("");
   const [artistSong2, setArtistSong2] = useState("");
   const [artistSong3, setArtistSong3] = useState("");
   const [renderCheck, setRenderCheck] = useState(false);
+  const [playing1, setPlaying1] = useState(false);
+  const [playing2, setPlaying2] = useState(false);
+  const [playing3, setPlaying3] = useState(false);
 
   useEffect(() => {
     // API access token
@@ -40,7 +37,7 @@ function TrendingArtists() {
 
   async function generateSong() {
     useEffect(() => {
-      if (token == null) return;
+      if (token === "") return;
       fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M", {
         method: "GET",
         headers: {
@@ -49,6 +46,7 @@ function TrendingArtists() {
       })
         .then((res) => res.json())
         .then((result) => {
+          // console.log(result);
           const n = Math.floor(Math.random() * 50);
           const song1 = result.tracks.items[n].track;
           const song2 = result.tracks.items[n + 1].track;
@@ -59,6 +57,7 @@ function TrendingArtists() {
             album1ArtistName: song1.artists[0].name,
             album1SongName: song1.name,
             album1SongLink: song1.external_urls.spotify,
+            album1Preview: song1.preview_url,
           };
 
           const album2 = {
@@ -66,6 +65,7 @@ function TrendingArtists() {
             album2ArtistName: song2.artists[0].name,
             album2SongName: song2.name,
             album2SongLink: song2.external_urls.spotify,
+            album2Preview: song2.preview_url,
           };
 
           const album3 = {
@@ -73,6 +73,7 @@ function TrendingArtists() {
             album3ArtistName: song3.artists[0].name,
             album3SongName: song3.name,
             album3SongLink: song3.external_urls.spotify,
+            album3Preview: song3.preview_url,
           };
 
           setArtistSong1(album1);
@@ -91,7 +92,24 @@ function TrendingArtists() {
           <div className={TrendingArtCSS.albumAndTextContainer}>
             <div className={TrendingArtCSS.coversongContainer}>
               <img src={artistSong1.album1Image} alt="album" />
-              <div className={TrendingArtCSS.playButton} />
+              {artistSong1.album1Preview != null ? (
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+                <button
+                  type="button"
+                  className={
+                    !playing1
+                      ? `${TrendingArtCSS.playButton}`
+                      : `${TrendingArtCSS.playButtonActive}`
+                  }
+                  onClick={() => setPlaying1(!playing1)}
+                >
+                  <ReactHowler
+                    src={artistSong1.album1Preview}
+                    html5
+                    playing={playing1}
+                  />
+                </button>
+              ) : null}
             </div>
             <div className={TrendingArtCSS.albumText}>
               <p className={`${TrendingArtCSS.songTitle} ${"pTitle"}`}>
@@ -141,7 +159,24 @@ function TrendingArtists() {
           <div className={TrendingArtCSS.albumAndTextContainer}>
             <div className={TrendingArtCSS.coversongContainer}>
               <img src={artistSong2.album2Image} alt="album" />
-              <div className={TrendingArtCSS.playButton} />
+              {artistSong2.album2Preview != null ? (
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+                <button
+                  type="button"
+                  className={
+                    !playing2
+                      ? `${TrendingArtCSS.playButton}`
+                      : `${TrendingArtCSS.playButtonActive}`
+                  }
+                  onClick={() => setPlaying2(!playing2)}
+                >
+                  <ReactHowler
+                    src={artistSong2.album2Preview}
+                    html5
+                    playing={playing2}
+                  />
+                </button>
+              ) : null}
             </div>
             <div className={TrendingArtCSS.albumText}>
               <p className={`${TrendingArtCSS.songTitle} ${"pTitle"}`}>
@@ -191,7 +226,24 @@ function TrendingArtists() {
           <div className={TrendingArtCSS.albumAndTextContainer}>
             <div className={TrendingArtCSS.coversongContainer}>
               <img src={artistSong3.album3Image} alt="album" />
-              <div className={TrendingArtCSS.playButton} />
+              {artistSong3.album3Preview != null ? (
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+                <button
+                  type="button"
+                  className={
+                    !playing3
+                      ? `${TrendingArtCSS.playButton}`
+                      : `${TrendingArtCSS.playButtonActive}`
+                  }
+                  onClick={() => setPlaying3(!playing3)}
+                >
+                  <ReactHowler
+                    src={artistSong3.album3Preview}
+                    html5
+                    playing={playing3}
+                  />
+                </button>
+              ) : null}
             </div>
             <div className={TrendingArtCSS.albumText}>
               <p className={`${TrendingArtCSS.songTitle} ${"pTitle"}`}>
@@ -241,6 +293,9 @@ function TrendingArtists() {
           onClick={() => {
             // eslint-disable-next-line no-unused-expressions
             renderCheck !== true ? setRenderCheck(true) : setRenderCheck(false);
+            setPlaying1(null);
+            setPlaying2(null);
+            setPlaying3(null);
           }}
           type="button"
           className={`${TrendingArtCSS.renderButton} ${"pButtons"}`}
