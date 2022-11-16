@@ -142,6 +142,53 @@
   .linkToSpotifyButton {
     display: none;
   }
+
+  .albumText {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .playButton {
+    align-self: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transition: 0.3s;
+    padding: 30px;
+    cursor: pointer;
+    background-image: url("./src/assets/musiQue-imgs/playButton.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+  }
+
+  .playButton:hover {
+    opacity: 1;
+  }
+
+  .coversongContainer {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  .spotifyIconLittle {
+    align-self: flex-end;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .spotifyIconLittleBlack {
+    display: none;
+  }
+
+  .sectionTitle {
+    text-align: center;
+    padding-top: 3rem;
+  }
+
    
   @media screen and (min-width: 450px) {
     .coversongContainer img {
@@ -198,59 +245,9 @@
     width: 300px;
     }
 
+
   }
 
-  .albumText {
-    display:flex;
-    flex-direction: column;
-  }
-
-  .playButton {
-    align-self: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transition: 0.3s;
-    padding: 30px;
-    cursor: pointer;
-    background-image: url("./src/assets/musiQue-imgs/playButton.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.6;
-  }
-
-  .playButton:hover {
-    opacity: 1;
-  }
-
-  .coversongContainer {
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-  }
-
-  .spotifyIconLittle {
-    align-self: flex-end;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .spotifyIconLittleBlack {
-    display: none;
-  }
-
-  .sectionTitle {
-    text-align: center;
-    padding-top: 3rem;
-  }
-   
-  @media screen and (min-width: 450px) {
-    .coversongContainer img {
-      width: 300px;
-      }
-  }
 
   @media screen and (min-width: 600px) {
 
