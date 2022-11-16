@@ -72,7 +72,7 @@ export default function MostPopular({ name, image, artist, url, preview }) {
         </div>
         <div className={styles.mostPopularSongsText}>
           <p className={styles.pTitle}>{name}</p>
-          <p className={styles.pText}>{artist}</p>
+          <p className={styles.pItalic}>{artist}</p>
         </div>
       </div>
       <a

@@ -181,10 +181,10 @@ function Recommended() {
             <audio controls src={song.previewUrl} />
           </figure>
           <p className={`${styles.artistMobile} ${"pText"}`}>
-            {song.artistTitle}
+            {song.songTitle}
           </p>
           <p className={`${styles.songTitleMobile} ${"pItalic"}`}>
-            {song.songTitle}
+            {song.artistTitle}
           </p>
 
           <button type="button" className={styles.btn}>
