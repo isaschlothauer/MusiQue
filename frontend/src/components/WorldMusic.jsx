@@ -51,6 +51,10 @@ const playLists = [
     playListId: "0gorsfrZ74eaEYwR552r3w",
     country: "Syria",
   },
+  {
+    playListId: "1f2NGx8o2iQyw3AW8VJ3RO",
+    country: "Ukraine",
+  },
 ];
 
 // Multi purpose random nunerator
@@ -378,6 +382,10 @@ function WorldMusic() {
               renderCheck !== true
                 ? setRenderCheck(true)
                 : setRenderCheck(false);
+              setPlaying1(null);
+              setPlaying2(null);
+              setPlaying3(null);
+              setPlaying4(null);
             }}
             className={`${MusicCSS.pButtons} ${"pButtons"}`}
             type="button"
