@@ -2,6 +2,7 @@
 /* eslint-disable import/no-unresolved */
 // eslint-disable-next-line import/no-unresolved
 import React, { useState, useEffect } from "react";
+import ReactHowler from "react-howler";
 import PropTypes from "prop-types";
 import TopGenres from "../components/TopGenres";
 import ShuffleButton from "../components/shuffleButton";
@@ -29,9 +30,57 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
   const [trending, setTrending] = useState("");
   const [hidden, setHidden] = useState(false);
 
+  const [currentPlaying, setCurrentPlaying] = useState("");
+
+  const [playingOrPaused, setPlayingOrPaused] = useState(false);
+
+  const handlePreviewClick = (url) => {
+    if (currentPlaying === url) {
+      setPlayingOrPaused(!playingOrPaused);
+    } else {
+      setPlayingOrPaused(true);
+    }
+    setCurrentPlaying(url);
+    console.log(url);
+  };
+
+  const shuffle = (array) => {
+    const output = array;
+    for (let i = output.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = output[i];
+      output[i] = output[j];
+      output[j] = temp;
+    }
+    return output;
+  };
+
+  const handleShuffle = () => {
+    if (popular == null || popular === "") return;
+    // () => shuffle(popular.tracks.items)
+    // popular: object
+    // tracks: object
+    // items: array
+
+    // Way 1
+    setPopular({
+      ...popular,
+      tracks: { ...popular.tracks, items: shuffle(popular.tracks.items) },
+    });
+    setCurrentPlaying(false);
+
+    // Way 2
+    // const newItems = shuffle(popular.tracks.items);
+    // const newTracks = { ...popular.tracks, items: newItems };
+    // const newPopular = { ...popular, tracks: newTracks };
+    // setPopular(newPopular);
+  };
+
   const handleClick = () => {
     setHidden((current) => !current);
   };
+
+  //  USE EFFECT FOR TOKEN
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -65,6 +114,8 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
     };
   }, []);
 
+  //  USE EFFECT FOR POPULAR
+
   useEffect(() => {
     const abortController = new AbortController();
     const abortSignal = abortController.signal;
@@ -89,6 +140,8 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
     };
   }, [accessToken]);
 
+  //  USE EFFECT FOR TRENDING
+
   useEffect(() => {
     if (accessToken == null) return;
     fetch(Tlink, {
@@ -105,37 +158,6 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
         console.log(err);
       });
   }, [accessToken]);
-
-  const shuffle = (array) => {
-    const output = array;
-    for (let i = output.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = output[i];
-      output[i] = output[j];
-      output[j] = temp;
-    }
-    return output;
-  };
-
-  const handleShuffle = () => {
-    if (popular == null || popular === "") return;
-    // () => shuffle(popular.tracks.items)
-    // popular: object
-    // tracks: object
-    // items: array
-
-    // Way 1
-    setPopular({
-      ...popular,
-      tracks: { ...popular.tracks, items: shuffle(popular.tracks.items) },
-    });
-
-    // Way 2
-    // const newItems = shuffle(popular.tracks.items);
-    // const newTracks = { ...popular.tracks, items: newItems };
-    // const newPopular = { ...popular, tracks: newTracks };
-    // setPopular(newPopular);
-  };
 
   return (
     <div className={styles.Rock}>
@@ -154,6 +176,13 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
         </section>
       </header>
       <section className={styles.mostPopular}>
+        <ReactHowler
+          src={[currentPlaying]}
+          playing={playingOrPaused}
+          volume={0.3}
+          html5
+          format="mp3"
+        />
         <h2>Most Popular</h2>
         {popular.tracks != null && (popular.tracks.items != null) != null ? (
           <>
@@ -164,6 +193,13 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
                 artist={song.track.artists[0].name}
                 url={song.track.external_urls.spotify}
                 preview={song.track.preview_url}
+                setUrl={handlePreviewClick}
+                iconStatus={
+                  song.track.preview_url === currentPlaying
+                    ? playingOrPaused
+                    : false
+                }
+                // isStart = {song.track.preview_url === currentPlaying && playingOrPaused}
               />
             ))}
             <ShuffleButton className={styles.suffle} onClick={handleShuffle} />

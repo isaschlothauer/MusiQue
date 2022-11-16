@@ -1,43 +1,27 @@
 /* eslint-disable no-constant-condition */
 /* eslint-disable react/jsx-boolean-value */
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
-import ReactHowler from "react-howler";
+import React from "react";
 import styles from "./genres.module.css";
 import SpotifyLogoButton from "../components/SpotifyLogoButton";
 import SpotifyLogoLittle from "../components/SpotifyLogoLittle";
 
 // eslint-disable-next-line no-unused-vars
-export default function MostPopular({ name, image, artist, url, preview }) {
+export default function MostPopular({
+  name,
+  image,
+  artist,
+  url,
+  preview,
+  setUrl,
+  iconStatus,
+}) {
   // const [play, { stop }] = useSound(yeah, { playbackRate });
-  const [playing, setPlaying] = useState(false);
-  const [isStart, setStart] = useState(false);
-
-  const handlePauseMusic = () => {
-    if (playing === true) {
-      setPlaying(playing === false);
-    } else {
-      setPlaying(playing === true);
-    }
-  };
-
-  const handleStartPauseButton = () => {
-    setStart(!isStart);
-  };
-
-  // eslint-disable-next-line no-restricted-syntax
-  console.log({ preview });
 
   return (
     <div className={styles.mostPopularSongsContainer}>
       <div id={styles.popularCoverAndPopularText}>
         <div className={styles.mostPopularSongsCoverSong}>
-          <ReactHowler
-            src={[preview]}
-            html5={true}
-            playing={playing}
-            volume={0.3}
-          />
           <img
             className={styles.mostPopularSongsImg}
             src={image}
@@ -47,10 +31,14 @@ export default function MostPopular({ name, image, artist, url, preview }) {
           {preview != null ? (
             <button
               type="button"
-              onClick={(handlePauseMusic, handleStartPauseButton)}
-              className={`isStart ? ${styles.playButton} : ${styles.pauseButton}`}
+              onClick={() => {
+                setUrl(preview);
+              }}
+              className={
+                iconStatus ? `${styles.pauseButton}` : `${styles.playButton}`
+              }
             >
-              {playing ? "" : ""}
+              {}
             </button>
           ) : (
             ""
