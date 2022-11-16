@@ -101,12 +101,17 @@ function TrendingArtists() {
                       ? `${TrendingArtCSS.playButton}`
                       : `${TrendingArtCSS.playButtonActive}`
                   }
-                  onClick={() => setPlaying1(!playing1)}
+                  onClick={() => {
+                    setPlaying1(!playing1);
+                    setPlaying2(null);
+                    setPlaying3(null);
+                  }}
                 >
                   <ReactHowler
                     src={artistSong1.album1Preview}
                     html5
                     playing={playing1}
+                    volume={0.3}
                   />
                 </button>
               ) : null}
@@ -168,12 +173,17 @@ function TrendingArtists() {
                       ? `${TrendingArtCSS.playButton}`
                       : `${TrendingArtCSS.playButtonActive}`
                   }
-                  onClick={() => setPlaying2(!playing2)}
+                  onClick={() => {
+                    setPlaying2(!playing2);
+                    setPlaying1(null);
+                    setPlaying3(null);
+                  }}
                 >
                   <ReactHowler
                     src={artistSong2.album2Preview}
                     html5
                     playing={playing2}
+                    volume={0.3}
                   />
                 </button>
               ) : null}
@@ -235,12 +245,17 @@ function TrendingArtists() {
                       ? `${TrendingArtCSS.playButton}`
                       : `${TrendingArtCSS.playButtonActive}`
                   }
-                  onClick={() => setPlaying3(!playing3)}
+                  onClick={() => {
+                    setPlaying3(!playing3);
+                    setPlaying1(null);
+                    setPlaying2(null);
+                  }}
                 >
                   <ReactHowler
                     src={artistSong3.album3Preview}
                     html5
                     playing={playing3}
+                    volume={0.3}
                   />
                 </button>
               ) : null}
