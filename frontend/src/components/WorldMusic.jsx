@@ -245,8 +245,17 @@ function WorldMusic() {
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                 <button
                   type="button"
-                  className={MusicCSS.playButton}
-                  onClick={() => setPlaying1(!playing1)}
+                  className={
+                    !playing1
+                      ? `${MusicCSS.playButton}`
+                      : `${MusicCSS.playButtonActive}`
+                  }
+                  onClick={() => {
+                    setPlaying1(!playing1);
+                    setPlaying2(null);
+                    setPlaying3(null);
+                    setPlaying4(null);
+                  }}
                 >
                   <ReactHowler
                     src={musicData1.panel1PreviewCheck}
@@ -278,11 +287,21 @@ function WorldMusic() {
                 alt="Arist/Album Cover image1"
               />
               {musicData2.panel2PreviewCheck != null ? (
+                // {MusicCSS.playButton
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                 <button
                   type="button"
-                  className={MusicCSS.playButton}
-                  onClick={() => setPlaying2(!playing2)}
+                  className={
+                    !playing2
+                      ? `${MusicCSS.playButton}`
+                      : `${MusicCSS.playButtonActive}`
+                  }
+                  onClick={() => {
+                    setPlaying2(!playing2);
+                    setPlaying1(null);
+                    setPlaying3(null);
+                    setPlaying4(null);
+                  }}
                 >
                   <ReactHowler
                     src={musicData2.panel2PreviewCheck}
@@ -317,8 +336,17 @@ function WorldMusic() {
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                 <button
                   type="button"
-                  className={MusicCSS.playButton}
-                  onClick={() => setPlaying3(!playing3)}
+                  className={
+                    !playing3
+                      ? `${MusicCSS.playButton}`
+                      : `${MusicCSS.playButtonActive}`
+                  }
+                  onClick={() => {
+                    setPlaying3(!playing3);
+                    setPlaying1(null);
+                    setPlaying2(null);
+                    setPlaying4(null);
+                  }}
                 >
                   <ReactHowler
                     src={musicData3.panel3PreviewCheck}
@@ -353,8 +381,17 @@ function WorldMusic() {
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                 <button
                   type="button"
-                  className={MusicCSS.playButton}
-                  onClick={() => setPlaying4(!playing4)}
+                  className={
+                    !playing4
+                      ? `${MusicCSS.playButton}`
+                      : `${MusicCSS.playButtonActive}`
+                  }
+                  onClick={() => {
+                    setPlaying4(!playing4);
+                    setPlaying1(null);
+                    setPlaying2(null);
+                    setPlaying3(null);
+                  }}
                 >
                   <ReactHowler
                     src={musicData4.panel4PreviewCheck}
