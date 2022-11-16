@@ -1,7 +1,8 @@
 import React from "react";
 import shuffleButton from "./shuffleButton.module.css";
 
-function ShuffleButton() {
+// eslint-disable-next-line react/prop-types
+function ShuffleButton({ onClick }) {
   return (
     <div className={shuffleButton.btnContainer}>
       <button
@@ -9,6 +10,7 @@ function ShuffleButton() {
           shuffleButton.shuffle
         }`}
         type="button"
+        onClick={onClick}
       >
         SHUFFLE
       </button>

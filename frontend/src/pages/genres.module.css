@@ -208,10 +208,15 @@ h2 {
   transition: 0.3s;
   padding: 30px;
   cursor: pointer;
+  background: none;
+  border: 0;
   background-image: url("./src/assets/musiQue-imgs/playButton.png");
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.6;
+}
+.playButton:active {
+  background-image: url("./src/assets/musiQue-imgs/STOP.png");
 }
 
 .playButton:hover {
