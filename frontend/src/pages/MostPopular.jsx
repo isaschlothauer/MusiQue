@@ -7,17 +7,6 @@ import styles from "./genres.module.css";
 import SpotifyLogoButton from "../components/SpotifyLogoButton";
 import SpotifyLogoLittle from "../components/SpotifyLogoLittle";
 
-/*
-     <ReactPlayer
-          url={preview}
-          width="400px"
-          height="50px"
-          playing={false}
-          controls={true}
-          mute={false}
-        />
-*/
-
 // eslint-disable-next-line no-unused-vars
 export default function MostPopular({ name, image, artist, url, preview }) {
   // const [play, { stop }] = useSound(yeah, { playbackRate });
@@ -25,33 +14,12 @@ export default function MostPopular({ name, image, artist, url, preview }) {
 
   // eslint-disable-next-line no-restricted-syntax
   console.log({ preview });
-  /*
-
- const handlePlay = () => {
-    setPlaying(!playing);
-  };
-
-  const handleStop = () => {
-    setPlaying(playing);
-  };
-
-   <button type="button" onClick={handlePlay}>
-            Play
-          </button>
-          <button type="button" onClick={handleStop}>
-            Pause
-          </button>
-  */
 
   return (
     <div className={styles.mostPopularSongsContainer}>
       <div id={styles.popularCoverAndPopularText}>
         <div className={styles.mostPopularSongsCoverSong}>
-          {{ preview } != null ? (
-            <ReactHowler src={[preview]} html5={true} playing={playing} />
-          ) : (
-            {}
-          )}
+          <ReactHowler src={[preview]} html5={true} playing={playing} />
           <img
             className={styles.mostPopularSongsImg}
             src={image}
