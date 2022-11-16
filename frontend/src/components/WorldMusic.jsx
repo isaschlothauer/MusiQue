@@ -117,7 +117,7 @@ function WorldMusic() {
         const dataLength = data.tracks.items.length;
         const stringPath1 =
           data.tracks.items[Math.floor(Math.random() * dataLength)].track;
-        console.log(stringPath1);
+        // console.log(stringPath1);
 
         // Panel 1 data
         const panel1 = {
@@ -133,7 +133,7 @@ function WorldMusic() {
           panel1PreviewCheck: stringPath1.preview_url,
         };
 
-        console.log(panel1.panel1PreviewCheck);
+        // console.log(panel1.panel1PreviewCheck);
 
         // Savimg panel objects to state
         setMusicData1(panel1);
@@ -252,6 +252,7 @@ function WorldMusic() {
                     src={musicData1.panel1PreviewCheck}
                     html5
                     playing={playing1}
+                    volume={0.2}
                   />
                 </button>
               ) : null}
@@ -287,6 +288,7 @@ function WorldMusic() {
                     src={musicData2.panel2PreviewCheck}
                     html5
                     playing={playing2}
+                    volume={0.2}
                   />
                 </button>
               ) : null}
@@ -322,6 +324,7 @@ function WorldMusic() {
                     src={musicData3.panel3PreviewCheck}
                     html5
                     playing={playing3}
+                    volume={0.2}
                   />
                 </button>
               ) : null}
@@ -357,6 +360,7 @@ function WorldMusic() {
                     src={musicData4.panel4PreviewCheck}
                     html5
                     playing={playing4}
+                    volume={0.2}
                   />
                 </button>
               ) : null}
