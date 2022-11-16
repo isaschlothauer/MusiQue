@@ -3,7 +3,7 @@
   background-color: rgba(48, 37, 24, 1);
   color: white;
   text-align: center;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 
 .btn2 {
@@ -154,6 +154,10 @@
 }
 
 @media screen and (max-width: 439px) {
+
+
+
+  
   .btn {
     align-items: center;
     background-image: linear-gradient(

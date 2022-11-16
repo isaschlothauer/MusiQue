@@ -115,7 +115,7 @@
     white-space: nowrap;
     will-change: box-shadow,transform;
     margin:auto;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   .renderButton:hover {

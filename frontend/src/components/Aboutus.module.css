@@ -2,9 +2,9 @@
   background-color: #302518;
   height:auto;
   color:white;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1.5rem;
  
 }
 
@@ -12,7 +12,7 @@
   color: white;
   text-align: center;
   margin-bottom: 1.25rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 .aboutustext {
@@ -43,7 +43,7 @@
     background-color: #302518;
     height:auto;
     color:white;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     
 
   }
@@ -69,6 +69,15 @@
     margin-right: auto;
     }
   }
+
+  @media screen and (min-width: 600px) {
+    .aboutus {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+
 
 @media screen and (min-width: 1000px) {
 
