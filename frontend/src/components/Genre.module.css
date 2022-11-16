@@ -327,7 +327,7 @@
   }
 
   .title {
-    margin-left: 3.5rem;
+    margin-left: 3rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
   }
@@ -472,8 +472,8 @@
     font-size: 1.75rem;
   }
   .buttonsdesk {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     gap: 2rem;
   }
 }
