@@ -51,6 +51,7 @@ a:link {
     margin-bottom: 1rem;
     width: 200px;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+
 }
 
 .songTitle,
@@ -182,6 +183,7 @@ a:link {
     display: flex;
     justify-content: space-evenly;
   }
+
 
   .panel1 {
     margin: initial;

@@ -58,18 +58,21 @@ function TrendingArtists() {
             album1Image: song1.album.images[1].url,
             album1ArtistName: song1.artists[0].name,
             album1SongName: song1.name,
+            album1SongLink: song1.external_urls.spotify,
           };
 
           const album2 = {
             album2Image: song2.album.images[1].url,
             album2ArtistName: song2.artists[0].name,
             album2SongName: song2.name,
+            album2SongLink: song2.external_urls.spotify,
           };
 
           const album3 = {
             album3Image: song3.album.images[1].url,
             album3ArtistName: song3.artists[0].name,
             album3SongName: song3.name,
+            album3SongLink: song3.external_urls.spotify,
           };
 
           setArtistSong1(album1);
@@ -92,26 +95,47 @@ function TrendingArtists() {
             </div>
             <div className={TrendingArtCSS.albumText}>
               <p className={`${TrendingArtCSS.songTitle} ${"pTitle"}`}>
-                {artistSong1.album1ArtistName}
-              </p>
-              <p className={`${TrendingArtCSS.songName} ${"pItalic"}`}>
                 {artistSong1.album1SongName}
               </p>
+              <p className={`${TrendingArtCSS.songName} ${"pItalic"}`}>
+                {artistSong1.album1ArtistName}
+              </p>
+              <a
+                href={artistSong1.album1SongLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className={TrendingArtCSS.linkToSpotifyText} />
+              </a>
             </div>
           </div>
-          <img
-            src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
-            alt="spotify-icon"
-            className={TrendingArtCSS.spotifyIconLittle}
-            width={28}
-          />
-          <img
-            src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-            alt="spotify-icon"
-            className={TrendingArtCSS.spotifyIconLittleBlack}
-            width={28}
-          />
-          <SpotifyLogoButton className={TrendingArtCSS.SpotifyIconBig} />
+          <a
+            href={artistSong1.album1SongLink}
+            className={TrendingArtCSS.linkToSpotifyIcons}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
+              alt="spotify-icon"
+              className={TrendingArtCSS.spotifyIconLittle}
+              width={28}
+            />
+            <img
+              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+              alt="spotify-icon"
+              className={TrendingArtCSS.spotifyIconLittleBlack}
+              width={28}
+            />
+          </a>
+          <a
+            href={artistSong1.album1SongLink}
+            className={TrendingArtCSS.linkToSpotifyButton}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SpotifyLogoButton className={TrendingArtCSS.SpotifyIconBig} />
+          </a>
         </article>
         <article className={TrendingArtCSS.articles}>
           <div className={TrendingArtCSS.albumAndTextContainer}>
@@ -121,26 +145,47 @@ function TrendingArtists() {
             </div>
             <div className={TrendingArtCSS.albumText}>
               <p className={`${TrendingArtCSS.songTitle} ${"pTitle"}`}>
-                {artistSong2.album2ArtistName}
-              </p>
-              <p className={`${TrendingArtCSS.songName} ${"pItalic"}`}>
                 {artistSong2.album2SongName}
               </p>
+              <p className={`${TrendingArtCSS.songName} ${"pItalic"}`}>
+                {artistSong2.album2ArtistName}
+              </p>
+              <a
+                href={artistSong2.album2SongLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className={TrendingArtCSS.linkToSpotifyText} />
+              </a>
             </div>
           </div>
-          <img
-            src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
-            alt="spotify-icon"
-            className={TrendingArtCSS.spotifyIconLittle}
-            width={28}
-          />
-          <img
-            src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-            alt="spotify-icon"
-            className={TrendingArtCSS.spotifyIconLittleBlack}
-            width={28}
-          />
-          <SpotifyLogoButton className={TrendingArtCSS.SpotifyIconBig} />
+          <a
+            href={artistSong2.album2SongLink}
+            className={TrendingArtCSS.linkToSpotifyIcons}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
+              alt="spotify-icon"
+              className={TrendingArtCSS.spotifyIconLittle}
+              width={28}
+            />
+            <img
+              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+              alt="spotify-icon"
+              className={TrendingArtCSS.spotifyIconLittleBlack}
+              width={28}
+            />
+          </a>
+          <a
+            href={artistSong2.album2SongLink}
+            className={TrendingArtCSS.linkToSpotifyButton}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SpotifyLogoButton className={TrendingArtCSS.SpotifyIconBig} />
+          </a>
         </article>
         <article className={TrendingArtCSS.articles}>
           <div className={TrendingArtCSS.albumAndTextContainer}>
@@ -150,26 +195,47 @@ function TrendingArtists() {
             </div>
             <div className={TrendingArtCSS.albumText}>
               <p className={`${TrendingArtCSS.songTitle} ${"pTitle"}`}>
-                {artistSong3.album3ArtistName}
-              </p>
-              <p className={`${TrendingArtCSS.songName} ${"pItalic"}`}>
                 {artistSong3.album3SongName}
               </p>
+              <p className={`${TrendingArtCSS.songName} ${"pItalic"}`}>
+                {artistSong3.album3ArtistName}
+              </p>
+              <a
+                href={artistSong3.album3SongLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className={TrendingArtCSS.linkToSpotifyText} />
+              </a>
             </div>
           </div>
-          <img
-            src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
-            alt="spotify-icon"
-            className={TrendingArtCSS.spotifyIconLittle}
-            width={28}
-          />
-          <img
-            src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
-            alt="spotify-icon"
-            className={TrendingArtCSS.spotifyIconLittleBlack}
-            width={28}
-          />
-          <SpotifyLogoButton className={TrendingArtCSS.SpotifyIconBig} />
+          <a
+            href={artistSong3.album3SongLink}
+            className={TrendingArtCSS.linkToSpotifyIcons}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
+              alt="spotify-icon"
+              className={TrendingArtCSS.spotifyIconLittle}
+              width={28}
+            />
+            <img
+              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+              alt="spotify-icon"
+              className={TrendingArtCSS.spotifyIconLittleBlack}
+              width={28}
+            />
+          </a>
+          <a
+            href={artistSong3.album3SongLink}
+            className={TrendingArtCSS.linkToSpotifyButton}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SpotifyLogoButton className={TrendingArtCSS.SpotifyIconBig} />
+          </a>
         </article>
         <button
           onClick={() => {
