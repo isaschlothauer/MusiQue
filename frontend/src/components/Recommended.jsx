@@ -20,7 +20,7 @@ const recs = [
       close. Bound not by blood, but music. Life goes on: we shouldn’t
       hold on for nostalgia, but learn with our past. Sometimes, things
       can’t be avoided, but we can surely learn from them.`,
-    id: "6mFkJmJqdDVQ1REhVfGgd1",
+    id: "7aE5WXu5sFeNRh3Z05wwu4",
   },
   {
     author: "Isamu, Germany/Japan",
