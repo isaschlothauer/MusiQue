@@ -11,6 +11,19 @@ import SpotifyLogoLittle from "../components/SpotifyLogoLittle";
 export default function MostPopular({ name, image, artist, url, preview }) {
   // const [play, { stop }] = useSound(yeah, { playbackRate });
   const [playing, setPlaying] = useState(false);
+  const [isStart, setStart] = useState(false);
+
+  const handlePauseMusic = () => {
+    if (playing === true) {
+      setPlaying(playing === false);
+    } else {
+      setPlaying(playing === true);
+    }
+  };
+
+  const handleStartPauseButton = () => {
+    setStart(!isStart);
+  };
 
   // eslint-disable-next-line no-restricted-syntax
   console.log({ preview });
@@ -19,7 +32,12 @@ export default function MostPopular({ name, image, artist, url, preview }) {
     <div className={styles.mostPopularSongsContainer}>
       <div id={styles.popularCoverAndPopularText}>
         <div className={styles.mostPopularSongsCoverSong}>
-          <ReactHowler src={[preview]} html5={true} playing={playing} />
+          <ReactHowler
+            src={[preview]}
+            html5={true}
+            playing={playing}
+            volume={0.3}
+          />
           <img
             className={styles.mostPopularSongsImg}
             src={image}
@@ -29,8 +47,8 @@ export default function MostPopular({ name, image, artist, url, preview }) {
           {preview != null ? (
             <button
               type="button"
-              onClick={() => setPlaying(!playing)}
-              className={styles.playButton}
+              onClick={(handlePauseMusic, handleStartPauseButton)}
+              className={`isStart ? ${styles.playButton} : ${styles.pauseButton}`}
             >
               {playing ? "" : ""}
             </button>

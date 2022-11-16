@@ -4,9 +4,9 @@ import styles from "./genres.module.css";
 
 export default function TrendingArtists({ artist, followers, image }) {
   return (
-    <div className={styles.trendingArtistsDiv}>
-      <p className={styles.trendingtext}>{artist}</p>
-      <p className={styles.trendingtext2}>{followers} followers</p>
+    <div className={styles.trendingArtistsDivhid}>
+      <p className={styles.trendingtexthid}>{artist}</p>
+      <p className={styles.trendingtext2hid}>{followers} followers</p>
       <img id={styles.trendingImg} alt="trending-img" src={image} />
     </div>
   );

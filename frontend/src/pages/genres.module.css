@@ -53,6 +53,10 @@ h2 {
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.375rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .pItalic {
@@ -215,8 +219,23 @@ h2 {
   background-repeat: no-repeat;
   opacity: 0.6;
 }
-.playButton:active {
+
+.pauseButton {
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: 0.3s;
+  padding: 30px;
+  cursor: pointer;
+  background: none;
+  border: 0;
   background-image: url("./src/assets/musiQue-imgs/STOP.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.6;
 }
 
 .playButton:hover {
@@ -247,6 +266,11 @@ h2 {
 .trendingArtistsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.trendingArtistsContainer img {
+  width: 100%;
+  height: 100%;
 }
 
 #trendingImg {
@@ -313,6 +337,11 @@ footer {
 .trendingArtistsContainerhid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.trendingArtistsContainerhid img {
+  width: 100%;
+  height: 100%;
 }
 
 .trendingtexthid {
@@ -445,6 +474,10 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .pItalic {

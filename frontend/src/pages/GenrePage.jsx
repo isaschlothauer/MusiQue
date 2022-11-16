@@ -9,7 +9,8 @@ import Footer from "../components/footer";
 import MostPopular from "./MostPopular";
 
 import styles from "./genres.module.css";
-// import TrendingArtists from "./rendingArtists";
+import TrendingArtists from "./TrendingArtists";
+import TrendingArtistsHidden from "./TrendingArtistsHidden";
 
 function GenrePage({ title, mainText, image, link, Tlink }) {
   GenrePage.propTypes = {
@@ -77,7 +78,7 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
     })
       .then((res) => res.json())
       // eslint-disable-next-line no-bitwise
-      .then((result) => setPopular(result) & console.log(result))
+      .then((result) => setPopular(result) & console.log("POPULAR", result))
       .catch((err) => {
         // eslint-disable-next-line no-restricted-syntax
         console.log(err);
@@ -97,7 +98,12 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
       },
     })
       .then((res) => res.json())
-      .then((result) => setTrending(result));
+      // eslint-disable-next-line no-bitwise
+      .then((result) => setTrending(result) & console.log("TRENDING", result))
+      .catch((err) => {
+        // eslint-disable-next-line no-restricted-syntax
+        console.log(err);
+      });
   }, [accessToken]);
 
   const shuffle = (array) => {
@@ -173,126 +179,23 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
         (trending.artists.items != null) != null ? (
           <>
             <div className={styles.trendingArtistsContainer}>
-              <div className={styles.trendingArtistsDiv}>
-                <p className={styles.trendingtext}>
-                  {trending.artists.items[0].name}
-                </p>
-                <p className={styles.trendingtext2}>
-                  {trending.artists.items[0].followers.total} followers
-                </p>
-                <img
-                  id={styles.trendingImg}
-                  alt="trending-img"
-                  src={trending.artists.items[0].images[0].url}
+              {trending.artists.items.slice(0, 5).map((musician) => (
+                <TrendingArtists
+                  artist={musician.name}
+                  followers={musician.followers.total}
+                  image={musician.images[0].url}
                 />
-              </div>
-              <div className={styles.trendingArtistsDiv}>
-                <p className={styles.trendingtext}>
-                  {trending.artists.items[1].name}
-                </p>
-                <p className={styles.trendingtext2}>
-                  {trending.artists.items[1].followers.total} followers
-                </p>
-                <img
-                  id={styles.trendingImg}
-                  alt="trending-img"
-                  src={trending.artists.items[1].images[0].url}
-                />
-              </div>
-              <div className={styles.trendingArtistsDiv}>
-                <p className={styles.trendingtext}>
-                  {trending.artists.items[2].name}
-                </p>
-                <p className={styles.trendingtext2}>
-                  {trending.artists.items[2].followers.total} followers
-                </p>
-                <img
-                  id={styles.trendingImg}
-                  alt="trending-img"
-                  src={trending.artists.items[2].images[0].url}
-                />
-              </div>
-              <div className={styles.trendingArtistsDiv}>
-                <p className={styles.trendingtext}>
-                  {trending.artists.items[3].name}
-                </p>
-                <p className={styles.trendingtext2}>
-                  {trending.artists.items[3].followers.total} followers
-                </p>
-                <img
-                  id={styles.trendingImg}
-                  alt="trending-img"
-                  src={trending.artists.items[3].images[0].url}
-                />
-              </div>
-              <div className={styles.trendingArtistsDiv}>
-                <p className={styles.trendingtext}>
-                  {trending.artists.items[4].name}
-                </p>
-                <p className={styles.trendingtext2}>
-                  {trending.artists.items[4].followers.total} followers
-                </p>
-                <img
-                  id={styles.trendingImg}
-                  alt="trending-img"
-                  src={trending.artists.items[4].images[0].url}
-                />
-              </div>
+              ))}
             </div>
             {hidden && (
               <div className={styles.trendingArtistsContainerhid}>
-                <div className={styles.trendingArtistsDivhid}>
-                  <p className={styles.trendingtexthid}>
-                    {trending.artists.items[5].name}
-                  </p>
-                  <p className={styles.trendingtext2hid}>
-                    {trending.artists.items[5].followers.total} followers
-                  </p>
-                  <img
-                    id={styles.trendingImg}
-                    alt="trending-img"
-                    src={trending.artists.items[5].images[1].url}
+                {trending.artists.items.slice(4, 8).map((musician) => (
+                  <TrendingArtistsHidden
+                    artist={musician.name}
+                    followers={musician.followers.total}
+                    image={musician.images[0].url}
                   />
-                </div>
-                <div className={styles.trendingArtistsDivhid}>
-                  <p className={styles.trendingtexthid}>
-                    {trending.artists.items[11].name}
-                  </p>
-                  <p className={styles.trendingtext2hid}>
-                    {trending.artists.items[11].followers.total} followers
-                  </p>
-                  <img
-                    id={styles.trendingImg}
-                    alt="trending-img"
-                    src={trending.artists.items[11].images[2].url}
-                  />
-                </div>
-                <div className={styles.trendingArtistsDivhid}>
-                  <p className={styles.trendingtexthid}>
-                    {trending.artists.items[7].name}
-                  </p>
-                  <p className={styles.trendingtext2hid}>
-                    {trending.artists.items[7].followers.total} followers
-                  </p>
-                  <img
-                    id={styles.trendingImg}
-                    alt="trending-img"
-                    src={trending.artists.items[7].images[0].url}
-                  />
-                </div>
-                <div className={styles.trendingArtistsDivhid}>
-                  <p className={styles.trendingtexthid}>
-                    {trending.artists.items[12].name}
-                  </p>
-                  <p className={styles.trendingtext2hid}>
-                    {trending.artists.items[12].followers.total} followers
-                  </p>
-                  <img
-                    id={styles.trendingImg}
-                    alt="trending-img"
-                    src={trending.artists.items[12].images[0].url}
-                  />
-                </div>
+                ))}
               </div>
             )}
             <button
