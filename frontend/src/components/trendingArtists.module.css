@@ -39,14 +39,16 @@
     margin: 0;
     padding-left: 1rem;
     padding-right: 1rem;
-    max-width: 30ch;
+    max-width: 27ch;
   }
 
   .albumText {
     display:flex;
     flex-direction: column;
+    cursor: pointer;
+    position: relative;
   }
-
+  
   .playButton {
     align-self: center;
     position: absolute;
@@ -123,11 +125,79 @@
   .renderButton:active {
     transform: translateY(2px);
   }
+
+  .linkToSpotifyText {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    }
+
+  .linkToSpotifyIcons {
+    display: contents;
+  }
+
+  .linkToSpotifyButton {
+    display: none;
+  }
    
   @media screen and (min-width: 450px) {
     .coversongContainer img {
       width: 300px;
       }
+
+  .albumText {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .playButton {
+    align-self: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transition: 0.3s;
+    padding: 30px;
+    cursor: pointer;
+    background-image: url("./src/assets/musiQue-imgs/playButton.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+  }
+
+  .playButton:hover {
+    opacity: 1;
+  }
+
+  .coversongContainer {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  .spotifyIconLittle {
+    align-self: flex-end;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .spotifyIconLittleBlack {
+    display: none;
+  }
+
+  .sectionTitle {
+    text-align: center;
+    padding-top: 3rem;
+  }
+
+  .coversongContainer img {
+    width: 300px;
+    }
+
   }
 
   .albumText {
@@ -221,6 +291,10 @@
     align-items: flex-start;
   }
 
+  .albumText p {
+    max-width: none;
+  }
+
   .albumAndTextContainer {
     display: flex;
     flex-direction: row;
@@ -249,8 +323,6 @@
     text-align: left;
   }
 
-
-
   }
 
   @media screen and (min-width: 800px) {
@@ -266,6 +338,14 @@
     .songName {
       font-weight: 400;
       font-size: 1.25rem;
+    }
+
+    .linkToSpotifyIcons {
+      display: none;
+    }
+
+    .linkToSpotifyButton {
+      display: contents;
     }
 
   }
