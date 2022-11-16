@@ -8,6 +8,7 @@
 
 .btn2 {
   display: none;
+
   aspect-ratio: 1/1;
   height: 100%;
   background-size: cover;
@@ -151,6 +152,7 @@
   grid-row-end: 6;
   margin-top: 1rem;
 }
+
 @media screen and (max-width: 439px) {
   .btn {
     align-items: center;
@@ -362,6 +364,7 @@
   }
 
   .btn2:nth-child(1) {
+
     background-image: url(src/assets/genres/Rectangle14.png);
   }
 
@@ -462,6 +465,7 @@
     transform: scale(0.9);
   }
 }
+
 @media screen and (min-width: 900px) {
   .btn2 {
     width: calc(25% - 2rem);
@@ -617,10 +621,3 @@
     transform: scale(0.9);
   }
 }
-
-/* @media screen and (min-width: 980px) {
-  .btn2 {
-    width: 12.5rem;
-    height: 12.5rem;
-  }
-} */
