@@ -33,7 +33,7 @@ export default function MostPopular({
               type="button"
               onClick={() => {
                 setUrl(preview);
-              }}
+              }} // SETTING THE URL AS THE PREVIEW PROP, WHICH IS THE PREVIEW_URL. NEEDS TO BE IN THIS EMPTY FUNCTION TO RENDER ONLY ON CLICK. OTHERWISE IT RENDES ON PAGE LOAD
               className={
                 iconStatus ? `${styles.pauseButton}` : `${styles.playButton}`
               }

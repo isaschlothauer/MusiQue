@@ -30,33 +30,43 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
   const [trending, setTrending] = useState("");
   const [hidden, setHidden] = useState(false);
 
-  const [currentPlaying, setCurrentPlaying] = useState("");
+  // HANDLE SONG PLAYING, INCLUDING PAUSING PREVIOUSLY PLAYED SONG
+  // THE CODE ALSO CHANGES THE PLAY/PAUSE BUTTON (SEE PROPS OF POPULAR CONTAINER)
+  // TWO USESTATE TO: SAVE THE VALUE OF THE SONG BEING PLAYED; SAVE THE STATUS OF THE PLAY/PAUSE BUTTON
 
-  const [playingOrPaused, setPlayingOrPaused] = useState(false);
+  const [currentPlaying, setCurrentPlaying] = useState(""); // SONG USESTATE
+  const [playingOrPaused, setPlayingOrPaused] = useState(false); // BUTTON USESTATE
 
   const handlePreviewClick = (url) => {
+    // WE PASS AN URL AS ARGUMENT. HERE, WE SHOULD PROP THE PREVIEW (SEE IN POPULAR CONTAINER)
     if (currentPlaying === url) {
-      setPlayingOrPaused(!playingOrPaused);
+      // IF CURRENT SONG URL BEING PLAYED IS THE SAME AS THE URL WE PASS AS ARGUMENT
+      setPlayingOrPaused(!playingOrPaused); // WE ARE GOING TO SET THE CURRENTSONG BEING PLAYED AS FALSE, WHICH IS PAUSING IT
     } else {
-      setPlayingOrPaused(true);
+      setPlayingOrPaused(true); // HOWEVER, IF IT DOES NOT MATCH, LET'S PLAY THE SONG!
     }
-    setCurrentPlaying(url);
+    setCurrentPlaying(url); // EITHERWAY; WHETHER THERE IS A SONG OR NOT, THE DEFAULT PARAMETER OF THIS FUNCTION WHOULD BE SETTING THE SONG TO BE PLAYED URL
     console.log(url);
   };
 
+  // SHUFFLE SHENANINGANS
+  // LET'S DEFINE A LOOP FUNCTION TO SCRAMBLE OUR ARRAY FIRST
+
   const shuffle = (array) => {
+    // PASS AN ARRAY AS A PARAMETER
     const output = array;
     for (let i = output.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = output[i];
+      // I = THE OUTPUT LENGHT, WHICH IS THE ARRAY, AS AN INITIAL PARAMETER. THEN, THE LIMIT IS 0, WHILE WE SUBTRACT 1 to i AS THE LAST PARAMETER
+      const j = Math.floor(Math.random() * (i + 1)); // RANDOMIZER FUNCTION
+      const temp = output[i]; // HERE WE SCRAMBLE EVERYTHING: THE OUTPUTS INDEX WILL HAVE THE RANDOMIZER FUNCTION. THEN WE SETTLE THAT OUTPUT AS THE INITIAL INDEX...
       output[i] = output[j];
-      output[j] = temp;
+      output[j] = temp; // AND WE'LL DO IT AGAIN AND AGAIN WHILE i IS GREATER THAN 0.
     }
     return output;
   };
 
   const handleShuffle = () => {
-    if (popular == null || popular === "") return;
+    if (popular == null || popular === "") return; // IF THERE IS NO SONG, WE DON'T EXECUTE THIS FUCTION
     // () => shuffle(popular.tracks.items)
     // popular: object
     // tracks: object
@@ -64,10 +74,10 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
 
     // Way 1
     setPopular({
-      ...popular,
-      tracks: { ...popular.tracks, items: shuffle(popular.tracks.items) },
-    });
-    setCurrentPlaying(false);
+      ...popular, // FIGURE OUT THE ARRAY PATH, THEN USE A SPREAD OPERATOR BECAUSE OR FETCH RETURNS US AN API OBJECT
+      tracks: { ...popular.tracks, items: shuffle(popular.tracks.items) }, // IN THIS CASE, WE WANT TO GO TILL TRACKS.ITEMS, WHERE OUR ARRAY IS
+    }); // BECAUSE OUR LOOP SCRAMBLES AN ARRAY, THAT'S EXACTLY WHERE WE WANT TO BE.
+    setCurrentPlaying(false); // PARTICULAR THING: WHEN WE PRESS THE BUTTON SHUFFLE, WE WANT TO SET ALL CURRENTPLAY STATES TO FALSE. MEANING: SHUFFLE WILL KILL ANY SONG BEING PLAYED
 
     // Way 2
     // const newItems = shuffle(popular.tracks.items);
@@ -76,6 +86,7 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
     // setPopular(newPopular);
   };
 
+  // FUNCTION HANDLECLICK FOR THE BUTTON TO REVEAL OTHER ARTISTS ON TRENDING ARTISTS WHILE IN MOBILE
   const handleClick = () => {
     setHidden((current) => !current);
   };
@@ -183,34 +194,36 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
           html5
           format="mp3"
         />
-        <h2>Most Popular</h2>
+        <p className={styles.pTitle}>Most Popular</p>
         {popular.tracks != null && (popular.tracks.items != null) != null ? (
           <>
             {popular.tracks.items.slice(0, 5).map((song) => (
-              <MostPopular
+              <MostPopular // PASSING ALL THE PROPS AFTER MAPING. NOTE THE PARTICULAR SETURL AND ICONSTATUS!
                 name={song.track.name}
                 image={song.track.album.images[1].url}
                 artist={song.track.artists[0].name}
                 url={song.track.external_urls.spotify}
                 preview={song.track.preview_url}
-                setUrl={handlePreviewClick}
+                setUrl={handlePreviewClick} // THAT'S THE ONE FUNCTION TO CONTROL THE PLAY/PAUSE IN OUR PREVIEWS!
                 iconStatus={
                   song.track.preview_url === currentPlaying
                     ? playingOrPaused
                     : false
                 }
-                // isStart = {song.track.preview_url === currentPlaying && playingOrPaused}
+                // iconStatus is a prop that is going to "fetch" a ternary operator to MostPopular component
+                // IT SAYS THAT IF PREVIEW_URL IS THE SAME AS THE SONG in CURRENTPLAYING, THAN WE RENDER THE "true" in the icon (PLAY). OTHERWISE, WE RENDER THE "false" (PAUSE)
+                // iconStatus = {song.track.preview_url === currentPlaying && playingOrPaused}
               />
             ))}
             <ShuffleButton className={styles.suffle} onClick={handleShuffle} />
           </>
         ) : (
-          <h2>Tracks loading...</h2>
+          <p className={styles.pText}>Tracks loading...</p>
         )}
       </section>
 
       <section className={styles.trending}>
-        <h2 className={styles.h2trend}>Trending Artists</h2>
+        <p className={styles.pTitle}>Trending Artists</p>
         {trending.artists != null &&
         (trending.artists.items != null) != null ? (
           <>
@@ -220,18 +233,22 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
                   artist={musician.name}
                   followers={musician.followers.total}
                   image={musician.images[0].url}
-                />
+                /> // MAPPUNG EVERYTHING LIKE IN MOSTPOPULAR.
               ))}
             </div>
-            {hidden && (
+            {hidden && ( // HOWEVER HERE WE NEED TO MAP DIFFERENTLY. WE ONLY WANT THE FOLLOWING FOUR ITEMS AFTER THE INITIALL FIVE WE MAPED UPSTAIRS
               <div className={styles.trendingArtistsContainerhid}>
-                {trending.artists.items.slice(4, 8).map((musician) => (
-                  <TrendingArtistsHidden
-                    artist={musician.name}
-                    followers={musician.followers.total}
-                    image={musician.images[0].url}
-                  />
-                ))}
+                {trending.artists.items.slice(4, 8).map(
+                  (
+                    musician // THAT'S WHY I SLICED FROM POSITION 4 TO 8
+                  ) => (
+                    <TrendingArtistsHidden // BECAUSE THIS SECTION ONLY RENDERS IN A PARTICULAR CONDITION (MOBILE VERSION) I HAD TO KEEP IT IN A SEPARATE MODULE
+                      artist={musician.name}
+                      followers={musician.followers.total}
+                      image={musician.images[0].url}
+                    />
+                  )
+                )}
               </div>
             )}
             <button
@@ -248,7 +265,7 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
             </button>
           </>
         ) : (
-          <h2>Tracks loading...</h2>
+          <h2>Page Loading...</h2>
         )}
       </section>
       <Footer />
