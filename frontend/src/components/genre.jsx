@@ -17,7 +17,7 @@ function GenreSection() {
                 type="button"
                 onClick={() => navigate("/classic")}
               >
-                <span>CLASSIC</span>
+                <span>CLASSICAL</span>
               </button>
               <button
                 className={`${Genre.btn} ${"pButtons"}`}
@@ -152,7 +152,7 @@ function GenreSection() {
                 type="button"
                 onClick={() => navigate("/classic")}
               >
-                CLASSIC
+                CLASSICAL
               </button>
               <button
                 className={`${Genre.btn2} ${"pButtons"}`}
