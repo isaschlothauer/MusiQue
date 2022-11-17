@@ -1,56 +1,241 @@
-body {
+:root {
+  --colorDarkBG: #302518;
+  --colorBlackFonts: #131315;
+  --colorWhiteFonts: #f5f5f5;
+  --colorGray: #f6f6f6;
+  --colorLightblue: #4faeff;
+  --gradientBG: linear-gradient(270.64deg, #7755f9 -22.24%, #5f3971 109.3%);
+  --gradientButtons: linear-gradient(269.49deg, #7755f9 10.41%, #02aafd 111.89%),
+    linear-gradient(270.52deg, #db6c2f -10.09%, #7755f9 90.46%);
+  --fontPoppins: "Poppins", sans-serif;
+  --fontNoto: "Noto Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 1440px;
+  min-width: 330px;
+  width: 100%;
 }
 
-.App {
-  text-align: center;
+
+
+/*--------Fonts Mobile-----------*/
+
+h1 {
+  color: var(--white);
+  font-family: var(--fontPoppins);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2.125rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-family: var(--fontPoppins);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.pText {
+  font-family: var(--fontNoto);
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.pTitle {
+  font-family: var(--fontNoto);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+.pItalic {
+  font-family: var(--fontNoto);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+.pButtons {
+  font-family: var(--fontNoto);
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+/*--------Fonts Tablet/Desktop-----------*/
+
+@media screen and (min-width: 600px) {
+  h1 {
+    color: var(--white);
+    font-family: var(--fontPoppins);
+    font-weight: 700;
+    font-size: 2.75rem;
+    line-height: 4.125rem;
+  }
+
+  h2 {
+    font-family: var(--fontPoppins);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+
+  .pText {
+    font-family: var(--fontNoto);
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .pTitle {
+    font-family: var(--fontNoto);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .pItalic {
+    font-family: var(--fontNoto);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .pButtons {
+    font-family: var(--fontNoto);
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+/*--------CSS for Genres Pages-----------*/
+.logo-buttonBack {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 2.5%;
+  grid-column-start: 1;
+}
+
+.button-back {
+  grid-column-start: 2;
+}
+
+.genre-text {
   display: flex;
   flex-direction: column;
+}
+
+.genre-text h1,
+.genre-text p {
+  color: #f5f5f5;
+}
+
+.genre-text p {
+  white-space: wrap;
+  max-width: 35ch;
+  font-size: 18px;
+}
+
+.header-genres {
+  background: linear-gradient(270.64deg, #7755f9 -22.24%, #5f3971 109.3%);
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.most-popular {
+  background: #f6f6f6;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  color: #131315;
+}
+
+.most-popular-songs {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #ffffff;
+  border-radius: 15px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.spotify-icon {
+  align-self: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shuffle {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(269.49deg, #7755f9 10.41%, #02aafd 111.89%),
+    linear-gradient(270.52deg, #db6c2f -10.09%, #7755f9 90.46%);
+  border-radius: 20px;
+  color: #f5f5f5;
+  align-self: center;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+.trending {
+  background: #302518;
+  color: #f5f5f5;
+  padding: 1.5rem;
 }
+.trending-artists-div {
+display: flex;
+gap: 0.5rem;
+}
+
+.trending-artists-div-artist {
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.trending-artists-div-artist img {
+  align-self: center;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  position: sticky;
+  top: 100vh;
+}
+
+/*
+
+background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2%, rgba(141, 138, 133, 0.322174) 59.48%, rgba(161, 159, 155, 0.237391) 84.6%, rgba(217, 217, 217, 0) 2.64%), url(assets/background3.png);
+*/
+
+
+
+
+
+
+  
+
+  
+

@@ -1,0 +1,251 @@
+/* Link style */
+a:link {
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--colorWhiteFonts);
+}
+
+.musicContainer {
+  color: var(--colorWhiteFonts);
+  background: var(--gradientBG);
+}
+
+.panelContainer {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  margin-bottom: 4rem;
+}
+
+.panel1,
+.panel2,
+.panel3,
+.panel4 {
+  max-width: 330px;
+  margin: 0;
+  flex: 1;
+}
+
+.panel1 {
+  margin: 0 auto;
+}
+
+.panel2,
+.panel3,
+.panel4 {
+  display: none;
+}
+
+.musicDiscover {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.mainImg {
+    display: flex;
+    position: relative;
+}
+
+.mainImg img {
+    margin: 2rem auto;   
+    margin-bottom: 1rem;
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+
+}
+
+.songTitle,
+.artists,
+.country,
+.format,
+.release {
+  text-align: center;
+  
+  
+}
+
+.songTitle{
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+
+.country {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.release {
+  font-size: 1rem;
+}
+
+
+
+
+.country {
+  margin-top: 1rem;
+}
+
+.shufflebtn {
+  width: 120px;
+  height: 40px;
+  margin: 1rem auto;
+  margin-top: 3rem;
+  background: linear-gradient(269.49deg, #7755f9 10.41%, #02aafd 111.89%),
+    linear-gradient(270.52deg, #db6c2f -10.09%, #7755f9 90.46%);
+  border-radius: 20px;
+  position: relative;
+}
+
+.endTxt {
+  padding-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+.endTxt p {
+  text-align: center;
+}
+
+.endTxt a,
+.endTxt img {
+  display: flex;
+  margin: 0 auto;
+}
+
+.endTxt1 {
+  font-size: 0.8rem;
+}
+
+.spotifyLogo {
+  width: 5rem;
+}
+
+.shuffleBtn {
+  margin-top: 2rem;
+}
+
+.btnContainer {
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+}
+
+.pButtons {
+    align-items: center;
+    background: linear-gradient(269.49deg, #7755F9 10.41%, #02AAFD 111.89%), linear-gradient(270.52deg, #DB6C2F -10.09%, #7755F9 90.46%);
+    border: 0;
+    border-radius: 1.25rem;
+    color: #fff;
+    cursor: pointer;
+    height: 2.625rem;
+    width: 6.688rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: left;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: box-shadow,transform;
+    margin:auto;
+    margin-bottom: 2rem;
+}
+
+.pButtons:hover {
+    transform: translateY(-2px)z;
+}
+
+.pButtons:active {
+    transform: translateY(2px);
+}
+
+.btnContainer {
+    display: flex;
+}
+
+.playButton {
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: 0.3s;
+  padding: 30px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  background-image: url("./src/assets/musiQue-imgs/playButton.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+/*   background-image: url("./src/assets/musiQue-imgs/STOP.png"); */
+
+.playButtonActive {
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: 0.3s;
+  padding: 30px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  background-image: url("./src/assets/musiQue-imgs/STOP.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.playButton:hover {
+  opacity: 1;
+}
+
+@media screen and (min-width: 600px) {
+  .panelContainer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+
+  .panel1 {
+    margin: initial;
+  }
+
+  .panel2 {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .musicDiscover {
+    text-align: initial;
+    padding-left: 3rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .panel3 {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .panel4 {
+    display: inline;
+  }
+
+
+  .musicDiscover{
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .panelContainer{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
