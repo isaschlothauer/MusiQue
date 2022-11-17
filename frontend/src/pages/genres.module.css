@@ -334,10 +334,20 @@ footer {
   display: none;
 }
 
+/* FIGMA */
 .trendingArtistsContainerhid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(1,  auto 300px);
 }
+
+/* VERTICAL ALIGNMENT 
+.trendingArtistsContainerhid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(1px, 100%));
+  grid-template-rows: repeat(1, 1fr);
+}
+*/
 
 .trendingArtistsContainerhid img {
   object-fit: cover;
