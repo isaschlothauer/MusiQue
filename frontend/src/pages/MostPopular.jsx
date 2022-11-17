@@ -1,57 +1,27 @@
 /* eslint-disable no-constant-condition */
 /* eslint-disable react/jsx-boolean-value */
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
-import ReactHowler from "react-howler";
+import React from "react";
 import styles from "./genres.module.css";
 import SpotifyLogoButton from "../components/SpotifyLogoButton";
 import SpotifyLogoLittle from "../components/SpotifyLogoLittle";
 
-/*
-     <ReactPlayer
-          url={preview}
-          width="400px"
-          height="50px"
-          playing={false}
-          controls={true}
-          mute={false}
-        />
-*/
-
 // eslint-disable-next-line no-unused-vars
-export default function MostPopular({ name, image, artist, url, preview }) {
+export default function MostPopular({
+  name,
+  image,
+  artist,
+  url,
+  preview,
+  setUrl,
+  iconStatus,
+}) {
   // const [play, { stop }] = useSound(yeah, { playbackRate });
-  const [playing, setPlaying] = useState(false);
-
-  // eslint-disable-next-line no-restricted-syntax
-  console.log({ preview });
-  /*
-
- const handlePlay = () => {
-    setPlaying(!playing);
-  };
-
-  const handleStop = () => {
-    setPlaying(playing);
-  };
-
-   <button type="button" onClick={handlePlay}>
-            Play
-          </button>
-          <button type="button" onClick={handleStop}>
-            Pause
-          </button>
-  */
 
   return (
     <div className={styles.mostPopularSongsContainer}>
       <div id={styles.popularCoverAndPopularText}>
         <div className={styles.mostPopularSongsCoverSong}>
-          {{ preview } != null ? (
-            <ReactHowler src={[preview]} html5={true} playing={playing} />
-          ) : (
-            {}
-          )}
           <img
             className={styles.mostPopularSongsImg}
             src={image}
@@ -61,10 +31,14 @@ export default function MostPopular({ name, image, artist, url, preview }) {
           {preview != null ? (
             <button
               type="button"
-              onClick={() => setPlaying(!playing)}
-              className={styles.playButton}
+              onClick={() => {
+                setUrl(preview);
+              }} // SETTING THE URL AS THE PREVIEW PROP, WHICH IS THE PREVIEW_URL. NEEDS TO BE IN THIS EMPTY FUNCTION TO RENDER ONLY ON CLICK. OTHERWISE IT RENDES ON PAGE LOAD
+              className={
+                iconStatus ? `${styles.pauseButton}` : `${styles.playButton}`
+              }
             >
-              {playing ? "" : ""}
+              {}
             </button>
           ) : (
             ""
