@@ -10,7 +10,7 @@ function Header() {
         alt="logo"
       />
       <h1 className={`${HeaderM.headerFirsttext} ${"h1"}`}>
-        musiQue presents you a new opportunity to explore the world of music.
+        MusiQue presents you a new opportunity to explore the world of music.
       </h1>
       <p className={`${HeaderM.headerSecondtext} ${"pItalic"}`}>
         Find out more about your favorite genres, discover new songs, and check

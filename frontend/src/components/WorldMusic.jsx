@@ -233,7 +233,7 @@ function WorldMusic() {
   return (
     <div className={MusicCSS.musicContainer}>
       <div className={MusicCSS.recContainer}>
-        <h2 className={MusicCSS.musicDiscover}>Music from around the world</h2>
+        <h2 className={MusicCSS.musicDiscover}>World's Music</h2>
         <div className={MusicCSS.panelContainer}>
           <div className={MusicCSS.panel1}>
             <div className={MusicCSS.mainImg}>
@@ -266,9 +266,9 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
               {musicData1.panel1Title}
-            </h2>
+            </p>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
               {musicData1.panel1Artists}
             </p>
@@ -276,7 +276,7 @@ function WorldMusic() {
               Country: {musicData1.panel1Country}
             </p>
             <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Release: {musicData1.panel1Release}
+              {musicData1.panel1Release}
             </p>
           </div>
 
@@ -312,9 +312,9 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
               {musicData2.panel2Title}
-            </h2>
+            </p>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
               {musicData2.panel2Artists}
             </p>
@@ -357,9 +357,9 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
               {musicData3.panel3Title}
-            </h2>
+            </p>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
               {musicData3.panel3Artists}
             </p>
@@ -402,9 +402,9 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <h2 className={`${MusicCSS.songTitle} ${["h2"]}`}>
+            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
               {musicData4.panel4Title}
-            </h2>
+            </p>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
               {musicData4.panel4Artists}
             </p>

@@ -2,6 +2,7 @@
 /* eslint-disable import/no-unresolved */
 // eslint-disable-next-line import/no-unresolved
 import React, { useState, useEffect } from "react";
+import ReactHowler from "react-howler";
 import PropTypes from "prop-types";
 import TopGenres from "../components/TopGenres";
 import ShuffleButton from "../components/shuffleButton";
@@ -9,7 +10,8 @@ import Footer from "../components/footer";
 import MostPopular from "./MostPopular";
 
 import styles from "./genres.module.css";
-// import TrendingArtists from "./rendingArtists";
+import TrendingArtists from "./TrendingArtists";
+import TrendingArtistsHidden from "./TrendingArtistsHidden";
 
 function GenrePage({ title, mainText, image, link, Tlink }) {
   GenrePage.propTypes = {
@@ -28,9 +30,68 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
   const [trending, setTrending] = useState("");
   const [hidden, setHidden] = useState(false);
 
+  // HANDLE SONG PLAYING, INCLUDING PAUSING PREVIOUSLY PLAYED SONG
+  // THE CODE ALSO CHANGES THE PLAY/PAUSE BUTTON (SEE PROPS OF POPULAR CONTAINER)
+  // TWO USESTATE TO: SAVE THE VALUE OF THE SONG BEING PLAYED; SAVE THE STATUS OF THE PLAY/PAUSE BUTTON
+
+  const [currentPlaying, setCurrentPlaying] = useState(""); // SONG USESTATE
+  const [playingOrPaused, setPlayingOrPaused] = useState(false); // BUTTON USESTATE
+
+  const handlePreviewClick = (url) => {
+    // WE PASS AN URL AS ARGUMENT. HERE, WE SHOULD PROP THE PREVIEW (SEE IN POPULAR CONTAINER)
+    if (currentPlaying === url) {
+      // IF CURRENT SONG URL BEING PLAYED IS THE SAME AS THE URL WE PASS AS ARGUMENT
+      setPlayingOrPaused(!playingOrPaused); // WE ARE GOING TO SET THE CURRENTSONG BEING PLAYED AS FALSE, WHICH IS PAUSING IT
+    } else {
+      setPlayingOrPaused(true); // HOWEVER, IF IT DOES NOT MATCH, LET'S PLAY THE SONG!
+    }
+    setCurrentPlaying(url); // EITHERWAY; WHETHER THERE IS A SONG OR NOT, THE DEFAULT PARAMETER OF THIS FUNCTION WHOULD BE SETTING THE SONG TO BE PLAYED URL
+    console.log(url);
+  };
+
+  // SHUFFLE SHENANINGANS
+  // LET'S DEFINE A LOOP FUNCTION TO SCRAMBLE OUR ARRAY FIRST
+
+  const shuffle = (array) => {
+    // PASS AN ARRAY AS A PARAMETER
+    const output = array;
+    for (let i = output.length - 1; i > 0; i -= 1) {
+      // I = THE OUTPUT LENGHT, WHICH IS THE ARRAY, AS AN INITIAL PARAMETER. THEN, THE LIMIT IS 0, WHILE WE SUBTRACT 1 to i AS THE LAST PARAMETER
+      const j = Math.floor(Math.random() * (i + 1)); // RANDOMIZER FUNCTION
+      const temp = output[i]; // HERE WE SCRAMBLE EVERYTHING: THE OUTPUTS INDEX WILL HAVE THE RANDOMIZER FUNCTION. THEN WE SETTLE THAT OUTPUT AS THE INITIAL INDEX...
+      output[i] = output[j];
+      output[j] = temp; // AND WE'LL DO IT AGAIN AND AGAIN WHILE i IS GREATER THAN 0.
+    }
+    return output;
+  };
+
+  const handleShuffle = () => {
+    if (popular == null || popular === "") return; // IF THERE IS NO SONG, WE DON'T EXECUTE THIS FUCTION
+    // () => shuffle(popular.tracks.items)
+    // popular: object
+    // tracks: object
+    // items: array
+
+    // Way 1
+    setPopular({
+      ...popular, // FIGURE OUT THE ARRAY PATH, THEN USE A SPREAD OPERATOR BECAUSE OR FETCH RETURNS US AN API OBJECT
+      tracks: { ...popular.tracks, items: shuffle(popular.tracks.items) }, // IN THIS CASE, WE WANT TO GO TILL TRACKS.ITEMS, WHERE OUR ARRAY IS
+    }); // BECAUSE OUR LOOP SCRAMBLES AN ARRAY, THAT'S EXACTLY WHERE WE WANT TO BE.
+    setCurrentPlaying(false); // PARTICULAR THING: WHEN WE PRESS THE BUTTON SHUFFLE, WE WANT TO SET ALL CURRENTPLAY STATES TO FALSE. MEANING: SHUFFLE WILL KILL ANY SONG BEING PLAYED
+
+    // Way 2
+    // const newItems = shuffle(popular.tracks.items);
+    // const newTracks = { ...popular.tracks, items: newItems };
+    // const newPopular = { ...popular, tracks: newTracks };
+    // setPopular(newPopular);
+  };
+
+  // FUNCTION HANDLECLICK FOR THE BUTTON TO REVEAL OTHER ARTISTS ON TRENDING ARTISTS WHILE IN MOBILE
   const handleClick = () => {
     setHidden((current) => !current);
   };
+
+  //  USE EFFECT FOR TOKEN
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -64,6 +125,8 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
     };
   }, []);
 
+  //  USE EFFECT FOR POPULAR
+
   useEffect(() => {
     const abortController = new AbortController();
     const abortSignal = abortController.signal;
@@ -77,7 +140,7 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
     })
       .then((res) => res.json())
       // eslint-disable-next-line no-bitwise
-      .then((result) => setPopular(result) & console.log(result))
+      .then((result) => setPopular(result) & console.log("POPULAR", result))
       .catch((err) => {
         // eslint-disable-next-line no-restricted-syntax
         console.log(err);
@@ -88,6 +151,8 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
     };
   }, [accessToken]);
 
+  //  USE EFFECT FOR TRENDING
+
   useEffect(() => {
     if (accessToken == null) return;
     fetch(Tlink, {
@@ -97,39 +162,13 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
       },
     })
       .then((res) => res.json())
-      .then((result) => setTrending(result));
+      // eslint-disable-next-line no-bitwise
+      .then((result) => setTrending(result) & console.log("TRENDING", result))
+      .catch((err) => {
+        // eslint-disable-next-line no-restricted-syntax
+        console.log(err);
+      });
   }, [accessToken]);
-
-  const shuffle = (array) => {
-    const output = array;
-    for (let i = output.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = output[i];
-      output[i] = output[j];
-      output[j] = temp;
-    }
-    return output;
-  };
-
-  const handleShuffle = () => {
-    if (popular == null || popular === "") return;
-    // () => shuffle(popular.tracks.items)
-    // popular: object
-    // tracks: object
-    // items: array
-
-    // Way 1
-    setPopular({
-      ...popular,
-      tracks: { ...popular.tracks, items: shuffle(popular.tracks.items) },
-    });
-
-    // Way 2
-    // const newItems = shuffle(popular.tracks.items);
-    // const newTracks = { ...popular.tracks, items: newItems };
-    // const newPopular = { ...popular, tracks: newTracks };
-    // setPopular(newPopular);
-  };
 
   return (
     <div className={styles.Rock}>
@@ -148,151 +187,68 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
         </section>
       </header>
       <section className={styles.mostPopular}>
-        <h2>Most Popular</h2>
+        <ReactHowler
+          src={[currentPlaying]}
+          playing={playingOrPaused}
+          volume={0.3}
+          html5
+          format="mp3"
+        />
+        <p className={styles.pTitle}>Most Popular</p>
         {popular.tracks != null && (popular.tracks.items != null) != null ? (
           <>
             {popular.tracks.items.slice(0, 5).map((song) => (
-              <MostPopular
+              <MostPopular // PASSING ALL THE PROPS AFTER MAPING. NOTE THE PARTICULAR SETURL AND ICONSTATUS!
                 name={song.track.name}
                 image={song.track.album.images[1].url}
                 artist={song.track.artists[0].name}
                 url={song.track.external_urls.spotify}
                 preview={song.track.preview_url}
+                setUrl={handlePreviewClick} // THAT'S THE ONE FUNCTION TO CONTROL THE PLAY/PAUSE IN OUR PREVIEWS!
+                iconStatus={
+                  song.track.preview_url === currentPlaying
+                    ? playingOrPaused
+                    : false
+                }
+                // iconStatus is a prop that is going to "fetch" a ternary operator to MostPopular component
+                // IT SAYS THAT IF PREVIEW_URL IS THE SAME AS THE SONG in CURRENTPLAYING, THAN WE RENDER THE "true" in the icon (PLAY). OTHERWISE, WE RENDER THE "false" (PAUSE)
+                // iconStatus = {song.track.preview_url === currentPlaying && playingOrPaused}
               />
             ))}
             <ShuffleButton className={styles.suffle} onClick={handleShuffle} />
           </>
         ) : (
-          <h2>Tracks loading...</h2>
+          <p className={styles.pText}>Tracks loading...</p>
         )}
       </section>
 
       <section className={styles.trending}>
-        <h2 className={styles.h2trend}>Trending Artists</h2>
+        <p className={styles.pTitle}>Trending Artists</p>
         {trending.artists != null &&
         (trending.artists.items != null) != null ? (
           <>
             <div className={styles.trendingArtistsContainer}>
-              <div className={styles.trendingArtistsDiv}>
-                <p className={styles.trendingtext}>
-                  {trending.artists.items[0].name}
-                </p>
-                <p className={styles.trendingtext2}>
-                  {trending.artists.items[0].followers.total} followers
-                </p>
-                <img
-                  id={styles.trendingImg}
-                  alt="trending-img"
-                  src={trending.artists.items[0].images[0].url}
-                />
-              </div>
-              <div className={styles.trendingArtistsDiv}>
-                <p className={styles.trendingtext}>
-                  {trending.artists.items[1].name}
-                </p>
-                <p className={styles.trendingtext2}>
-                  {trending.artists.items[1].followers.total} followers
-                </p>
-                <img
-                  id={styles.trendingImg}
-                  alt="trending-img"
-                  src={trending.artists.items[1].images[0].url}
-                />
-              </div>
-              <div className={styles.trendingArtistsDiv}>
-                <p className={styles.trendingtext}>
-                  {trending.artists.items[2].name}
-                </p>
-                <p className={styles.trendingtext2}>
-                  {trending.artists.items[2].followers.total} followers
-                </p>
-                <img
-                  id={styles.trendingImg}
-                  alt="trending-img"
-                  src={trending.artists.items[2].images[0].url}
-                />
-              </div>
-              <div className={styles.trendingArtistsDiv}>
-                <p className={styles.trendingtext}>
-                  {trending.artists.items[3].name}
-                </p>
-                <p className={styles.trendingtext2}>
-                  {trending.artists.items[3].followers.total} followers
-                </p>
-                <img
-                  id={styles.trendingImg}
-                  alt="trending-img"
-                  src={trending.artists.items[3].images[0].url}
-                />
-              </div>
-              <div className={styles.trendingArtistsDiv}>
-                <p className={styles.trendingtext}>
-                  {trending.artists.items[4].name}
-                </p>
-                <p className={styles.trendingtext2}>
-                  {trending.artists.items[4].followers.total} followers
-                </p>
-                <img
-                  id={styles.trendingImg}
-                  alt="trending-img"
-                  src={trending.artists.items[4].images[0].url}
-                />
-              </div>
+              {trending.artists.items.slice(0, 5).map((musician) => (
+                <TrendingArtists
+                  artist={musician.name}
+                  followers={musician.followers.total}
+                  image={musician.images[0].url}
+                /> // MAPPUNG EVERYTHING LIKE IN MOSTPOPULAR.
+              ))}
             </div>
-            {hidden && (
+            {hidden && ( // HOWEVER HERE WE NEED TO MAP DIFFERENTLY. WE ONLY WANT THE FOLLOWING FOUR ITEMS AFTER THE INITIALL FIVE WE MAPED UPSTAIRS
               <div className={styles.trendingArtistsContainerhid}>
-                <div className={styles.trendingArtistsDivhid}>
-                  <p className={styles.trendingtexthid}>
-                    {trending.artists.items[5].name}
-                  </p>
-                  <p className={styles.trendingtext2hid}>
-                    {trending.artists.items[5].followers.total} followers
-                  </p>
-                  <img
-                    id={styles.trendingImg}
-                    alt="trending-img"
-                    src={trending.artists.items[5].images[1].url}
-                  />
-                </div>
-                <div className={styles.trendingArtistsDivhid}>
-                  <p className={styles.trendingtexthid}>
-                    {trending.artists.items[11].name}
-                  </p>
-                  <p className={styles.trendingtext2hid}>
-                    {trending.artists.items[11].followers.total} followers
-                  </p>
-                  <img
-                    id={styles.trendingImg}
-                    alt="trending-img"
-                    src={trending.artists.items[11].images[2].url}
-                  />
-                </div>
-                <div className={styles.trendingArtistsDivhid}>
-                  <p className={styles.trendingtexthid}>
-                    {trending.artists.items[7].name}
-                  </p>
-                  <p className={styles.trendingtext2hid}>
-                    {trending.artists.items[7].followers.total} followers
-                  </p>
-                  <img
-                    id={styles.trendingImg}
-                    alt="trending-img"
-                    src={trending.artists.items[7].images[0].url}
-                  />
-                </div>
-                <div className={styles.trendingArtistsDivhid}>
-                  <p className={styles.trendingtexthid}>
-                    {trending.artists.items[12].name}
-                  </p>
-                  <p className={styles.trendingtext2hid}>
-                    {trending.artists.items[12].followers.total} followers
-                  </p>
-                  <img
-                    id={styles.trendingImg}
-                    alt="trending-img"
-                    src={trending.artists.items[12].images[0].url}
-                  />
-                </div>
+                {trending.artists.items.slice(4, 8).map(
+                  (
+                    musician // THAT'S WHY I SLICED FROM POSITION 4 TO 8
+                  ) => (
+                    <TrendingArtistsHidden // BECAUSE THIS SECTION ONLY RENDERS IN A PARTICULAR CONDITION (MOBILE VERSION) I HAD TO KEEP IT IN A SEPARATE MODULE
+                      artist={musician.name}
+                      followers={musician.followers.total}
+                      image={musician.images[0].url}
+                    />
+                  )
+                )}
               </div>
             )}
             <button
@@ -309,7 +265,7 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
             </button>
           </>
         ) : (
-          <h2>Tracks loading...</h2>
+          <h2>Page Loading...</h2>
         )}
       </section>
       <Footer />
