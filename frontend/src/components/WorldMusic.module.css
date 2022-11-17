@@ -15,6 +15,7 @@ a:link {
   max-width: 100%;
   margin: 0 auto;
   padding: 0 3rem;
+  margin-bottom: 4rem;
 }
 
 .panel1,
@@ -60,18 +61,27 @@ a:link {
 .format,
 .release {
   text-align: center;
-  font-weight: 500;
+  
+  
 }
 
-.release,
+.songTitle{
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+
 .country {
   font-size: 1rem;
   margin-top: 1rem;
 }
 
-.artists {
-  margin-top: 1rem;
+.release {
+  font-size: 1rem;
 }
+
+
+
 
 .country {
   margin-top: 1rem;
@@ -89,8 +99,8 @@ a:link {
 }
 
 .endTxt {
-  padding-bottom: 1.4rem;
-  /* margin-top: 1rem; */
+  padding-bottom: 3rem;
+  margin-top: 1rem;
 }
 
 .endTxt p {
@@ -226,5 +236,16 @@ a:link {
 @media screen and (min-width: 1200px) {
   .panel4 {
     display: inline;
+  }
+
+
+  .musicDiscover{
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .panelContainer{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }

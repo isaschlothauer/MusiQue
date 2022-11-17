@@ -73,7 +73,7 @@ const genreInfo = [
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:country",
   },
   {
-    title: "CLASSIC",
+    title: "CLASSICAL",
     mainText:
       "To define a “classical” genre, we can attribute the musical production that began a bit more than one thousand years old till our present times, produced mainly in the Western hemisphere. It’s a heavily structured music, for the so called “classic” instruments, such as piano, violin, acoustic guitar, French horn, transversal flute, counter bass, between many others. Artists produce musical pieces for solo concerts and/or orchestral arrangements.",
     path: "/classic/*",

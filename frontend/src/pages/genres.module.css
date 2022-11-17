@@ -27,20 +27,6 @@ body {
 
 /*--------Fonts Mobile-----------*/
 
-h1 {
-  color: var(--white);
-  font-family: var(--fontPoppins);
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 2.125rem;
-}
-
-h2 {
-  font-family: var(--fontPoppins);
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.875rem;
-}
 
 .pText {
   font-family: var(--fontNoto);
@@ -289,20 +275,22 @@ footer {
 
 .trendingtext {
   position: relative;
-  top: 85%;
+  top: 10%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 12px;
+  font-size: 16px;
   height: 0;
   font-weight: 700;
+  max-width: 20ch;
 }
 
 .trendingtext2 {
+  display: none;
   position: relative;
-  top: 90%;
+  top: 10%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 10px;
+  font-size: 14px;
   height: 0;
 }
 
@@ -317,20 +305,22 @@ footer {
 
 .trendingtexthid {
   position: relative;
-  top: 85%;
+  top: 10%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 12px;
+  font-size: 16px;
   height: 0;
   font-weight: 700;
+  max-width: 20ch;
 }
 
 .trendingtext2hid {
+  display: none;
   position: relative;
   top: 90%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 10px;
+  font-size: 14px;
   height: 0;
 }
 
@@ -367,39 +357,43 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
 @media screen and (max-width: 440px) {
   .trendingtext {
     position: relative;
-    top: 85%;
+    top: 10%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 8px;
+    font-size: 16px;
     height: 0;
     font-weight: 700;
+    max-width: 15ch;
   }
 
   .trendingtext2 {
+    display: none;
     position: relative;
-    top: 90%;
+    top: 85%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 6px;
+    font-size: 14px;
     height: 0;
   }
 
   .trendingtexthid {
     position: relative;
-    top: 85%;
+    top: 10%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 8px;
+    font-size: 16px;
     height: 0;
     font-weight: 700;
+    max-width: 15ch;
   }
 
   .trendingtext2hid {
+    display: none;
     position: relative;
-    top: 90%;
+    top: 85%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 6px;
+    font-size: 14px;
     height: 0;
   }
 
@@ -419,20 +413,7 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
 }
 
 @media screen and (min-width: 600px) {
-  h1 {
-    color: var(--white);
-    font-family: var(--fontPoppins);
-    font-weight: 700;
-    font-size: 2.75rem;
-    line-height: 4.125rem;
-  }
 
-  h2 {
-    font-family: var(--fontPoppins);
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 3rem;
-  }
 
   .pText {
     font-family: var(--fontNoto);
@@ -490,6 +471,52 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   #popularCoverAndPopularText {
     gap: 5rem;
   }
+
+  .trendingtext {
+    position: relative;
+    top: 82%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 18px;
+    height: 0;
+    font-weight: 700;
+    max-width: 50ch;
+    
+  }
+
+  .trendingtext2 {
+    display: block;
+    position: relative;
+    top: 90%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+  }
+
+  .trendingtexthid {
+    position: relative;
+    top: 82%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 18px;
+    height: 0;
+    font-weight: 700;
+    max-width: 50ch;
+    
+  }
+
+  .trendingtext2hid {
+    display: block;
+    position: relative;
+    top: 90%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+  }
+
+
 }
 
 @media screen and (min-width: 500px) {
@@ -576,7 +603,7 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     top: 85%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 14px;
+    font-size: 18px;
     height: 0;
   }
 
@@ -585,7 +612,7 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     top: 90%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 12px;
+    font-size: 14px;
     height: 0;
   }
 

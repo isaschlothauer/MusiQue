@@ -139,7 +139,7 @@
     white-space: nowrap;
     will-change: box-shadow,transform;
     margin:auto;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   .renderButton:hover {
@@ -193,7 +193,7 @@
     text-align: center;
     padding-top: 3rem;
   }
-
+   
    
   @media screen and (min-width: 450px) {
     .coversongContainer img {
@@ -223,23 +223,23 @@
 
   .sectionTitle {
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 4rem;
   }
 
   .coversongContainer img {
     width: 300px;
     }
 
-
   }
+
 
 
   @media screen and (min-width: 600px) {
 
    .trendingArtists {
      background: #F6F6F6;
-     padding-left: 5rem;
-     padding-right: 5rem;
+     padding-left: 3rem;
+     padding-right: 3rem;
    }
 
    .articles {
@@ -303,6 +303,7 @@
 
   .sectionTitle {
     text-align: left;
+    padding-top: 2rem;
   }
 
   }
@@ -330,4 +331,15 @@
       display: contents;
     }
 
+  }
+
+
+
+
+
+  @media screen and (min-width: 1200px) {
+.trendingArtists{
+padding-left:5rem;
+padding-right:5rem;
+}
   }
