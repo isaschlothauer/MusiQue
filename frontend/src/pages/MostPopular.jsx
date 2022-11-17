@@ -23,10 +23,9 @@ export default function MostPopular({
       <div id={styles.popularCoverAndPopularText}>
         <div className={styles.mostPopularSongsCoverSong}>
           <img
-            className={styles.mostPopularSongsImg}
+            id={styles.mostPopularSongsImg}
             src={image}
             alt="most-popular-song"
-            width={150}
           />
           {preview != null ? (
             <button

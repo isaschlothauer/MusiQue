@@ -27,6 +27,20 @@ body {
 
 /*--------Fonts Mobile-----------*/
 
+h1 {
+  color: var(--white);
+  font-family: var(--fontPoppins);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2.125rem;
+}
+
+h2 {
+  font-family: var(--fontPoppins);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+}
 
 .pText {
   font-family: var(--fontNoto);
@@ -176,6 +190,10 @@ body {
   box-sizing: border-box;
 }
 
+#mostPopularSongsImg {
+  width: 6rem;
+}
+
 #popularCoverAndPopularText {
   display: flex;
   gap: 1rem;
@@ -254,13 +272,16 @@ body {
   grid-template-columns: 1fr 1fr;
 }
 
-.trendingArtistsContainer img {
-  width: 100%;
-  height: 100%;
+.trendingArtistsContainer > div {
+  max-height: 200px;
+  overflow: hidden;
 }
 
 #trendingImg {
+  object-fit: cover;
   width: 100%;
+  height: 100%;
+  min-height: 200px;
   -webkit-box-shadow: inset 0 0 10px 10px blue;
   -moz-box-shadow: inset 0 0 10px 10px blue;
   box-shadow: inset 0 0 10px 10px blue;
@@ -299,22 +320,20 @@ footer {
 
 .trendingtext {
   position: relative;
-  top: 10%;
+  top: 85%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 16px;
+  font-size: 12px;
   height: 0;
   font-weight: 700;
-  max-width: 20ch;
 }
 
 .trendingtext2 {
-  display: none;
   position: relative;
-  top: 10%;
+  top: 90%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 14px;
+  font-size: 10px;
   height: 0;
 }
 
@@ -326,7 +345,12 @@ footer {
 .trendingArtistsContainerhid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(1,  auto 300px);
+  grid-template-rows: 1fr 1fr;
+}
+
+.trendingArtistsContainerhid > div {
+  max-height: 200px;
+  overflow: hidden;
 }
 
 /* VERTICAL ALIGNMENT 
@@ -345,22 +369,20 @@ footer {
 
 .trendingtexthid {
   position: relative;
-  top: 10%;
+  top: 85%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 16px;
+  font-size: 12px;
   height: 0;
   font-weight: 700;
-  max-width: 20ch;
 }
 
 .trendingtext2hid {
-  display: none;
   position: relative;
   top: 90%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 14px;
+  font-size: 10px;
   height: 0;
 }
 
@@ -388,7 +410,6 @@ footer {
 }
 
 /*
-
 background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2%, rgba(141, 138, 133, 0.322174) 59.48%, rgba(161, 159, 155, 0.237391) 84.6%, rgba(217, 217, 217, 0) 2.64%), url(assets/background3.png);
 */
 
@@ -397,43 +418,39 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
 @media screen and (max-width: 440px) {
   .trendingtext {
     position: relative;
-    top: 10%;
-    left: 5%;
-    font-family: var(--fontNoto);
-    font-size: 16px;
-    height: 0;
-    font-weight: 700;
-    max-width: 15ch;
-  }
-
-  .trendingtext2 {
-    display: none;
-    position: relative;
     top: 85%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 14px;
+    font-size: 8px;
+    height: 0;
+    font-weight: 700;
+  }
+
+  .trendingtext2 {
+    position: relative;
+    top: 90%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 6px;
     height: 0;
   }
 
   .trendingtexthid {
     position: relative;
-    top: 10%;
-    left: 5%;
-    font-family: var(--fontNoto);
-    font-size: 16px;
-    height: 0;
-    font-weight: 700;
-    max-width: 15ch;
-  }
-
-  .trendingtext2hid {
-    display: none;
-    position: relative;
     top: 85%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 14px;
+    font-size: 8px;
+    height: 0;
+    font-weight: 700;
+  }
+
+  .trendingtext2hid {
+    position: relative;
+    top: 90%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 6px;
     height: 0;
   }
 
@@ -453,7 +470,20 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
 }
 
 @media screen and (min-width: 600px) {
+  h1 {
+    color: var(--white);
+    font-family: var(--fontPoppins);
+    font-weight: 700;
+    font-size: 2.75rem;
+    line-height: 4.125rem;
+  }
 
+  h2 {
+    font-family: var(--fontPoppins);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
 
   .pText {
     font-family: var(--fontNoto);
@@ -512,55 +542,17 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     padding-right: 0rem;
   }
 
+  #mostPopularSongsImg {
+    width: 8rem;
+  }
+
   #popularCoverAndPopularText {
     gap: 5rem;
   }
 
-  .trendingtext {
-    position: relative;
-    top: 82%;
-    left: 5%;
-    font-family: var(--fontNoto);
-    font-size: 18px;
-    height: 0;
-    font-weight: 700;
-    max-width: 50ch;
-    
+  #mostPopularSongsImg {
+    width: 8rem;
   }
-
-  .trendingtext2 {
-    display: block;
-    position: relative;
-    top: 90%;
-    left: 5%;
-    font-family: var(--fontNoto);
-    font-size: 14px;
-    height: 0;
-  }
-
-  .trendingtexthid {
-    position: relative;
-    top: 82%;
-    left: 5%;
-    font-family: var(--fontNoto);
-    font-size: 18px;
-    height: 0;
-    font-weight: 700;
-    max-width: 50ch;
-    
-  }
-
-  .trendingtext2hid {
-    display: block;
-    position: relative;
-    top: 90%;
-    left: 5%;
-    font-family: var(--fontNoto);
-    font-size: 14px;
-    height: 0;
-  }
-
-
 }
 
 @media screen and (min-width: 500px) {
@@ -572,6 +564,15 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
 @media screen and (min-width: 800px) {
   .rockImg {
     display: contents;
+  }
+
+  .trendingArtistsContainer > div {
+    max-height: 100%;
+    overflow: initial;
+  }
+
+  #mostPopularSongsImg {
+    width: 10rem;
   }
 
   .trendingArtistsContainer {
@@ -647,7 +648,7 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     top: 85%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 18px;
+    font-size: 14px;
     height: 0;
   }
 
@@ -656,7 +657,7 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     top: 90%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 14px;
+    font-size: 12px;
     height: 0;
   }
 
