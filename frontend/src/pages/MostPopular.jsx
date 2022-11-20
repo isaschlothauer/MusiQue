@@ -44,7 +44,14 @@ export default function MostPopular({
           )}
         </div>
         <div className={styles.mostPopularSongsText}>
-          <p className={styles.pTitle}>{name}</p>
+          <a
+            href={url}
+            className={styles.linkBig}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p className={styles.pTitle}>{name}</p>
+          </a>
           <p className={styles.pItalic}>{artist}</p>
         </div>
       </div>
