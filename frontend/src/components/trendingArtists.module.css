@@ -26,7 +26,7 @@
 .articles {
     display: flex;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
@@ -140,6 +140,7 @@
     will-change: box-shadow,transform;
     margin:auto;
     margin-bottom: 3rem;
+  
   }
 
   .renderButton:hover {
@@ -254,7 +255,8 @@
     box-shadow: none;
     width: 100%;
     gap: 0;
-   }
+    margin-bottom: 1.5rem;
+     }
 
    .coversongContainer img {
     width: 150px;
@@ -265,6 +267,7 @@
   .artistsCard {
     padding-top: 1.5rem;
     border-radius: 15px;
+    gap: 0rem;
   }
 
   .albumText {
@@ -305,6 +308,12 @@
     text-align: left;
     padding-top: 2rem;
   }
+
+  .renderButton {
+    margin-top: 1.5rem;
+  }
+
+
 
   }
 

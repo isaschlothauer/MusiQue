@@ -13,13 +13,14 @@ import styles from "./genres.module.css";
 import TrendingArtists from "./TrendingArtists";
 import TrendingArtistsHidden from "./TrendingArtistsHidden";
 
-function GenrePage({ title, mainText, image, link, Tlink }) {
+function GenrePage({ title, mainText, image, link, Tlink, alt }) {
   GenrePage.propTypes = {
     title: PropTypes.string.isRequired,
     mainText: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     Tlink: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
   };
   // eslint-disable-next-line no-unused-vars
   const clientId = import.meta.env.VITE_CLIENT_ID;
@@ -74,7 +75,7 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
 
     // Way 1
     setPopular({
-      ...popular, // FIGURE OUT THE ARRAY PATH, THEN USE A SPREAD OPERATOR BECAUSE OR FETCH RETURNS US AN API OBJECT
+      ...popular, // FIGURE OUT THE ARRAY PATH, THEN USE A SPREAD OPERATOR BECAUSE OUR FETCH RETURNS US AN API OBJECT
       tracks: { ...popular.tracks, items: shuffle(popular.tracks.items) }, // IN THIS CASE, WE WANT TO GO TILL TRACKS.ITEMS, WHERE OUR ARRAY IS
     }); // BECAUSE OUR LOOP SCRAMBLES AN ARRAY, THAT'S EXACTLY WHERE WE WANT TO BE.
     setCurrentPlaying(false); // PARTICULAR THING: WHEN WE PRESS THE BUTTON SHUFFLE, WE WANT TO SET ALL CURRENTPLAY STATES TO FALSE. MEANING: SHUFFLE WILL KILL ANY SONG BEING PLAYED
@@ -180,8 +181,8 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
               <h1>{title}</h1>
               <p className={styles.pText}>{mainText}</p>
             </div>
-            <div className={styles.rockImg}>
-              <img alt="electric-guitar" src={image} width={350} />
+            <div className={styles.genresImg}>
+              <img alt={alt} src={image} width={350} />
             </div>
           </div>
         </section>
@@ -194,7 +195,7 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
           html5
           format="mp3"
         />
-        <p className={styles.pTitle}>Most Popular</p>
+        <h2 className={styles.h2}>Most Popular</h2>
         {popular.tracks != null && (popular.tracks.items != null) != null ? (
           <>
             {popular.tracks.items.slice(0, 5).map((song) => (
@@ -223,7 +224,7 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
       </section>
 
       <section className={styles.trending}>
-        <p className={styles.pTitle}>Trending Artists</p>
+        <h2 className={styles.h2}>Trending Artists</h2>
         {trending.artists != null &&
         (trending.artists.items != null) != null ? (
           <>

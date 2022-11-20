@@ -23,10 +23,9 @@ export default function MostPopular({
       <div id={styles.popularCoverAndPopularText}>
         <div className={styles.mostPopularSongsCoverSong}>
           <img
-            className={styles.mostPopularSongsImg}
+            id={styles.mostPopularSongsImg}
             src={image}
             alt="most-popular-song"
-            width={150}
           />
           {preview != null ? (
             <button
@@ -45,7 +44,14 @@ export default function MostPopular({
           )}
         </div>
         <div className={styles.mostPopularSongsText}>
-          <p className={styles.pTitle}>{name}</p>
+          <a
+            href={url}
+            className={styles.linkBig}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p className={styles.pTitle}>{name}</p>
+          </a>
           <p className={styles.pItalic}>{artist}</p>
         </div>
       </div>
