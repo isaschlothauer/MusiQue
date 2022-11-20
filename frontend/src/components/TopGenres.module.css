@@ -3,11 +3,16 @@
   grid-template-columns: 1fr;
   justify-items: center;
   align-items: center;
+  margin-left: 25px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+ 
 }
 
 .logo {
   margin-left: 2.5%;
   grid-column-start: 1;
+  
 }
 
 .buttonBack {
@@ -17,6 +22,7 @@
 .buttonBackDiv {
   opacity: 0.6;
   transition: all ease 0.3s;
+  
 }
 
 .buttonBackDiv:hover {

@@ -149,16 +149,16 @@ h2 {
 
 .genreText p {
   white-space: wrap;
-  max-width: 35ch;
   font-size: 18px;
 }
 
 .headerGenres {
   background: linear-gradient(270.64deg, #7755f9 -22.24%, #5f3971 109.3%);
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 3rem;
 }
+
 
 .genreTextAndImg {
   display: flex;
@@ -168,9 +168,9 @@ h2 {
 
 .mostPopular {
   background: #f6f6f6;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  padding-top: 1.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-top: 2rem;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -183,7 +183,7 @@ h2 {
   align-items: center;
   background: #ffffff;
   border-radius: 15px;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   min-width: 100%;
   padding: 1rem;
 }
@@ -274,11 +274,17 @@ h2 {
   color: #f5f5f5;
   height: auto;
   padding-bottom: 4rem;
+  padding-top: 2rem;
+}
+
+.trending .h2{
+  margin-left: 2rem;
 }
 
 .trendingArtistsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding-top: 1.5rem;
 }
 
 .trendingArtistsContainer > div {
@@ -291,6 +297,7 @@ h2 {
   width: 100%;
   height: 100%;
   min-height: 200px;
+
 }
 
 footer {
@@ -326,21 +333,25 @@ footer {
 
 .trendingtext {
   position: relative;
-  top: 85%;
+  top: 10%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 12px;
+  font-size: 16px;
   height: 0;
   font-weight: 700;
+  max-width: 20ch;
+  text-shadow: 1px 1px 2px #000000;
 }
 
 .trendingtext2 {
+  display: none;
   position: relative;
-  top: 90%;
+  top: 10%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 10px;
+  font-size: 14px;
   height: 0;
+  text-shadow: 1px 1px 2px #000000;
 }
 
 .trendingArtistsDiv:nth-child(5) {
@@ -375,21 +386,25 @@ footer {
 
 .trendingtexthid {
   position: relative;
-  top: 85%;
+  top: 10%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 12px;
+  font-size: 16px;
   height: 0;
   font-weight: 700;
+  max-width: 20ch;
+  text-shadow: 1px 1px 2px #000000;
 }
 
 .trendingtext2hid {
+  display: none;
   position: relative;
   top: 90%;
   left: 5%;
   font-family: var(--fontNoto);
-  font-size: 10px;
+  font-size: 14px;
   height: 0;
+  text-shadow: 1px 1px 2px #000000;
 }
 
 .btn3 {
@@ -424,39 +439,43 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
 @media screen and (max-width: 440px) {
   .trendingtext {
     position: relative;
-    top: 85%;
+    top: 10%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 8px;
+    font-size: 16px;
     height: 0;
     font-weight: 700;
+    max-width: 15ch;
   }
 
   .trendingtext2 {
+    display: none;
     position: relative;
-    top: 90%;
+    top: 85%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 6px;
+    font-size: 14px;
     height: 0;
   }
 
   .trendingtexthid {
     position: relative;
-    top: 85%;
+    top: 10%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 8px;
+    font-size: 16px;
     height: 0;
     font-weight: 700;
+    max-width: 15ch;
   }
 
   .trendingtext2hid {
+    display: none;
     position: relative;
-    top: 90%;
+    top: 85%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 6px;
+    font-size: 14px;
     height: 0;
   }
 
@@ -474,6 +493,9 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     background-color: #302518;
   }
 }
+
+
+
 
 @media screen and (min-width: 600px) {
   h1 {
@@ -526,8 +548,8 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   /*--------CSS for Genres Pages-----------*/
 
   .mostPopular {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
   .h2trend {
     padding-left: 5rem;
@@ -535,8 +557,8 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   }
 
   .genreTextAndImg {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .genreText p {
@@ -556,6 +578,56 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     gap: 5rem;
   }
 
+  .trendingtext {
+    position: relative;
+    top: 75%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 18px;
+    height: 0;
+    font-weight: 700;
+    max-width: 50ch;
+    
+  }
+
+  .trendingtext2 {
+    display: block;
+    position: relative;
+    top:87%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+  }
+
+  .trendingtexthid {
+    position: relative;
+    top: 75%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 18px;
+    height: 0;
+    font-weight: 700;
+    max-width: 50ch;
+    
+  }
+
+  .trendingtext2hid {
+    display: block;
+    position: relative;
+    top: 87%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+  }
+
+  .trending .h2{
+    margin-left: 3rem;
+  }
+
+
+
   #mostPopularSongsImg {
     width: 8rem;
   }
@@ -565,6 +637,8 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   .mostPopularSongsContainer {
     width: 100%;
   }
+
+
 }
 
 @media screen and (min-width: 800px) {
@@ -663,7 +737,7 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     top: 85%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 14px;
+    font-size: 18px;
     height: 0;
   }
 
@@ -672,10 +746,9 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     top: 90%;
     left: 5%;
     font-family: var(--fontNoto);
-    font-size: 12px;
+    font-size: 14px;
     height: 0;
   }
-
   .btn3 {
     display: none;
   }
@@ -728,5 +801,22 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     font-family: var(--fontNoto);
     font-size: 20px;
     height: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .mostPopular {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .trending .h2{
+    margin-left: 5rem;
+  }
+
+  .headerGenres {
+    padding-right: 5rem;
+    padding-left: 5rem;
+   
   }
 }
