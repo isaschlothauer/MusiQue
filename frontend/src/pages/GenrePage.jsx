@@ -194,7 +194,7 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
           html5
           format="mp3"
         />
-        <p className={styles.pTitle}>Most Popular</p>
+        <h2 className={styles.h2}>Most Popular</h2>
         {popular.tracks != null && (popular.tracks.items != null) != null ? (
           <>
             {popular.tracks.items.slice(0, 5).map((song) => (
@@ -223,7 +223,7 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
       </section>
 
       <section className={styles.trending}>
-        <p className={styles.pTitle}>Trending Artists</p>
+        <h2 className={styles.h2}>Trending Artists</h2>
         {trending.artists != null &&
         (trending.artists.items != null) != null ? (
           <>
