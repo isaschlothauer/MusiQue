@@ -13,13 +13,14 @@ import styles from "./genres.module.css";
 import TrendingArtists from "./TrendingArtists";
 import TrendingArtistsHidden from "./TrendingArtistsHidden";
 
-function GenrePage({ title, mainText, image, link, Tlink }) {
+function GenrePage({ title, mainText, image, link, Tlink, alt }) {
   GenrePage.propTypes = {
     title: PropTypes.string.isRequired,
     mainText: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     Tlink: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
   };
   // eslint-disable-next-line no-unused-vars
   const clientId = import.meta.env.VITE_CLIENT_ID;
@@ -180,8 +181,8 @@ function GenrePage({ title, mainText, image, link, Tlink }) {
               <h1>{title}</h1>
               <p className={styles.pText}>{mainText}</p>
             </div>
-            <div className={styles.rockImg}>
-              <img alt="electric-guitar" src={image} width={350} />
+            <div className={styles.genresImg}>
+              <img alt={alt} src={image} width={350} />
             </div>
           </div>
         </section>

@@ -21,6 +21,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DWZryfp6NSvtz",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:rock",
+    alt: "electric guitar",
   },
   {
     title: "JAZZ",
@@ -31,6 +32,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DX7YCknf2jT6s",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:jazz",
+    alt: "trumpet player",
   },
   {
     title: "REGGAE",
@@ -41,6 +43,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DX7GUbRHVEX42",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:reggae",
+    alt: "battery playing",
   },
   {
     title: "METAL",
@@ -51,6 +54,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DX5J7FIl4q56G",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:metal",
+    alt: "black guitar",
   },
   {
     title: "PUNK",
@@ -61,6 +65,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DX0KpeLFwA3tO",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:punk",
+    alt: "jumping guy",
   },
   {
     title: "COUNTRY",
@@ -71,6 +76,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DX1lVhptIYRda",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:country",
+    alt: "acoutstic guitar",
   },
   {
     title: "CLASSICAL",
@@ -81,6 +87,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DWV0gynK7G6pD",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:classical",
+    alt: "stage",
   },
   {
     title: "INDIE",
@@ -91,6 +98,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DXdbXrPNafg9d",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:indie",
+    alt: "guitar playing",
   },
   {
     title: "HIP-HOP",
@@ -101,6 +109,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DX4SrOBCjlfVi",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:hip-pop",
+    alt: "microphone",
   },
   {
     title: "R&B",
@@ -111,6 +120,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DX4SBhb3fqCJd",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:r&b",
+    alt: "singer",
   },
   {
     title: "ELECTRONIC",
@@ -121,6 +131,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DXaPK7HyVedIT",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:electronic",
+    alt: "DJ set",
   },
   {
     title: "BLUES",
@@ -131,6 +142,7 @@ const genreInfo = [
     link: "https://api.spotify.com/v1/playlists/37i9dQZF1DXb3MZdETGqKB",
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:blues",
+    alt: "battery set",
   },
 ];
 
@@ -162,6 +174,7 @@ function App() {
                 image={info.image}
                 link={info.link}
                 Tlink={info.Tlink}
+                alt={info.alt}
               />
             }
             path={info.path}
