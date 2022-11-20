@@ -25,6 +25,13 @@ body {
   width: 100%;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
 /*--------Fonts Mobile-----------*/
 
 h1 {
@@ -50,6 +57,7 @@ h2 {
 }
 .pTitle {
   font-family: var(--fontNoto);
+  color: var(--colorBlackFonts);
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.375rem;
