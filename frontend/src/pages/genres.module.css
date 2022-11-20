@@ -134,6 +134,7 @@ h2 {
 
 .genresImg img {
   width: 20rem;
+  max-height: 480px;
 }
 
 .genreText {
@@ -573,6 +574,7 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
 
   .genresImg img {
     min-height: 350px;
+    min-width: 320px;
     object-fit: cover;
   }
 

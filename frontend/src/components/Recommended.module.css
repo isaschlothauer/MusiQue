@@ -55,6 +55,7 @@
   color: var(--colorWhiteFonts);
   text-align: center;
   margin-bottom: 1rem;
+  display: -webkit-box;
 }
 
 .sectionHeadline {
@@ -69,6 +70,11 @@
 .artistMobile {
   color: var(--colorWhiteFonts);
   font-weight: 700;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
 }
 
 .song {
@@ -170,6 +176,7 @@ audio {
   }
   .pText {
     text-align: left;
+    line-height: 2rem;
   }
 
   .recQuote {
@@ -206,6 +213,7 @@ audio {
     color: var(--colorWhiteFonts);
     margin-bottom: 1.5rem;
   }
+
   .artistTitle {
     display: block;
     color: var(--colorWhiteFonts);
@@ -220,9 +228,8 @@ audio {
     padding-right: 5rem;
   }
 
-  .sectionHeadline{
+  .sectionHeadline {
     padding-left: 5rem;
-    padding-right:5rem;
+    padding-right: 5rem;
   }
-
 }
