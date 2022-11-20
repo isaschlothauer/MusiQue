@@ -140,7 +140,6 @@ h2 {
 
 .genreText p {
   white-space: wrap;
-  max-width: 35ch;
   font-size: 18px;
 }
 
@@ -150,6 +149,7 @@ h2 {
   padding-left: 2rem;
   padding-bottom: 3rem;
 }
+
 
 .genreTextAndImg {
   display: flex;

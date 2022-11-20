@@ -55,6 +55,7 @@
   color: var(--colorWhiteFonts);
   text-align: center;
   margin-bottom: 1rem;
+
 }
 
 .sectionHeadline {
@@ -69,6 +70,11 @@
 .artistMobile {
   color: var(--colorWhiteFonts);
   font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 26ch;
 }
 
 .song {
@@ -131,6 +137,17 @@ audio {
   .nameMobile {
     font-size: 1.125rem;
   }
+  .artistMobile {
+    color: var(--colorWhiteFonts);
+    font-weight: 700;
+  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 36ch
+  }
+
+
 }
 
 /*--------Tablet/Dekstop-----------*/
