@@ -43,16 +43,15 @@ a:link {
 }
 
 .mainImg {
-    display: flex;
-    position: relative;
+  display: flex;
+  position: relative;
 }
 
 .mainImg img {
-    margin: 2rem auto;   
-    margin-bottom: 1rem;
-    width: 200px;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-
+  margin: 2rem auto;
+  margin-bottom: 1rem;
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 .songTitle,
@@ -61,15 +60,12 @@ a:link {
 .format,
 .release {
   text-align: center;
-  
-  
 }
 
-.songTitle{
+.songTitle {
   font-weight: 700;
   margin-top: 0.5rem;
 }
-
 
 .country {
   font-size: 1rem;
@@ -79,9 +75,6 @@ a:link {
 .release {
   font-size: 1rem;
 }
-
-
-
 
 .country {
   margin-top: 1rem;
@@ -131,36 +124,12 @@ a:link {
 }
 
 .pButtons {
-    align-items: center;
-    background: linear-gradient(269.49deg, #7755F9 10.41%, #02AAFD 111.89%), linear-gradient(270.52deg, #DB6C2F -10.09%, #7755F9 90.46%);
-    border: 0;
-    border-radius: 1.25rem;
-    color: #fff;
-    cursor: pointer;
-    height: 2.625rem;
-    width: 6.688rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    text-align: left;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    will-change: box-shadow,transform;
-    margin:auto;
-    margin-bottom: 2rem;
-}
-
-.pButtons:hover {
-    transform: translateY(-2px)z;
-}
-
-.pButtons:active {
-    transform: translateY(2px);
+  margin: auto;
 }
 
 .btnContainer {
-    display: flex;
+  display: flex;
+  justify-content: center;
 }
 
 .playButton {
@@ -209,7 +178,6 @@ a:link {
     justify-content: space-evenly;
   }
 
-
   .panel1 {
     margin: initial;
   }
@@ -237,13 +205,12 @@ a:link {
     display: inline;
   }
 
-
-  .musicDiscover{
+  .musicDiscover {
     padding-left: 5rem;
     padding-right: 5rem;
   }
 
-  .panelContainer{
+  .panelContainer {
     padding-left: 2rem;
     padding-right: 2rem;
   }
