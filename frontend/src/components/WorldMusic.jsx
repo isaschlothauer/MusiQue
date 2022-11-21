@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import ReactHowler from "react-howler";
 import MusicCSS from "./WorldMusic.module.css";
 import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
+import btnStyles from "./Button.module.css";
 // eslint-disable-next-line camelcase
 const clientId = import.meta.env.VITE_CLIENT_ID;
 // eslint-disable-next-line camelcase
@@ -428,7 +429,7 @@ function WorldMusic() {
               setPlaying3(null);
               setPlaying4(null);
             }}
-            className={`${MusicCSS.pButtons} ${"pButtons"}`}
+            className={`${btnStyles.btn} ${"pButtons"}`}
             type="button"
           >
             SHUFFLE
