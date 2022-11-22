@@ -11,14 +11,7 @@ import btnStyles from "./Button.module.css";
 const clientId = import.meta.env.VITE_CLIENT_ID;
 // eslint-disable-next-line camelcase
 const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
-// const artistName = "The Beatles";
 
-// TO DO LIST
-// 1. Randomized artist selector
-// 3. Play List and song picker still needs to be implemented
-// 5. Implement error handing on null or undefined response
-
-// Find a way to get song tracks
 const playLists = [
   {
     playListId: "37i9dQZF1DX0FGW2dUyDef",
