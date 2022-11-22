@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import WorldMusic from "./components/WorldMusic";
@@ -9,7 +9,7 @@ import Footer from "./components/footer";
 import Recommended from "./components/Recommended";
 import TrendingArtists from "./components/trendingArtists";
 
-import GenrePage from "./pages/GenrePage";
+const GenrePage = lazy(() => import("./pages/GenrePage"));
 
 const genreInfo = [
   {
@@ -149,39 +149,40 @@ const genreInfo = [
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route
-          path="*"
-          element={
-            <div>
-              <Header />
-              <GenreSection />
-              <TrendingArtists />
-              <Recommended />
-              <WorldMusic />
-              <AboutUs />
-              <Footer />
-            </div>
-          }
-        />
-
-        {genreInfo.map((info) => (
+      <Suspense fallback={<h1>Loading.....</h1>}>
+        <Routes>
           <Route
+            path="*"
             element={
-              <GenrePage
-                title={info.title}
-                mainText={info.mainText}
-                image={info.image}
-                link={info.link}
-                Tlink={info.Tlink}
-                alt={info.alt}
-              />
+              <div>
+                <Header />
+                <GenreSection />
+                <TrendingArtists />
+                <Recommended />
+                <WorldMusic />
+                <AboutUs />
+                <Footer />
+              </div>
             }
-            path={info.path}
-            key={info.id}
           />
-        ))}
-      </Routes>
+          {genreInfo.map((info) => (
+            <Route
+              element={
+                <GenrePage
+                  title={info.title}
+                  mainText={info.mainText}
+                  image={info.image}
+                  link={info.link}
+                  Tlink={info.Tlink}
+                  alt={info.alt}
+                />
+              }
+              path={info.path}
+              key={info.id}
+            />
+          ))}
+        </Routes>
+      </Suspense>
     </div>
   );
 }
