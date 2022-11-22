@@ -65,6 +65,13 @@ const recs = [
     content: `"My branches scrape the sea of stars, My roots dig deep into this world of ours, I'm grounded”. I love the lyrics of this song. When I listen to it, I imagine myself dancing. My feet touching the ground to then again lift off - oscillating between imagination and reality. To not lose touch with the ground, nor with the sky. Can they exist at the same time?`,
     id: "7cYod6eQvKmiyLwOjBgYR6",
   },
+  {
+    author: "João, Germany/Portugal",
+    imgAuthor: Joao,
+    content: `As a music and filme enthusiastic, I can not help myself to go back to this The Korgi's cover by Beck, used in one of my favourite movies: Eternal Sunshine of the Spotless Mind. 
+    Both pieces complement eachother very well. As in the movie, about a couple who can't cope a reason for enjoying life together, sometimes, all that we need to be happy is to keeping it simple, yet deeply thoughtful as life's most enjoyable aspects are right next to us and don't need a thousand reasons but one to be taken: being happy.`,
+    id: "4oYfMQ6NDGHq0GcbICqsDw",
+  },
 ];
 
 // NEW API WITH PLAYLIST TRACKS ENDPOINT
