@@ -8,11 +8,7 @@ function TopGenres() {
   return (
     <div className={styles.logoButtonBack}>
       <div className={styles.logo}>
-        <img
-          src="src\assets\musiQue-imgs\MusiQueLogo.png"
-          alt="go-back-home"
-          width={150}
-        />
+        <img src="src\assets\musiQue-imgs\MusiQueLogo.png" alt="go-back-home" />
       </div>
       <div className={styles.buttonBack}>
         <Routes>

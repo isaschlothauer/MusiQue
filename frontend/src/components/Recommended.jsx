@@ -194,7 +194,12 @@ function Recommended() {
             {song.artistTitle}
           </p>
 
-          <a className="active" href={song.spotifyLink}>
+          <a
+            className="active"
+            href={song.spotifyLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <SpotifyLogoButton />
           </a>
         </div>
