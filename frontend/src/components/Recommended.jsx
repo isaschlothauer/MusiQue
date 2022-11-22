@@ -185,7 +185,7 @@ function Recommended() {
           </p>
           <figure>
             {/* eslint-disable jsx-a11y/media-has-caption */}
-            <audio controls src={song.previewUrl} />
+            <audio volume={0.3} controls src={song.previewUrl} />
           </figure>
           <p className={`${styles.artistMobile} ${"pText"}`}>
             {song.songTitle}

@@ -4,6 +4,8 @@ import TrendingArtCSS from "./trendingArtists.module.css";
 import "../App.css";
 import SpotifyLogoButton from "./SpotifyLogoButton";
 import btnStyles from "./Button.module.css";
+import spotifyIconLittle from "../assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png";
+import spotifyIconLittleBlack from "../assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png";
 
 const clientId = import.meta.env.VITE_CLIENT_ID;
 const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
@@ -140,13 +142,13 @@ function TrendingArtists() {
             rel="noopener noreferrer"
           >
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
+              src={spotifyIconLittle}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittle}
               width={28}
             />
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+              src={spotifyIconLittleBlack}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittleBlack}
               width={28}
@@ -212,13 +214,13 @@ function TrendingArtists() {
             rel="noopener noreferrer"
           >
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
+              src={spotifyIconLittle}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittle}
               width={28}
             />
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+              src={spotifyIconLittleBlack}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittleBlack}
               width={28}
@@ -284,13 +286,13 @@ function TrendingArtists() {
             rel="noopener noreferrer"
           >
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
+              src={spotifyIconLittle}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittle}
               width={28}
             />
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+              src={spotifyIconLittleBlack}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittleBlack}
               width={28}
