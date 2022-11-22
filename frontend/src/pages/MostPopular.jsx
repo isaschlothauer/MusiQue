@@ -11,6 +11,7 @@ export default function MostPopular({
   name,
   image,
   artist,
+  artistPage,
   url,
   preview,
   setUrl,
@@ -47,7 +48,9 @@ export default function MostPopular({
           <a href={url} target="_blank" rel="noopener noreferrer">
             <p className={styles.pTitle}>{name}</p>
           </a>
-          <p className={styles.pItalic}>{artist}</p>
+          <a href={artistPage} target="_blank" rel="noopener noreferrer">
+            <p className={styles.pItalic}>{artist}</p>
+          </a>
         </div>
       </div>
       <a

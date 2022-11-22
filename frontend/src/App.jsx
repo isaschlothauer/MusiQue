@@ -22,6 +22,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:rock",
     alt: "electric guitar",
+    id: "1",
   },
   {
     title: "JAZZ",
@@ -33,6 +34,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:jazz",
     alt: "trumpet player",
+    id: "2",
   },
   {
     title: "REGGAE",
@@ -44,6 +46,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:reggae",
     alt: "battery playing",
+    id: "3",
   },
   {
     title: "METAL",
@@ -55,6 +58,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:metal",
     alt: "black guitar",
+    id: "4",
   },
   {
     title: "PUNK",
@@ -66,6 +70,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:punk",
     alt: "jumping guy",
+    id: "5",
   },
   {
     title: "COUNTRY",
@@ -77,6 +82,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:country",
     alt: "acoutstic guitar",
+    id: "6",
   },
   {
     title: "CLASSICAL",
@@ -88,6 +94,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:classical",
     alt: "stage",
+    id: "7",
   },
   {
     title: "INDIE",
@@ -99,6 +106,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:indie",
     alt: "guitar playing",
+    id: "8",
   },
   {
     title: "HIP-HOP",
@@ -110,6 +118,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:hip-pop",
     alt: "microphone",
+    id: "9",
   },
   {
     title: "R&B",
@@ -121,6 +130,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:r&b",
     alt: "singer",
+    id: "10",
   },
   {
     title: "ELECTRONIC",
@@ -132,6 +142,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:electronic",
     alt: "DJ set",
+    id: "11",
   },
   {
     title: "BLUES",
@@ -143,6 +154,7 @@ const genreInfo = [
     Tlink:
       "https://api.spotify.com/v1/search?type=artist&q=year:2022%20genre:blues",
     alt: "battery set",
+    id: "12",
   },
 ];
 

@@ -15,6 +15,7 @@
 
 .logo img {
   width: 8.125rem;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .buttonBack {
