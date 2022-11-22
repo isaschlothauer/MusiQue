@@ -41,10 +41,10 @@ const playLists = [
     playListId: "0YFoHvtj9er0GyqmxGaW5i",
     country: "Turkey",
   },
-//   {
-//     playListId: "0gorsfrZ74eaEYwR552r3w",
-//     country: "Syria",
-//   },
+  //   {
+  //     playListId: "0gorsfrZ74eaEYwR552r3w",
+  //     country: "Syria",
+  //   },
   {
     playListId: "1f2NGx8o2iQyw3AW8VJ3RO",
     country: "Ukraine",
@@ -274,15 +274,11 @@ function WorldMusic() {
                 {musicData1.panel1Title}
               </p>
             </a>
-            <a
-              href={musicData1.panel1ArtistUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-                {musicData1.panel1Artists}
-              </p>
-            </a>
+            {/* <a href={musicData1.panel1ArtistUrl} target="_blank" rel="noopener noreferrer"></a> */}
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+              {musicData1.panel1Artists}
+            </p>
+
             <p className={`${MusicCSS.country} ${["pText"]}`}>
               Country: {musicData1.panel1Country}
             </p>
@@ -332,15 +328,9 @@ function WorldMusic() {
                 {musicData2.panel2Title}
               </p>
             </a>
-            <a
-              href={musicData2.panel2ArtistUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-                {musicData2.panel2Artists}
-              </p>
-            </a>
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+              {musicData2.panel2Artists}
+            </p>
             <p className={`${MusicCSS.country} ${["pText"]}`}>
               Country: {musicData2.panel2Country}
             </p>
@@ -389,15 +379,10 @@ function WorldMusic() {
                 {musicData3.panel3Title}
               </p>
             </a>
-            <a
-              href={musicData3.panel3ArtistUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-                {musicData3.panel3Artists}
-              </p>
-            </a>
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+              {musicData3.panel3Artists}
+            </p>
+
             <p className={`${MusicCSS.country} ${["pText"]}`}>
               Country: {musicData3.panel3Country}
             </p>
@@ -405,7 +390,6 @@ function WorldMusic() {
               {musicData3.panel3Release}
             </p>
           </div>
-
           <div className={MusicCSS.panel4}>
             <div className={MusicCSS.mainImg}>
               <img
@@ -446,15 +430,9 @@ function WorldMusic() {
                 {musicData4.panel4Title}
               </p>
             </a>
-            <a
-              href={musicData4.panel4ArtistUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-                {musicData4.panel4Artists}
-              </p>
-            </a>
+            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+              {musicData4.panel4Artists}
+            </p>
             <p className={`${MusicCSS.country} ${["pText"]}`}>
               Country: {musicData4.panel4Country}
             </p>
