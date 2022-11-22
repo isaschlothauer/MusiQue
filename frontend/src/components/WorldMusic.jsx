@@ -118,7 +118,7 @@ function WorldMusic() {
         const dataLength = data.tracks.items.length;
         const stringPath1 =
           data.tracks.items[Math.floor(Math.random() * dataLength)].track;
-        // console.log(stringPath1);
+        console.log(stringPath1);
 
         // Panel 1 data
         const panel1 = {
@@ -132,6 +132,8 @@ function WorldMusic() {
           panel1Image: stringPath1.album.images[1].url,
           panel1Country: playLists[pListIndex1].country,
           panel1PreviewCheck: stringPath1.preview_url,
+          panel1TrackUrl: stringPath1.external_urls.spotify,
+          panel1ArtistUrl: stringPath1.artists[0].external_urls.spotify,
         };
 
         // console.log(panel1.panel1PreviewCheck);
@@ -163,6 +165,8 @@ function WorldMusic() {
           panel2Image: stringPath2.album.images[1].url,
           panel2Country: playLists[pListIndex2].country,
           panel2PreviewCheck: stringPath2.preview_url,
+          panel2TrackUrl: stringPath2.external_urls.spotify,
+          panel2ArtistUrl: stringPath2.artists[0].external_urls.spotify,
         };
 
         // Savimg panel objects to state
@@ -192,6 +196,8 @@ function WorldMusic() {
           panel3Image: stringPath3.album.images[1].url,
           panel3Country: playLists[pListIndex3].country,
           panel3PreviewCheck: stringPath3.preview_url,
+          panel3TrackUrl: stringPath3.external_urls.spotify,
+          panel3ArtistUrl: stringPath3.artists[0].external_urls.spotify,
         };
         // Savimg panel objects to state
         setMusicData3(panel3);
@@ -220,16 +226,14 @@ function WorldMusic() {
           panel4Image: stringPath4.album.images[1].url,
           panel4Country: playLists[pListIndex4].country,
           panel4PreviewCheck: stringPath4.preview_url,
+          panel4TrackUrl: stringPath4.external_urls.spotify,
+          panel4ArtistUrl: stringPath4.artists[0].external_urls.spotify,
         };
         // Savimg panel objects to state
         setMusicData4(panel4);
       })
       .catch((err) => console.error(err));
   }, [renderCheck, accessToken]);
-
-  function playPause() {
-    console.log("Hello");
-  }
 
   return (
     <div className={MusicCSS.musicContainer}>
@@ -267,12 +271,25 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
-              {musicData1.panel1Title}
-            </p>
-            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-              {musicData1.panel1Artists}
-            </p>
+
+            <a
+              href={musicData1.panel1TrackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
+                {musicData1.panel1Title}
+              </p>
+            </a>
+            <a
+              href={musicData1.panel1ArtistUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+                {musicData1.panel1Artists}
+              </p>
+            </a>
             <p className={`${MusicCSS.country} ${["pText"]}`}>
               Country: {musicData1.panel1Country}
             </p>
@@ -313,12 +330,24 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
-              {musicData2.panel2Title}
-            </p>
-            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-              {musicData2.panel2Artists}
-            </p>
+            <a
+              href={musicData2.panel2TrackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
+                {musicData2.panel2Title}
+              </p>
+            </a>
+            <a
+              href={musicData2.panel2ArtistUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+                {musicData2.panel2Artists}
+              </p>
+            </a>
             <p className={`${MusicCSS.country} ${["pText"]}`}>
               Country: {musicData2.panel2Country}
             </p>
@@ -358,12 +387,24 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
-              {musicData3.panel3Title}
-            </p>
-            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-              {musicData3.panel3Artists}
-            </p>
+            <a
+              href={musicData3.panel3TrackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
+                {musicData3.panel3Title}
+              </p>
+            </a>
+            <a
+              href={musicData3.panel3ArtistUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+                {musicData3.panel3Artists}
+              </p>
+            </a>
             <p className={`${MusicCSS.country} ${["pText"]}`}>
               Country: {musicData3.panel3Country}
             </p>
@@ -403,12 +444,24 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
-              {musicData4.panel4Title}
-            </p>
-            <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
-              {musicData4.panel4Artists}
-            </p>
+            <a
+              href={musicData4.panel4TrackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
+                {musicData4.panel4Title}
+              </p>
+            </a>
+            <a
+              href={musicData4.panel4ArtistUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
+                {musicData4.panel4Artists}
+              </p>
+            </a>
             <p className={`${MusicCSS.country} ${["pText"]}`}>
               Country: {musicData4.panel4Country}
             </p>
@@ -437,7 +490,11 @@ function WorldMusic() {
         </div>
         <div className={MusicCSS.endTxt}>
           <p className={`${MusicCSS.endTxt1} ${["pText"]}`}>Find more on</p>
-          <a href="https://www.spotify.com">
+          <a
+            href="https://www.spotify.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src={SpotifyLogo}
               className={MusicCSS.spotifyLogo}

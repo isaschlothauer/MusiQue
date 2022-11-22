@@ -5,6 +5,10 @@ a:link {
   color: var(--colorWhiteFonts);
 }
 
+a:visited {
+  color: var(--colorWhiteFonts);
+}
+
 .musicContainer {
   color: var(--colorWhiteFonts);
   background: var(--gradientBG);
