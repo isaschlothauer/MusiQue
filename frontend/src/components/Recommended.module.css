@@ -166,6 +166,7 @@ audio {
   }
   .pText {
     text-align: left;
+    line-height: 2rem;
   }
 
   .recQuote {
@@ -202,6 +203,7 @@ audio {
     color: var(--colorWhiteFonts);
     margin-bottom: 1.5rem;
   }
+
   .artistTitle {
     display: block;
     color: var(--colorWhiteFonts);
