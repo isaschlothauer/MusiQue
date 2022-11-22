@@ -12,9 +12,10 @@ export default function TrendingArtists({
     <div className={styles.trendingArtistsDiv}>
       <a href={artistPage} target="_blank" rel="noopener noreferrer">
         <p className={styles.trendingtext}>{artist}</p>
+
+        <p className={styles.trendingtext2}>{followers} followers</p>
+        <img id={styles.trendingImg} alt="trending-img" src={image} />
       </a>
-      <p className={styles.trendingtext2}>{followers} followers</p>
-      <img id={styles.trendingImg} alt="trending-img" src={image} />
     </div>
   );
 }
