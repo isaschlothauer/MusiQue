@@ -31,63 +31,40 @@ function GenrePage({ title, mainText, image, link, Tlink, alt }) {
   const [trending, setTrending] = useState("");
   const [hidden, setHidden] = useState(false);
 
-  // HANDLE SONG PLAYING, INCLUDING PAUSING PREVIOUSLY PLAYED SONG
-  // THE CODE ALSO CHANGES THE PLAY/PAUSE BUTTON (SEE PROPS OF POPULAR CONTAINER)
-  // TWO USESTATE TO: SAVE THE VALUE OF THE SONG BEING PLAYED; SAVE THE STATUS OF THE PLAY/PAUSE BUTTON
-
   const [currentPlaying, setCurrentPlaying] = useState(""); // SONG USESTATE
   const [playingOrPaused, setPlayingOrPaused] = useState(false); // BUTTON USESTATE
 
   const handlePreviewClick = (url) => {
-    // WE PASS AN URL AS ARGUMENT. HERE, WE SHOULD PROP THE PREVIEW (SEE IN POPULAR CONTAINER)
     if (currentPlaying === url) {
-      // IF CURRENT SONG URL BEING PLAYED IS THE SAME AS THE URL WE PASS AS ARGUMENT
-      setPlayingOrPaused(!playingOrPaused); // WE ARE GOING TO SET THE CURRENTSONG BEING PLAYED AS FALSE, WHICH IS PAUSING IT
+      setPlayingOrPaused(!playingOrPaused);
     } else {
-      setPlayingOrPaused(true); // HOWEVER, IF IT DOES NOT MATCH, LET'S PLAY THE SONG!
+      setPlayingOrPaused(true);
     }
-    setCurrentPlaying(url); // EITHERWAY; WHETHER THERE IS A SONG OR NOT, THE DEFAULT PARAMETER OF THIS FUNCTION WHOULD BE SETTING THE SONG TO BE PLAYED URL
+    setCurrentPlaying(url);
     console.log(url);
   };
-
-  // SHUFFLE SHENANINGANS
-  // LET'S DEFINE A LOOP FUNCTION TO SCRAMBLE OUR ARRAY FIRST
 
   const shuffle = (array) => {
     // PASS AN ARRAY AS A PARAMETER
     const output = array;
     for (let i = output.length - 1; i > 0; i -= 1) {
-      // I = THE OUTPUT LENGHT, WHICH IS THE ARRAY, AS AN INITIAL PARAMETER. THEN, THE LIMIT IS 0, WHILE WE SUBTRACT 1 to i AS THE LAST PARAMETER
-      const j = Math.floor(Math.random() * (i + 1)); // RANDOMIZER FUNCTION
-      const temp = output[i]; // HERE WE SCRAMBLE EVERYTHING: THE OUTPUTS INDEX WILL HAVE THE RANDOMIZER FUNCTION. THEN WE SETTLE THAT OUTPUT AS THE INITIAL INDEX...
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = output[i];
       output[i] = output[j];
-      output[j] = temp; // AND WE'LL DO IT AGAIN AND AGAIN WHILE i IS GREATER THAN 0.
+      output[j] = temp;
     }
     return output;
   };
 
   const handleShuffle = () => {
-    if (popular == null || popular === "") return; // IF THERE IS NO SONG, WE DON'T EXECUTE THIS FUCTION
-    // () => shuffle(popular.tracks.items)
-    // popular: object
-    // tracks: object
-    // items: array
-
-    // Way 1
+    if (popular == null || popular === "") return;
     setPopular({
-      ...popular, // FIGURE OUT THE ARRAY PATH, THEN USE A SPREAD OPERATOR BECAUSE OUR FETCH RETURNS US AN API OBJECT
-      tracks: { ...popular.tracks, items: shuffle(popular.tracks.items) }, // IN THIS CASE, WE WANT TO GO TILL TRACKS.ITEMS, WHERE OUR ARRAY IS
-    }); // BECAUSE OUR LOOP SCRAMBLES AN ARRAY, THAT'S EXACTLY WHERE WE WANT TO BE.
-    setCurrentPlaying(false); // PARTICULAR THING: WHEN WE PRESS THE BUTTON SHUFFLE, WE WANT TO SET ALL CURRENTPLAY STATES TO FALSE. MEANING: SHUFFLE WILL KILL ANY SONG BEING PLAYED
-
-    // Way 2
-    // const newItems = shuffle(popular.tracks.items);
-    // const newTracks = { ...popular.tracks, items: newItems };
-    // const newPopular = { ...popular, tracks: newTracks };
-    // setPopular(newPopular);
+      ...popular,
+      tracks: { ...popular.tracks, items: shuffle(popular.tracks.items) },
+    });
+    setCurrentPlaying(false);
   };
 
-  // FUNCTION HANDLECLICK FOR THE BUTTON TO REVEAL OTHER ARTISTS ON TRENDING ARTISTS WHILE IN MOBILE
   const handleClick = () => {
     setHidden((current) => !current);
   };
@@ -220,9 +197,6 @@ function GenrePage({ title, mainText, image, link, Tlink, alt }) {
                     ? playingOrPaused
                     : false
                 }
-                // iconStatus is a prop that is going to "fetch" a ternary operator to MostPopular component
-                // IT SAYS THAT IF PREVIEW_URL IS THE SAME AS THE SONG in CURRENTPLAYING, THAN WE RENDER THE "true" in the icon (PLAY). OTHERWISE, WE RENDER THE "false" (PAUSE)
-                // iconStatus = {song.track.preview_url === currentPlaying && playingOrPaused}
               />
             ))}
             <ShuffleButton className={styles.suffle} onClick={handleShuffle} />
@@ -245,24 +219,20 @@ function GenrePage({ title, mainText, image, link, Tlink, alt }) {
                   artistPage={musician.external_urls.spotify}
                   followers={musician.followers.total}
                   image={musician.images[0].url}
-                /> // MAPPUNG EVERYTHING LIKE IN MOSTPOPULAR.
+                />
               ))}
             </div>
-            {hidden && ( // HOWEVER HERE WE NEED TO MAP DIFFERENTLY. WE ONLY WANT THE FOLLOWING FOUR ITEMS AFTER THE INITIALL FIVE WE MAPED UPSTAIRS
+            {hidden && (
               <div className={styles.trendingArtistsContainerhid}>
-                {trending.artists.items.slice(4, 8).map(
-                  (
-                    musician // THAT'S WHY I SLICED FROM POSITION 4 TO 8
-                  ) => (
-                    <TrendingArtistsHidden // BECAUSE THIS SECTION ONLY RENDERS IN A PARTICULAR CONDITION (MOBILE VERSION) I HAD TO KEEP IT IN A SEPARATE MODULE
-                      key={musician.id}
-                      artist={musician.name}
-                      followers={musician.followers.total}
-                      image={musician.images[0].url}
-                      artistPage={musician.external_urls.spotify}
-                    />
-                  )
-                )}
+                {trending.artists.items.slice(4, 8).map((musician) => (
+                  <TrendingArtistsHidden
+                    key={musician.id}
+                    artist={musician.name}
+                    followers={musician.followers.total}
+                    image={musician.images[0].url}
+                    artistPage={musician.external_urls.spotify}
+                  />
+                ))}
               </div>
             )}
             <button
