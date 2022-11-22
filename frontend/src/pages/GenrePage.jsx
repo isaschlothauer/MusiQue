@@ -141,7 +141,7 @@ function GenrePage({ title, mainText, image, link, Tlink, alt }) {
     })
       .then((res) => res.json())
       // eslint-disable-next-line no-bitwise
-      .then((result) => setPopular(result) & console.log("POPULAR", result))
+      .then((result) => setPopular(result)) // & console.log("POPULAR", result)
       .catch((err) => {
         // eslint-disable-next-line no-restricted-syntax
         console.log(err);
@@ -155,20 +155,27 @@ function GenrePage({ title, mainText, image, link, Tlink, alt }) {
   //  USE EFFECT FOR TRENDING
 
   useEffect(() => {
-    if (accessToken == null) return;
+    const abortController = new AbortController();
+    const abortSignal = abortController.signal;
+    if (accessToken == null) return {};
     fetch(Tlink, {
       method: "GET",
+      signal: abortSignal,
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
     })
       .then((res) => res.json())
       // eslint-disable-next-line no-bitwise
-      .then((result) => setTrending(result) & console.log("TRENDING", result))
+      .then((result) => setTrending(result)) // & console.log("TRENDING", result)
       .catch((err) => {
         // eslint-disable-next-line no-restricted-syntax
         console.log(err);
       });
+    return () => {
+      // Cancelling fetch request
+      abortController.abort();
+    };
   }, [accessToken]);
 
   return (
@@ -193,16 +200,18 @@ function GenrePage({ title, mainText, image, link, Tlink, alt }) {
           playing={playingOrPaused}
           volume={0.3}
           html5
-          format="mp3"
+          format={["mp3"]}
         />
         <h2 className={styles.h2}>Most Popular</h2>
         {popular.tracks != null && (popular.tracks.items != null) != null ? (
           <>
             {popular.tracks.items.slice(0, 5).map((song) => (
               <MostPopular // PASSING ALL THE PROPS AFTER MAPING. NOTE THE PARTICULAR SETURL AND ICONSTATUS!
+                key={song.track.id}
                 name={song.track.name}
                 image={song.track.album.images[1].url}
                 artist={song.track.artists[0].name}
+                artistPage={song.track.artists[0].external_urls.spotify}
                 url={song.track.external_urls.spotify}
                 preview={song.track.preview_url}
                 setUrl={handlePreviewClick} // THAT'S THE ONE FUNCTION TO CONTROL THE PLAY/PAUSE IN OUR PREVIEWS!
@@ -231,7 +240,9 @@ function GenrePage({ title, mainText, image, link, Tlink, alt }) {
             <div className={styles.trendingArtistsContainer}>
               {trending.artists.items.slice(0, 5).map((musician) => (
                 <TrendingArtists
+                  key={musician.id}
                   artist={musician.name}
+                  artistPage={musician.external_urls.spotify}
                   followers={musician.followers.total}
                   image={musician.images[0].url}
                 /> // MAPPUNG EVERYTHING LIKE IN MOSTPOPULAR.
@@ -244,9 +255,11 @@ function GenrePage({ title, mainText, image, link, Tlink, alt }) {
                     musician // THAT'S WHY I SLICED FROM POSITION 4 TO 8
                   ) => (
                     <TrendingArtistsHidden // BECAUSE THIS SECTION ONLY RENDERS IN A PARTICULAR CONDITION (MOBILE VERSION) I HAD TO KEEP IT IN A SEPARATE MODULE
+                      key={musician.id}
                       artist={musician.name}
                       followers={musician.followers.total}
                       image={musician.images[0].url}
+                      artistPage={musician.external_urls.spotify}
                     />
                   )
                 )}

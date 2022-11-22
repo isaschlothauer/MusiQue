@@ -69,6 +69,7 @@ h2 {
 
 .pItalic {
   font-family: var(--fontNoto);
+  color: var(--colorBlackFonts);
   font-style: italic;
   font-weight: 400;
   font-size: 1rem;
@@ -158,7 +159,6 @@ h2 {
   padding-left: 2rem;
   padding-bottom: 3rem;
 }
-
 
 .genreTextAndImg {
   display: flex;
@@ -277,7 +277,7 @@ h2 {
   padding-top: 2rem;
 }
 
-.trending .h2{
+.trending .h2 {
   margin-left: 2rem;
 }
 
@@ -297,7 +297,6 @@ h2 {
   width: 100%;
   height: 100%;
   min-height: 200px;
-
 }
 
 footer {
@@ -332,6 +331,7 @@ footer {
 }
 
 .trendingtext {
+  color: #fff;
   position: relative;
   top: 10%;
   left: 5%;
@@ -494,9 +494,6 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   }
 }
 
-
-
-
 @media screen and (min-width: 600px) {
   h1 {
     color: var(--white);
@@ -587,13 +584,12 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     height: 0;
     font-weight: 700;
     max-width: 50ch;
-    
   }
 
   .trendingtext2 {
     display: block;
     position: relative;
-    top:87%;
+    top: 87%;
     left: 5%;
     font-family: var(--fontNoto);
     font-size: 14px;
@@ -609,7 +605,6 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     height: 0;
     font-weight: 700;
     max-width: 50ch;
-    
   }
 
   .trendingtext2hid {
@@ -622,11 +617,9 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     height: 0;
   }
 
-  .trending .h2{
+  .trending .h2 {
     margin-left: 3rem;
   }
-
-
 
   #mostPopularSongsImg {
     width: 8rem;
@@ -637,8 +630,6 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   .mostPopularSongsContainer {
     width: 100%;
   }
-
-
 }
 
 @media screen and (min-width: 800px) {
@@ -810,7 +801,7 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
     padding-right: 5rem;
   }
 
-  .trending .h2{
+  .trending .h2 {
     margin-left: 5rem;
   }
 
