@@ -112,7 +112,7 @@ function TrendingArtists() {
                     src={artistSong1.album1Preview}
                     html5
                     playing={playing1}
-                    volume={0.3}
+                    volume={0.2}
                   />
                 </button>
               ) : null}
@@ -184,7 +184,7 @@ function TrendingArtists() {
                     src={artistSong2.album2Preview}
                     html5
                     playing={playing2}
-                    volume={0.3}
+                    volume={0.2}
                   />
                 </button>
               ) : null}
@@ -256,7 +256,7 @@ function TrendingArtists() {
                     src={artistSong3.album3Preview}
                     html5
                     playing={playing3}
-                    volume={0.3}
+                    volume={0.2}
                   />
                 </button>
               ) : null}
