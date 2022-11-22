@@ -41,10 +41,10 @@ const playLists = [
     playListId: "0YFoHvtj9er0GyqmxGaW5i",
     country: "Turkey",
   },
-  {
-    playListId: "0gorsfrZ74eaEYwR552r3w",
-    country: "Syria",
-  },
+//   {
+//     playListId: "0gorsfrZ74eaEYwR552r3w",
+//     country: "Syria",
+//   },
   {
     playListId: "1f2NGx8o2iQyw3AW8VJ3RO",
     country: "Ukraine",
