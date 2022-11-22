@@ -345,7 +345,7 @@ function WorldMusic() {
               Country: {musicData2.panel2Country}
             </p>
             <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Release: {musicData2.panel2Release}
+              {musicData2.panel2Release}
             </p>
           </div>
 
@@ -402,7 +402,7 @@ function WorldMusic() {
               Country: {musicData3.panel3Country}
             </p>
             <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Release: {musicData3.panel3Release}
+              {musicData3.panel3Release}
             </p>
           </div>
 
@@ -459,7 +459,7 @@ function WorldMusic() {
               Country: {musicData4.panel4Country}
             </p>
             <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Release: {musicData4.panel4Release}
+              {musicData4.panel4Release}
             </p>
           </div>
         </div>
