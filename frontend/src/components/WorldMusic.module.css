@@ -5,6 +5,10 @@ a:link {
   color: var(--colorWhiteFonts);
 }
 
+a:visited {
+  color: var(--colorWhiteFonts);
+}
+
 .musicContainer {
   color: var(--colorWhiteFonts);
   background: var(--gradientBG);
@@ -15,7 +19,6 @@ a:link {
   max-width: 100%;
   margin: 0 auto;
   padding: 0 3rem;
-  /* margin-bottom: 1rem; */
 }
 
 .panel1,
