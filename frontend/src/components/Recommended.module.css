@@ -82,18 +82,6 @@
   align-items: center;
 }
 
-.btn {
-  background: var(--gradientButtons);
-  border: none;
-  width: 119px;
-  height: 42px;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
-  margin-top: 2.5rem;
-  margin-bottom: 3rem;
-}
-
 audio {
   height: 40px;
   margin-top: 3rem;
@@ -105,12 +93,6 @@ audio {
   text-align: center;
 }
 
-.logo {
-  width: 80px;
-  height: 25px;
-  object-fit: contain;
-  margin-top: 0.25rem;
-}
 .songHeadline {
   display: none;
 }
@@ -139,14 +121,12 @@ audio {
   .artistMobile {
     color: var(--colorWhiteFonts);
     font-weight: 700;
-  
+
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 36ch
+    max-width: 36ch;
   }
-
-
 }
 
 /*--------Tablet/Dekstop-----------*/

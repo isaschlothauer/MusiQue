@@ -3,6 +3,7 @@ import ReactHowler from "react-howler";
 import TrendingArtCSS from "./trendingArtists.module.css";
 import "../App.css";
 import SpotifyLogoButton from "./SpotifyLogoButton";
+import btnStyles from "./Button.module.css";
 
 const clientId = import.meta.env.VITE_CLIENT_ID;
 const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
@@ -301,7 +302,7 @@ function TrendingArtists() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <SpotifyLogoButton className={TrendingArtCSS.SpotifyIconBig} />
+            <SpotifyLogoButton />
           </a>
         </article>
         <button
@@ -313,7 +314,7 @@ function TrendingArtists() {
             setPlaying3(null);
           }}
           type="button"
-          className={`${TrendingArtCSS.renderButton} ${"pButtons"}`}
+          className={`${btnStyles.btn} ${"pButtons"}`}
         >
           SHUFFLE
         </button>

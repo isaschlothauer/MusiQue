@@ -6,7 +6,7 @@ import Joao from "../assets/recommended/Joao.jpg";
 import Isamu from "../assets/recommended/Isamu.jpg";
 import Iryna from "../assets/recommended/Iryna.png";
 import Elif from "../assets/recommended/Elif.png";
-import Logo from "../assets/spotify_logo_white.png";
+import SpotifyLogoButton from "./SpotifyLogoButton";
 
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 const CLIENT_SECRET = import.meta.env.VITE_CLIENT_SECRET;
@@ -194,11 +194,9 @@ function Recommended() {
             {song.artistTitle}
           </p>
 
-          <button type="button" className={styles.btn}>
-            <a className="active" href={song.spotifyLink}>
-              <img className={styles.logo} alt="spotify logo" src={Logo} />
-            </a>
-          </button>
+          <a className="active" href={song.spotifyLink}>
+            <SpotifyLogoButton />
+          </a>
         </div>
       </div>
     </div>

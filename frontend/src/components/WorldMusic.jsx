@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import ReactHowler from "react-howler";
 import MusicCSS from "./WorldMusic.module.css";
 import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
+import btnStyles from "./Button.module.css";
 // eslint-disable-next-line camelcase
 const clientId = import.meta.env.VITE_CLIENT_ID;
 // eslint-disable-next-line camelcase
@@ -117,7 +118,7 @@ function WorldMusic() {
         const dataLength = data.tracks.items.length;
         const stringPath1 =
           data.tracks.items[Math.floor(Math.random() * dataLength)].track;
-        console.log(stringPath1);
+        // console.log(stringPath1);
 
         // Panel 1 data
         const panel1 = {
@@ -133,7 +134,7 @@ function WorldMusic() {
           panel1PreviewCheck: stringPath1.preview_url,
         };
 
-        console.log(panel1.panel1PreviewCheck);
+        // console.log(panel1.panel1PreviewCheck);
 
         // Savimg panel objects to state
         setMusicData1(panel1);
@@ -428,7 +429,7 @@ function WorldMusic() {
               setPlaying3(null);
               setPlaying4(null);
             }}
-            className={`${MusicCSS.pButtons} ${"pButtons"}`}
+            className={`${btnStyles.btn} ${"pButtons"}`}
             type="button"
           >
             SHUFFLE
