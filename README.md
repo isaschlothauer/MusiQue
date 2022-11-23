@@ -1,9 +1,11 @@
 ## Concept
 
+<h1>musiQue</h1>
+
 ![MusiQueLogo](https://user-images.githubusercontent.com/107939073/203567954-a90492dc-9998-48f4-b75a-2bd9ee02f3a7.png)
 
-MusiQue presents you a new opportunity to explore the world of music.
-Find out more about your favorite genres, discover new songs, and check the recommendations by our team of curators!
+** MusiQue presents you a new opportunity to explore the world of music.**
+**Find out more about your favorite genres, discover new songs, and check the recommendations by our team of curators!**
 
 ![Spotify_Logo_RGB_White](https://user-images.githubusercontent.com/107939073/203570507-e969bba6-f6de-4b46-bcb0-8b575628fe1c.png)
 
@@ -30,8 +32,8 @@ There are also aesthetic details we still want to solve, but so far, we are pret
 
 Contributors: 
 
-João Mota: https://github.com/joaoefmota \n
-Isamu Schlothauer: https://github.com/isaschlothauer \n
-Iryna Kukuruza: https://github.com/Kukuruzka1 \n
-Diogo Guilherme: https://github.com/DiogoG8 \n
-Elif Gömleksiz: https://github.com/elifPeriza \n
+João Mota: https://github.com/joaoefmota
+Isamu Schlothauer: https://github.com/isaschlothauer
+Iryna Kukuruza: https://github.com/Kukuruzka1
+Diogo Guilherme: https://github.com/DiogoG8
+Elif Gömleksiz: https://github.com/elifPeriza
