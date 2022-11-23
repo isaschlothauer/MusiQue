@@ -10,7 +10,7 @@
       rgb(84 78 70 / 3%) 5.1%,
       rgba(161, 159, 155, 0.237391) 100%
     ),
-    url(src/assets/bg-trending-artists.png);
+    url(../assets/bg-trending-artists.png);
   background-size: cover;
 }
 

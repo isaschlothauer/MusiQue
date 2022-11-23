@@ -311,7 +311,7 @@ footer {
       rgba(161, 159, 155, 0.237391) 100%,
       rgba(217, 217, 217, 0) 2.64%
     ),
-    url(src/assets/backgroundWall.png);
+    url(../assets/backgroundWall.png);
 }
 
 .footerimage {
