@@ -4,7 +4,7 @@
 
 ![MusiQueLogo](https://user-images.githubusercontent.com/107939073/203567954-a90492dc-9998-48f4-b75a-2bd9ee02f3a7.png)
 
-** MusiQue presents you a new opportunity to explore the world of music.**
+**MusiQue presents you a new opportunity to explore the world of music.**
 **Find out more about your favorite genres, discover new songs, and check the recommendations by our team of curators!**
 
 ![Spotify_Logo_RGB_White](https://user-images.githubusercontent.com/107939073/203570507-e969bba6-f6de-4b46-bcb0-8b575628fe1c.png)
