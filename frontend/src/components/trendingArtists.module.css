@@ -68,7 +68,7 @@
   cursor: pointer;
   background: none;
   border: 0;
-  background-image: url("./src/assets/musiQue-imgs/playButton.png");
+  background-image: url("../assets/musiQue-imgs/playButton.png");
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.6;
@@ -90,7 +90,7 @@
   cursor: pointer;
   background: none;
   border: 0;
-  background-image: url("./src/assets/musiQue-imgs/STOP.png");
+  background-image: url("../assets/musiQue-imgs/STOP.png");
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.6;
