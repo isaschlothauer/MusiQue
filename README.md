@@ -30,8 +30,8 @@ There are also aesthetic details we still want to solve, but so far, we are pret
 
 Contributors: 
 
-João Mota: https://github.com/joaoefmota
-Isamu Schlothauer: https://github.com/isaschlothauer
-Iryna Kukuruza: https://github.com/Kukuruzka1
-Diogo Guilherme: https://github.com/DiogoG8
-Elif Gömleksiz: https://github.com/elifPeriza
+João Mota: https://github.com/joaoefmota \n
+Isamu Schlothauer: https://github.com/isaschlothauer \n
+Iryna Kukuruza: https://github.com/Kukuruzka1 \n
+Diogo Guilherme: https://github.com/DiogoG8 \n
+Elif Gömleksiz: https://github.com/elifPeriza \n
