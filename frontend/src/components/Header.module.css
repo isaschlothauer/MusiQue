@@ -1,7 +1,7 @@
 /*HEADER SECTION*/
 
 .header {
-  background-image:url(src/assets/backgroundHeader.png);
+  background-image: url(../assets/backgroundHeader.png);
   background-position: right 35% bottom 45%;
   background-repeat: no-repeat;
   background-size: cover;

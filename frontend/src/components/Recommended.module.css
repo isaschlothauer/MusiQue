@@ -69,24 +69,17 @@
 .artistMobile {
   color: var(--colorWhiteFonts);
   font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 26ch;
 }
 
 .song {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.btn {
-  background: var(--gradientButtons);
-  border: none;
-  width: 119px;
-  height: 42px;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
-  margin-top: 2.5rem;
-  margin-bottom: 3rem;
 }
 
 audio {
@@ -100,12 +93,6 @@ audio {
   text-align: center;
 }
 
-.logo {
-  width: 80px;
-  height: 25px;
-  object-fit: contain;
-  margin-top: 0.25rem;
-}
 .songHeadline {
   display: none;
 }
@@ -130,6 +117,15 @@ audio {
   }
   .nameMobile {
     font-size: 1.125rem;
+  }
+  .artistMobile {
+    color: var(--colorWhiteFonts);
+    font-weight: 700;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 36ch;
   }
 }
 
@@ -170,6 +166,7 @@ audio {
   }
   .pText {
     text-align: left;
+    line-height: 2rem;
   }
 
   .recQuote {
@@ -206,6 +203,7 @@ audio {
     color: var(--colorWhiteFonts);
     margin-bottom: 1.5rem;
   }
+
   .artistTitle {
     display: block;
     color: var(--colorWhiteFonts);
@@ -220,9 +218,8 @@ audio {
     padding-right: 5rem;
   }
 
-  .sectionHeadline{
+  .sectionHeadline {
     padding-left: 5rem;
-    padding-right:5rem;
+    padding-right: 5rem;
   }
-
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Aboutus from "./Aboutus.module.css";
+import musiqueLogo from "../assets/musiQue-imgs/MusiQueLogo.png";
 
 function AboutUs() {
   return (
@@ -20,7 +21,7 @@ function AboutUs() {
       <div className={Aboutus.container2}>
         <img
           className={Aboutus.logo}
-          src="src/assets/musiqueLogo.png"
+          src={musiqueLogo}
           alt="logo"
           width="50"
           height="50"

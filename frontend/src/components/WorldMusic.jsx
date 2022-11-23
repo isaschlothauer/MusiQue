@@ -6,18 +6,12 @@ import { useState, useEffect } from "react";
 import ReactHowler from "react-howler";
 import MusicCSS from "./WorldMusic.module.css";
 import SpotifyLogo from "../assets/Spotify_Logo_RGB_White.png";
+import btnStyles from "./Button.module.css";
 // eslint-disable-next-line camelcase
 const clientId = import.meta.env.VITE_CLIENT_ID;
 // eslint-disable-next-line camelcase
 const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
-// const artistName = "The Beatles";
 
-// TO DO LIST
-// 1. Randomized artist selector
-// 3. Play List and song picker still needs to be implemented
-// 5. Implement error handing on null or undefined response
-
-// Find a way to get song tracks
 const playLists = [
   {
     playListId: "37i9dQZF1DX0FGW2dUyDef",
@@ -47,10 +41,10 @@ const playLists = [
     playListId: "0YFoHvtj9er0GyqmxGaW5i",
     country: "Turkey",
   },
-  {
-    playListId: "0gorsfrZ74eaEYwR552r3w",
-    country: "Syria",
-  },
+  //   {
+  //     playListId: "0gorsfrZ74eaEYwR552r3w",
+  //     country: "Syria",
+  //   },
   {
     playListId: "1f2NGx8o2iQyw3AW8VJ3RO",
     country: "Ukraine",
@@ -131,9 +125,11 @@ function WorldMusic() {
           panel1Image: stringPath1.album.images[1].url,
           panel1Country: playLists[pListIndex1].country,
           panel1PreviewCheck: stringPath1.preview_url,
+          panel1TrackUrl: stringPath1.external_urls.spotify,
+          panel1ArtistUrl: stringPath1.artists[0].external_urls.spotify,
         };
 
-        console.log(panel1.panel1PreviewCheck);
+        // console.log(panel1.panel1PreviewCheck);
 
         // Savimg panel objects to state
         setMusicData1(panel1);
@@ -162,6 +158,8 @@ function WorldMusic() {
           panel2Image: stringPath2.album.images[1].url,
           panel2Country: playLists[pListIndex2].country,
           panel2PreviewCheck: stringPath2.preview_url,
+          panel2TrackUrl: stringPath2.external_urls.spotify,
+          panel2ArtistUrl: stringPath2.artists[0].external_urls.spotify,
         };
 
         // Savimg panel objects to state
@@ -191,6 +189,8 @@ function WorldMusic() {
           panel3Image: stringPath3.album.images[1].url,
           panel3Country: playLists[pListIndex3].country,
           panel3PreviewCheck: stringPath3.preview_url,
+          panel3TrackUrl: stringPath3.external_urls.spotify,
+          panel3ArtistUrl: stringPath3.artists[0].external_urls.spotify,
         };
         // Savimg panel objects to state
         setMusicData3(panel3);
@@ -219,6 +219,8 @@ function WorldMusic() {
           panel4Image: stringPath4.album.images[1].url,
           panel4Country: playLists[pListIndex4].country,
           panel4PreviewCheck: stringPath4.preview_url,
+          panel4TrackUrl: stringPath4.external_urls.spotify,
+          panel4ArtistUrl: stringPath4.artists[0].external_urls.spotify,
         };
         // Savimg panel objects to state
         setMusicData4(panel4);
@@ -226,14 +228,10 @@ function WorldMusic() {
       .catch((err) => console.error(err));
   }, [renderCheck, accessToken]);
 
-  function playPause() {
-    console.log("Hello");
-  }
-
   return (
     <div className={MusicCSS.musicContainer}>
       <div className={MusicCSS.recContainer}>
-        <h2 className={MusicCSS.musicDiscover}>World's Music</h2>
+        <h2 className={MusicCSS.musicDiscover}>World Music</h2>
         <div className={MusicCSS.panelContainer}>
           <div className={MusicCSS.panel1}>
             <div className={MusicCSS.mainImg}>
@@ -266,12 +264,21 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
-              {musicData1.panel1Title}
-            </p>
+
+            <a
+              href={musicData1.panel1TrackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
+                {musicData1.panel1Title}
+              </p>
+            </a>
+            {/* <a href={musicData1.panel1ArtistUrl} target="_blank" rel="noopener noreferrer"></a> */}
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
               {musicData1.panel1Artists}
             </p>
+
             <p className={`${MusicCSS.country} ${["pText"]}`}>
               Country: {musicData1.panel1Country}
             </p>
@@ -312,9 +319,15 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
-              {musicData2.panel2Title}
-            </p>
+            <a
+              href={musicData2.panel2TrackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
+                {musicData2.panel2Title}
+              </p>
+            </a>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
               {musicData2.panel2Artists}
             </p>
@@ -322,7 +335,7 @@ function WorldMusic() {
               Country: {musicData2.panel2Country}
             </p>
             <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Release: {musicData2.panel2Release}
+              {musicData2.panel2Release}
             </p>
           </div>
 
@@ -357,20 +370,26 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
-              {musicData3.panel3Title}
-            </p>
+            <a
+              href={musicData3.panel3TrackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
+                {musicData3.panel3Title}
+              </p>
+            </a>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
               {musicData3.panel3Artists}
             </p>
+
             <p className={`${MusicCSS.country} ${["pText"]}`}>
               Country: {musicData3.panel3Country}
             </p>
             <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Release: {musicData3.panel3Release}
+              {musicData3.panel3Release}
             </p>
           </div>
-
           <div className={MusicCSS.panel4}>
             <div className={MusicCSS.mainImg}>
               <img
@@ -402,9 +421,15 @@ function WorldMusic() {
                 </button>
               ) : null}
             </div>
-            <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
-              {musicData4.panel4Title}
-            </p>
+            <a
+              href={musicData4.panel4TrackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={`${MusicCSS.songTitle} ${["pText"]}`}>
+                {musicData4.panel4Title}
+              </p>
+            </a>
             <p className={`${MusicCSS.artists} ${["pItalic"]}`}>
               {musicData4.panel4Artists}
             </p>
@@ -412,7 +437,7 @@ function WorldMusic() {
               Country: {musicData4.panel4Country}
             </p>
             <p className={`${MusicCSS.release} ${["pText"]}`}>
-              Release: {musicData4.panel4Release}
+              {musicData4.panel4Release}
             </p>
           </div>
         </div>
@@ -428,7 +453,7 @@ function WorldMusic() {
               setPlaying3(null);
               setPlaying4(null);
             }}
-            className={`${MusicCSS.pButtons} ${"pButtons"}`}
+            className={`${btnStyles.btn} ${"pButtons"}`}
             type="button"
           >
             SHUFFLE
@@ -436,7 +461,11 @@ function WorldMusic() {
         </div>
         <div className={MusicCSS.endTxt}>
           <p className={`${MusicCSS.endTxt1} ${["pText"]}`}>Find more on</p>
-          <a href="https://www.spotify.com">
+          <a
+            href="https://www.spotify.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src={SpotifyLogo}
               className={MusicCSS.spotifyLogo}
