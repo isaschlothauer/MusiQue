@@ -2,7 +2,7 @@
 
 <h1>musiQue</h1>
 
-![MusiQueLogo](https://user-images.githubusercontent.com/107939073/203567954-a90492dc-9998-48f4-b75a-2bd9ee02f3a7.png)
+![MusiQue_black](https://user-images.githubusercontent.com/107939073/203588802-18dfe266-0e52-447c-9b15-56dc4cfab33b.png)
 
 **MusiQue presents you a new opportunity to explore the world of music.**
 **Find out more about your favorite genres, discover new songs, and check the recommendations by our team of curators!**
