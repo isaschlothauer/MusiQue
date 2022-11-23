@@ -31,14 +31,13 @@ For future implementations, we want to add a user-to-user interaction, such as a
 There are also aesthetic details we still want to solve, but so far, we are pretty satisfied with the result :)
 
 Contributors: 
-´´´
 João Mota: https://github.com/joaoefmota
-´´´
+
 Isamu Schlothauer: https://github.com/isaschlothauer
-´´´
+
 Iryna Kukuruza: https://github.com/Kukuruzka1
-´´´
+
 Diogo Guilherme: https://github.com/DiogoG8
-´´´
+
 Elif Gömleksiz: https://github.com/elifPeriza
-´´´
+
