@@ -68,7 +68,7 @@ const recs = [
   {
     author: "João, Germany/Portugal",
     imgAuthor: Joao,
-    content: `As a music and filme enthusiastic, I can not help myself to go back to this The Korgi's cover by Beck, used in one of my favourite movies: Eternal Sunshine of the Spotless Mind. As in the movie, about a couple who can't cope a reason for enjoying life together, sometimes, all that we need to be happy is to keeping it simple, as life's most enjoyable aspects are right next to us and don't need a thousand reasons but one to be taken: being happy.`,
+    content: `As a music and film enthusiast, I can not help to go back to this The Korgi's cover by Beck, used in one of my favorite movies: Eternal Sunshine of the Spotless Mind. As in the movie, about a couple who can't cope a reason for enjoying life together, sometimes, all that we need to be happy is to keep it simple, as life's most enjoyable aspects are right next to us and don't need a thousand reasons but one to be taken: being happy.`,
     id: "4oYfMQ6NDGHq0GcbICqsDw",
   },
 ];
