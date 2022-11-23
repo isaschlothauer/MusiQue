@@ -7,7 +7,7 @@
 **MusiQue presents you a new opportunity to explore the world of music.**
 **Find out more about your favorite genres, discover new songs, and check the recommendations by our team of curators!**
 
-![Spotify_Logo_RGB_Black](https://user-images.githubusercontent.com/107939073/203593306-893ae32c-cb10-47d1-b55b-23629d765f4d.png)
+![Spotify_Logo_RGB_Green](https://user-images.githubusercontent.com/107939073/203594223-5675c21a-81d6-41fc-91ff-b879e5743b4e.png)
 
 This second project aimed to provide a challenge focused on **React.js** usage, emphasizing API implementation. From music lovers to music lovers, our team decided to go through the official Spotify API. 
 
