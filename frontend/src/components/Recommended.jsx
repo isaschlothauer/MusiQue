@@ -6,7 +6,7 @@ import Joao from "../assets/recommended/Joao.jpg";
 import Isamu from "../assets/recommended/Isamu.jpg";
 import Iryna from "../assets/recommended/Iryna.png";
 import Elif from "../assets/recommended/Elif.png";
-import Logo from "../assets/spotify_logo_white.png";
+import SpotifyLogoButton from "./SpotifyLogoButton";
 
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 const CLIENT_SECRET = import.meta.env.VITE_CLIENT_SECRET;
@@ -64,6 +64,12 @@ const recs = [
     imgAuthor: Elif,
     content: `"My branches scrape the sea of stars, My roots dig deep into this world of ours, I'm grounded”. I love the lyrics of this song. When I listen to it, I imagine myself dancing. My feet touching the ground to then again lift off - oscillating between imagination and reality. To not lose touch with the ground, nor with the sky. Can they exist at the same time?`,
     id: "7cYod6eQvKmiyLwOjBgYR6",
+  },
+  {
+    author: "João, Germany/Portugal",
+    imgAuthor: Joao,
+    content: `As a music and film enthusiast, I can not help to go back to this The Korgi's cover by Beck, used in one of my favorite movies: Eternal Sunshine of the Spotless Mind. As in the movie, about a couple who can't cope a reason for enjoying life together, sometimes, all that we need to be happy is to keep it simple, as life's most enjoyable aspects are right next to us and don't need a thousand reasons but one to be taken: being happy.`,
+    id: "4oYfMQ6NDGHq0GcbICqsDw",
   },
 ];
 
@@ -178,7 +184,7 @@ function Recommended() {
           </p>
           <figure>
             {/* eslint-disable jsx-a11y/media-has-caption */}
-            <audio controls src={song.previewUrl} />
+            <audio volume={0.3} controls src={song.previewUrl} />
           </figure>
           <p className={`${styles.artistMobile} ${"pText"}`}>
             {song.songTitle}
@@ -187,11 +193,14 @@ function Recommended() {
             {song.artistTitle}
           </p>
 
-          <button type="button" className={styles.btn}>
-            <a className="active" href={song.spotifyLink}>
-              <img className={styles.logo} alt="spotify logo" src={Logo} />
-            </a>
-          </button>
+          <a
+            className="active"
+            href={song.spotifyLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SpotifyLogoButton />
+          </a>
         </div>
       </div>
     </div>

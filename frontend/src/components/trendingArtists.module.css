@@ -2,207 +2,212 @@
   height: 230px;
   width: 250px;
   object-fit: cover;
-  }
+}
 
-  .trendingArtists {
-    background-image: linear-gradient(#302518 0.48%, rgb(84 78 70 / 3%) 5.1%, rgba(161, 159, 155, 0.237391) 100%),url(src/assets/bg-trending-artists.png);
-    background-size: cover;
-  }
+.trendingArtists {
+  background-image: linear-gradient(
+      #302518 0.48%,
+      rgb(84 78 70 / 3%) 5.1%,
+      rgba(161, 159, 155, 0.237391) 100%
+    ),
+    url(../assets/bg-trending-artists.png);
+  background-size: cover;
+}
 
 .artistsCard {
-    padding-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .albumAndTextContainer {
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 .articles {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    background-color: #302518;
-    color: #F5F5F5;
-    box-shadow: rgb(17 17 26 / 20%) 0px 4px 16px, rgb(17 17 26 / 20%) 0px 8px 24px, rgb(17 17 26 / 20%) 0px 16px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-color: #302518;
+  color: #f5f5f5;
+  box-shadow: rgb(17 17 26 / 20%) 0px 4px 16px, rgb(17 17 26 / 20%) 0px 8px 24px,
+    rgb(17 17 26 / 20%) 0px 16px 56px;
+    margin-top: 3rem;
 }
 
-  .albumText p {
-    margin: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    max-width: 27ch;
+.artistsCard :nth-child(3){
+  margin-bottom: 0;
+}
+
+.albumText p {
+  margin: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 27ch;
+}
+
+.albumText {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+}
+
+.playButton {
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: 0.3s;
+  padding: 30px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  background-image: url("../assets/musiQue-imgs/playButton.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.playButton:hover {
+  opacity: 1;
+}
+
+.playButtonActive {
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: 0.3s;
+  padding: 30px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  background-image: url("../assets/musiQue-imgs/STOP.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.playButtonActive:hover {
+  opacity: 1;
+}
+
+.coversongContainer {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.spotifyIconLittle {
+  align-self: flex-end;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.spotifyIconLittleBlack {
+  display: none;
+}
+
+.sectionTitle {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.renderButton {
+  align-items: center;
+  appearance: none;
+  background: linear-gradient(269.49deg, #7755f9 10.41%, #02aafd 111.89%),
+    linear-gradient(270.52deg, #db6c2f -10.09%, #7755f9 90.46%);
+  border: 0;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  height: 2.625rem;
+  width: 6.688rem;
+  justify-content: center;
+  overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  text-align: left;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.renderButton:hover {
+  transform: translateY(-2px);
+}
+
+.renderButton:active {
+  transform: translateY(2px);
+}
+
+.linkToSpotifyText {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.linkToSpotifyIcons {
+  display: contents;
+}
+
+.linkToSpotifyButton {
+  display: none;
+}
+
+.albumText {
+  display: flex;
+  flex-direction: column;
+}
+
+.coversongContainer {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.spotifyIconLittle {
+  align-self: flex-end;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.spotifyIconLittleBlack {
+  display: none;
+}
+
+.sectionTitle {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+@media screen and (min-width: 450px) {
+  .coversongContainer img {
+    width: 300px;
   }
 
   .albumText {
-    display:flex;
-    flex-direction: column;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  .playButton {
-    align-self: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transition: 0.3s;
-    padding: 30px;
-    cursor: pointer;
-    background: none;
-    border: 0;
-    background-image: url("./src/assets/musiQue-imgs/playButton.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.6;
-  }
-
-  .playButton:hover {
-    opacity: 1;
-  }
-
-  .playButtonActive {
-    align-self: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transition: 0.3s;
-    padding: 30px;
-    cursor: pointer;
-    background: none;
-    border: 0;
-    background-image: url("./src/assets/musiQue-imgs/STOP.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.6;
-  }
-
-  .playButtonActive:hover {
-    opacity: 1;
-  }
-
-  .coversongContainer {
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-  }
-
-  .spotifyIconLittle {
-    align-self: flex-end;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .spotifyIconLittleBlack {
-    display: none;
-  }
-
-  .sectionTitle {
-    text-align: center;
-    padding-top: 3rem;
-  }
-
-  .renderButton {
-    align-items: center;
-    appearance: none;
-    background: linear-gradient(269.49deg, #7755F9 10.41%, #02AAFD 111.89%), linear-gradient(270.52deg, #DB6C2F -10.09%, #7755F9 90.46%);
-    border: 0;
-    border-radius: 1.25rem;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-flex;
-    height: 2.625rem;
-    width: 6.688rem;
-    justify-content: center;
-    overflow: hidden;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    position: relative;
-    text-align: left;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow,transform;
-    margin:auto;
-    margin-bottom: 3rem;
-  
-  }
-
-  .renderButton:hover {
-    transform: translateY(-2px);
-  }
-
-  .renderButton:active {
-    transform: translateY(2px);
-  }
-
-  .linkToSpotifyText {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    }
-
-  .linkToSpotifyIcons {
-    display: contents;
-  }
-
-  .linkToSpotifyButton {
-    display: none;
-  }
-
-  .albumText {
-    display:flex;
-    flex-direction: column;
-  }
-
-
-  .coversongContainer {
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-  }
-
-  .spotifyIconLittle {
-    align-self: flex-end;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .spotifyIconLittleBlack {
-    display: none;
-  }
-
-  .sectionTitle {
-    text-align: center;
-    padding-top: 3rem;
-  }
-   
-   
-  @media screen and (min-width: 450px) {
-    .coversongContainer img {
-      width: 300px;
-      }
-
-  .albumText {
-    display:flex;
+    display: flex;
     flex-direction: column;
   }
 
@@ -229,36 +234,37 @@
 
   .coversongContainer img {
     width: 300px;
-    }
+  }
+}
 
+@media screen and (min-width: 600px) {
+  .trendingArtists {
+    background: #f6f6f6;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
-
-
-  @media screen and (min-width: 600px) {
-
-   .trendingArtists {
-     background: #F6F6F6;
-     padding-left: 3rem;
-     padding-right: 3rem;
-   }
-
-   .articles {
+  .articles {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 15px;
     color: #131315;
     box-shadow: none;
     width: 100%;
     gap: 0;
     margin-bottom: 1.5rem;
-     }
+    margin-top: 0;
+  }
 
-   .coversongContainer img {
+  .artistsCard:last-of-type{
+    margin-bottom: 0;
+  }
+
+  .coversongContainer img {
     width: 150px;
     height: 150px;
     overflow: hidden;
@@ -298,7 +304,7 @@
     font-size: 1rem;
     font-weight: 700;
   }
-  
+
   .songName {
     font-weight: 400;
     font-size: 1rem;
@@ -312,43 +318,35 @@
   .renderButton {
     margin-top: 1.5rem;
   }
-
-
-
-  }
-
-  @media screen and (min-width: 800px) {
-    .spotifyIconLittleBlack {
-      display: none;
-    }
-
-    .songTitle {
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
-    
-    .songName {
-      font-weight: 400;
-      font-size: 1.25rem;
-    }
-
-    .linkToSpotifyIcons {
-      display: none;
-    }
-
-    .linkToSpotifyButton {
-      display: contents;
-    }
-
-  }
-
-
-
-
-
-  @media screen and (min-width: 1200px) {
-.trendingArtists{
-padding-left:5rem;
-padding-right:5rem;
 }
+
+@media screen and (min-width: 800px) {
+  .spotifyIconLittleBlack {
+    display: none;
   }
+
+  .songTitle {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .songName {
+    font-weight: 400;
+    font-size: 1.25rem;
+  }
+
+  .linkToSpotifyIcons {
+    display: none;
+  }
+
+  .linkToSpotifyButton {
+    display: contents;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .trendingArtists {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}

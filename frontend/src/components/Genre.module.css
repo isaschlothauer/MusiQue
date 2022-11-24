@@ -27,7 +27,7 @@
   box-sizing: border-box;
   color: #4faeff;
   display: flex;
-  font-family: Phantomsans, sans-serif;
+  font-family: var(--fontNoto), sans-serif;
   font-size: 1.125rem;
   justify-content: center;
   line-height: 1em;
@@ -154,10 +154,6 @@
 }
 
 @media screen and (max-width: 439px) {
-
-
-
-  
   .btn {
     align-items: center;
     background-image: linear-gradient(
@@ -171,8 +167,8 @@
     box-sizing: border-box;
     color: #4faeff;
     display: flex;
-    font-family: Phantomsans, sans-serif;
-    font-size: 1.125rem;
+    font-family: var(--fontNoto);
+    font-size: 1rem;
     justify-content: center;
     line-height: 1em;
     width: auto;
@@ -323,7 +319,7 @@
         rgba(141, 140, 133, 0.322174) 6.48%,
         rgba(217, 217, 217, 0) 11.64%
       ),
-      url(src/assets/5.jpeg);
+      url(../assets/5.jpeg);
     color: black;
     font-size: 2rem;
     text-align: left;
@@ -365,55 +361,55 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
       rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
       rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      cursor: pointer;
   }
 
   .btn2:nth-child(1) {
-
-    background-image: url(src/assets/genres/Rectangle14.png);
+    background-image: url(../assets/genres/Rectangle14.png);
   }
 
   .btn2:nth-child(2) {
-    background-image: url(src/assets/genres/Rectangle24.png);
+    background-image: url(../assets/genres/Rectangle24.png);
   }
 
   .btn2:nth-child(3) {
-    background-image: url(src/assets/genres/Rectangle16.png);
+    background-image: url(../assets/genres/Rectangle16.png);
   }
 
   .btn2:nth-child(4) {
-    background-image: url(src/assets/genres/Rectangle2.jpeg);
+    background-image: url(../assets/genres/Rectangle2.jpeg);
   }
 
   .btn2:nth-child(5) {
-    background-image: url(src/assets/genres/Rectangle18.png);
+    background-image: url(../assets/genres/Rectangle18.png);
   }
 
   .btn2:nth-child(6) {
-    background-image: url(src/assets/genres/Rectangle19.png);
+    background-image: url(../assets/genres/Rectangle19.png);
   }
 
   .btn2:nth-child(7) {
-    background-image: url(src/assets/genres/Rectangle26.png);
+    background-image: url(../assets/genres/Rectangle26.png);
   }
 
   .btn2:nth-child(8) {
-    background-image: url(src/assets/genres/Rectangle21.png);
+    background-image: url(../assets/genres/Rectangle21.png);
   }
 
   .btn2:nth-child(9) {
-    background-image: url(src/assets/genres/Rectangle22.png);
+    background-image: url(../assets/genres/Rectangle22.png);
   }
 
   .btn2:nth-child(10) {
-    background-image: url(src/assets/genres/Rectangle23.png);
+    background-image: url(../assets/genres/Rectangle23.png);
   }
 
   .btn2:nth-child(11) {
-    background-image: url(src/assets/genres/Rectangle15.png);
+    background-image: url(../assets/genres/Rectangle15.png);
   }
 
   .btn2:nth-child(12) {
-    background-image: url(src/assets/genres/Rectangle25.png);
+    background-image: url(../assets/genres/Rectangle25.png);
   }
 
   .btn {
@@ -489,7 +485,7 @@
         rgba(141, 140, 133, 0.322174) 6.48%,
         rgba(217, 217, 217, 0) 11.64%
       ),
-      url(src/assets/5.jpeg);
+      url(../assets/5.jpeg);
     color: black;
     font-size: 2rem;
     text-align: left;
@@ -525,51 +521,51 @@
   }
 
   .btn2:nth-child(1) {
-    background-image: url(src/assets/genres/Rectangle14.png);
+    background-image: url(../assets/genres/Rectangle14.png);
   }
 
   .btn2:nth-child(2) {
-    background-image: url(src/assets/genres/Rectangle24.png);
+    background-image: url(../assets/genres/Rectangle24.png);
   }
 
   .btn2:nth-child(3) {
-    background-image: url(src/assets/genres/Rectangle16.png);
+    background-image: url(../assets/genres/Rectangle16.png);
   }
 
   .btn2:nth-child(4) {
-    background-image: url(src/assets/genres/Rectangle2.jpeg);
+    background-image: url(../assets/genres/Rectangle2.jpeg);
   }
 
   .btn2:nth-child(5) {
-    background-image: url(src/assets/genres/Rectangle18.png);
+    background-image: url(../assets/genres/Rectangle18.png);
   }
 
   .btn2:nth-child(6) {
-    background-image: url(src/assets/genres/Rectangle19.png);
+    background-image: url(../assets/genres/Rectangle19.png);
   }
 
   .btn2:nth-child(7) {
-    background-image: url(src/assets/genres/Rectangle26.png);
+    background-image: url(../assets/genres/Rectangle26.png);
   }
 
   .btn2:nth-child(8) {
-    background-image: url(src/assets/genres/Rectangle21.png);
+    background-image: url(../assets/genres/Rectangle21.png);
   }
 
   .btn2:nth-child(9) {
-    background-image: url(src/assets/genres/Rectangle22.png);
+    background-image: url(../assets/genres/Rectangle22.png);
   }
 
   .btn2:nth-child(10) {
-    background-image: url(src/assets/genres/Rectangle23.png);
+    background-image: url(../assets/genres/Rectangle23.png);
   }
 
   .btn2:nth-child(11) {
-    background-image: url(src/assets/genres/Rectangle15.png);
+    background-image: url(../assets/genres/Rectangle15.png);
   }
 
   .btn2:nth-child(12) {
-    background-image: url(src/assets/genres/Rectangle25.png);
+    background-image: url(../assets/genres/Rectangle25.png);
   }
 
   .btn {

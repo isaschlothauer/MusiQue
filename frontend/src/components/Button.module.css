@@ -1,0 +1,47 @@
+.btn {
+  background: var(--gradientButtons);
+  border: none;
+  height: 42px;
+  border-radius: 3rem;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 20%), 0 4px 6px -4px rgb(0 0 0 / 20%);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  color: var(--colorWhiteFonts);
+  padding: 0.25rem 1.5rem;
+  font-size: 0.925rem;
+  letter-spacing: 0.06rem;
+}
+
+
+.btn:hover {
+  filter: saturate(1.1) brightness(0.9) contrast(1.1);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 30%), 0 4px 6px -4px rgb(0 0 0 / 30%);
+}
+
+.btn:active {
+  box-shadow: none;
+  transform: translateY(3px);
+}
+.logo {
+  width: 80px;
+  height: 25px;
+  object-fit: contain;
+  margin-top: 0.25rem;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+@media screen and (min-width: 600px) {
+  .logo {
+    width: 100px;
+    height: 32px;
+  }
+  .btn {
+    height: 48px;
+    font-size: 1.125rem;
+  }
+}

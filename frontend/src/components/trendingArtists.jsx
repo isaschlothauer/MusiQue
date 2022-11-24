@@ -3,6 +3,9 @@ import ReactHowler from "react-howler";
 import TrendingArtCSS from "./trendingArtists.module.css";
 import "../App.css";
 import SpotifyLogoButton from "./SpotifyLogoButton";
+import btnStyles from "./Button.module.css";
+import spotifyIconLittle from "../assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png";
+import spotifyIconLittleBlack from "../assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png";
 
 const clientId = import.meta.env.VITE_CLIENT_ID;
 const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
@@ -111,7 +114,7 @@ function TrendingArtists() {
                     src={artistSong1.album1Preview}
                     html5
                     playing={playing1}
-                    volume={0.3}
+                    volume={0.2}
                   />
                 </button>
               ) : null}
@@ -139,13 +142,13 @@ function TrendingArtists() {
             rel="noopener noreferrer"
           >
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
+              src={spotifyIconLittle}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittle}
               width={28}
             />
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+              src={spotifyIconLittleBlack}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittleBlack}
               width={28}
@@ -183,7 +186,7 @@ function TrendingArtists() {
                     src={artistSong2.album2Preview}
                     html5
                     playing={playing2}
-                    volume={0.3}
+                    volume={0.2}
                   />
                 </button>
               ) : null}
@@ -211,13 +214,13 @@ function TrendingArtists() {
             rel="noopener noreferrer"
           >
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
+              src={spotifyIconLittle}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittle}
               width={28}
             />
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+              src={spotifyIconLittleBlack}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittleBlack}
               width={28}
@@ -255,7 +258,7 @@ function TrendingArtists() {
                     src={artistSong3.album3Preview}
                     html5
                     playing={playing3}
-                    volume={0.3}
+                    volume={0.2}
                   />
                 </button>
               ) : null}
@@ -283,13 +286,13 @@ function TrendingArtists() {
             rel="noopener noreferrer"
           >
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_White.png"
+              src={spotifyIconLittle}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittle}
               width={28}
             />
             <img
-              src="src/assets/spotify-icons-logos/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Black.png"
+              src={spotifyIconLittleBlack}
               alt="spotify-icon"
               className={TrendingArtCSS.spotifyIconLittleBlack}
               width={28}
@@ -301,7 +304,7 @@ function TrendingArtists() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <SpotifyLogoButton className={TrendingArtCSS.SpotifyIconBig} />
+            <SpotifyLogoButton />
           </a>
         </article>
         <button
@@ -313,7 +316,7 @@ function TrendingArtists() {
             setPlaying3(null);
           }}
           type="button"
-          className={`${TrendingArtCSS.renderButton} ${"pButtons"}`}
+          className={`${btnStyles.btn} ${"pButtons"}`}
         >
           SHUFFLE
         </button>
