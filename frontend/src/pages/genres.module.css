@@ -1,0 +1,814 @@
+:root {
+  --colorDarkBG: #302518;
+  --colorBlackFonts: #131315;
+  --colorWhiteFonts: #f5f5f5;
+  --colorGray: #f6f6f6;
+  --colorLightblue: #4faeff;
+  --gradientBG: linear-gradient(270.64deg, #7755f9 -22.24%, #5f3971 109.3%);
+  --gradientButtons: linear-gradient(269.49deg, #7755f9 10.41%, #02aafd 111.89%),
+    linear-gradient(270.52deg, #db6c2f -10.09%, #7755f9 90.46%);
+  --fontPoppins: "Poppins", sans-serif;
+  --fontNoto: "Noto Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 2000px;
+  min-width: 330px;
+  width: 100%;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+/*--------Fonts Mobile-----------*/
+
+h1 {
+  color: var(--white);
+  font-family: var(--fontPoppins);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2.125rem;
+}
+
+h2 {
+  font-family: var(--fontPoppins);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+}
+
+.pText {
+  font-family: var(--fontNoto);
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+.pTitle {
+  font-family: var(--fontNoto);
+  color: var(--colorBlackFonts);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pItalic {
+  font-family: var(--fontNoto);
+  color: var(--colorBlackFonts);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+.pButtons {
+  align-items: center;
+  appearance: none;
+  background: linear-gradient(269.49deg, #7755f9 10.41%, #02aafd 111.89%),
+    linear-gradient(270.52deg, #db6c2f -10.09%, #7755f9 90.46%);
+  border: 0;
+  border-radius: 1.25rem;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  height: 2.625rem;
+  width: 6.688rem;
+  justify-content: center;
+  overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  text-align: left;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.pButtons:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.pButtons:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.pButtons:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+/*--------CSS for Genres Pages-----------*/
+
+.genreText p {
+  padding: 0;
+}
+
+.genresImg {
+  display: none;
+}
+
+.genresImg img {
+  width: 20rem;
+  max-height: 480px;
+}
+
+.genreText {
+  display: flex;
+  flex-direction: column;
+}
+
+.genreText h1,
+.genreText p {
+  color: #f5f5f5;
+}
+
+.genreText p {
+  white-space: wrap;
+  font-size: 18px;
+}
+
+.headerGenres {
+  background: linear-gradient(270.64deg, #7755f9 -22.24%, #5f3971 109.3%);
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 3rem;
+}
+
+.genreTextAndImg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mostPopular {
+  background: #f6f6f6;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  color: #131315;
+}
+
+.mostPopularSongsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 15px;
+  margin-top: 1.5rem;
+  min-width: 100%;
+  padding: 1rem;
+}
+
+.mostPopularSongsContainer h2 {
+  font-size: 1.5rem;
+  max-width: 10ch;
+}
+
+.mostPopularSongsCoverSong {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+#mostPopularSongsImg {
+  width: 6rem;
+}
+
+#popularCoverAndPopularText {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.mostPopularSongsText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.playButton {
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: 0.3s;
+  padding: 30px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  background-image: url("../assets/musiQue-imgs/playButton.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.pauseButton {
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: 0.3s;
+  padding: 30px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  background-image: url("../assets/musiQue-imgs/STOP.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.playButton:hover {
+  opacity: 1;
+}
+
+.spotifyIconLittle {
+  justify-content: flex-end;
+  margin: 1rem;
+  align-self: flex-end;
+}
+
+.linkLittle {
+  display: contents;
+}
+
+.linkBig {
+  display: none;
+}
+
+.trending {
+  background: #302518;
+  color: #f5f5f5;
+  height: auto;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+}
+
+.trending .h2 {
+  margin-left: 2rem;
+}
+
+.trendingArtistsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 1.5rem;
+}
+
+.trendingArtistsContainer > div {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+#trendingImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  position: sticky;
+  top: 100vh;
+  background-image: linear-gradient(
+      #302518 0.48%,
+      rgba(84, 78, 70, 0.565217) 33.2%,
+      rgba(141, 138, 133, 0.322174) 59.48%,
+      rgba(161, 159, 155, 0.237391) 100%,
+      rgba(217, 217, 217, 0) 2.64%
+    ),
+    url(../assets/backgroundWall.png);
+}
+
+.footerimage {
+  width: 7.75rem;
+  height: 2.375rem;
+  margin-bottom: 0rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.h2trend {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.trendingtext {
+  color: #fff;
+  position: relative;
+  top: 10%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 16px;
+  height: 0;
+  font-weight: 700;
+  max-width: 20ch;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.trendingtext2 {
+  color: #fff;
+  display: none;
+  position: relative;
+  top: 10%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 14px;
+  height: 0;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.trendingArtistsDiv:nth-child(5) {
+  display: none;
+}
+
+/* FIGMA */
+.trendingArtistsContainerhid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.trendingArtistsContainerhid > div {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+/* VERTICAL ALIGNMENT 
+.trendingArtistsContainerhid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(1px, 100%));
+  grid-template-rows: repeat(1, 1fr);
+}
+*/
+
+.trendingArtistsContainerhid img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.trendingtexthid {
+  position: relative;
+  top: 10%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 16px;
+  height: 0;
+  font-weight: 700;
+  max-width: 20ch;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.trendingtext2hid {
+  display: none;
+  position: relative;
+  top: 90%;
+  left: 5%;
+  font-family: var(--fontNoto);
+  font-size: 14px;
+  height: 0;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.btn3 {
+  box-sizing: border-box;
+  height: 10vw;
+  width: 10vw;
+  border-style: solid;
+  border-color: white;
+  border-width: 0px 2px 2px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+  margin-top: 3rem;
+  margin-left: 45%;
+  background-color: #302518;
+}
+
+.btn3:hover {
+  border-bottom-width: 5px;
+  border-right-width: 5px;
+}
+
+#trendingImg:hover {
+  opacity: 0.3;
+}
+
+/*
+background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2%, rgba(141, 138, 133, 0.322174) 59.48%, rgba(161, 159, 155, 0.237391) 84.6%, rgba(217, 217, 217, 0) 2.64%), url(assets/background3.png);
+*/
+
+/*--------Fonts Tablet/Desktop-----------*/
+
+@media screen and (max-width: 440px) {
+  .trendingtext {
+    position: relative;
+    top: 10%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 16px;
+    height: 0;
+    font-weight: 700;
+    max-width: 15ch;
+  }
+
+  .trendingtext2 {
+    display: none;
+    position: relative;
+    top: 85%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+  }
+
+  .trendingtexthid {
+    position: relative;
+    top: 10%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 16px;
+    height: 0;
+    font-weight: 700;
+    max-width: 15ch;
+  }
+
+  .trendingtext2hid {
+    display: none;
+    position: relative;
+    top: 85%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+  }
+
+  .btn3 {
+    box-sizing: border-box;
+    height: 12vw;
+    width: 12vw;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(45deg);
+    transition: border-width 150ms ease-in-out;
+    margin-top: 3rem;
+    margin-left: 45%;
+    background-color: #302518;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  h1 {
+    color: var(--white);
+    font-family: var(--fontPoppins);
+    font-weight: 700;
+    font-size: 2.75rem;
+    line-height: 4.125rem;
+  }
+
+  h2 {
+    font-family: var(--fontPoppins);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .pText {
+    font-family: var(--fontNoto);
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .pTitle {
+    font-family: var(--fontNoto);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .pItalic {
+    font-family: var(--fontNoto);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .pButtons {
+    font-family: var(--fontNoto);
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  /*--------CSS for Genres Pages-----------*/
+
+  .mostPopular {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .h2trend {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .genreTextAndImg {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .genreText p {
+    max-width: 65ch;
+  }
+
+  .trending {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+
+  #mostPopularSongsImg {
+    width: 8rem;
+  }
+
+  #popularCoverAndPopularText {
+    gap: 5rem;
+  }
+
+  .trendingtext {
+    position: relative;
+    top: 75%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 18px;
+    height: 0;
+    font-weight: 700;
+    max-width: 50ch;
+  }
+
+  .trendingtext2 {
+    display: block;
+    position: relative;
+    top: 87%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+  }
+
+  .trendingtexthid {
+    position: relative;
+    top: 75%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 18px;
+    height: 0;
+    font-weight: 700;
+    max-width: 50ch;
+  }
+
+  .trendingtext2hid {
+    display: block;
+    position: relative;
+    top: 87%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+  }
+
+  .trending .h2 {
+    margin-left: 3rem;
+  }
+
+  #mostPopularSongsImg {
+    width: 8rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .mostPopularSongsContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .genresImg {
+    display: contents;
+  }
+
+  .genresImg img {
+    height: 350px;
+    width: 320px;
+    object-fit: cover;
+  }
+
+  .trendingArtistsContainer > div {
+    max-height: 100%;
+    /* overflow: initial; */
+  }
+
+  #mostPopularSongsImg {
+    width: 10rem;
+  }
+
+  .trendingArtistsContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: auto;
+    max-height: 600px;
+  }
+
+  .trendingArtistsDiv:nth-child(1) {
+    width: 100%;
+    max-height: 600px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .trendingArtistsDiv:nth-child(2) {
+    width: 100%;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .trendingArtistsDiv:nth-child(3) {
+    width: 100%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .trendingArtistsDiv:nth-child(4) {
+    width: 100%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .trendingArtistsDiv:nth-child(5) {
+    display: block;
+    width: 100%;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .trendingArtistsContainerhid {
+    display: none;
+  }
+
+  .trending {
+    padding-bottom: 2rem;
+  }
+  .trendingtext {
+    position: relative;
+    top: 80%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 12px;
+    height: 0;
+    font-weight: 700;
+  }
+
+  .trendingtext2 {
+    position: relative;
+    top: 88%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 10px;
+    height: 0;
+  }
+
+  .trendingArtistsDiv:nth-child(1) .trendingtext {
+    position: relative;
+    top: 85%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 18px;
+    height: 0;
+  }
+
+  .trendingArtistsDiv:nth-child(1) .trendingtext2 {
+    position: relative;
+    top: 90%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+  }
+  .btn3 {
+    display: none;
+  }
+
+  .linkBig {
+    display: contents;
+  }
+  .linkLittle {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .genresImg img {
+    width: 30rem;
+  }
+
+  .trendingtext {
+    position: relative;
+    top: 80%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 16px;
+    height: 0;
+    font-weight: 700;
+  }
+
+  .trendingtext2 {
+    position: relative;
+    top: 88%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 14px;
+    height: 0;
+  }
+
+  .trendingArtistsDiv:nth-child(1) .trendingtext {
+    position: relative;
+    top: 85%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 22px;
+    height: 0;
+  }
+
+  .trendingArtistsDiv:nth-child(1) .trendingtext2 {
+    position: relative;
+    top: 90%;
+    left: 5%;
+    font-family: var(--fontNoto);
+    font-size: 20px;
+    height: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .mostPopular {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .trending .h2 {
+    margin-left: 5rem;
+  }
+
+  .headerGenres {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+}
