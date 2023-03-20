@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@vitejs/plugin-react': ^3.1.0
+  autoprefixer: ^10.4.14
   eslint: ^8.36.0
   eslint-config-airbnb: ^19.0.4
   eslint-config-prettier: ^8.7.0
@@ -13,7 +14,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.6.0
   howler: ^2.2.3
   husky: ^8.0.3
-  nth-check: ^2.1.1
+  postcss: ^8.4.21
   prettier: ^2.8.5
   prop-types: ^15.8.1
   react: ^18.2.0
@@ -26,12 +27,15 @@ specifiers:
   react-router-dom: ^6.9.0
   react-scripts: ^5.0.1
   react-spotify-web-playback: ^0.13.3
+  tailwindcss: ^3.2.7
   template-fullstack: file:..
   use-sound: ^4.0.1
   vite: ^4.2.0
 
 dependencies:
+  autoprefixer: 10.4.14_postcss@8.4.21
   howler: 2.2.3
+  postcss: 8.4.21
   prop-types: 15.8.1
   react: 18.2.0
   react-bootstrap: 2.7.2_biqbaboplfbrettd7655fr4n2y
@@ -42,6 +46,7 @@ dependencies:
   react-router-dom: 6.9.0_biqbaboplfbrettd7655fr4n2y
   react-scripts: 5.0.1_wbhqbto5o2tdq7via3rqcfefny
   react-spotify-web-playback: 0.13.3_biqbaboplfbrettd7655fr4n2y
+  tailwindcss: 3.2.7_postcss@8.4.21
   template-fullstack: file:.._kox6cbllugysrienfqtnaxnfdy
   use-sound: 4.0.1_react@18.2.0
 
@@ -57,7 +62,6 @@ devDependencies:
   eslint-plugin-react: 7.32.2_eslint@8.36.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.36.0
   husky: 8.0.3
-  nth-check: 2.1.1
   prettier: 2.8.5
   react-error-overlay: 6.0.11
   vite: 4.2.0
@@ -3541,6 +3545,7 @@ packages:
 
   /boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
+    dev: false
 
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -7263,6 +7268,7 @@ packages:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
     dependencies:
       boolbase: 1.0.0
+    dev: false
 
   /nwsapi/2.2.2:
     resolution: {integrity: sha512-90yv+6538zuvUMnN+zCr8LuV6bPFdq50304114vJYJ8RDyK8D5O9Phpbd6SZWgI7PwzmmfN1upeOJlvybDSgCw==}
