@@ -16,7 +16,7 @@
   "author": "Wild Code School",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.15.3",
+    "@types/node": "^18.15.5",
     "concurrently": "^7.6.0",
     "dotenv": "^16.0.3",
     "husky": "^8.0.3"

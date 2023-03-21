@@ -230,7 +230,6 @@ function WorldMusic() {
 
   return (
     <div className={MusicCSS.musicContainer}>
-      <p>test</p>
       <div className={MusicCSS.recContainer}>
         <h2 className={MusicCSS.musicDiscover}>World Music</h2>
         <div className={MusicCSS.panelContainer}>
