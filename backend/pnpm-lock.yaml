@@ -38,6 +38,7 @@ dependencies:
   nodemailer: 6.9.1
   template-fullstack: file:.._j4766f7ecgqbon3u7zlxn5zszu
 
+
 devDependencies:
   '@types/cors': 2.8.13
   '@types/eslint': 8.21.3
